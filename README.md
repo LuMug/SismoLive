@@ -17,13 +17,13 @@ L’obiettivo principale è quello di mettere in funzione permanente il sismogr
 Documento di specifica: [QdC_SecondoSemestre-Sismografo.pdf](Documenti/muggiasca_qdc_sismografo.pdf)
 
 #### Struttura:
-- [Source](Source/SismoLive/)
+- [Source](Source/)
   > Cartella nella quale è salvata la documentazione del progetto.
 
-- [Documentazione](Documenti/Documentazione/SismoLiveDocumentazione.md)
+- [Documentazione](Documenti)
   > Cartella nella quale è salvata la documentazione del progetto.
 
-- [Gantt](Documenti/Gantt/)
+- [Gantt](Documenti/)
   > Cartella nella quale sono salvati tutti i diagrammi di gantt.
 
 - [Diari di lavoro](Documenti/Diari/)
