@@ -446,4 +446,4 @@ Elenco degli allegati, esempio:
 
 -   …
 
-- [Diari di lavoro](../Diari)
+- [Diari di lavoro](Diari/)
