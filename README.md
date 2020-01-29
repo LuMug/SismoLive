@@ -20,7 +20,7 @@ Documento di specifica: [QdC_SecondoSemestre-Sismografo.pdf](Documenti/muggiasca
 - [Source](Source/)
   > Cartella nella quale è salvata la documentazione del progetto.
 
-- [Documentazione](Documenti/)
+- [Documentazione](Documenti/SismoLiveDocumentazione.md)
   > Cartella nella quale è salvata la documentazione del progetto.
 
 - [Gantt](Documenti/)
