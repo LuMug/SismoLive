@@ -8,7 +8,6 @@
 |10:05 -  11:35  | Stesura requisiti minimi                    |
 |13:15 -  14:45  | Colloqui stage e creazione bacheca su Trello|
 |14:45 - 16:30   | Analisi dei mezzi                           |
-|
 
 ##  Problemi riscontrati e soluzioni adottate
 Abbiamo perso del tempo a causa dei colloqui per gli stage all'estero.
