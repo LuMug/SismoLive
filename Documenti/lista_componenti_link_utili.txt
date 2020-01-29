@@ -1,0 +1,25 @@
+Arduino Ethernet Shield 2 (44.50CHF)
+
+https://www.sparkfun.com/products/11166
+
+Arduino Uno WiFi(44.95$)
+
+https://www.sparkfun.com/products/14871
+
+Geophone sensor (59.95$)
+
+https://www.sparkfun.com/products/11744
+
+LCD (24.95$)
+
+https://www.sparkfun.com/products/14074
+
+SD CardShiel (13.90$)
+https://www.seeedstudio.com/SD-Card-Shield-V4-p-1381.html
+
+
+
+Bibliografia:
+
+29.01 https://www.sparkfun.com/
+29.01 https://www.seeedstudio.com/
