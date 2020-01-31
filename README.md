@@ -5,7 +5,7 @@
 |SismoLive    |Georgiy Farina, Daniel Matt, Marco Lorusso, Matthias Iannarella|Luca Muggiasca|non ancora|
 
 ## Info
-**Inizio:** 18.01.2020
+**Inizio:** 24.01.2020
 
 **Consegna:** 08.05.2020
 
