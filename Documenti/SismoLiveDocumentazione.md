@@ -6,10 +6,10 @@
 
   - [Scopo](#scopo)
 
-1. [Analisi](#analisi)
+2. [Analisi](#analisi)
 
   - [Analisi del dominio](#analisi-del-dominio)
-  
+
   - [Analisi dei mezzi](#analisi-dei-mezzi)
 
   - [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
@@ -18,15 +18,15 @@
 
   - [Pianificazione](#pianificazione)
 
-1. [Progettazione](#progettazione)
+3. [Progettazione](#progettazione)
 
   - [Design dell’architettura del sistema](#design-dell’architettura-del-sistema)
 
   - [Design dei dati e database](#design-dei-dati-e-database)
 
-1. [Implementazione](#implementazione)
+4. [Implementazione](#implementazione)
 
-1. [Test](#test)
+5. [Test](#test)
 
   - [Protocollo di test](#protocollo-di-test)
 
@@ -34,24 +34,24 @@
 
   - [Mancanze/limitazioni conosciute](#mancanze/limitazioni-conosciute)
 
-1. [Consuntivo](#consuntivo)
+6. [Consuntivo](#consuntivo)
 
-1. [Conclusioni](#conclusioni)
+7. [Conclusioni](#conclusioni)
 
   - [Sviluppi futuri](#sviluppi-futuri)
 
   - [Considerazioni personali](#considerazioni-personali)
 
-1. [Sitografia](#sitografia)
+8. [Sitografia](#sitografia)
 
-1. [Allegati](#allegati)
+9. [Allegati](#allegati)
 
 
 ## Introduzione
 
 ### Informazioni sul progetto
 
-- Allievi: 
+- Allievi:
 	> Daniel Matt (Sviluppatore)
 	> Georgiy Farina (Sviluppatore)
 	> Marco Lorusso (Sviluppatore)
@@ -119,6 +119,10 @@
 
 ### Analisi del dominio
 
+Il prodotto finale potrà essere utilizzato da tutti gli utenti, sia esperti,
+sia principianti, che hanno a disposizione un computer oppure un telefono e una
+connessione a internet.<br>
+
   Questo capitolo dovrebbe descrivere il contesto in cui il prodotto verrà
   utilizzato, da questa analisi dovrebbero scaturire le risposte a quesiti
   quali ad esempio:
@@ -145,75 +149,41 @@
 
 ### Analisi e specifica dei requisiti
 
-  Il progettista, dopo aver ricevuto il mandato, in collaborazione con il
-  committente redige una lista di requisiti. Durante questi incontri,
-  tramite interviste (da inserire nei diari), il progettista deve cercare
-  di rispondere alle seguenti domande:
-
-  -   Quali sono i bisogni del committente?
-
-  -   Quali funzioni deve svolgere il prodotto?
-
-  -   Come devono essere implementate?
-
-  -   L’utente, come vorrebbe/dovrebbe interagire con il prodotto?
-
-  -   Come verrà utilizzato il prodotto?
-
-  -   Che tipo di interfaccia si immagina?
-
-  -   Che prestazioni minime deve fornire il prodotto?
-
-  -   Che grado di sicurezza deve avere il prodotto?
-
-  -   …
-
-  In base alla lista dei requisiti e all’analisi degli stessi, il
-  progettista redige una *specifica dei requisiti* in cui elenca e
-  descrive in modo dettagliato quali sono le funzionalità che il prodotto
-  fornirà. La specifica dovrebbe essere abbastanza dettagliata da poter
-  essere utilizzata come base per lo sviluppo, ma non troppo; ad esempio
-  non dovrebbe contenere dettagli di implementazione, o definizioni
-  dettagliate dell’interfaccia grafica a meno che questi non siano
-  considerati cruciali. Non si deve scordare che i requisiti non
-  rappresentano delle attività bensì delle caratteristiche che il prodotto
-  dovrà possedere.
-
-
-
-
-  |**ID**	|**Nome**			|**Priorità**|**Vers**|**Note**  |
-  |----|------------|--------|----|------|
-  |Req-12|Dovrà esserci una maschera di login|1|1.0|...|
-  |Req-13|Si dovranno poter immettere nuovi allievi|1|1.0|...|
-  |Req-14|Dovrà essere possibile la ricerca di allievi|1|1.0|...|
-  
-  
-
-
-
 **Spiegazione elementi tabella dei requisiti:**
 
-**ID**: identificativo univoco del requisito
+**ID**: identificativo univoco del requisito.
 
-**Nome**: breve descrizione del requisito
+**Nome**: breve descrizione del requisito.
 
 **Priorità**: indica l’importanza di un requisito nell’insieme del
-progetto, definita assieme al committente. Ad esempio poter disporre di
-report con colonne di colori diversi ha priorità minore rispetto al
-fatto di avere un database con gli elementi al suo interno. Solitamente
-si definiscono al massimo di 2-3 livelli di priorità.
+progetto.
 
-**Versione**: indica la versione del requisito. Ogni modifica del
-requisito avrà una versione aggiornata.
+**Versione**: indica la versione del requisito.
 
-Sulla documentazione apparirà solamente l’ultima versione, mentre le
-vecchie dovranno essere inserite nei diari.
+**Note**: eventuali note.
 
-**Note**: eventuali osservazioni importanti o riferimenti ad altri
-requisiti.
-
-**Sotto requisiti**: elementi che compongono il requisito.
+  | **ID**  | **Requisito** | **Priorità** | **Versione** | **Note** |
+  | ------- | ------------- | ------------ | ------------ | -------- |
+  | REQ-001 | Realizzare un sito per la visualizzazione dei dati.| 1 | 1.0  |          |
+  | REQ-002 || 1 | 1.0  |          |
+  | REQ-003 || 1 | 1.0  |          |
+  | REQ-004 || 1 | 1.0 | |
+  | REQ-005 || 1 | 1.0 | |
+  | REQ-006 || 1 | 1.0| |
+  | REQ-007 || 1 | 1.0 |   |
+  | REQ-008 | | 1 | 1.0 |          |
+  | REQ-009 | | 1 | 1.0 | |
+  | REQ-010 | | 1 | 1.0 |       |
+  | REQ-011 |  | 1 | 1.0 |  |
+  | REQ-012 | | 1 | 1.0 |  |
+  | REQ-013 |  | 1 | 1.0 |  |
+  | REQ-014 | | 1 | 1.0 | |
+  | REQ-015 | | 1 | 1.0 | |
+  | REQ-016 | | 1 | 1.0 |  |
+  | REQ-017 | | 1 | 1.0 |  |
+  | REQ-018 | | 1 | 1.0 |  |
+  | REQ-019 | | 1 | 1.0 |  |
+  | REQ-020 | | 1 | 1.0 |  |
 
 
 ### Use case
@@ -238,16 +208,34 @@ in questo capitolo.
 
 ### Analisi dei mezzi
 
-Elencare e *descrivere* i mezzi disponibili per la realizzazione del
-progetto. Ricordarsi di sempre descrivere nel dettaglio le versioni e il
-modello di riferimento.
+#### Hardware
 
-SDK, librerie, tools utilizzati per la realizzazione del progetto e
-eventuali dipendenze.
+Matthias:
 
-Su quale piattaforma dovrà essere eseguito il prodotto? Che hardware
-particolare è coinvolto nel progetto? Che particolarità e limitazioni
-presenta? Che hw sarà disponibile durante lo sviluppo?
+- ASUS ROG GL553VE, Windows 10 Home 64 bit, versione 1903 build 18362.535.
+
+Marco:
+
+Georgiy:
+
+Daniel:
+
+#### Software
+
+- Lunacy v4.6.1
+
+- Atom v1.40.1
+
+- Microsoft Project 2019 v16
+
+- GitHub Desktop v2.1.3
+
+- Google Chrome v79.0.3945.79
+
+- XAMPP v3.2.4
+
+#### Librerie
+
 
 ## Progettazione
 
@@ -330,29 +318,209 @@ Per eventuali dettagli si possono inserire riferimenti ai diari.
 
 ### Protocollo di test
 
-Definire in modo accurato tutti i test che devono essere realizzati per
-garantire l’adempimento delle richieste formulate nei requisiti. I test
-fungono da garanzia di qualità del prodotto. Ogni test deve essere
-ripetibile alle stesse condizioni.
-
-
-|Test Case      | TC-001                               |
+|Test Case      | TC-001                       |
 |---------------|--------------------------------------|
-|**Nome**       |Import a card, but not shown with the GUI |
-|**Riferimento**|REQ-012                               |
-|**Descrizione**|Import a card with KIC, KID and KIK keys with no obfuscation, but not shown with the GUI |
-|**Prerequisiti**|Store on local PC: Profile\_1.2.001.xml (appendix n\_n) and Cards\_1.2.001.txt (appendix n\_n) |
-|**Procedura**     | - Go to “Cards manager” menu, in main page click “Import Profiles” link, Select the “1.2.001.xml” file, Import the Profile - Go to “Cards manager” menu, in main page click “Import Cards” link, Select the “1.2.001.txt” file, Delete the cards, Select the “1.2.001.txt” file, Import the cards |
-|**Risultati attesi** |Keys visible in the DB (OtaCardKey) but not visible in the GUI (Card details) |
+|**Nome**       ||
+|**Riferimento**|REQ-|
+|**Descrizione**|  |
+|**Prerequisiti**|  |
+|**Procedura**   | |
+|**Risultati attesi** |  |
 
+
+|Test Case      | TC-002                       |
+|---------------|--------------------------------------|
+|**Nome**       |           |
+|**Riferimento**|REQ-                     |
+|**Descrizione**|  |
+|**Prerequisiti**|  |
+|**Procedura**   | |
+|**Risultati attesi** |  |
+
+
+|Test Case      | TC-003                       |
+|---------------|--------------------------------------|
+|**Nome**       |           |
+|**Riferimento**|REQ-                     |
+|**Descrizione**|  |
+|**Prerequisiti**|  |
+|**Procedura**   | |
+|**Risultati attesi** |  |
+
+
+|Test Case      | TC-004                       |
+|---------------|--------------------------------------|
+|**Nome**       |           |
+|**Riferimento**|REQ-                     |
+|**Descrizione**|  |
+|**Prerequisiti**|  |
+|**Procedura**   | |
+|**Risultati attesi** |  |
+
+
+|Test Case      | TC-005                       |
+|---------------|--------------------------------------|
+|**Nome**       |           |
+|**Riferimento**|REQ-                     |
+|**Descrizione**|  |
+|**Prerequisiti**|  |
+|**Procedura**   | |
+|**Risultati attesi** |  |
+
+
+|Test Case      | TC-006                       |
+|---------------|--------------------------------------|
+|**Nome**       |           |
+|**Riferimento**|REQ-                     |
+|**Descrizione**|  |
+|**Prerequisiti**|  |
+|**Procedura**   | |
+|**Risultati attesi** |  |
+
+
+|Test Case      | TC-007                       |
+|---------------|--------------------------------------|
+|**Nome**       |           |
+|**Riferimento**|REQ-                     |
+|**Descrizione**|  |
+|**Prerequisiti**|  |
+|**Procedura**   | |
+|**Risultati attesi** |  |
+
+
+|Test Case      | TC-008                       |
+|---------------|--------------------------------------|
+|**Nome**       |           |
+|**Riferimento**|REQ-                     |
+|**Descrizione**|  |
+|**Prerequisiti**|  |
+|**Procedura**   | |
+|**Risultati attesi** |  |
+
+
+|Test Case      | TC-009                       |
+|---------------|--------------------------------------|
+|**Nome**       |           |
+|**Riferimento**|REQ-                     |
+|**Descrizione**|  |
+|**Prerequisiti**|  |
+|**Procedura**   | |
+|**Risultati attesi** |  |
+
+
+|Test Case      | TC-010                       |
+|---------------|--------------------------------------|
+|**Nome**       |           |
+|**Riferimento**|REQ-                     |
+|**Descrizione**|  |
+|**Prerequisiti**|  |
+|**Procedura**   | |
+|**Risultati attesi** |  |
+
+|Test Case      | TC-011                      |
+|---------------|--------------------------------------|
+|**Nome**       | |
+|**Riferimento**|REQ-                       |
+|**Descrizione**| |
+|**Prerequisiti**||
+|**Procedura**   | |
+|**Risultati attesi** | |
+
+|Test Case      | TC-012                      |
+|---------------|--------------------------------------|
+|**Nome**       | |
+|**Riferimento**|REQ-                       |
+|**Descrizione**| |
+|**Prerequisiti**||
+|**Procedura**   | |
+|**Risultati attesi** | |
+
+|Test Case      | TC-013                      |
+|---------------|--------------------------------------|
+|**Nome**       | |
+|**Riferimento**|REQ-                       |
+|**Descrizione**| |
+|**Prerequisiti**||
+|**Procedura**   | |
+|**Risultati attesi** | |
+
+|Test Case      | TC-014                      |
+|---------------|--------------------------------------|
+|**Nome**       | |
+|**Riferimento**|REQ-                       |
+|**Descrizione**| |
+|**Prerequisiti**||
+|**Procedura**   | |
+|**Risultati attesi** | |
+
+|Test Case      | TC-015                      |
+|---------------|--------------------------------------|
+|**Nome**       | |
+|**Riferimento**|REQ-                       |
+|**Descrizione**| |
+|**Prerequisiti**||
+|**Procedura**   | |
+|**Risultati attesi** | |
+
+|Test Case      | TC-016                      |
+|---------------|--------------------------------------|
+|**Nome**       | |
+|**Riferimento**|REQ-                       |
+|**Descrizione**| |
+|**Prerequisiti**||
+|**Procedura**   | |
+|**Risultati attesi** | |
+
+|Test Case      | TC-017                      |
+|---------------|--------------------------------------|
+|**Nome**       | |
+|**Riferimento**|REQ-                       |
+|**Descrizione**| |
+|**Prerequisiti**||
+|**Procedura**   | |
+|**Risultati attesi** | |
+
+|Test Case      | TC-018                      |
+|---------------|--------------------------------------|
+|**Nome**       | |
+|**Riferimento**|REQ-                       |
+|**Descrizione**| |
+|**Prerequisiti**||
+|**Procedura**   | |
+|**Risultati attesi** | |
+
+|Test Case      | TC-019                      |
+|---------------|--------------------------------------|
+|**Nome**       | |
+|**Riferimento**|REQ-                       |
+|**Descrizione**| |
+|**Prerequisiti**||
+|**Procedura**   | |
+|**Risultati attesi** | |
 
 ### Risultati test
 
-Tabella riassuntiva in cui si inseriscono i test riusciti e non del
-prodotto finale. Se un test non riesce e viene corretto l’errore, questo
-dovrà risultare nel documento finale come riuscito (la procedura della
-correzione apparirà nel diario), altrimenti dovrà essere descritto
-l’errore con eventuali ipotesi di correzione.
+| Test Case |  Stato   |
+|-----------|----------|
+|   TC-001  |  |            
+|   TC-002  |  |            
+|   TC-003  |  |           
+|   TC-004  |   |
+|   TC-005  |  |             
+|   TC-006  |  |             
+|   TC-007  |  |             
+|   TC-008  | |             
+|   TC-009  | |  
+|   TC-010  |  |             
+|   TC-011  |  |   
+|   TC-012  |  |
+|   TC-013 |  |
+|   TC-014  |  |             
+|   TC-015  |  |   
+|   TC-016  |  |
+|   TC-017 |  |
+|   TC-018  |  |             
+|   TC-019  |  |   
 
 ### Mancanze/limitazioni conosciute
 
@@ -375,41 +543,29 @@ marginale o è semplicemente servita per scoprire che questo percorso è
 stato una perdita di tempo? I risultati ottenuti sono generali,
 facilmente generalizzabili o sono specifici di un caso particolare? ecc
 
+Marco:
+
+Georgiy:
+
+Matthias:
+
+Daniel:
+
 ### Sviluppi futuri
   Migliorie o estensioni che possono essere sviluppate sul prodotto.
 
 ### Considerazioni personali
   Cosa ho imparato in questo progetto? ecc
 
+  Marco:
+
+  Georgiy:
+
+  Matthias:
+
+  Daniel:
+
 ## Bibliografia
-
-### Bibliografia per articoli di riviste
-1.  Cognome e nome (o iniziali) dell’autore o degli autori, o nome
-    dell’organizzazione,
-
-2.  Titolo dell’articolo (tra virgolette),
-
-3.  Titolo della rivista (in italico),
-
-4.  Anno e numero
-
-5.  Pagina iniziale dell’articolo,
-
-### Bibliografia per libri
-
-
-1.  Cognome e nome (o iniziali) dell’autore o degli autori, o nome
-    dell’organizzazione,
-
-2.  Titolo del libro (in italico),
-
-3.  ev. Numero di edizione,
-
-4.  Nome dell’editore,
-
-5.  Anno di pubblicazione,
-
-6.  ISBN.
 
 ### Sitografia
 
@@ -425,13 +581,18 @@ facilmente generalizzabili o sono specifici di un caso particolare? ecc
 -   http://standards.ieee.org/guides/style/section7.html, *IEEE
     Standards Style Manual*, 07-06-2008.
 
+- https://www.sparkfun.com/, 29-01-2020
+- https://www.seeedstudio.com/, 29-01-2020
+- https://www.iconfinder.com/, 29-01-2020
+
+
 ## Allegati
 
-Elenco degli allegati, esempio:
+- [Diari di lavoro](Diari/)
 
--   Diari di lavoro
+- [Codice sorgente](../Source/)
 
--   Codici sorgente/documentazione macchine virtuali
+- [Mandato](muggiasca_qdc_sismografo.pdf)
 
 -   Istruzioni di installazione del prodotto (con credenziali
     di accesso) e/o di eventuali prodotti terzi
@@ -440,10 +601,6 @@ Elenco degli allegati, esempio:
 
 -   Eventuali guide utente / Manuali di utilizzo
 
--   Mandato e/o Qdc
-
 -   Prodotto
 
 -   …
-
-- [Diari di lavoro](Diari/)
