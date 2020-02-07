@@ -17,6 +17,8 @@ https://www.sparkfun.com/products/14074
 SD CardShiel (13.90$)
 https://www.seeedstudio.com/SD-Card-Shield-V4-p-1381.html
 
+Mini GPS Shield (6.95)
+https://www.sparkfun.com/products/14030
 
 
 Bibliografia:
