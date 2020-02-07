@@ -6,3 +6,6 @@ https://www.sparkfun.com/products/14074
 
 Mini GPS Shield (6.95$)
 https://www.sparkfun.com/products/14030
+
+WiFi Module - ESP8266 (6.95$)
+https://www.sparkfun.com/products/13678
