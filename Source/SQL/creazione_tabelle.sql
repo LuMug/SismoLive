@@ -1,12 +1,12 @@
 drop database if exists SismoLive;
 create database SismoLive;
 use SismoLive;
-/*
+
 # CREAZIONE TABELLE ----------------------------------------------------------------------------------
 drop table if exists Utente;
 create table Utente(
 	nome_utente varchar(20) primary key not null,
-	psw varchar(20) not null,
+	psw varchar(100) not null,
 	email varchar(50) not null,
 	telefono int not null,
 	tipo varchar(20) not null
@@ -22,7 +22,7 @@ create table Configurazione(
 
 drop table if exists ValoreGPS;
 create table ValoreGPS(
-	id int primary key auto_increment,
+	id int primary key auto_increment not null,
 	longitudine double not null,
 	latitudine double not null
 );
@@ -39,9 +39,23 @@ create table Terremoto(
 
 # CREAZIONE AMMINISTRATORI DI BASE -----------------------------------------------------------------------------------------------
 
-insert into Utente(nome_utente,psw,mail,telefono,tipo) values ("Georgiy","");*/
-set @prova = aes_encrypt("psw","chiave");
+insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Georgiy",aes_encrypt("PasswordDiGeorgiy1","&F)H@McQfTjWnZr4"),"georgiy.farina@samtrevano.ch",0790123456,"A");
+insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Marco",aes_encrypt("PasswordDiMarco","&F)H@McQfTjWnZr4"),"marco.lorusso@samtrevano.ch",0791234567,"A");
+insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Matthias",aes_encrypt("PasswordDiMatthias","&F)H@McQfTjWnZr4"),"matthias.iannarella@samtrevano.ch", 0792345678,"A");
+insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Daniel",aes_encrypt("PasswordDiDaniel","&F)H@McQfTjWnZr4"),"daniel.matt@samtrevano.ch",0793456789,"A");
 
-set @psw_nuova = aes_encrypt("pw","chiave");
-select @prova = @psw_nuova;
+# TRIGGER PER L'ALLARME TERREMOTO---------------------------------------------------------------------------------------------------------------------------------
+drop trigger if exists after_terremoto_insert;
+
+delimiter //
+create DEFINER = CURRENT_USER trigger after_terremoto_insert
+after insert on Terremoto
+for each row
+begin
+	### da inserire istruzioni per notifica mail/sms.
+end
+//
+delimiter ;
+
+
 
