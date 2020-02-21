@@ -44,18 +44,4 @@ insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Marco",aes_encr
 insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Matthias",aes_encrypt("PasswordDiMatthias","&F)H@McQfTjWnZr4"),"matthias.iannarella@samtrevano.ch", 41792345678,"A");
 insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Daniel",aes_encrypt("PasswordDiDaniel","&F)H@McQfTjWnZr4"),"daniel.matt@samtrevano.ch",41793456789,"A");
 
-# TRIGGER PER L'ALLARME TERREMOTO---------------------------------------------------------------------------------------------------------------------------------
-drop trigger if exists sendAlarmEmail;
-
-delimiter //
-create DEFINER = CURRENT_USER trigger sendAlarmEmail
-after insert on Terremoto
-for each row
-BEGIN
-
-END
-//
-delimiter ;
-
-
 
