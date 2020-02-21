@@ -39,9 +39,9 @@ create table Terremoto(
 
 # CREAZIONE AMMINISTRATORI DI BASE -----------------------------------------------------------------------------------------------
 
-insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Georgiy",aes_encrypt("PasswordDiGeorgiy1","&F)H@McQfTjWnZr4"),"georgiy.farina@samtrevano.ch",41790123456,"A");
-insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Marco",aes_encrypt("PasswordDiMarco","&F)H@McQfTjWnZr4"),"marco.lorusso@samtrevano.ch",41791234567,"A");
-insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Matthias",aes_encrypt("PasswordDiMatthias","&F)H@McQfTjWnZr4"),"matthias.iannarella@samtrevano.ch", 41792345678,"A");
-insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Daniel",aes_encrypt("PasswordDiDaniel","&F)H@McQfTjWnZr4"),"daniel.matt@samtrevano.ch",41793456789,"A");
+insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Georgiy",md5("PasswordDiGeorgiy"),"georgiy.farina@samtrevano.ch",41790123456,"A");
+insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Marco",md5("PasswordDiMarco"),"marco.lorusso@samtrevano.ch",41791234567,"A");
+insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Matthias",md5("PasswordDiMatthias"),"matthias.iannarella@samtrevano.ch", 41792345678,"A");
+insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Daniel",md5("PasswordDiDaniel"),"daniel.matt@samtrevano.ch",41793456789,"A");
 
-
+select * from utente;
