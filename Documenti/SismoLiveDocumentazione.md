@@ -110,10 +110,7 @@
 
 ### Scopo
 
-  Lo scopo del progetto (scopi didattici/scopi operativi). Dovrebbe
-  descrivere il mandato, ma non vanno ricopiate le informazioni del
-  quaderno dei compiti (che va invece allegato).
-
+  Lo scopo di questo progetto è quello di avere una costante misurazione, insieme alla relativa rappresentazione su un sito web, delle vibrazioni terrestri. Nel caso di un terremoto vengono notificati via mail gli amministratori e sul sito coloro che lo visitano.
 
 ## Analisi
 
@@ -217,6 +214,7 @@ Matthias:
 Marco:
 
 Georgiy:
+- Acer Aspire A717-71G, Windows 10 home 64 bit 
 
 Daniel:
 
@@ -233,6 +231,8 @@ Daniel:
 - Google Chrome v79.0.3945.79
 
 - XAMPP v3.2.4
+
+- MySQL Workbench 8.0 CE
 
 #### Librerie
 
