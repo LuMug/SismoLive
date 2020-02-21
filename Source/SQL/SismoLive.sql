@@ -45,34 +45,17 @@ insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Matthias",aes_e
 insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Daniel",aes_encrypt("PasswordDiDaniel","&F)H@McQfTjWnZr4"),"daniel.matt@samtrevano.ch",41793456789,"A");
 
 # TRIGGER PER L'ALLARME TERREMOTO---------------------------------------------------------------------------------------------------------------------------------
-drop trigger if exists after_terremoto_insert;
-/*
+drop trigger if exists sendAlarmEmail;
+
 delimiter //
-create DEFINER = CURRENT_USER trigger after_terremoto_insert
+create DEFINER = CURRENT_USER trigger sendAlarmEmail
 after insert on Terremoto
 for each row
-BEGIN        
-SET NOCOUNT ON;
-
-DECLARE @NombreDocumento VARCHAR(MAX) = (SELECT INSERTED.NombreDocumento 
-                                         FROM INSERTED 
-                                         WHERE INSERTED.IdCircuito = 53 
-                                         AND INSERTED.IdTipoDoc = 45 
-                                         AND INSERTED.Gestor = 'Gest1')
-
-IF @NombreDocumento IS NOT NULL
 BEGIN
 
-    EXEC msdb.dbo.sp_send_dbmail
-      @recipients = 'rsg@gmail.com', 
-      @subject = 'New requeriment', 
-      @body = 'It''s a new requeriment: ' + @NombreDocumento;
 END
-END
-GO
 //
-delimiter ;*/
-select * from Utente;
+delimiter ;
 
 
 
