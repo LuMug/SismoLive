@@ -25,7 +25,7 @@ $row = mysqli_num_rows($sql);
 echo "<br>";
 
 if($row == 1){
-  header("Location:../../ceevee/index.html");
+  header("Location:../index.html");
 }else{
   echo "BRAVO HAI SBAGLIATO LA PASSWORD!!!!!!!!!!!!!!";
 }
