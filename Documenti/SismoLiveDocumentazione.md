@@ -109,74 +109,50 @@
   > design such a large-scale microprocessor in just weeks.*
 
 ### Scopo
-
-  Lo scopo di questo progetto è quello di avere una costante misurazione, insieme alla relativa rappresentazione su un sito web, delle vibrazioni terrestri. Nel caso di un terremoto vengono notificati via mail gli amministratori e sul sito coloro che lo visitano.
+  Lo scopo di questo progetto è quello di avere una costante misurazione, insieme alla relativa rappresentazione su un sito web, delle vibrazioni terrestri. Nel caso di un terremoto devono essere notificati gli admin via mail e gli utenti sul sito
 
 ## Analisi
 
 ### Analisi del dominio
 
 Il prodotto finale potrà essere utilizzato da tutti gli utenti, sia esperti,
-sia principianti, che hanno a disposizione un computer oppure un telefono e una
-connessione a internet.<br>
+sia principianti, che hanno a disposizione un dispositivo in grado di navigare su internet. Chiunque può consultare il sito che conterrà una rappresentazione delle misurazioni delle scosse sismiche sotto forma di vari grafici.<br>
+Attualmente esiste già un sito nazionale dedicato a questo tema, speriamo che la nostra versione sia più piacevole ed efficace.
 
-  Questo capitolo dovrebbe descrivere il contesto in cui il prodotto verrà
-  utilizzato, da questa analisi dovrebbero scaturire le risposte a quesiti
-  quali ad esempio:
-
-  -   Background/Situazione iniziale
-
-  -   Quale è e come è organizzato il contesto in cui il prodotto dovrà
-      funzionare?
-
-  -   Come viene risolto attualmente il problema? Esiste già un prodotto
-      simile?
-
-  -   Chi sono gli utenti? Che bisogni hanno? Come e dove lavorano?
-
-  -   Che competenze/conoscenze/cultura posseggono gli utenti in relazione
-      con il problema?
-
-  -   Esistono convenzioni/standard applicati nel dominio?
-
-  -   Che conoscenze teoriche bisogna avere/acquisire per poter operare
-      efficacemente nel dominio?
-
-  -   …
 
 ### Analisi e specifica dei requisiti
 
 **Spiegazione elementi tabella dei requisiti:**
 
-**ID**: identificativo univoco del requisito.
+***ID***: identificativo univoco del requisito.
 
-**Nome**: breve descrizione del requisito.
+***Nome***: breve descrizione del requisito.
 
-**Priorità**: indica l’importanza di un requisito nell’insieme del
-progetto.
+***Priorità***: indica l’importanza di un requisito nell’insieme del
+progetto (1 = massima, 2 = importante, 3 = Da considerare 4 = facoltativo).
 
-**Versione**: indica la versione del requisito.
+***Versione***: indica la versione del requisito.
 
-**Note**: eventuali note.
+***Note***: eventuali note.
 
   | **ID**  | **Requisito** | **Priorità** | **Versione** | **Note** |
   | ------- | ------------- | ------------ | ------------ | -------- |
-  | REQ-001 | Realizzare un sito per la visualizzazione dei dati.| 1 | 1.0  |          |
-  | REQ-002 || 1 | 1.0  |          |
-  | REQ-003 || 1 | 1.0  |          |
-  | REQ-004 || 1 | 1.0 | |
-  | REQ-005 || 1 | 1.0 | |
-  | REQ-006 || 1 | 1.0| |
-  | REQ-007 || 1 | 1.0 |   |
-  | REQ-008 | | 1 | 1.0 |          |
-  | REQ-009 | | 1 | 1.0 | |
-  | REQ-010 | | 1 | 1.0 |       |
-  | REQ-011 |  | 1 | 1.0 |  |
-  | REQ-012 | | 1 | 1.0 |  |
-  | REQ-013 |  | 1 | 1.0 |  |
-  | REQ-014 | | 1 | 1.0 | |
-  | REQ-015 | | 1 | 1.0 | |
-  | REQ-016 | | 1 | 1.0 |  |
+  | REQ-001 | Bisogna avere un sito per la visualizzazione di dati| 1 | 1.0  | Per ora è sul nostro spazio su infomaniak, eventualmente ne acquisteremo uno        |
+  | REQ-002 |Il sito deve avere il collegamento ad un DB| 1 | 1.0  | Inizialmente è locale, se avanza tempo potrebbe diventare da remoto          |
+  | REQ-003 | Il sito deve avere una pagina di login| 1 | 1.0  |          |
+  | REQ-004 | Dev'esserci una struttura hardware con Arduino| 1 | 1.0 | |
+  | REQ-005 | L'Arduino deve poter leggere i dati da un componente che misura le vibrazioni| 1 | 1.0 | Il componente in questione è un geofono|
+  | REQ-006 | L'arduino deve poter mandare i dati tramite modulo Wi-Fi| 1 | 1.0| |
+  | REQ-007 |Il sito dev'essere compatibile con i principali browser| 1 | 2.0 | |
+  | REQ-008 | I dati sul sito devono essere rappresentati sotto forma di grafici | 1 | 1.0 |          |
+  | REQ-009 | Deve esistere un DB per il salvataggio dei vari dati | 1 | 1.0 | |
+  | REQ-010 | Il dato live viene mostrato su un LCD attaccato all'Arduino | 3 | 1.0 |     |
+  | REQ-011 | L'admin deve poter configurare le  soglie (minima e critica) dei dati  | 1 | 1.0 |  |
+  | REQ-012 | Il dato live viene mostrato sul sito| 2 | 1.0 |  |
+  | REQ-013 | In caso di terremoto gli admin vengono notificati via mail  | 1 | 1.0 |  |
+  | REQ-014 | In caso di terremoto gli admin vengono notificati via messaggio| 4 | 1.0 | |
+  | REQ-015 | Per il progetto è necessario avere un agenda su TRELLO | 2 | 1.0 | |
+  | REQ-016 | I dati vengono letti con frequenza configurata dall'admin| 1 | 1.0 |  |
   | REQ-017 | | 1 | 1.0 |  |
   | REQ-018 | | 1 | 1.0 |  |
   | REQ-019 | | 1 | 1.0 |  |
@@ -190,18 +166,7 @@ funzionalità del prodotto.
 
 ### Pianificazione
 
-Prima di stabilire una pianificazione bisogna avere almeno una vaga idea
-del modello di sviluppo che si intende adottare. In questa sezione
-bisognerà inserire il modello concettuale di sviluppo che si seguirà
-durante il progetto. Gli elementi di riferimento per una buona
-pianificazione derivano da una scomposizione top-down della problematica
-del progetto.
 
-La pianificazione può essere rappresentata mediante un diagramma di
-Gantt.
-
-Se si usano altri metodi di pianificazione (es scrum), dovranno apparire
-in questo capitolo.
 
 ### Analisi dei mezzi
 
@@ -218,6 +183,9 @@ Georgiy:
 
 Daniel:
 
+Sismografo:
+- Arduino Mega 2560
+
 #### Software
 
 - Lunacy v4.6.1
@@ -233,6 +201,8 @@ Daniel:
 - XAMPP v3.2.4
 
 - MySQL Workbench 8.0 CE
+
+- Arduino IDE v1.8.33.0
 
 #### Librerie
 
@@ -320,42 +290,42 @@ Per eventuali dettagli si possono inserire riferimenti ai diari.
 
 |Test Case      | TC-001                       |
 |---------------|--------------------------------------|
-|**Nome**       ||
-|**Riferimento**|REQ-|
-|**Descrizione**|  |
-|**Prerequisiti**|  |
-|**Procedura**   | |
-|**Risultati attesi** |  |
+|**Nome**       |Presenza del sito|
+|**Riferimento**|REQ-001|
+|**Descrizione**| Bisogna verificare che esista il sito per visualizzare i dati |
+|**Prerequisiti**| --- |
+|**Procedura**   | Aprire un browser ed andare sul seguente url: http://samtinfo.ch/i17lormar/Progetti/SismoLive/|
+|**Risultati attesi** | Deve apparire la pagina di benvenuto|
 
 
 |Test Case      | TC-002                       |
 |---------------|--------------------------------------|
-|**Nome**       |           |
-|**Riferimento**|REQ-                     |
-|**Descrizione**|  |
-|**Prerequisiti**|  |
-|**Procedura**   | |
-|**Risultati attesi** |  |
+|**Nome**       | Presenza di una pagina di login|
+|**Riferimento**|REQ-003|
+|**Descrizione**| Visitando il sito, deve esserci la possibilità di eseguire il login |
+|**Prerequisiti**| Visitare il sito|
+|**Procedura**   | Avere il sito su questo url: http://samtinfo.ch/i17lormar/Progetti/SismoLive/ Dopodichè in alto a destra cliccare sul bottone "Login" |
+|**Risultati attesi** | Dovrebbe apparire la pagina di login|
 
 
 |Test Case      | TC-003                       |
 |---------------|--------------------------------------|
-|**Nome**       |           |
-|**Riferimento**|REQ-                     |
-|**Descrizione**|  |
-|**Prerequisiti**|  |
-|**Procedura**   | |
-|**Risultati attesi** |  |
+|**Nome**       |Compatibilità coi principali browser|
+|**Riferimento**|REQ-007|
+|**Descrizione**| Il sito deve essere compatibile con i principali browser (Chrome, Opera, Firefox, Edge)|
+|**Prerequisiti**| Avere il sito |
+|**Procedura**   | Inserire l'url http://samtinfo.ch/i17lormar/Progetti/SismoLive/ sui vari browser sopracitati|
+|**Risultati attesi** | Dovrebbe apparire la pagina di benvenuto con le informazioni utili e con possibilità di effettuare il login|
 
 
 |Test Case      | TC-004                       |
 |---------------|--------------------------------------|
-|**Nome**       |           |
-|**Riferimento**|REQ-                     |
-|**Descrizione**|  |
-|**Prerequisiti**|  |
-|**Procedura**   | |
-|**Risultati attesi** |  |
+|**Nome**       | Presenza di un agenda di progetto su TRELLO|
+|**Riferimento**|REQ-015|
+|**Descrizione**| Dev'esserci un agenda di progetto su TRELLO |
+|**Prerequisiti**| Tutti e 4 i componenti del gruppo e il docente perito del progetto devono avere un account|
+|**Procedura**   | Visitare |
+|**Risultati attesi** | Visitando l'agenda devono essere presenti le varie liste di attività|
 
 
 |Test Case      | TC-005                       |
@@ -568,13 +538,6 @@ Daniel:
 ## Bibliografia
 
 ### Sitografia
-
-1.  URL del sito (se troppo lungo solo dominio, evt completo nel
-    diario),
-
-2.  Eventuale titolo della pagina (in italico),
-
-3.  Data di consultazione (GG-MM-AAAA).
 
 **Esempio:**
 
