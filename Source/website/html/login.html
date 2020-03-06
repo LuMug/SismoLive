@@ -30,7 +30,7 @@
 					<img src="../images/broski.JPG" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" action="../php/index.php" method="post">
+				<form class="login100-form validate-form" action="../php/connection.php" method="post">
 					<span class="login100-form-title">
 						Login Amministratore
 					</span>
@@ -44,12 +44,14 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "La password è obbligatoria!">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input id="ss" class="input100" type="password" name="pass" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
+
 					</div>
+					<input type="checkbox" onclick="myFunction()">&nbsp;&nbsp;<a>Show Password</a>
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
@@ -75,7 +77,16 @@
 	</div>
 
 
-
+	<script>
+	function myFunction() {
+	  var x = document.getElementById("ss");
+	  if (x.type === "password") {
+	    x.type = "text";
+	  } else {
+	    x.type = "password";
+	  }
+	}
+	</script>
 
 <!--===============================================================================================-->
 	<script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
