@@ -2,7 +2,7 @@
 ## Progetto
 |Titolo             |Autori           |Responsabile               |Link    |
 |:------------------|:------------------|:--------------------------|:-------|
-|SismoLive    |Georgiy Farina, Daniel Matt, Marco Lorusso, Matthias Iannarella|Luca Muggiasca|non ancora|
+|SismoLive    |Georgiy Farina, Daniel Matt, Marco Lorusso, Matthias Iannarella|Luca Muggiasca|www.samtinfo.ch/i17lormar/Progetti/SismoLive/index.php|
 
 ## Info
 **Inizio:** 24.01.2020
@@ -18,13 +18,17 @@ Documento di specifica: [QdC_SecondoSemestre-Sismografo.pdf](Documenti/muggiasca
 
 #### Struttura:
 - [Source](Source/)
-  > Cartella nella quale è salvata la documentazione del progetto.
-
+  
+> Cartella nella quale è salvata la documentazione del progetto.
+  
 - [Documentazione](Documenti/SismoLiveDocumentazione.md)
-  > Cartella nella quale è salvata la documentazione del progetto.
-
+  
+> Cartella nella quale è salvata la documentazione del progetto.
+  
 - [Gantt](Documenti/Gantt_SismoLive.pdf)
-  > Cartella nella quale sono salvati tutti i diagrammi di gantt.
-
+  
+> Cartella nella quale sono salvati tutti i diagrammi di gantt.
+  
 - [Diari di lavoro](Documenti/Diari/)
+    
     > Cartella nella quale sono presenti tutti i diari.
