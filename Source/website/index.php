@@ -39,9 +39,9 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Terremoti</a></li>
-                    <li><a href="html/elements.html">Progettazione</a></li>
-                    <li><a href="html/elements.html">Chi siamo</a></li>
+                    <li><a href="html/terremoti.html">Terremoti</a></li>
+                    <li><a href="html/progettazione.html">Progettazione</a></li>
+                    <li><a href="html/chisiamo.html">Chi siamo</a></li>
                     <li><a href="html/login.html" class="loginButton">LOGIN</a></li>
                 </ul>
             </div>
