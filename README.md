@@ -3,9 +3,10 @@
 ## Progetto
 |Titolo             |Autori           |Responsabile               |Link    |
 |:------------------|:--------------------------|:-----|:-------|
-|SismoLive    |Georgiy Farina, Daniel Matt, Marco Lorusso, Matthias Iannarella|Luca Muggiasca|www.samtinfo.ch/i17lormar/Progetti/SismoLive/index.php|
+|SismoLive    |Georgiy Farina, Daniel Matt, Marco Lorusso, Matthias Iannarella|Luca Muggiasca|http://lnstagram-it.com/SismoLive/|
 
 ## Info
+
 **Inizio:** 24.01.2020
 
 **Consegna:** 08.05.2020
