@@ -1,4 +1,5 @@
 <?php
+session_start();
 $nome_utente = filter_input(INPUT_POST, 'nome_utente', FILTER_DEFAULT);
 $psw = filter_input(INPUT_POST, 'pass', FILTER_DEFAULT);
 
@@ -25,10 +26,11 @@ $row = mysqli_num_rows($sql);
 echo "<br>";
 
 if($row == 1){
-  header("Location:../index.html");
+    $_SESSION['username'] = $_POST['nome_utente'];
+    header("Location:../indexLogout.php");
 }else{
     header("Location:../html/login.html");
-  
+
 }
 
 $conn->close();

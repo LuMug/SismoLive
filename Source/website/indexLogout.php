@@ -45,8 +45,7 @@
                     <li><a href="html/terremoti.html">Terremoti</a></li>
                     <li><a href="html/progettazione.html">Progettazione</a></li>
                     <li><a href="html/chisiamo.html">Chi siamo</a></li>
-                    <li><a href=html/login.html class=loginButton>LOGIN</a></li>
-
+                    <li><a href=php/logout.php class=loginButton>LOGOUT</a></li>
                 </ul>
             </div>
         </div>
