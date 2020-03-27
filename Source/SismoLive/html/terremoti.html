@@ -55,13 +55,13 @@
             <div class="col-sm-6">
                 <h1 style="font-size:20px;">Tabella terremoti più percepiti in Svizzera</h1>
                 <br>
-                    <table class=”sortable”>
+                    <table id=”sortTable”>
                         <thead>
                             <tr class="table100-head">
-                                <th class="column1">Data</th>
-                                <th class="column3">Magnitudo</th>
-                                <th class="column4">Pericolosità</th>
-                                <th class="column5">Città</th>
+                                <th class="column1" >Data</th>
+                                <th class="column3" >Magnitudo</th>
+                                <th class="column4" onclick="sortByDate(0)">Pericolosità</th>
+                                <th class="column5" onclick="sortByDate(1)">Città</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -128,11 +128,12 @@
                         </tbody>
                     </table>
             </div>
+
             <div class="col-sm-6">
                 <div class="table100">
                     <h1 style="font-size:20px;">Tabella terremoti più percepiti nel mondo</h1>
                     <br>
-                    <table class=”sortable”>
+                    <table>
                         <thead>
                             <tr class="table100-head">
                                 <th class="column1">Data</th>
@@ -213,6 +214,45 @@
     <footer class="container-fluid bg-4 text-center">
         <p>SismoLive &copy</p>
     </footer>
+
+    <script>
+        function sortTable(n) {
+          var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+          table = document.getElementsById(sortTable);
+          switching = true;
+          dir = "asc";
+          while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+              shouldSwitch = false;
+              x = rows[i].getElementsByTagName("TD")[n];
+              y = rows[i + 1].getElementsByTagName("TD")[n];
+              if (dir == "asc") {
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                  shouldSwitch = true;
+                  break;
+                }
+              } else if (dir == "desc") {
+                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                  shouldSwitch = true;
+                  break;
+                }
+              }
+            }
+            if (shouldSwitch) {
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+              switchcount ++;
+            } else {
+              if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+              }
+            }
+          }
+        }
+</script>
 
 
     <script src="../table/vendor/jquery/jquery-3.2.1.min.js"></script>
