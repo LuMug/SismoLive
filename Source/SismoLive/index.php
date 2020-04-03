@@ -76,9 +76,6 @@
                                 <th class="column1">Data</th>
                                 <th class="column2">Orario</th>
                                 <th class="column3">Magnitudo</th>
-                                <th class="column4">Città</th>
-                                <th class="column5">Latitudine</th>
-                                <th class="column6">Longitudine</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -101,10 +98,9 @@
                                                         if ($result->num_rows > 0) {
                                                           echo "<table>";
                                                             while($row=$result->fetch_assoc()){
-                                                              echo "<tr><td>" . $row["data_registrazione"]. "</td><td>" . $row["orario_registrazione"]. "</td><td>". $row["id_terremoto"] . "</td><td>"
-                                                                . "a". "</td><td>" . $row["latitudine"].  "</td><td>" . $row["longitudine"]. "</td></tr>";
+                                                              echo "<tr><td>" . $row["data_registrazione"]. "</td><td>" . $row["orario_registrazione"]. "</td><td>". $row["magnitudo"] . "</td>";
                                                                 array_push($giorni,$row["data_registrazione"]);
-                                                                  array_push($magnitudi,$row["id_terremoto"]);
+                                                                  array_push($magnitudi,$row["magnitudo"]);
                                                             }
                                                             echo "</table>";
                                                         } else {
