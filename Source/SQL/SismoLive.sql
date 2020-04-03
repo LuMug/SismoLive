@@ -27,6 +27,13 @@ create table Luogo(
     Citta varchar(45)
 );
 
+drop table if exists ValoreGPS;
+create table ValoreGPS(
+	id int primary key auto_increment not null,
+    latitudine long,
+    longitudine long
+);
+
 drop table if exists Terremoto;
 create table Terremoto(
 	id_registrazione int not null,
