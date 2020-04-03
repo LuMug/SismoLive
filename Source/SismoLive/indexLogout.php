@@ -81,81 +81,89 @@
                             </tr>
                         </thead>
                         <tbody>
+                          <?php
+                            $giorni = array();
+                            $magnitudi = array();
 
-                            <?php
-                              $servername = "localhost";
-                              $username = "root";
-                              $password = "";
-                              $nomeDB = "SismoLive";
-                              $port = 3306;
-                              $conn = mysqli_connect($servername, $username, $password, $nomeDB, $port);
-                              // Check connection
-                              if ($conn->connect_error) {
-                                die("Connection failed: " . $conn->connect_error);
-                              }
-                            //  $view = "create view tabella as select t.momento_registrazione, t.id_terremoto, t.id_gps, v.latitudine, v.longitudine from Terremoto t, ValoreGPS v  where t.id_terremoto < 5";
-                              $terremoti = "SELECT * from tabella limit 7";
-                              $result = $conn->query($terremoti);
-                              if ($result->num_rows > 0) {
-                                echo "<table>";
-                                  while($row=$result->fetch_assoc()){
-                                    echo "<tr><td>" . $row["data_registrazione"]. "</td><td>" . $row["orario_registrazione"]. "</td><td>". $row["id_terremoto"] . "</td><td>"
-                                      . "a". "</td><td>" . $row["latitudine"].  "</td><td>" . $row["longitudine"]. "</td></tr>";
-                                  }
-                                  echo "</table>";
-                              } else {
-                                 echo "0 results";
-                              }
-                              $conn->close();
-                            ?>
+
+                            $servername = "160.153.133.155";
+                            $username = "matthias";
+                            $password = "matthias";
+                            $nomeDB = "SismoLive";
+                            $port = 3306;
+                            $conn = mysqli_connect($servername, $username, $password, $nomeDB, $port);
+                            // Check connection
+                            if ($conn->connect_error) {
+                              die("Connection failed: " . $conn->connect_error);
+                            }
+                            $terremoti = "SELECT * from tabella limit 7";
+                            $result = $conn->query($terremoti);
+                            if ($result->num_rows > 0) {
+                              echo "<table>";
+                                while($row=$result->fetch_assoc()){
+                                  echo "<tr><td>" . $row["data_registrazione"]. "</td><td>" . $row["orario_registrazione"]. "</td><td>". $row["id_terremoto"] . "</td><td>"
+                                    . "a". "</td><td>" . $row["latitudine"].  "</td><td>" . $row["longitudine"]. "</td></tr>";
+                                    array_push($giorni,$row["data_registrazione"]);
+                                      array_push($magnitudi,$row["id_terremoto"]);
+                                }
+                                echo "</table>";
+                            } else {
+                               echo "0 results";
+                            }
+                            $giorni_json = json_encode($giorni);
+                            $magnitudi_json = json_encode($magnitudi);
+                            $conn->close();
+                          ?>
+
 
                         </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+                        </table>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
 
-    <!-- Footer -->
-    <footer class="container-fluid bg-4 text-center">
-        <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p>
+                        <!-- Footer -->
+                        <footer class="container-fluid bg-4 text-center">
+                        <p>SismoLive &copy</p>
 
-    </footer>
+                        </footer>
 
-    <script>
+                        <script type="text/javascript">
+                        var orari = JSON.parse('<?= $giorni_json; ?>');
+                        var magnitudi = JSON.parse('<?= $magnitudi_json; ?>');
+                        var ctx = document.getElementById('canvas1').getContext('2d');
 
-        var ctx = document.getElementById('canvas1').getContext('2d');
+                        var chart = new Chart(ctx, {
+                        // The type of chart we want to create
+                        type: 'line',
+                        options: {
+                        responsive: true
+                        },
 
-        var chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'line',
-            options: {
-                responsive: true
-            },
+                        // The data for our dataset
+                        data: {
+                        labels: [orari[0], orari[1], orari[2], orari[3], orari[4], orari[5], orari[6] ],
+                        datasets: [{
+                        label: 'Terremoti',
+                        backgroundColor: 'rgb(0, 99, 132)',
+                        borderColor: 'rgb(0, 99, 132)',
+                        data: [magnitudi[0], magnitudi[1], magnitudi[2], magnitudi[3], magnitudi[4], magnitudi[5], magnitudi[6]]
+                        }]
+                        }
 
-            // The data for our dataset
-            data: {
-                labels: ['June', 'July', 'August'],
-                datasets: [{
-                    label: 'My First dataset',
-                    backgroundColor: 'rgb(0, 99, 132)',
-                    borderColor: 'rgb(0, 99, 132)',
-                    data: [30, 45, 22]
-                }]
-            }
+                        });
+                        </script>
 
-        });
-    </script>
+                        <script src="table/vendor/jquery/jquery-3.2.1.min.js"></script>
+                        <!--===============================================================================================-->
+                        <script src="table/vendor/bootstrap/js/popper.js"></script>
+                        <script src="table/vendor/bootstrap/js/bootstrap.min.js"></script>
+                        <!--===============================================================================================-->
+                        <script src="table/vendor/select2/select2.min.js"></script>
+                        <!--===============================================================================================-->
+                        <script src="table/js/main.js"></script>
 
-    <script src="table/vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="table/vendor/bootstrap/js/popper.js"></script>
-    <script src="table/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="table/vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="table/js/main.js"></script>
+                        </body>
 
-</body>
-
-</html>
+                        </html>
