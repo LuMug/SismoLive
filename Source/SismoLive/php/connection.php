@@ -5,9 +5,9 @@ $psw = filter_input(INPUT_POST, 'pass', FILTER_DEFAULT);
 
 //echo 'Benvenuto ' . htmlspecialchars($_POST["nome_utente"]) . '!';
 
-$servername = "localhost";
-$username = "root";
-$password = "";
+$servername = "160.153.133.155";
+$username = "matthias";
+$password = "matthias";
 $nomeDB = "SismoLive";
 $port = 3306;
 $conn = mysqli_connect($servername, $username, $password, $nomeDB, $port);
