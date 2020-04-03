@@ -35,7 +35,7 @@ create table Terremoto(
     orario_registrazione TIME not null,
     id_gps int not null,
     primary key (id_registrazione, id_terremoto),
-    foreign key Terremoto(id_gps) references ValoreGPS(id)
+    foreign key Terremoto(id_gps) references Luogo(id)
 );
 
 # CREAZIONE AMMINISTRATORI DI BASE -----------------------------------------------------------------------------------------------
@@ -59,108 +59,6 @@ insert into Luogo (Nazione, citta) values ('South Africa', 'Caledon');
 insert into Luogo (Nazione, citta) values ('Svizzera', 'Lugano');
 
 
-insert into ValoreGPS (id, latitudine, longitudine) values (1, -12.67442, -75.325157);
-insert into ValoreGPS (id, latitudine, longitudine) values (2, 42.7590695, 46.8392256);
-insert into ValoreGPS (id, latitudine, longitudine) values (3, 7.1801552, 79.8842521);
-insert into ValoreGPS (id, latitudine, longitudine) values (4, 54.2569032, 26.0150745);
-insert into ValoreGPS (id, latitudine, longitudine) values (5, 28.805453, 104.802326);
-insert into ValoreGPS (id, latitudine, longitudine) values (6, 31.8840886, -102.4953899);
-insert into ValoreGPS (id, latitudine, longitudine) values (7, -8.605402, 115.106609);
-insert into ValoreGPS (id, latitudine, longitudine) values (8, 41.7820601, 20.0881443);
-insert into ValoreGPS (id, latitudine, longitudine) values (9, 22.3908295, 113.9725126);
-insert into ValoreGPS (id, latitudine, longitudine) values (10, 50.6429329, 13.9944445);
-insert into ValoreGPS (id, latitudine, longitudine) values (11, 31.3115396, 120.6947551);
-insert into ValoreGPS (id, latitudine, longitudine) values (12, -4.5329418, 105.2077798);
-insert into ValoreGPS (id, latitudine, longitudine) values (13, -26.4417804, 31.9416226);
-insert into ValoreGPS (id, latitudine, longitudine) values (14, 38.6627574, -9.0573022);
-insert into ValoreGPS (id, latitudine, longitudine) values (15, 23.241655, 111.539333);
-insert into ValoreGPS (id, latitudine, longitudine) values (16, '-8.2794', '113.4073');
-insert into ValoreGPS (id, latitudine, longitudine) values (17, -7.6418714, 112.9110933);
-insert into ValoreGPS (id, latitudine, longitudine) values (18, 34.4345947, 35.8361633);
-insert into ValoreGPS (id, latitudine, longitudine) values (19, 28.041005, 110.814125);
-insert into ValoreGPS (id, latitudine, longitudine) values (20, -8.2922696, 120.4415242);
-insert into ValoreGPS (id, latitudine, longitudine) values (21, 49.9899828, 18.6926323);
-insert into ValoreGPS (id, latitudine, longitudine) values (22, 49.4643925, 36.8584805);
-insert into ValoreGPS (id, latitudine, longitudine) values (23, 51.3842543, 58.9999439);
-insert into ValoreGPS (id, latitudine, longitudine) values (24, 10.122667, 123.540401);
-insert into ValoreGPS (id, latitudine, longitudine) values (25, 55.8240814, 65.5756726);
-insert into ValoreGPS (id, latitudine, longitudine) values (26, 45.0052663, 41.1199008);
-insert into ValoreGPS (id, latitudine, longitudine) values (27, 50.3257904, 19.0018119);
-insert into ValoreGPS (id, latitudine, longitudine) values (28, 10.391584, -84.138109);
-insert into ValoreGPS (id, latitudine, longitudine) values (29, 56.6495031, 12.7902265);
-insert into ValoreGPS (id, latitudine, longitudine) values (30, 27.756339, 112.555087);
-insert into ValoreGPS (id, latitudine, longitudine) values (31, 47.372696, 132.145184);
-insert into ValoreGPS (id, latitudine, longitudine) values (32, 40.4579077, -7.845845);
-insert into ValoreGPS (id, latitudine, longitudine) values (33, -29.0303854, -51.2003761);
-insert into ValoreGPS (id, latitudine, longitudine) values (34, 50.8839386, 18.6840269);
-insert into ValoreGPS (id, latitudine, longitudine) values (35, 23.736457, 107.998149);
-insert into ValoreGPS (id, latitudine, longitudine) values (36, 40.2023282, 116.2398367);
-insert into ValoreGPS (id, latitudine, longitudine) values (37, -28.7415512, 30.461686);
-insert into ValoreGPS (id, latitudine, longitudine) values (38, 15.5251409, -89.3343599);
-insert into ValoreGPS (id, latitudine, longitudine) values (39, 41.6698545, -8.4450745);
-insert into ValoreGPS (id, latitudine, longitudine) values (40, 4.9946855, 19.982437);
-insert into ValoreGPS (id, latitudine, longitudine) values (41, 10.1709167, -66.8915809);
-insert into ValoreGPS (id, latitudine, longitudine) values (42, 62.0772471, 49.5698112);
-insert into ValoreGPS (id, latitudine, longitudine) values (43, -22.4205202, -42.9755528);
-insert into ValoreGPS (id, latitudine, longitudine) values (44, 52.9718428, 63.1128326);
-insert into ValoreGPS (id, latitudine, longitudine) values (45, 48.804517, -0.7467014);
-insert into ValoreGPS (id, latitudine, longitudine) values (46, 28.423436, 109.006211);
-insert into ValoreGPS (id, latitudine, longitudine) values (47, 31.688228, 105.570955);
-insert into ValoreGPS (id, latitudine, longitudine) values (48, 28.79188, 98.397783);
-insert into ValoreGPS (id, latitudine, longitudine) values (49, 31.1713871, 31.6967438);
-insert into ValoreGPS (id, latitudine, longitudine) values (50, -6.076643, 106.4288088);
-insert into ValoreGPS (id, latitudine, longitudine) values (51, -32.8976518, -68.7990117);
-insert into ValoreGPS (id, latitudine, longitudine) values (52, -20.3170872, 57.5265289);
-insert into ValoreGPS (id, latitudine, longitudine) values (53, 16.004175, 120.7806412);
-insert into ValoreGPS (id, latitudine, longitudine) values (54, 27.352673, 109.174932);
-insert into ValoreGPS (id, latitudine, longitudine) values (55, 13.9300945, 120.9522977);
-insert into ValoreGPS (id, latitudine, longitudine) values (56, 23.124093, 113.8589235);
-insert into ValoreGPS (id, latitudine, longitudine) values (57, 45.4331407, -76.3609305);
-insert into ValoreGPS (id, latitudine, longitudine) values (58, 43.8986, 39.3467);
-insert into ValoreGPS (id, latitudine, longitudine) values (59, 22.928305, 113.207187);
-insert into ValoreGPS (id, latitudine, longitudine) values (60, 45.4131077, 79.917079);
-insert into ValoreGPS (id, latitudine, longitudine) values (61, 13.490046, 120.960159);
-insert into ValoreGPS (id, latitudine, longitudine) values (62, -12.868355, -72.6919814);
-insert into ValoreGPS (id, latitudine, longitudine) values (63, 46.6522568, 33.3646929);
-insert into ValoreGPS (id, latitudine, longitudine) values (64, 47.0166139, -68.1430098);
-insert into ValoreGPS (id, latitudine, longitudine) values (65, 10.656869, 38.1662152);
-insert into ValoreGPS (id, latitudine, longitudine) values (66, -42.7608818, -65.0587962);
-insert into ValoreGPS (id, latitudine, longitudine) values (67, 41.40517, -8.7463716);
-insert into ValoreGPS (id, latitudine, longitudine) values (68, 22.493937, 99.679493);
-insert into ValoreGPS (id, latitudine, longitudine) values (69, 61.7983586, 34.3753781);
-insert into ValoreGPS (id, latitudine, longitudine) values (70, 34.29922, 108.490475);
-insert into ValoreGPS (id, latitudine, longitudine) values (71, -14.2234, -72.194618);
-insert into ValoreGPS (id, latitudine, longitudine) values (72, -20.2877726, -45.5396954);
-insert into ValoreGPS (id, latitudine, longitudine) values (73, 42.35, -71.06);
-insert into ValoreGPS (id, latitudine, longitudine) values (74, 11.3799005, 5.6457951);
-insert into ValoreGPS (id, latitudine, longitudine) values (75, 25.386379, 114.922922);
-insert into ValoreGPS (id, latitudine, longitudine) values (76, 31.135176, 121.439288);
-insert into ValoreGPS (id, latitudine, longitudine) values (77, 45.3639886, 5.5949365);
-insert into ValoreGPS (id, latitudine, longitudine) values (78, 14.8454589, 121.0912149);
-insert into ValoreGPS (id, latitudine, longitudine) values (79, 42.901533, 125.136451);
-insert into ValoreGPS (id, latitudine, longitudine) values (80, 20.2639567, 105.9753452);
-insert into ValoreGPS (id, latitudine, longitudine) values (81, 26.085391, 119.583599);
-insert into ValoreGPS (id, latitudine, longitudine) values (82, 6.9280156, 79.8908308);
-insert into ValoreGPS (id, latitudine, longitudine) values (83, '-8.0412', '111.6694');
-insert into ValoreGPS (id, latitudine, longitudine) values (84, 3.1155165, 35.6040785);
-insert into ValoreGPS (id, latitudine, longitudine) values (85, 5.6810774, 95.1171505);
-insert into ValoreGPS (id, latitudine, longitudine) values (86, 31.5545599, 120.1398158);
-insert into ValoreGPS (id, latitudine, longitudine) values (87, -16.2162656, 39.914466);
-insert into ValoreGPS (id, latitudine, longitudine) values (88, 42.3223434, 22.7092535);
-insert into ValoreGPS (id, latitudine, longitudine) values (89, 43.3688739, 46.5485537);
-insert into ValoreGPS (id, latitudine, longitudine) values (90, 43.9307146, 4.8743415);
-insert into ValoreGPS (id, latitudine, longitudine) values (91, 37.499972, 105.196902);
-insert into ValoreGPS (id, latitudine, longitudine) values (92, 61.9581691, 14.8300464);
-insert into ValoreGPS (id, latitudine, longitudine) values (93, 22.672099, 113.250897);
-insert into ValoreGPS (id, latitudine, longitudine) values (94, 54.1407588, 43.1704696);
-insert into ValoreGPS (id, latitudine, longitudine) values (95, 35.4208388, 136.6048742);
-insert into ValoreGPS (id, latitudine, longitudine) values (96, 50.0259849, 22.1693843);
-insert into ValoreGPS (id, latitudine, longitudine) values (97, 54.0521127, -1.9847194);
-insert into ValoreGPS (id, latitudine, longitudine) values (98, 60.6717958, 17.1711587);
-insert into ValoreGPS (id, latitudine, longitudine) values (99, 38.6002724, -9.0119332);
-insert into ValoreGPS (id, latitudine, longitudine) values (100, -8.2576917, 112.0565795);
-
-
 insert into Terremoto (id_registrazione, id_terremoto, orario_registrazione, data_registrazione, id_gps) values (1, 1, '8:48:56', '2019-11-30', 1);
 insert into Terremoto (id_registrazione, id_terremoto, orario_registrazione, data_registrazione, id_gps) values (2, 2, '7:43:08', '2019-05-04', 2);
 insert into Terremoto (id_registrazione, id_terremoto, orario_registrazione, data_registrazione, id_gps) values (3, 3, '4:19:19', '2019-09-03', 3);
@@ -171,6 +69,7 @@ insert into Terremoto (id_registrazione, id_terremoto, orario_registrazione, dat
 insert into Terremoto (id_registrazione, id_terremoto, orario_registrazione, data_registrazione, id_gps) values (8, 8, '4:12:13', '2019-08-05', 8);
 insert into Terremoto (id_registrazione, id_terremoto, orario_registrazione, data_registrazione, id_gps) values (9, 9, '3:09:51', '2019-05-18', 9);
 insert into Terremoto (id_registrazione, id_terremoto, orario_registrazione, data_registrazione, id_gps) values (10, 10, '17:15:01', '2019-12-15', 10);
+/*
 insert into Terremoto (id_registrazione, id_terremoto, orario_registrazione, data_registrazione, id_gps) values (11, 11, '16:02:31', '2019-12-29', 11);
 insert into Terremoto (id_registrazione, id_terremoto, orario_registrazione, data_registrazione, id_gps) values (12, 12, '1:14:53', '2020-02-28', 12);
 insert into Terremoto (id_registrazione, id_terremoto, orario_registrazione, data_registrazione, id_gps) values (13, 13, '14:44:41', '2019-04-18', 13);
@@ -263,4 +162,4 @@ insert into Terremoto (id_registrazione, id_terremoto, orario_registrazione, dat
 insert into Terremoto (id_registrazione, id_terremoto, orario_registrazione, data_registrazione, id_gps) values (100, 100, '8:45:52', '2019-07-05', 100);
 
 drop view if exists tabella;
-create view tabella as select t.data_registrazione, t.orario_registrazione, t.id_terremoto, v.latitudine, v.longitudine from Terremoto t, ValoreGPS v  where t.id_terremoto < 5;
+create view tabella as select t.data_registrazione, t.orario_registrazione, t.id_terremoto, v.latitudine, v.longitudine from Terremoto t, ValoreGPS v  where t.id_terremoto < 5;*/
