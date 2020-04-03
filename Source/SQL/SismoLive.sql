@@ -44,14 +44,45 @@ insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Marco",md5("Pas
 insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Matthias",md5("PasswordDiMatthias"),"matthias.iannarella@samtrevano.ch", 41792345678,"A");
 insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Daniel",md5("PasswordDiDaniel"),"daniel.matt@samtrevano.ch",41793456789,"A");
 
-/*
+
 insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(1,1,5.2,current_date(),curtime());
 insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(2,1,4.8,curdate(),curtime());
 insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(3,2,3.5,curdate(),curtime());
 insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(4,2,2.5,curdate(),curtime());
-insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(5,3,9,curdate(),curtime());*/
+insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(5,3,9,curdate(),curtime());
+insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(6,3,9,curdate(),curtime());
+insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(7,3,9,curdate(),curtime());
+insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(8,3,9,curdate(),curtime());
+insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(9,3,9,curdate(),curtime());
+insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(10,4,6,curdate(),curtime());
 
+#-----------------------------------------------------------------------------------------------------------------------------------------------------
+DELIMITER //
+CREATE FUNCTION getStartId()
+returns int deterministic
+BEGIN 
+	declare startId int;
+	set startId = (select max(id_registrazione) -5 from Terremoto);
+    return startId;
+END
+//
+DELIMITER ;
+
+DELIMITER //
+CREATE FUNCTION getFinishId()
+returns int deterministic
+BEGIN 
+	declare finishId int;
+	set finishId = (select max(id_registrazione) from Terremoto);
+    return finishId;
+END
+//
+DELIMITER ;
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------
+select getStartId();
 select * from Terremoto;
 
 drop view if exists tabella;
-create view tabella as select t.data_registrazione, t.orario_registrazione, t.magnitudo , t.id_terremoto from Terremoto t where t.id_terremoto < 5;
+create view tabella as select t.data_registrazione, t.orario_registrazione, t.magnitudo , t.id_terremoto from Terremoto t where t.id_terremoto > getStartId();
