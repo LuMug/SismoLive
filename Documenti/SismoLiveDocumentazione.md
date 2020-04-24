@@ -291,7 +291,10 @@ La progettazione dell'hardware prevedeva l'uso di una board ArduinoWifi collegat
 </div>
 
 <div style="text-align: justify">
-Abbiamo utilizzato ArduinoIDE. Se si ha problemi con le librerie di fishino consultare il diario del [3.04.2020](Diari/SismoLive_2020_04_03.md) o il sito di <a href="https://fishino.it/download-libraries-it.html">fishino</a>.<br>
+Abbiamo utilizzato ArduinoIDE. Se si ha problemi con le librerie di fishino consultare il diario del
+
+[3.04.2020](Diari/SismoLive_2020_04_03.md) 
+o il sito di <a href="https://fishino.it/download-libraries-it.html">fishino</a>.<br>
 Per prima cosa si deve configurare le informazioni che ci serviranno per connetterci al wifi come: 
 <ul>
     <li>SSID: nome della rete</li>
