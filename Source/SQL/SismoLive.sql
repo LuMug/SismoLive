@@ -17,15 +17,10 @@ create table Configurazione(
 	id_configurazione int not null,
 	parametro varchar(50) not null,
 	valore int not null,
-    primary key (id_configurazione, parametro)
+    nome_utente varchar(20) not null,
+    primary key (id_configurazione, parametro),
+    foreign key Configurazione(nome_utente) references Utente(nome)
 );
-/*
-drop table if exists Luogo;
-create table Luogo(
-	id int primary key auto_increment not null,
-    Nazione varchar(45),
-    Citta varchar(45)
-);*/
 
 drop table if exists Terremoto;
 create table Terremoto(
@@ -57,7 +52,7 @@ insert into Terremoto(id_terremoto,magnitudo,data_registrazione,orario_registraz
 insert into Terremoto(id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(3,4,curdate(),curtime());
 insert into Terremoto(id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(4,7,curdate(),curtime());
 insert into Terremoto(id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(5,8,curdate(),curtime());
-#-----------------------------------------------------------------------------------------------------------------------------------------------------
+# FUNZIONI VARIE -----------------------------------------------------------------------------------------------------------------------------------------------------
 DELIMITER //
 CREATE FUNCTION getStartId()
 returns int deterministic
