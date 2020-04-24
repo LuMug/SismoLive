@@ -1,6 +1,6 @@
 # SismoLive | Diario di Lavoro
 ##### Daniel Matt, Georgiy Farina, Marco Lorusso e Matthias Iannarella
-### Trevano, 24.04.2020
+### Trevano,  24.04.2020
 
 ## Lavori Svolti
 |Orario          |Lavoro svolto                 |
