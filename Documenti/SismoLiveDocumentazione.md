@@ -137,9 +137,9 @@ progetto (1 = massima, 2 = importante, 3 = Da considerare 4 = facoltativo).
 
   | **ID**  | **Requisito** | **Priorità** | **Versione** | **Note** |
   | ------- | ------------- | ------------ | ------------ | -------- |
-  | REQ-001 | Bisogna avere un sito per la visualizzazione di dati| 1 | 1.0  | Per ora è sul nostro spazio su infomaniak, eventualmente ne acquisteremo uno        |
-  | REQ-002 |Il sito deve avere il collegamento ad un DB| 1 | 1.0  | Inizialmente è locale, se avanza tempo potrebbe diventare da remoto          |
-  | REQ-003 | Il sito deve avere una pagina di login| 1 | 1.0  |          |
+  | REQ-001 | Bisogna avere un sito per la visualizzazione di dati| 1 | 1.0  | http://lnstagram-it.com/SismoLive/        |
+  | REQ-002 |Il sito deve avere il collegamento ad un DB| 1 | 1.0  |          |
+  | REQ-003 | Il sito deve avere una pagina di login| 1 | 1.0  |  Con credenziali solo per amministratori        |
   | REQ-004 | Dev'esserci una struttura hardware con Arduino| 1 | 1.0 | |
   | REQ-005 | L'Arduino deve poter leggere i dati da un componente che misura le vibrazioni| 1 | 1.0 | Il componente in questione è un geofono|
   | REQ-006 | L'arduino deve poter mandare i dati tramite modulo Wi-Fi| 1 | 1.0| |
@@ -173,8 +173,10 @@ Matthias:
 
 Marco:
 
+- Acer Aspire VN7-572G, Windows 10 home 64 bit
+
 Georgiy:
-- Acer Aspire A717-71G, Windows 10 home 64 bit 
+- Acer Aspire A717-71G, Windows 10 home 64 bit
 
 Daniel:
 
@@ -199,6 +201,8 @@ Sismografo:
 
 - Arduino IDE v1.8.33.0
 
+- Sublime text 3
+
 #### Librerie
 
 
@@ -221,7 +225,8 @@ Descrive:
     relative elaborazioni. Può utilizzare *diagrammi di flusso dei
     dati* (DFD).
 
--   Eventuale sitemap
+Sitemap:
+![sitemap](Progettazione_Sito/sitemap.png)
 
 ### Design dei dati e database
 
@@ -234,6 +239,18 @@ Se il diagramma E-R viene modificato, sulla doc dovrà apparire l’ultima
 versione, mentre le vecchie saranno sui diari.
 
 ### Design delle interfacce
+
+Progettazione pagina principale:
+![index](Progettazione_Sito/Home.png)
+
+Progettazione Login:
+
+![Login](Progettazione_Sito/login.png)
+
+
+Progettazione terremoti:
+
+![Terremoti](Progettazione_Sito/terremoti.png)
 
 Descrizione delle interfacce interne ed esterne del sistema e
 dell’interfaccia utente. La progettazione delle interfacce è basata
