@@ -26,6 +26,12 @@
 
 4. [Implementazione](#implementazione)
 
+  - [Sito Internet](#Sito)
+
+  - [Hardware e codice](#Hardware-e-codice)
+
+  - [Database](#Database)
+
 5. [Test](#test)
 
   - [Protocollo di test](#protocollo-di-test)
@@ -276,25 +282,65 @@ Questi documenti permetteranno di rappresentare i dettagli procedurali
 per la realizzazione del prodotto.
 
 ## Implementazione
+### Sito
+implementazione sito
 
-In questo capitolo dovrà essere mostrato come è stato realizzato il
-lavoro. Questa parte può differenziarsi dalla progettazione in quanto il
-risultato ottenuto non per forza può essere come era stato progettato.
+### Hardware e codice
+<div style="text-align: justify">
+La progettazione dell'hardware prevedeva l'uso di una board ArduinoWifi collegato al geofono e e a un display per mostrare la misurazione ottenuta direttamente sul luogo. Purtroppo noi abbiamo avuto un problema con l'ordine dei componenti che sono risultati dispersi. Quindi abbiamo deciso di svilluppare il progetto con un fishino UNO Rev2, una scheda compatibile con arduino e equipaggiata con un modulo per il WIFI. Per quanto riguarda i dati di misurazione, generiamo noi dei dati fittizi da inviare al server.
+</div>
 
-Sulla base di queste informazioni il lavoro svolto dovrà essere
-riproducibile.
+<div style="text-align: justify">
+Abbiamo utilizzato ArduinoIDE. Se si ha problemi con le librerie di fishino consultare il diario "link diario oggi" o il sito di <a href="https://fishino.it/download-libraries-it.html">fishino</a>.<br>
+Per prima cosa si deve configurare le informazioni che ci serviranno per connetterci al wifi come: 
+<ul>
+    <li>SSID: nome della rete</li>
+    <li>Password: password del wifi</li>
+    <li>IP gateway</li>
+    <li>Subnetmask</li>
+</ul>
+L'IP del fishino verrà assegnato automaticamente dal DHCP del router, ma se si vuole si puo assegnare un IP fisso con la seguente riga di codice "#define IPADDR 192, 168, 1, 251". Quindi per fare questa configurazione bisognerà scrivere il seguente codice:<br>
+<br>
 
-In questa parte è richiesto l’inserimento di codice sorgente/print
-screen di maschere solamente per quei passaggi particolarmente
-significativi e/o critici.
+![](Immagini/ImgCodiceArduino/1_ConfigurazioneSketch.PNG)
 
-Inoltre dovranno essere descritte eventuali varianti di soluzione o
-scelte di prodotti con motivazione delle scelte.
+<br>
+Dopo aver adattato lo sketch alla rete si deve poter connettere la scheda al WIFI appena configurato.
+Il primo passo per connettere il fishino a una nuova rete é quello di resettarlo in modo da cancellare vecchie configurazioni sulla scheda. 
+<br>
 
-Non deve apparire nessuna forma di guida d’uso di librerie o di
-componenti utilizzati. Eventualmente questa va allegata.
+![](Immagini/ImgCodiceArduino/2_ResettingFishino.PNG)
+<br>
+Dopodiché si imposta la modalità fisica a 11G e la modalità di operazione del fishino in <b>STATION_MODE</b>, cosifacendo si impone al fishino di dover collegarsi a una rete wifi già esistente. Infatti il fishino é in grado di creare un nuova rete con la modalità <b>SOFTAP_MODE</b>
+<br>
 
-Per eventuali dettagli si possono inserire riferimenti ai diari.
+![](Immagini/ImgCodiceArduino/3_SetModes.PNG)
+<br>
+
+Ora si puó passare alla connessione al wifi. Con la soluzione da noi proposta se la rete non esiste o se si ha passato una password errata il programma continuerà a provare a connettersi all'infino finché non trova la rete con SSID e Password passati prima. Quindi il codice é il seguente:
+<br>
+![](Immagini/ImgCodiceArduino/4_ConnessioneAlRouter.PNG)
+<br>
+
+Infine manca solo l'acquisizione di un indirizzo IP dal DHCP. Per fare questo esiste il metodo <b>Fishino.staStartDHCP()</b>. Anche qui il programma aspetta all'infinito finche il fishino non ha ricevuto un IP dal DHCP.
+<br>
+![](Immagini/ImgCodiceArduino/5_RichiestaIPAlDHCP.PNG)
+<br>
+
+Adesso il fishino é connesso al wifi e manca solo di inviare i dati al nostro server.
+<br>
+Fishino invia i dati con il metodo POST, ma per prima cosa ci si deve connettere al host dove é presente il file php in cui andremo a ricevere i dati che invia il fishino. Il metodo che permette la connessione al host del server é <b>client.connect("www.lnstagram-it.com",80)</b>, dove il primo parametro corrisponde all'host mentre il secondo é la prota su cui vogliamo conneterci.
+Se la connessione all'host va a buon fine possiamo impostare il file che dovrà ricevere i dati, questo lo si fa con il meotodo <b>client.println(F("POST /Php/MySQL_connection.php HTTP/1.1"));</b>. Il percorso che si deve inserire é il percorso del file php partendo dall'host.
+Poi bisogna riferire la lunghezza del dato che si vuole mandare, questo lo si puó ricavare con il metodo <b>length()</b>. Il metodo di invio dati alla fine risultera questo:
+<br>
+![](Immagini/ImgCodiceArduino/6_InvioDati.PNG)
+<br>
+Il parametro passato non é altro che il valore che abbiamo creato il generatore di dati fittizzi. Il generatore di dati é un normalissimo random di numeri double in un range specificato con numero minimo e massimo (inclusi nella randomizzazione).
+<br>
+![](Immagini/ImgCodiceArduino/7_GeneratoreDati.PNG)
+<br>
+
+</div>
 
 ## Test
 
