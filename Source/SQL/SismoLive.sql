@@ -52,7 +52,7 @@ insert into Terremoto(id_terremoto,magnitudo,data_registrazione,orario_registraz
 insert into Terremoto(id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(3,4,curdate(),curtime());
 insert into Terremoto(id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(4,7,curdate(),curtime());
 insert into Terremoto(id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(5,8,curdate(),curtime());
-#-----------------------------------------------------------------------------------------------------------------------------------------------------
+# FUNZIONI VARIE -----------------------------------------------------------------------------------------------------------------------------------------------------
 DELIMITER //
 CREATE FUNCTION getStartId()
 returns int deterministic
