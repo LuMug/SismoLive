@@ -123,7 +123,7 @@ FishinoClient client;
 void send(double geophoneData)
 {
 
-  if(client.connect("www.samtrevano.ch",80) == 1)
+  if(client.connect("www.samtinfo.ch",80) == 1)
   {
     client.println(F("POST /retrieve.php?data=%u' HTTP/1.1"));
     //client.println("Host: ");
@@ -144,7 +144,7 @@ double randomDouble(double minf, double maxf)
 }
 
 void loop() {
-  //void send(randomDouble(-1.00, 1.00));
-  Serial.println(randomDouble(-1.00, 1.00));
+  send(randomDouble(-1.00, 1.00));
+  //Serial.println(randomDouble(-1.00, 1.00));
   delay(200);
 }
