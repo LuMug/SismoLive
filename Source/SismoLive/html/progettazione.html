@@ -49,13 +49,14 @@
         <h1 style="text-align:center;">Progettazione</h1>
         <br>
         <p>L'idea iniziale di questo progetto era quella di monitorare in tempo
-          reale i dati presi da un geofono, e tramite l'apposito sito web
+          reale i dati presi da un geofono montato su una stazione sismografica, e tramite l'apposito sito web
           stampare un grafico e una tabella ed avvisare tramite un email appena
           c'è il sospetto di un terremoto.
           Purtoppo a causa di vari motivi la registrazione dei dati non
           avviene più con il geofono bensì tramite un sistema di generazione
           fittizia dei dati, che poi tramite un fishino vengono inviati al database
-          che conterrà tutti i terremoti registrati con data e ora annessa</p>
+          che conterrà tutti i terremoti registrati con data e ora annessa.
+      	  Ogni secondo vengono registrati 5 dati randomici e vengono inviati al database dove, tramite varie tabelle, immagazzina i dati secondo 2 id, il primo è l'id che cambia per ogni dato ricevuto, il secondo si basa su un sistema che, se vengono registrati dei dati per un po' di tempo continuo sopra la soglia che decide che è una scossa o meno, allora è lo stesso terremoto che dura un tot di tempo, perciò l'id sarà lo stesso per ogni dato di quel terremoto. Un'altra colonna della tabella dove vengono immagazzinati i dati è il magnitudo, un dato numerico che può andare da 0 a 9. Infine viene registrato il momento in cui si crea il dato fittizzio e tramite una data e un'ora viene registrato.</p>
     </div>
 
     <!-- Footer -->
