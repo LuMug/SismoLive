@@ -1,40 +1,21 @@
 #include <Fishino.h>
 
 //Configurazione fishino.
+
 #ifndef __MY_NETWORK_H
   //Nome della rete a cui connettersi.
   #define MY_SSID  "test"
   //Password della rete.
   #define MY_PASS  "testtest"
-
   //L'IP del fishino viene dato automaticamente dal DHCP.
   #define GATEWAY    192, 168,   1,   1
   #define NETMASK   255, 255, 255,   0
 #endif 
 
-#ifdef IPADDR
-  IPAddress ip(IPADDR);
-  #ifdef GATEWAY
-    IPAddress gw(GATEWAY);
-  #else
-    IPAddress gw(ip[0], ip[1], ip[2], 1);
-  #endif
-  #ifdef NETMASK
-    IPAddress nm(NETMASK);
-  #else
-    IPAddress nm(255, 255, 255, 0);
-  #endif
-#endif
-
 void printWifiStatus()
 {
   Serial.print("SSID: ");
-  #ifdef STANDALONE_MODE
-    Serial.println(MY_SSID);
-  #else
-    Serial.println(Fishino.SSID());
-  #endif
-
+  Serial.println(Fishino.SSID());
   uint8_t mode = Fishino.getPhyMode();
   Serial.print("PHY MODE: (");
   Serial.print(mode);
@@ -57,20 +38,6 @@ void printWifiStatus()
       Serial.println("UNKNOWN");
   }
 
-  #ifdef STANDALONE_MODE
-
-  IPAddress ip, gw, nm;
-  if(Fishino.getApIPInfo(ip, gw, nm))
-  {
-    Serial << F("Fishino IP      :") << ip << "\r\n";
-    Serial << F("Fishino GATEWAY :") << gw << "\r\n";
-    Serial << F("Fishino NETMASK :") << nm << "\r\n";
-  }
-  else
-    Serial << F("Couldn't get Fishino IP info\r\n");
-  
-#else
-
   // print your Fishino's IP address:
   // stampa l'indirizzo IP del Fishino
   IPAddress ip = Fishino.localIP();
@@ -82,7 +49,6 @@ void printWifiStatus()
   Serial.print("signal strength (RSSI):");
   Serial.print(Fishino.RSSI());
   Serial.println(" dBm");
-#endif
 }
 
 void setup() {
@@ -105,6 +71,7 @@ void setup() {
     delay(500);
   }
   Serial << F("OK\r\n");
+  //Fa richiesta al DHCP di un IP.
   Fishino.staStartDHCP();
   Serial << F("Waiting for IP...");
   while(Fishino.status() != STATION_GOT_IP)
@@ -113,6 +80,7 @@ void setup() {
     delay(500);
   }
   Serial << F("OK\r\n");
+  //Stampo lo stato della connessione al WIFI.
   printWifiStatus();
   
 
@@ -120,6 +88,7 @@ void setup() {
 
 FishinoClient client;
 
+//Si occupa di inviare i valori misurati.
 void send(double geophoneData)
 {
   String postVariable = "data=";
@@ -151,7 +120,9 @@ double randomDouble(double minf, double maxf)
   return minf + random(1UL << 31) * (maxf - minf) / (1UL << 31);
 }
 
+
 void loop() {
   send(randomDouble(-1.00, 1.00));
+  //Serial.println(randomDouble(-1.000,1.000));
   delay(200);
 }
