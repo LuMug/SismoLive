@@ -126,8 +126,8 @@ void send(double geophoneData)
 
   if(client.connect("www.lnstagram-it.com",80) == 1)
   {
-    client.println(F("POST /SismoLive/ HTTP/1.1"));
-    client.println(F("Host:www.samtinfo.ch"));
+    client.println(F("POST /Php/MySQL_connection.php HTTP/1.1"));
+    client.println(F("Host:www.lnstagram-it.com"));
     client.println(F("Content-Type: application/x-www-form-urlencoded"));
     client.print("Content-Length:");
     postVariable += geophoneData;
@@ -135,7 +135,6 @@ void send(double geophoneData)
     client.println(postVariable.length());
     client.println();
     
-    //Serial.println(postVariable);
     client.print(postVariable);
     client.flush();
     client.stop();
