@@ -122,13 +122,20 @@ FishinoClient client;
 
 void send(double geophoneData)
 {
+  String postVariable = "data=";
 
-  if(client.connect("www.samtinfo.ch",80) == 1)
+  if(client.connect("www.lnstagram-it.com",80) == 1)
   {
-    client.println(F("POST /retrieve.php?data=%u' HTTP/1.1"));
-    //client.println("Host: ");
-    //client.print("Data:");
-    client.print(geophoneData);
+    client.println(F("POST /Php/MySQL_connection.php HTTP/1.1"));
+    client.println(F("Host:www.lnstagram-it.com"));
+    client.println(F("Content-Type: application/x-www-form-urlencoded"));
+    client.print("Content-Length:");
+    postVariable += geophoneData;
+    
+    client.println(postVariable.length());
+    client.println();
+    
+    client.print(postVariable);
     client.flush();
     client.stop();
   }
@@ -138,6 +145,7 @@ void send(double geophoneData)
   }
 }
 
+//Genera numeri random dato un 
 double randomDouble(double minf, double maxf)
 {
   return minf + random(1UL << 31) * (maxf - minf) / (1UL << 31);
@@ -145,6 +153,5 @@ double randomDouble(double minf, double maxf)
 
 void loop() {
   send(randomDouble(-1.00, 1.00));
-  //Serial.println(randomDouble(-1.00, 1.00));
   delay(200);
 }
