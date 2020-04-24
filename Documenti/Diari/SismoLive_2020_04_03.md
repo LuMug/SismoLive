@@ -18,8 +18,9 @@ Creata funzione che prende i dati dal database e crea un grafico (non ancora liv
 |16:20 - 16:30 | Aggiornamento diario|
 
 ##  Problemi riscontrati e soluzioni adottate
-Diversi errori ad implementare la funzione che per far in modo che il grafico si aggiorna.
-Perdite di tempo dovute ad errori di distrazione durante l'implementazione di alcune funzioni mysql e delle loro applicazioni nelle query.
+Diversi errori ad implementare la funzione che per far in modo che il grafico si aggiorna.<br>
+Perdite di tempo dovute ad errori di distrazione durante l'implementazione di alcune funzioni mysql e delle loro applicazioni nelle query.<br>
+Ho avuto dei problemi con le librerie per Fishino. Sul sito di fishino c'è una breve documentazione su come fare a importarle nell'IDE di Arduino.<a href="https://fishino.it/download-libraries-it.html">Sito download librerie fishino e documentazione</a>
 
 
 ##  Punto della situazione rispetto alla pianificazione
