@@ -5,7 +5,7 @@ use SismoLive;
 # CREAZIONE TABELLE ----------------------------------------------------------------------------------
 drop table if exists Utente;
 create table Utente(
-	nome_utente varchar(20) primary key not null,
+	nome varchar(20) primary key not null,
 	psw varchar(100) not null,
 	email varchar(50) not null,
 	telefono long not null,
@@ -39,10 +39,10 @@ create table Terremoto(
 
 # CREAZIONE AMMINISTRATORI DI BASE -----------------------------------------------------------------------------------------------
 
-insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Georgiy",md5("PasswordDiGeorgiy"),"georgiy.farina@samtrevano.ch",41790123456,"A");
-insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Marco",md5("PasswordDiMarco"),"marco.lorusso@samtrevano.ch",41791234567,"A");
-insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Matthias",md5("PasswordDiMatthias"),"matthias.iannarella@samtrevano.ch", 41792345678,"A");
-insert into Utente(nome_utente,psw,email,telefono,tipo) values ("Daniel",md5("PasswordDiDaniel"),"daniel.matt@samtrevano.ch",41793456789,"A");
+insert into Utente(nome,psw,email,telefono,tipo) values ("Georgiy",md5("PasswordDiGeorgiy"),"georgiy.farina@samtrevano.ch",41790123456,"A");
+insert into Utente(nome,psw,email,telefono,tipo) values ("Marco",md5("PasswordDiMarco"),"marco.lorusso@samtrevano.ch",41791234567,"A");
+insert into Utente(nome,psw,email,telefono,tipo) values ("Matthias",md5("PasswordDiMatthias"),"matthias.iannarella@samtrevano.ch", 41792345678,"A");
+insert into Utente(nome,psw,email,telefono,tipo) values ("Daniel",md5("PasswordDiDaniel"),"daniel.matt@samtrevano.ch",41793456789,"A");
 
 # INSERIMENTO DI DATI FITTIZI -----------------------------------------------------------------------------------------------------------------------------------------------------
 
