@@ -26,6 +26,12 @@
 
 4. [Implementazione](#implementazione)
 
+  - [Sito Internet](#Sito)
+
+  - [Hardware e codice](#Hardware-e-codice)
+
+  - [Database](#Database)
+
 5. [Test](#test)
 
   - [Protocollo di test](#protocollo-di-test)
@@ -279,12 +285,11 @@ per la realizzazione del prodotto.
 ### Sito
 implementazione sito
 
-### Hardware
+### Hardware e codice
 <div style="text-align: justify">
 La progettazione dell'hardware prevedeva l'uso di una board ArduinoWifi collegato al geofono e e a un display per mostrare la misurazione ottenuta direttamente sul luogo. Purtroppo noi abbiamo avuto un problema con l'ordine dei componenti che sono risultati dispersi. Quindi abbiamo deciso di svilluppare il progetto con un fishino UNO Rev2, una scheda compatibile con arduino e equipaggiata con un modulo per il WIFI. Per quanto riguarda i dati di misurazione, generiamo noi dei dati fittizi da inviare al server.
 </div>
 
-#### Codice
 <div style="text-align: justify">
 Abbiamo utilizzato ArduinoIDE. Se si ha problemi con le librerie di fishino consultare il diario "link diario oggi" o il sito di <a href="https://fishino.it/download-libraries-it.html">fishino</a>.<br>
 Per prima cosa si deve configurare le informazioni che ci serviranno per connetterci al wifi come: 
