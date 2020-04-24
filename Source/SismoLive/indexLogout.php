@@ -45,6 +45,7 @@
                     <li><a href="html/terremotiLogout.html">Terremoti</a></li>
                     <li><a href="html/progettazioneLogout.html">Progettazione</a></li>
                     <li><a href="html/chisiamoLogout.html">Chi siamo</a></li>
+                    <li style="border: 2px solid #45849D; border-radius: 12px"><a href="html/configurazione.html"><strong>Configurazione</strong></a></li>
                     <li><a href=php/logout.php class=loginButton>LOGOUT</a></li>
                 </ul>
             </div>
