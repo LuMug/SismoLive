@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>SismoLive</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="SismoLive Project">
+    <meta name="keywords" content="Project, Earthquake, SismoLive, Modulo306">
+    <meta name="author" content="Matthias, Marco, Daniel, Georgiy">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/index.css" type="text/css">
+
+    <link rel="icon" type="../image/png" href="../table/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../table/css/util.css">
+    <link rel="stylesheet" type="text/css" href="../table/css/main.css">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../indexLogout.php">Home</a></li>
+                    <li><a href="terremotiLogout.html">Terremoti</a></li>
+                    <li><a href="progettazioneLogout.html">Progettazione</a></li>
+                    <li><a href="chisiamoLogout.html">Chi siamo</a></li>
+                    <li><a href="../php/logout.html" class="loginButton">LOGOUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid bg-2">
+        <h1 style="text-align:center;">Progettazione</h1>
+        <br>
+        <img src="../images/Schema_Terremoto.jpg" alt="Schema Terremoto" style="float: right; width: 350px"><h2>Cos'è un terremoto?</h2>
+        <p>I terremoti, o anche detti sismi sono delle vibrazioni della crosta terrestre provocati dallo spostamento improvviso di una massa rocciosa nel sottosuolo.<br>
+        	All'interno della crosta terrestre avviene una deformazione causata dalle forze di natura tettonica(modello di dinamica della Terra), che provoca una liberazione nell'epicentro di energia elastica.<br>L’energia che viene rilasciata si propaga sotto forma di onde attraverso la terra e sulla superficie terrestre, causando scuotimenti che vengono percepiti come terremoti.<br>I terremoti possono inoltre essere legati all’attività vulcanica.<br>Le faglie sono fratture tettoniche nel sottosuolo lungo le quali le masse rocciose mostrano evidenze di movimento relativo.</p>
+        <br>
+        <h2>Rilevamento terremoti</h2>
+        <p>L'idea iniziale di questo progetto era quella di monitorare in tempo
+          reale i dati presi da un geofono montato su una stazione sismografica, e tramite l'apposito sito web
+          stampare un grafico e una tabella ed avvisare tramite un email gli amministratori appena
+          c'è il sospetto di un terremoto.<br>
+          Purtoppo a causa di vari motivi la registrazione dei dati non
+          avviene più con il geofono bensì tramite un sistema di generazione
+          fittizia dei dati, che poi tramite un fishino vengono inviati al database
+          che conterrà tutti i terremoti registrati con data e ora annessa.<br>
+      	  Ogni secondo vengono registrati 5 dati randomici nell'arduino Mega 2560, questi dati randomici sono dei numeri che variano da -1 ad 1, in base al valore che esce, viene preso il valore assoluto e viene moltiplicato per 10(ad esempio, esce -0,3 si prende 0,3, poi *10, il magnitudo sarà 3)in modo da ottenere il magnitudo, e tramite un piccolo componente chiamato fishino vengono inviati al database dove, tramite varie tabelle, immagazzina i dati secondo 2 id, il primo è l'id che cambia per ogni dato ricevuto, il secondo si basa su un sistema che, se vengono registrati dei dati per un periodo di tempo continuo sopra la soglia che decide che è una scossa sismica o meno, allora è lo stesso terremoto che dura un tot di tempo, perciò l'id sarà lo stesso per ogni dato di quel terremoto.<br> Un'altra colonna della tabella dove vengono immagazzinati i dati è il magnitudo, un dato numerico che può andare da 0 a 9. Infine viene registrato il momento in cui si crea il dato fittizzio e tramite una data e un'ora viene registrato.<br>
+      	  Inseguito il sito prende i dati delle tabelle nel database e nella <a href="../index.php"> pagina principale</a> crea una grafico sulla sinistra che va in base al magnitudo registrato nel tempo e sulla destra una tabella con i dati in forma numerica.<br>
+      	  Nella pagina <a href="Terremoti.html">Terremoti</a> invece ci sono due tabelle con dati statici dei terremoti più percepiti in Svizzera e nel mondo. </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-4 text-center">
+        <p>SismoLive &copy</p>
+    </footer>
+</body>
+</html>
