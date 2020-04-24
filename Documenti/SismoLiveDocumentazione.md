@@ -27,7 +27,9 @@
 4. [Implementazione](#implementazione)
 
   -[Sito Internet](#Sito)
+
   -[Hardware e codice](#Hardware-e-codice)
+  
   -[Database](#Database)
 
 5. [Test](#test)
