@@ -152,12 +152,7 @@ progetto (1 = massima, 2 = importante, 3 = Da considerare 4 = facoltativo).
   | REQ-013 | In caso di terremoto gli admin vengono notificati via mail  | 1 | 1.0 |  |
   | REQ-014 | In caso di terremoto gli admin vengono notificati via messaggio| 4 | 1.0 | |
   | REQ-015 | Per il progetto è necessario avere un agenda su TRELLO | 2 | 1.0 | |
-  | REQ-016 | I dati vengono letti con frequenza configurata dall'admin| 1 | 1.0 |  |
-  | REQ-017 | | 1 | 1.0 |  |
-  | REQ-018 | | 1 | 1.0 |  |
-  | REQ-019 | | 1 | 1.0 |  |
-  | REQ-020 | | 1 | 1.0 |  |
-
+  | REQ-016 | I dati vengono letti con frequenza configurata dall'admin| 1 | 1.0 | |
 
 ### Use case
 
@@ -294,7 +289,7 @@ Per eventuali dettagli si possono inserire riferimenti ai diari.
 |**Riferimento**|REQ-001|
 |**Descrizione**| Bisogna verificare che esista il sito per visualizzare i dati |
 |**Prerequisiti**| --- |
-|**Procedura**   | Aprire un browser ed andare sul seguente url: http://samtinfo.ch/i17lormar/Progetti/SismoLive/|
+|**Procedura**   | Aprire un browser ed andare sul seguente url: http://www.lnstagram-it.com/SismoLive/index.php|
 |**Risultati attesi** | Deve apparire la pagina di benvenuto|
 
 
@@ -304,7 +299,7 @@ Per eventuali dettagli si possono inserire riferimenti ai diari.
 |**Riferimento**|REQ-003|
 |**Descrizione**| Visitando il sito, deve esserci la possibilità di eseguire il login |
 |**Prerequisiti**| Visitare il sito|
-|**Procedura**   | Avere il sito su questo url: http://samtinfo.ch/i17lormar/Progetti/SismoLive/ Dopodichè in alto a destra cliccare sul bottone "Login" |
+|**Procedura**   | Avere il sito su questo url: http://www.lnstagram-it.com/SismoLive/index.php Dopodichè in alto a destra cliccare sul bottone "Login" |
 |**Risultati attesi** | Dovrebbe apparire la pagina di login|
 
 
@@ -314,7 +309,7 @@ Per eventuali dettagli si possono inserire riferimenti ai diari.
 |**Riferimento**|REQ-007|
 |**Descrizione**| Il sito deve essere compatibile con i principali browser (Chrome, Opera, Firefox, Edge)|
 |**Prerequisiti**| Avere il sito |
-|**Procedura**   | Inserire l'url http://samtinfo.ch/i17lormar/Progetti/SismoLive/ sui vari browser sopracitati|
+|**Procedura**   | Inserire l'url http://www.lnstagram-it.com/SismoLive/index.php sui vari browser sopracitati|
 |**Risultati attesi** | Dovrebbe apparire la pagina di benvenuto con le informazioni utili e con possibilità di effettuare il login|
 
 
@@ -324,33 +319,33 @@ Per eventuali dettagli si possono inserire riferimenti ai diari.
 |**Riferimento**|REQ-015|
 |**Descrizione**| Dev'esserci un agenda di progetto su TRELLO |
 |**Prerequisiti**| Tutti e 4 i componenti del gruppo e il docente perito del progetto devono avere un account|
-|**Procedura**   | Visitare |
+|**Procedura**   | Visitare https://trello.com/b/fdVY0YLT/sismolive|
 |**Risultati attesi** | Visitando l'agenda devono essere presenti le varie liste di attività|
 
 
 |Test Case      | TC-005                       |
 |---------------|--------------------------------------|
-|**Nome**       |           |
-|**Riferimento**|REQ-                     |
-|**Descrizione**|  |
-|**Prerequisiti**|  |
-|**Procedura**   | |
-|**Risultati attesi** |  |
+|**Nome**       |DB collegato al sito|
+|**Riferimento**|REQ-002, REQ-009|
+|**Descrizione**|Deve esistere un database collegato da remoto al sito|
+|**Prerequisiti**||
+|**Procedura**   |Connettersi al DB tramite WorkBench, provare ad aggiungere un record in Terremoto|
+|**Risultati attesi** |Sul sito dovrebbe apparire il nuovo record di terremoto, sia nella tabella che nel rispettivo grafico|
 
 
 |Test Case      | TC-006                       |
 |---------------|--------------------------------------|
-|**Nome**       |           |
-|**Riferimento**|REQ-                     |
-|**Descrizione**|  |
-|**Prerequisiti**|  |
-|**Procedura**   | |
-|**Risultati attesi** |  |
+|**Nome**       |Grafici sul sito          |
+|**Riferimento**|REQ-008|
+|**Descrizione**|I dati sul sito devono essere rappresentati sotto forma di grafici  |
+|**Prerequisiti**|Avere dei dati da dover rappresentare  |
+|**Procedura**   |Visitare http://www.lnstagram-it.com/SismoLive/index.php e scorrere in basso|
+|**Risultati attesi** |Si dovrebbe poter vedere il grafico dei terremoti con accanto la rispettiva tabella|
 
 
 |Test Case      | TC-007                       |
 |---------------|--------------------------------------|
-|**Nome**       |           |
+|**Nome**       ||
 |**Riferimento**|REQ-                     |
 |**Descrizione**|  |
 |**Prerequisiti**|  |
