@@ -138,7 +138,13 @@ void send(double geophoneData)
   }
 }
 
-void loop() {
-  void send();
+double randomDouble(double minf, double maxf)
+{
+  return minf + random(1UL << 31) * (maxf - minf) / (1UL << 31);
+}
 
+void loop() {
+  //void send(randomDouble(-1.00, 1.00));
+  Serial.println(randomDouble(-1.00, 1.00));
+  delay(200);
 }
