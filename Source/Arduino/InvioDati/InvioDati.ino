@@ -1,16 +1,18 @@
 #include <Fishino.h>
 
-//Configurazione fishino.
+  //Configurazione di rete fishino.
+  #ifndef __MY_NETWORK_H
+    //Nome della rete a cui connettersi.
+    #define MY_SSID  "test"
+    
+    //Password della rete.
+    #define MY_PASS  "testtest"
+    
+    //L'IP del fishino viene dato automaticamente dal DHCP.
+    #define GATEWAY    192, 168,   1,   1
+    #define NETMASK   255, 255, 255,   0
+  #endif 
 
-#ifndef __MY_NETWORK_H
-  //Nome della rete a cui connettersi.
-  #define MY_SSID  "test"
-  //Password della rete.
-  #define MY_PASS  "testtest"
-  //L'IP del fishino viene dato automaticamente dal DHCP.
-  #define GATEWAY    192, 168,   1,   1
-  #define NETMASK   255, 255, 255,   0
-#endif 
 
 void printWifiStatus()
 {
@@ -48,11 +50,12 @@ void printWifiStatus()
   // stampa la qualità del segnale WiFi
   Serial.print("signal strength (RSSI):");
   Serial.print(Fishino.RSSI());
-  Serial.println(" dBm");
+  Serial.println("dBm");
 }
 
 void setup() {
   Serial.begin(9600);
+  
   //Resetta il fishino.
   Serial << F("Resetting Fishino...");
   while(!Fishino.reset())
@@ -60,10 +63,14 @@ void setup() {
     Serial << ".";
     delay(500);
   }
-  Fishino.setPhyMode(PHY_MODE_11G);
 
+  //Imposta la modalità fisica a 11G
+  Fishino.setPhyMode(PHY_MODE_11G);
+  //Imposta il modo di operazione a STATION_MODE.
   Serial << F("Setting mode STATION_MODE\r\n");
   Fishino.setMode(STATION_MODE);
+
+  
   Serial << F("Connecting to AP...");
   while(!Fishino.begin(MY_SSID, MY_PASS))
   {
@@ -71,6 +78,7 @@ void setup() {
     delay(500);
   }
   Serial << F("OK\r\n");
+  
   //Fa richiesta al DHCP di un IP.
   Fishino.staStartDHCP();
   Serial << F("Waiting for IP...");
@@ -80,10 +88,9 @@ void setup() {
     delay(500);
   }
   Serial << F("OK\r\n");
+  Serial.flush();
   //Stampo lo stato della connessione al WIFI.
   printWifiStatus();
-  
-
 }
 
 FishinoClient client;
@@ -122,7 +129,7 @@ double randomDouble(double minf, double maxf)
 
 
 void loop() {
-  send(randomDouble(-1.00, 1.00));
+  //send(randomDouble(-1.00, 1.00));
   //Serial.println(randomDouble(-1.000,1.000));
   delay(200);
 }
