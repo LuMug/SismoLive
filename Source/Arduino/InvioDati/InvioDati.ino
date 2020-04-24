@@ -94,23 +94,19 @@ void setup() {
 }
 
 FishinoClient client;
-
 //Si occupa di inviare i valori misurati.
 void send(double geophoneData)
 {
-  String postVariable = "data=";
-
   if(client.connect("www.lnstagram-it.com",80) == 1)
   {
     client.println(F("POST /Php/MySQL_connection.php HTTP/1.1"));
     client.println(F("Host:www.lnstagram-it.com"));
     client.println(F("Content-Type: application/x-www-form-urlencoded"));
-    client.print("Content-Length:");
-    postVariable += geophoneData;
     
+    client.print("Content-Length:");
+    String postVariable = "data=" + geophoneData;
     client.println(postVariable.length());
     client.println();
-    
     client.print(postVariable);
     client.flush();
     client.stop();
@@ -121,15 +117,14 @@ void send(double geophoneData)
   }
 }
 
-//Genera numeri random dato un 
-double randomDouble(double minf, double maxf)
-{
-  return minf + random(1UL << 31) * (maxf - minf) / (1UL << 31);
-}
+  //Genera numeri random dato un 
+  double randomDouble(double minf, double maxf)
+  {
+    return minf + random(1UL << 31) * (maxf - minf) / (1UL << 31);
+  }
 
 
 void loop() {
-  //send(randomDouble(-1.00, 1.00));
-  //Serial.println(randomDouble(-1.000,1.000));
+  send(randomDouble(-1.00, 1.00));
   delay(200);
 }
