@@ -41,10 +41,10 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="html/terremoti.html">Terremoti</a></li>
-                    <li><a href="html/progettazione.html">Progettazione</a></li>
-                    <li><a href="html/chisiamo.html">Chi siamo</a></li>
+                    <li><a href="indexLogout.php">Home</a></li>
+                    <li><a href="html/terremotiLogout.html">Terremoti</a></li>
+                    <li><a href="html/progettazioneLogout.html">Progettazione</a></li>
+                    <li><a href="html/chisiamoLogout.html">Chi siamo</a></li>
                     <li><a href=php/logout.php class=loginButton>LOGOUT</a></li>
                 </ul>
             </div>
@@ -75,9 +75,6 @@
                                 <th class="column1">Data</th>
                                 <th class="column2">Orario</th>
                                 <th class="column3">Magnitudo</th>
-                                <th class="column4">Città</th>
-                                <th class="column5">Latitudine</th>
-                                <th class="column6">Longitudine</th>
                             </tr>
                         </thead>
                         <tbody>
