@@ -14,7 +14,7 @@ create table Utente(
 
 drop table if exists Configurazione;
 create table Configurazione(
-	id_configurazione int not null,
+	id_configurazione int auto_increment,
 	parametro varchar(50) not null,
 	valore int not null,
     nome_utente varchar(20) not null,
@@ -60,6 +60,9 @@ returns int deterministic
 BEGIN 
 	declare startId int;
 	set startId = (select max(id_registrazione) -5 from Terremoto);
+	if startId < 0 then
+		set startId = 0;
+    end if;
     return startId;
 END
 //
