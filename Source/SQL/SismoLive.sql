@@ -38,6 +38,7 @@ insert into Utente(nome,psw,email,telefono,tipo) values ("Georgiy",md5("Password
 insert into Utente(nome,psw,email,telefono,tipo) values ("Marco",md5("PasswordDiMarco"),"marco.lorusso@samtrevano.ch",41791234567,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Matthias",md5("PasswordDiMatthias"),"matthias.iannarella@samtrevano.ch", 41792345678,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Daniel",md5("PasswordDiDaniel"),"daniel.matt@samtrevano.ch",41793456789,"A");
+insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"luca.muggiasca@edu.ti.ch",41794567890,"A");
 
 # INSERIMENTO DI DATI FITTIZI -----------------------------------------------------------------------------------------------------------------------------------------------------
 
