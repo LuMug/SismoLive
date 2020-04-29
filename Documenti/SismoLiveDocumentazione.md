@@ -188,6 +188,7 @@ Daniel:
 
 Sismografo:
 - Arduino Mega 2560
+- Fishino
 
 #### Software
 
@@ -214,10 +215,6 @@ Sismografo:
 
 ## Progettazione
 
-Questo capitolo descrive esaustivamente come deve essere realizzato il
-prodotto fin nei suoi dettagli. Una buona progettazione permette
-all’esecutore di evitare fraintendimenti e imprecisioni
-nell’implementazione del prodotto.
 
 ### Design dell’architettura del sistema
 
@@ -232,6 +229,7 @@ Descrive:
     dati* (DFD).
 
 Sitemap:
+
 ![sitemap](Progettazione_Sito/sitemap.png)
 
 ### Design dei dati e database
@@ -247,7 +245,7 @@ versione, mentre le vecchie saranno sui diari.
 ### Design delle interfacce
 
 Progettazione pagina principale:
-![index](Progettazione_Sito/Home.png)
+![index](Progettazione_Sito/index.png)
 
 Progettazione Login:
 
@@ -258,10 +256,14 @@ Progettazione terremoti:
 
 ![Terremoti](Progettazione_Sito/terremoti.png)
 
-Descrizione delle interfacce interne ed esterne del sistema e
-dell’interfaccia utente. La progettazione delle interfacce è basata
-sulle informazioni ricavate durante la fase di analisi e realizzata
-tramite mockups.
+Progettazione Menu a tendina:
+
+![Terremoti](Progettazione_Sito/Menu-Tendina.png)
+
+Progettazione pagina progettazione:
+
+![Terremoti](Progettazione_Sito/Progettazione.png)
+
 
 ### Design procedurale
 
@@ -283,7 +285,20 @@ per la realizzazione del prodotto.
 
 ## Implementazione
 ### Sito
-implementazione sito
+Il luogo dove tutto viene visualizzato; i dati statistici e altre Informazioni riguardanti il progetto.<br>
+Qui vengono mostrati agli utenti, in tempo reale i dati presi dall'arduino che si aggiornano in continuazione e tramite una pagina di login, gli amministratori possono accedere e modificare vari parametri.
+Per la struttura del sito abbiamo usato un bootstrap.
+
+![Terremoti](Immagini/ImgCodiceSito/tabella.png)
+
+Questo pezzo di codice mostra come viene fatta la tabella con i dati del presi dal database, prima di tutto bisogna connettersi al database inserendo i parametri; nome del server, nome utente con cui si vuole accedere, password, nome del database e infine la porta.<br>
+Dopo essere sicuri che la connessione è andata a buon fine, abbiamo fatto una query dove seleziona tutti i dati della tabella ma con un limite di dati che possono essere mostrati, in modo che la tabella non è così grande.<br>
+Se la query ritorna correttamente, e ci sono dei dati all'interno della tabella, allora inserisce nella tabella i valori corrispondenti della data, ora e magnitudo.
+<br>
+
+![Terremoti](Immagini/ImgCodiceSito/grafico.png)
+
+Per il grafico abbiamo usato un canvas e tramite questo script si va a creare il grafico a linee con l'opzione di responsive attiva, con la data sull'asse delle X e il magnitudo sull'asse delle Y e con i vari parametri per lo stile. Arrivo fino ad un massimo di 5 dati visualizzati.
 
 ### Hardware e codice
 <div style="text-align: justify">
@@ -293,9 +308,9 @@ La progettazione dell'hardware prevedeva l'uso di una board ArduinoWifi collegat
 <div style="text-align: justify">
 Abbiamo utilizzato ArduinoIDE. Se si ha problemi con le librerie di fishino consultare il diario del
 
-[3.04.2020](Diari/SismoLive_2020_04_03.md) 
+[3.04.2020](Diari/SismoLive_2020_04_03.md)
 o il sito di <a href="https://fishino.it/download-libraries-it.html">fishino</a>.<br>
-Per prima cosa si deve configurare le informazioni che ci serviranno per connetterci al wifi come: 
+Per prima cosa si deve configurare le informazioni che ci serviranno per connetterci al wifi come:
 <ul>
     <li>SSID: nome della rete</li>
     <li>Password: password del wifi</li>
@@ -309,7 +324,7 @@ L'IP del fishino verrà assegnato automaticamente dal DHCP del router, ma se si 
 
 <br>
 Dopo aver adattato lo sketch alla rete si deve poter connettere la scheda al WIFI appena configurato.
-Il primo passo per connettere il fishino a una nuova rete é quello di resettarlo in modo da cancellare vecchie configurazioni sulla scheda. 
+Il primo passo per connettere il fishino a una nuova rete é quello di resettarlo in modo da cancellare vecchie configurazioni sulla scheda.
 <br>
 
 ![](Immagini/ImgCodiceArduino/2_ResettingFishino.PNG)
@@ -353,20 +368,20 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |---------------|--------------------------------------|
 |**Nome**       |Presenza del sito|
 |**Riferimento**|REQ-001|
-|**Descrizione**| Bisogna verificare che esista il sito per visualizzare i dati |
+|**Descrizione**| Bisogna verificare che esista il sito all'url: http://www.lnstagram-it.com/SismoLive/index.php, e che tutte le pagine vengono visualizzate senza problemi.|
 |**Prerequisiti**| --- |
-|**Procedura**   | Aprire un browser ed andare sul seguente url: http://www.lnstagram-it.com/SismoLive/index.php|
-|**Risultati attesi** | Deve apparire la pagina di benvenuto|
+|**Procedura**   | Aprire un browser ed andare sul seguente url: http://www.lnstagram-it.com/SismoLive/index.php, controllare che il grafico e la tabella si vedono e si aggiornano ogni 5 secondi, aprire anche le altre sezioni del sito.|
+|**Risultati attesi** | Deve apparire la pagina principale con grafico e tabella con dati al suo interno, ogni 5 secondi si deve poter vedere un miglioramento, non ci devono essere problemi di connessione al database o di altro genere.|
 
 
 |Test Case      | TC-002                       |
 |---------------|--------------------------------------|
 |**Nome**       | Presenza di una pagina di login|
 |**Riferimento**|REQ-003|
-|**Descrizione**| Visitando il sito, deve esserci la possibilità di eseguire il login |
+|**Descrizione**| Visitando il sito, deve esserci la possibilità di eseguire il login e collegarsi come amministratori.|
 |**Prerequisiti**| Visitare il sito|
-|**Procedura**   | Avere il sito su questo url: http://www.lnstagram-it.com/SismoLive/index.php Dopodichè in alto a destra cliccare sul bottone "Login" |
-|**Risultati attesi** | Dovrebbe apparire la pagina di login|
+|**Procedura**   | Avere il sito su questo url: http://www.lnstagram-it.com/SismoLive/index.php Dopodichè in alto a destra cliccare sul bottone "Login" inserire le credenziale: nome utente: test password: test. E controllare se una volta reindirizzato sulla pagina principale, spunta la parte di configurazione. |
+|**Risultati attesi** | Dovrebbe apparire la pagina di login, e tramite le credenziali deve poter accedere come amministratore e avere la possibilità di aprire la pagina di configurazione e modificare i parametri.|
 
 
 |Test Case      | TC-003                       |
@@ -375,8 +390,8 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |**Riferimento**|REQ-007|
 |**Descrizione**| Il sito deve essere compatibile con i principali browser (Chrome, Opera, Firefox, Edge)|
 |**Prerequisiti**| Avere il sito |
-|**Procedura**   | Inserire l'url http://www.lnstagram-it.com/SismoLive/index.php sui vari browser sopracitati|
-|**Risultati attesi** | Dovrebbe apparire la pagina di benvenuto con le informazioni utili e con possibilità di effettuare il login|
+|**Procedura**   | Inserire l'url http://www.lnstagram-it.com/SismoLive/index.php sui vari browser sopracitati, controllare se i grafici e la tabella si aggiornano ogni 5 secondi e che il login funzioni.|
+|**Risultati attesi** | Dovrebbe apparire la pagina principale con i grafici e le tabelle e con possibilità di effettuare il login.|
 
 
 |Test Case      | TC-004                       |
@@ -395,38 +410,38 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |**Riferimento**|REQ-002, REQ-009|
 |**Descrizione**|Deve esistere un database collegato da remoto al sito|
 |**Prerequisiti**||
-|**Procedura**   |Connettersi al DB tramite WorkBench, provare ad aggiungere un record in Terremoto|
-|**Risultati attesi** |Sul sito dovrebbe apparire il nuovo record di terremoto, sia nella tabella che nel rispettivo grafico|
+|**Procedura**   |Connettersi al DB tramite WorkBench, provare ad aggiungere un record in Terremoto, in seguito aprire il sito e controllare se nella tabella e nel grafico viene visualizzato il record.|
+|**Risultati attesi** |Sul sito dovrebbe apparire il nuovo record di terremoto, sia nella tabella che nel rispettivo grafico.|
 
 
 |Test Case      | TC-006                       |
 |---------------|--------------------------------------|
 |**Nome**       |Grafici sul sito          |
 |**Riferimento**|REQ-008|
-|**Descrizione**|I dati sul sito devono essere rappresentati sotto forma di grafici  |
-|**Prerequisiti**|Avere dei dati da dover rappresentare  |
-|**Procedura**   |Visitare http://www.lnstagram-it.com/SismoLive/index.php e scorrere in basso|
-|**Risultati attesi** |Si dovrebbe poter vedere il grafico dei terremoti con accanto la rispettiva tabella|
+|**Descrizione**|I dati sul sito devono essere rappresentati sotto forma di grafici.  |
+|**Prerequisiti**|Avere dei dati da dover rappresentare.|
+|**Procedura**   |Visitare http://www.lnstagram-it.com/SismoLive/index.php e scorrere in basso, fino al grafico, dove ogni 5 secondi si deve aggiornare.|
+|**Risultati attesi** |Si dovrebbe poter vedere il grafico dei terremoti che si aggiorna ogni 5 secondi, con accanto la rispettiva tabella|
 
 
 |Test Case      | TC-007                       |
 |---------------|--------------------------------------|
-|**Nome**       ||
-|**Riferimento**|REQ-                     |
-|**Descrizione**|  |
+|**Nome**       |Struttura hardware con Arduino|
+|**Riferimento**|REQ-004                     |
+|**Descrizione**|La creazione dei dati deve avvenire da una struttura hardware con arduino.  |
 |**Prerequisiti**|  |
-|**Procedura**   | |
-|**Risultati attesi** |  |
+|**Procedura**   |Controllare la struttura dell'arduino. |
+|**Risultati attesi** |Deve esserci una struttura solida con arduino e ulteriori componenti collegati.  |
 
 
 |Test Case      | TC-008                       |
 |---------------|--------------------------------------|
-|**Nome**       |           |
-|**Riferimento**|REQ-                     |
-|**Descrizione**|  |
+|**Nome**       |Misurazione vibrazioni con geofono           |
+|**Riferimento**|REQ-005                     |
+|**Descrizione**|Tramite il geofono, bisogna poter prendere i dati che elabora con le vibrazioni del terreno, e poterli leggere nell'arduino.  |
 |**Prerequisiti**|  |
-|**Procedura**   | |
-|**Risultati attesi** |  |
+|**Procedura**   |Controllare se c'è il geofono e se l'arduino tramite un sistema di output, riceve i dati dal componente correttamente. |
+|**Risultati attesi** |L'arduino deve stampare in console i vari valori delle frequenze che elabora il geofono.  |
 
 
 |Test Case      | TC-009                       |
