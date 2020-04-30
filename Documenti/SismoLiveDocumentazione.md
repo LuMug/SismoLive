@@ -143,7 +143,7 @@ progetto (1 = massima, 2 = importante, 3 = Da considerare 4 = facoltativo).
 
   | **ID**  | **Requisito** | **Priorità** | **Versione** | **Note** |
   | ------- | ------------- | ------------ | ------------ | -------- |
-  | REQ-001 | Bisogna avere un sito per la visualizzazione di dati| 1 | 1.0  | http://lnstagram-it.com/SismoLive/        |
+  | REQ-001 | Bisogna avere un sito per la visualizzazione di dati| 1 | 1.0  | http://sismolive.online        |
   | REQ-002 |Il sito deve avere il collegamento ad un DB| 1 | 1.0  |          |
   | REQ-003 | Il sito deve avere una pagina di login| 1 | 1.0  |  Con credenziali solo per amministratori        |
   | REQ-004 | Dev'esserci una struttura hardware con Arduino| 1 | 1.0 | |
@@ -347,7 +347,7 @@ Infine manca solo l'acquisizione di un indirizzo IP dal DHCP. Per fare questo es
 
 Adesso il fishino é connesso al wifi e manca solo di inviare i dati al nostro server.
 <br>
-Fishino invia i dati con il metodo POST, ma per prima cosa ci si deve connettere al host dove é presente il file php in cui andremo a ricevere i dati che invia il fishino. Il metodo che permette la connessione al host del server é <b>client.connect("www.lnstagram-it.com",80)</b>, dove il primo parametro corrisponde all'host mentre il secondo é la prota su cui vogliamo conneterci.
+Fishino invia i dati con il metodo POST, ma per prima cosa ci si deve connettere al host dove é presente il file php in cui andremo a ricevere i dati che invia il fishino. Il metodo che permette la connessione al host del server é <b>client.connect("www.sismolive.online",80)</b>, dove il primo parametro corrisponde all'host mentre il secondo é la prota su cui vogliamo conneterci.
 Se la connessione all'host va a buon fine possiamo impostare il file che dovrà ricevere i dati, questo lo si fa con il meotodo <b>client.println(F("POST /Php/MySQL_connection.php HTTP/1.1"));</b>. Il percorso che si deve inserire é il percorso del file php partendo dall'host.
 Poi bisogna riferire la lunghezza del dato che si vuole mandare, questo lo si puó ricavare con il metodo <b>length()</b>. Il metodo di invio dati alla fine risultera questo:
 <br>
@@ -368,9 +368,9 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |---------------|--------------------------------------|
 |**Nome**       |Presenza del sito|
 |**Riferimento**|REQ-001|
-|**Descrizione**| Bisogna verificare che esista il sito all'url: http://www.lnstagram-it.com/SismoLive/index.php, e che tutte le pagine vengono visualizzate senza problemi.|
+|**Descrizione**| Bisogna verificare che esista il sito all'url: http://sismolive.online/index.php, e che tutte le pagine vengono visualizzate senza problemi.|
 |**Prerequisiti**| --- |
-|**Procedura**   | Aprire un browser ed andare sul seguente url: http://www.lnstagram-it.com/SismoLive/index.php, controllare che il grafico e la tabella si vedono e si aggiornano ogni 5 secondi, aprire anche le altre sezioni del sito.|
+|**Procedura**   | Aprire un browser ed andare sul seguente url: http://sismolive.online/index.php, controllare che il grafico e la tabella si vedono e si aggiornano ogni 5 secondi, aprire anche le altre sezioni del sito.|
 |**Risultati attesi** | Deve apparire la pagina principale con grafico e tabella con dati al suo interno, ogni 5 secondi si deve poter vedere un miglioramento, non ci devono essere problemi di connessione al database o di altro genere.|
 
 
@@ -380,7 +380,7 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |**Riferimento**|REQ-003|
 |**Descrizione**| Visitando il sito, deve esserci la possibilità di eseguire il login e collegarsi come amministratori.|
 |**Prerequisiti**| Visitare il sito|
-|**Procedura**   | Avere il sito su questo url: http://www.lnstagram-it.com/SismoLive/index.php Dopodichè in alto a destra cliccare sul bottone "Login" inserire le credenziale: nome utente: test password: test. E controllare se una volta reindirizzato sulla pagina principale, spunta la parte di configurazione. |
+|**Procedura**   | Avere il sito su questo url: http://www.sismolive.online/index.php Dopodichè in alto a destra cliccare sul bottone "Login" inserire le credenziale: nome utente: test password: test. E controllare se una volta reindirizzato sulla pagina principale, spunta la parte di configurazione. |
 |**Risultati attesi** | Dovrebbe apparire la pagina di login, e tramite le credenziali deve poter accedere come amministratore e avere la possibilità di aprire la pagina di configurazione e modificare i parametri.|
 
 
@@ -390,7 +390,7 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |**Riferimento**|REQ-007|
 |**Descrizione**| Il sito deve essere compatibile con i principali browser (Chrome, Opera, Firefox, Edge)|
 |**Prerequisiti**| Avere il sito |
-|**Procedura**   | Inserire l'url http://www.lnstagram-it.com/SismoLive/index.php sui vari browser sopracitati, controllare se i grafici e la tabella si aggiornano ogni 5 secondi e che il login funzioni.|
+|**Procedura**   | Inserire l'url http://www.sismolive.online/index.php sui vari browser sopracitati, controllare se i grafici e la tabella si aggiornano ogni 5 secondi e che il login funzioni.|
 |**Risultati attesi** | Dovrebbe apparire la pagina principale con i grafici e le tabelle e con possibilità di effettuare il login.|
 
 
@@ -420,7 +420,7 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |**Riferimento**|REQ-008|
 |**Descrizione**|I dati sul sito devono essere rappresentati sotto forma di grafici.  |
 |**Prerequisiti**|Avere dei dati da dover rappresentare.|
-|**Procedura**   |Visitare http://www.lnstagram-it.com/SismoLive/index.php e scorrere in basso, fino al grafico, dove ogni 5 secondi si deve aggiornare.|
+|**Procedura**   |Visitare http://www.sismolive.online/index.php e scorrere in basso, fino al grafico, dove ogni 5 secondi si deve aggiornare.|
 |**Risultati attesi** |Si dovrebbe poter vedere il grafico dei terremoti che si aggiorna ogni 5 secondi, con accanto la rispettiva tabella|
 
 

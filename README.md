@@ -3,7 +3,7 @@
 ## Progetto
 |Titolo             |Autori           |Responsabile               |Link    |
 |:------------------|:--------------------------|:-----|:-------|
-|SismoLive    |Georgiy Farina, Daniel Matt, Marco Lorusso, Matthias Iannarella|Luca Muggiasca|http://lnstagram-it.com/SismoLive/|
+|SismoLive    |Georgiy Farina, Daniel Matt, Marco Lorusso, Matthias Iannarella|Luca Muggiasca|http://sismolive.online|
 
 ## Info
 
