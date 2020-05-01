@@ -1,4 +1,5 @@
-<?php/*
+<?php
+/*
 $login = "http://localhost/SismoLive/Source/Progetto/html/login.html";
 $logout = "http://localhost/SismoLive/Source/Progetto/php/logout.php";
 $parametri = "http://localhost/SismoLive/Source/Progetto/html/configurazione.php";*/

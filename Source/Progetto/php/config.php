@@ -1,4 +1,5 @@
-<?php/*
+<?php
+/*
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'matthias');
 define('DB_PASSWORD', 'matthias');
