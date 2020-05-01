@@ -133,6 +133,5 @@ void send(double geophoneData)
 
 void loop() {
   send(randomDouble(-1.00, 1.00));
-  
   delay(1000);
 }
