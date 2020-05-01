@@ -489,57 +489,40 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 
 |Test Case      | TC-014                      |
 |---------------|--------------------------------------|
-|**Nome**       | |
-|**Riferimento**|REQ-                       |
-|**Descrizione**| |
+|**Nome**       | Dato live sul sito|
+|**Riferimento**|REQ-12                       |
+|**Descrizione**|I dati che prende il sito, devono aggiornarsi in live sia sul grafico che sulla tabella, senza la necessità di riaggiornare la pagina ogni volta. |
 |**Prerequisiti**||
-|**Procedura**   | |
-|**Risultati attesi** | |
+|**Procedura**   |Aprire il sito, andare nella pagina dei terremoti attuali e aspettare fino a che il grafico e la tabella non cambia. |
+|**Risultati attesi** |Il grafico e la tabella si aggiorna in live senza il refresh della pagina. |
 
 |Test Case      | TC-015                      |
 |---------------|--------------------------------------|
-|**Nome**       | |
-|**Riferimento**|REQ-                       |
-|**Descrizione**| |
+|**Nome**       |Notifica tramite email |
+|**Riferimento**|REQ-13                       |
+|**Descrizione**|Se si registra un terremoto sopra la soglia critica settata, gli amministratori ricevono un'email che si sta registrando un terremoto. |
 |**Prerequisiti**||
-|**Procedura**   | |
-|**Risultati attesi** | |
+|**Procedura**   |Aprire il sito, fare login con il nome utente: test e la password: test, settare una soglia critica, aspettare finchè non si registra un valore alto, e inseguito controllare la casella postale. |
+|**Risultati attesi** |Dovrebbe arrivare una mail, con un'allerta che si sta registrando un terremoto. |
 
 |Test Case      | TC-016                      |
 |---------------|--------------------------------------|
-|**Nome**       | |
-|**Riferimento**|REQ-                       |
-|**Descrizione**| |
+|**Nome**       |Notifica tramite messaggio |
+|**Riferimento**|REQ-14                       |
+|**Descrizione**|Se si registra un terremoto sopra la soglia critica settata, gli amministratori ricevono un messaggio sul telefono che si sta registrando un terremoto. |
 |**Prerequisiti**||
-|**Procedura**   | |
-|**Risultati attesi** | |
+|**Procedura**   |Aprire il sito, fare login con il nome utente: test e la password: test, settare una soglia critica, aspettare finchè non si registra un valore alto, e inseguito controllare i messaggi sul telefono.  |
+|**Risultati attesi** |Dovrebbe arrivare un messaggio con un'allerta che si sta registrando un terremoto. |
 
 |Test Case      | TC-017                      |
 |---------------|--------------------------------------|
-|**Nome**       | |
-|**Riferimento**|REQ-                       |
+|**Nome**       |Dati letti con frequenza settata |
+|**Riferimento**|REQ-16                       |
 |**Descrizione**| |
 |**Prerequisiti**||
 |**Procedura**   | |
 |**Risultati attesi** | |
 
-|Test Case      | TC-018                      |
-|---------------|--------------------------------------|
-|**Nome**       | |
-|**Riferimento**|REQ-                       |
-|**Descrizione**| |
-|**Prerequisiti**||
-|**Procedura**   | |
-|**Risultati attesi** | |
-
-|Test Case      | TC-019                      |
-|---------------|--------------------------------------|
-|**Nome**       | |
-|**Riferimento**|REQ-                       |
-|**Descrizione**| |
-|**Prerequisiti**||
-|**Procedura**   | |
-|**Risultati attesi** | |
 
 ### Risultati test
 
