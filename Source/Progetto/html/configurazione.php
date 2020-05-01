@@ -28,6 +28,9 @@
     <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
     <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="../contact/css/util.css">
+    <link rel="stylesheet" type="text/css" href="../contact/css/main.css">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Template Main CSS File -->
     <link href="../assets/css/style.css" rel="stylesheet">
@@ -66,64 +69,51 @@
       </div>
   </header>
   <!-- End Header -->
-
+  	<div class="container-contact100">
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-    <div class="container-fluid bg-2">
-        <h1 style="text-align:center;">Configurazione parametri</h1>
-        <form action="parametri.php" method="post">
 
-          <label for="max_soglia">Soglia massima</label>
-          <input type="number" id="max_s" name="soglia_max" te>
+    	<div class="container-contact100">
 
-          <label for="min_soglia">Soglia minima</label>
-          <input type="number" id="min_s" name="soglia_min">
+    		<div class="wrap-contact100">
+    			<form class="contact100-form validate-form" method="post" action="../php/congiurazione.php">
+    				<span class="contact100-form-title">
+    					Impostazione parametri
+    				</span>
 
-          <input type="submit" value="Submit">
+    				<div class="wrap-input100 validate-input" >
+    					<input class="input100" type="number" name="name" placeholder="Inserisci la soglia minima">
+    					<span class="focus-input100"></span>
+    				</div>
 
-        </form>
-    </div>
+    				<div class="container-contact100-form-btn">
+    					<button class="contact100-form-btn">
+    					      Imposta Parametri
+    					</button>
+    				</div>
+    			</form>
+
+    		</div>
+    	</div>
 
     </section>
     <!-- End Hero -->
+	</div>
 
-
-    <!-- ======= Start Blank section ======= -->
-    <section id="about" class="d-none d-sm-block">
-
-    </section>
-    <!-- End Blank section -->
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-lg-6 text-lg-left text-center">
-                    <div class="copyright">
-                        &copy; Copyright <strong>SismoLive</strong>. All Rights Reserved
-                    </div>
-                    <div class="credits">
-                        <!-- All the links in the footer should remain intact. -->
-                        <!-- You can delete the links only if you purchased the pro version. -->
-                        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
-                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-                        <a href="#intro" class="scrollto">Home</a>
-                        <a href="#about" class="scrollto">About</a>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Use</a>
-                    </nav>
-                </div>
+      <div class="container">
+        <div class="row d-flex align-items-center">
+          <div class="col-lg-6 text-lg-left text-center">
+            <div class="copyright">
+              &copy; Copyright 2020 <strong>SismoLive</strong>. All Rights Reserved
             </div>
+          </div>
         </div>
+      </div>
     </footer>
     <!-- End Footer -->
-
-    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="../assets/vendor/jquery/jquery.min.js"></script>
@@ -136,6 +126,9 @@
     <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="../assets/vendor/venobox/venobox.min.js"></script>
     <script src="../assets/vendor/aos/aos.js"></script>
+
+  <!--===============================================================================================-->
+    <script src="../contact/js/main.js"></script>
 
     <!-- Template Main JS File -->
     <script src="../assets/js/main.js"></script>

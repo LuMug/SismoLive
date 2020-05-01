@@ -73,7 +73,7 @@
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h1 data-aos="fade-up">Benvenuto sul miglior sito per controllare i terremoti</h1>
-          <div data-aos="fade-up" data-aos-delay="800">
+          <div data-aos="fade-up">
             <a href="html/terremoti_attuali.php" class="btn-get-started scrollto">Controlla i terremoti</a>
           </div>
         </div>
@@ -98,29 +98,12 @@
       <div class="row d-flex align-items-center">
         <div class="col-lg-6 text-lg-left text-center">
           <div class="copyright">
-            &copy; Copyright <strong>Vesperr</strong>. All Rights Reserved
+            &copy; Copyright 2020 <strong>SismoLive</strong>. All Rights Reserved
           </div>
-          <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-            <a href="#intro" class="scrollto">Home</a>
-            <a href="#about" class="scrollto">About</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
-          </nav>
         </div>
       </div>
     </div>
   </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>

@@ -55,7 +55,7 @@
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li><a href="../index.php">Home</a></li>
-                    <li class="active"><a href="#about">Terremoti Attuali</a></li>
+                    <li class="active"><a href="terremoti_attuali.php">Terremoti Attuali</a></li>
                     <li><a href="terremoti.php">Terremoti</a></li>
                     <li><a href="progettazione.php">Progettazione</a></li>
                     <li><a href="chisiamo.php">Chi siamo</a></li>
@@ -69,30 +69,35 @@
     <!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
+    <section class="d-flex align-items-center">
+      <div class="container-fluid bg-2 text-center">
+        <h3 style="font-size:50px;" class="margin">Terremoti Attuali</h3>
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+                  <h1 style="font-size:20px;">Grafico terremoti</h1>
+                  <br>
                   <canvas id="grafico_terremoti" width="300" height="200"></canvas>
-                </div>
-                <div class="col-md-6">
-                  <table class="table">
-                      <thead class="thead-dark">
-                          <tr>
-                              <th scope="col">Data</th>
-                              <th scope="col">Orario</th>
-                              <th scope="col">Magnitudo</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <?php require_once "../php/terremoti.php";?>
-                      </tbody>
-                      </tbody>
-                  </table>
+            </div>
+
+              <div class="col-sm-6">
+                <h1 style="font-size:20px;">Tabella terremoti</h1>
+                <br>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Data</th>
+                            <th scope="col">Orario</th>
+                            <th scope="col">Magnitudo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php require_once "../php/terremoti.php";?>
+                    </tbody>
+                </table>
+              </div>
                 </div>
             </div>
-        </div>
 
     </section>
     <!-- End Hero -->
@@ -105,34 +110,17 @@
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-lg-6 text-lg-left text-center">
-                    <div class="copyright">
-                        &copy; Copyright <strong>SismoLive</strong>. All Rights Reserved
-                    </div>
-                    <div class="credits">
-                        <!-- All the links in the footer should remain intact. -->
-                        <!-- You can delete the links only if you purchased the pro version. -->
-                        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
-                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-                        <a href="#intro" class="scrollto">Home</a>
-                        <a href="#about" class="scrollto">About</a>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Use</a>
-                    </nav>
-                </div>
+      <div class="container">
+        <div class="row d-flex align-items-center">
+          <div class="col-lg-6 text-lg-left text-center">
+            <div class="copyright">
+              &copy; Copyright 2020 <strong>SismoLive</strong>. All Rights Reserved
             </div>
+          </div>
         </div>
+      </div>
     </footer>
     <!-- End Footer -->
-
-    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="../assets/vendor/jquery/jquery.min.js"></script>

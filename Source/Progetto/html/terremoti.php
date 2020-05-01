@@ -28,6 +28,19 @@
     <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
     <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
 
+    <!--===============================================================================================-->
+    	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    	<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    	<link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    	<link rel="stylesheet" type="text/css" href="../vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    	<link rel="stylesheet" type="text/css" href="../css/util.css">
+    	<link rel="stylesheet" type="text/css" href="../css/table.css">
+    <!--===============================================================================================-->
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Template Main CSS File -->
     <link href="../assets/css/style.css" rel="stylesheet">
@@ -74,167 +87,166 @@ th {
   <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
+  <section class="d-flex align-items-center">
     <div class="container-fluid bg-2 text-center">
         <h3 style="font-size:50px;" class="margin">Terremoti</h3>
         <br>
         <div class="row">
-            <div class="col-sm-6">
-                <h1 style="font-size:20px;">Tabella terremoti più percepiti in Svizzera</h1>
-                <br>
-                    <table id=”sortTable”>
-                        <thead>
-                            <tr class="table100-head">
-                                <th class="column1">Data</th>
-                                <th class="column3">Magnitudo</th>
-                                <th class="column4">Pericolosità</th>
-                                <th class="column5">Città</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1356.10.18</td>
-                                <td>6.6</td>
-                                <td>Alta</td>
-                                <td>Basilea (BS)</td>
-                            </tr>
-                            <tr>
-                                <td>1295.09.03</td>
-                                <td>6.2</td>
-                                <td>Alta</td>
-                                <td>Churwalden (GR)</td>
-                            </tr>
-                            <tr>
-                                <td>1855.07.25</td>
-                                <td>6.2</td>
-                                <td>Alta</td>
-                                <td>Stalden-Visp (VS)</td>
-                            </tr>
-                            <tr>
-                                <td>1584.03.11</td>
-                                <td>5.9</td>
-                                <td>Alta</td>
-                                <td>Aigle (VD)</td>
-                            </tr>
-                            <tr>
-                                <td>1601.09.18</td>
-                                <td>5.9</d>
-                                <td>Alta</td>
-                                <td>Unterwalden (NW)</td>
-                            </tr>
-                            <tr>
-                                <td>1524.04.01</td>
-                                <td>5.8</td>
-                                <td>Media</td>
-                                <td>Ardon (VS)</td>
-                            </tr>
-                            <tr>
-                                <td>1946.01.25</td>
-                                <td>5.8</td>
-                                <td>Alta</td>
-                                <td>Sierre (VS)</td>
-                            </tr>
-                            <tr>
-                                <td>1755.12.09</td>
-                                <td>5.7</td>
-                                <td>Alta</td>
-                                <td>Brig-Naters (VS)</td>
-                            </tr>
-                            <tr>
-                                <td>1774.09.10</td>
-                                <td>5.7</td>
-                                <td>Media</td>
-                                <td>Altdorf (UR)</td>
-                            </tr>
-                            <tr>
-                                <td>1622.08.03</td>
-                                <td>5.4</td>
-                                <td>Media</td>
-                                <td>Ftan (GR)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-            </div>
+          <div class="col-sm-6">
+                  <h1 style="font-size:20px;">Tabella terremoti più percepiti in Svizzera</h1>
+                  <br>
+                  <table class="table" id="sortTable">
+                      <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">Data</th>
+                            <th scope="col">Magnitudo</th>
+                            <th scope="col">Pericolosità</th>
+                            <th scope="col">Città</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>1356.10.18</td>
+                              <td>6.6</td>
+                              <td>Alta</td>
+                              <td>Basilea (BS)</td>
+                          </tr>
+                          <tr>
+                              <td>1295.09.03</td>
+                              <td>6.2</td>
+                              <td>Alta</td>
+                              <td>Churwalden (GR)</td>
+                          </tr>
+                          <tr>
+                              <td>1855.07.25</td>
+                              <td>6.2</td>
+                              <td>Alta</td>
+                              <td>Stalden-Visp (VS)</td>
+                          </tr>
+                          <tr>
+                              <td>1584.03.11</td>
+                              <td>5.9</td>
+                              <td>Alta</td>
+                              <td>Aigle (VD)</td>
+                          </tr>
+                          <tr>
+                              <td>1601.09.18</td>
+                              <td>5.9</d>
+                              <td>Alta</td>
+                              <td>Unterwalden (NW)</td>
+                          </tr>
+                          <tr>
+                              <td>1524.04.01</td>
+                              <td>5.8</td>
+                              <td>Media</td>
+                              <td>Ardon (VS)</td>
+                          </tr>
+                          <tr>
+                              <td>1946.01.25</td>
+                              <td>5.8</td>
+                              <td>Alta</td>
+                              <td>Sierre (VS)</td>
+                          </tr>
+                          <tr>
+                              <td>1755.12.09</td>
+                              <td>5.7</td>
+                              <td>Alta</td>
+                              <td>Brig-Naters (VS)</td>
+                          </tr>
+                          <tr>
+                              <td>1774.09.10</td>
+                              <td>5.7</td>
+                              <td>Media</td>
+                              <td>Altdorf (UR)</td>
+                          </tr>
+                          <tr>
+                              <td>1622.08.03</td>
+                              <td>5.4</td>
+                              <td>Media</td>
+                              <td>Ftan (GR)</td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
 
             <div class="col-sm-6">
-                <div class="table100">
                     <h1 style="font-size:20px;">Tabella terremoti più percepiti nel mondo</h1>
                     <br>
-                    <table>
-                        <thead>
-                            <tr class="table100-head">
-                                <th class="column1">Data</th>
-                                <th class="column3">Magnitudo</th>
-                                <th class="column4">Pericolosità</th>
-                                <th class="column5">Città</th>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">Data</th>
+                              <th scope="col">Magnitudo</th>
+                              <th scope="col">Pericolosità</th>
+                              <th scope="col">Città</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1960.05.22</td>
-                                <td>9.5</td>
-                                <td>Molto alta</td>
-                                <td>Valdivia, Cile</td>
-                            </tr>
-                            <tr>
-                                <td>1964.03.27</td>
-                                <td>9.2</td>
-                                <td>Molto alta</td>
-                                <td>Stretto di Prince William, Alaska (Stati Uniti)</td>
-                            </tr>
-                            <tr>
-                                <td>2004.12.26</td>
-                                <td>9.1</td>
-                                <td>Molto alta</td>
-                                <td>Oceano Indiano, Sumatra, Indonesia</td>
-                            </tr>
-                            <tr>
-                                <td>2011.03.11</td>
-                                <td>9.0</td>
-                                <td>Molto alta</td>
-                                <td>Oceano Pacifico, Regione di Tōhoku, Giappone</td>
-                            </tr>
-                            <tr>
-                                <td>1952.11.04</td>
-                                <td>9.0</d>
-                                <td>Molto alta</td>
-                                <td>Kamčatka, Russia (all'epoca in URSS)</td>
-                            </tr>
-                            <tr>
-                                <td>1868.08.13</td>
-                                <td>9.0</td>
-                                <td>Molto alta</td>
-                                <td>Arica, Cile</td>
-                            </tr>
-                            <tr>
-                                <td>1700.01.26</td>
-                                <td>8.7</td>
-                                <td>Molto alta</td>
-                                <td>Oceano Pacifico, USA e Canada</td>
-                            </tr>
-                            <tr>
-                                <td>1869.07.09</td>
-                                <td>8.9</td>
-                                <td>Molto alta</td>
-                                <td>Oceano Pacifico, Regione di Tōhoku, Giappone</td>
-                            </tr>
-                            <tr>
-                                <td>1611.12.02</td>
-                                <td>8.9</td>
-                                <td>Molto alta</td>
-                                <td>Oceano Pacifico, Hokkaidō, Giappone</td>
-                            </tr>
-                            <tr>
-                                <td>1762.04.02</td>
-                                <td>8.8</td>
-                                <td>Molto alta</td>
-                                <td>Chittagong, Bangladesh</td>
-                            </tr>
-                        </tbody>
+                              <tr>
+                                  <td>1960.05.22</td>
+                                  <td>9.5</td>
+                                  <td>Molto alta</td>
+                                  <td>Valdivia, Cile</td>
+                              </tr>
+                              <tr>
+                                  <td>1964.03.27</td>
+                                  <td>9.2</td>
+                                  <td>Molto alta</td>
+                                  <td>Stretto di Prince William, Alaska (Stati Uniti)</td>
+                              </tr>
+                              <tr>
+                                  <td>2004.12.26</td>
+                                  <td>9.1</td>
+                                  <td>Molto alta</td>
+                                  <td>Oceano Indiano, Sumatra, Indonesia</td>
+                              </tr>
+                              <tr>
+                                  <td>2011.03.11</td>
+                                  <td>9.0</td>
+                                  <td>Molto alta</td>
+                                  <td>Oceano Pacifico, Regione di Tōhoku, Giappone</td>
+                              </tr>
+                              <tr>
+                                  <td>1952.11.04</td>
+                                  <td>9.0</d>
+                                  <td>Molto alta</td>
+                                  <td>Kamčatka, Russia (all'epoca in URSS)</td>
+                              </tr>
+                              <tr>
+                                  <td>1868.08.13</td>
+                                  <td>9.0</td>
+                                  <td>Molto alta</td>
+                                  <td>Arica, Cile</td>
+                              </tr>
+                              <tr>
+                                  <td>1700.01.26</td>
+                                  <td>8.7</td>
+                                  <td>Molto alta</td>
+                                  <td>Oceano Pacifico, USA e Canada</td>
+                              </tr>
+                              <tr>
+                                  <td>1869.07.09</td>
+                                  <td>8.9</td>
+                                  <td>Molto alta</td>
+                                  <td>Oceano Pacifico, Regione di Tōhoku, Giappone</td>
+                              </tr>
+                              <tr>
+                                  <td>1611.12.02</td>
+                                  <td>8.9</td>
+                                  <td>Molto alta</td>
+                                  <td>Oceano Pacifico, Hokkaidō, Giappone</td>
+                              </tr>
+                              <tr>
+                                  <td>1762.04.02</td>
+                                  <td>8.8</td>
+                                  <td>Molto alta</td>
+                                  <td>Chittagong, Bangladesh</td>
+                              </tr>
+                          </tbody>
                     </table>
-                </div>
+                  </div>
+
             </div>
-        </div>
     </div>
 
   </section>
@@ -247,35 +259,19 @@ th {
     <!-- End Blank section -->
 
     <!-- ======= Footer ======= -->
+    <!-- ======= Footer ======= -->
     <footer id="footer">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-lg-6 text-lg-left text-center">
-                    <div class="copyright">
-                        &copy; Copyright <strong>SismoLive</strong>. All Rights Reserved
-                    </div>
-                    <div class="credits">
-                        <!-- All the links in the footer should remain intact. -->
-                        <!-- You can delete the links only if you purchased the pro version. -->
-                        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
-                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-                        <a href="#intro" class="scrollto">Home</a>
-                        <a href="#about" class="scrollto">About</a>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Use</a>
-                    </nav>
-                </div>
+      <div class="container">
+        <div class="row d-flex align-items-center">
+          <div class="col-lg-6 text-lg-left text-center">
+            <div class="copyright">
+              &copy; Copyright 2020 <strong>SismoLive</strong>. All Rights Reserved
             </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </footer><!-- End Footer -->
     <!-- End Footer -->
-
-      <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
     <script>
     const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
@@ -306,14 +302,14 @@ th {
     <script src="../assets/js/main.js"></script>
 
 
-    <script src="../table/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
-    <script src="../table/vendor/bootstrap/js/popper.js"></script>
-    <script src="../table/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/bootstrap/js/popper.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
     <!--===============================================================================================-->
-    <script src="../table/vendor/select2/select2.min.js"></script>
+    <script src="../vendor/select2/select2.min.js"></script>
     <!--===============================================================================================-->
-    <script src="../table/js/main.js"></script>
+    <script src="../js/main.js"></script>
 
 </body>
 
