@@ -224,9 +224,6 @@ Descrive:
 
 -   Gli oggetti/moduli/componenti che lo compongono.
 
--   I flussi di informazione in ingresso ed in uscita e le
-    relative elaborazioni. Può utilizzare *diagrammi di flusso dei
-    dati* (DFD).
 
 Sitemap:
 
@@ -474,21 +471,21 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 
 |Test Case      | TC-012                      |
 |---------------|--------------------------------------|
-|**Nome**       | |
-|**Riferimento**|REQ-                       |
-|**Descrizione**| |
+|**Nome**       | Dato in live su LCD|
+|**Riferimento**|REQ-010                       |
+|**Descrizione**| Tramite un LCD montato sull'arduino, bisogna mostrare il dato appena registrato|
 |**Prerequisiti**||
-|**Procedura**   | |
-|**Risultati attesi** | |
+|**Procedura**   |Controllare sulla struttura se c'è un LCD montato e se mostra i dati in tempo reale. |
+|**Risultati attesi** |Ci dovrebbe essere un LCD con i dati misurati/generati casualmente. |
 
 |Test Case      | TC-013                      |
 |---------------|--------------------------------------|
-|**Nome**       | |
-|**Riferimento**|REQ-                       |
-|**Descrizione**| |
+|**Nome**       |configurazione soglie da parte dell'admin |
+|**Riferimento**|REQ-11                       |
+|**Descrizione**| Gli amministratori possono configurare delle soglie, che corrispondono alla soglia minima e a quella massima. Settando la soglia minima, si potranno vedere i dati riguardanti il magnitudo sopra ad esso. Settando la soglia critica ad un certo valore, se si registra un magnitudo sopra quel valore, gli admin vengono avvisati tramite un'email.|
 |**Prerequisiti**||
-|**Procedura**   | |
-|**Risultati attesi** | |
+|**Procedura**   |Entrare nel sito, fare il login con il nome utente: test e la password: test. Inseguito aprire la pagina di configurazione dei parametri e settare un valore minimo e uno massimo. Infine controllare se sul grafico e sulla tabella escono solo i valori sopra la soglia e che se ci dovesse essere un terremoto di magnitudo sopra la soglia critica, arriva un'email. |
+|**Risultati attesi** |La tabella e il grafico dovrebbero prendere in considerazione solo i dati sopra la soglia minima e si deve ricevere un'email se si supera la soglia critica. |
 
 |Test Case      | TC-014                      |
 |---------------|--------------------------------------|
