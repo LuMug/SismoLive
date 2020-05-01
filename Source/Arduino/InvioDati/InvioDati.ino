@@ -105,12 +105,16 @@ void send(double geophoneData)
   {
     client.println(F("POST /php/MySQL_connection.php HTTP/1.1"));
     client.println(F("Host:www.sismolive.online"));
+    client.println(F("User-Agent: FISHINO"));
+    client.println("Connection: close");
     client.println(F("Content-Type: application/x-www-form-urlencoded"));
+    
     
     client.print("Content-Length:");
     client.println(postData.length());
     client.println();
     client.print(postData);
+    Serial.println("Inviato" + postData);
     client.flush();
     client.stop();
   }
@@ -129,5 +133,6 @@ void send(double geophoneData)
 
 void loop() {
   send(randomDouble(-1.00, 1.00));
-  delay(200);
+  
+  delay(1000);
 }
