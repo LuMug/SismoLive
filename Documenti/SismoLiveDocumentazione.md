@@ -38,7 +38,7 @@
 
   - [Risultati test](#risultati-test)
 
-  - [Mancanze/limitazioni conosciute](#mancanze/limitazioni-conosciute)
+  - [Mancanze e limitazioni conosciute](#mancanze-e-limitazioni-conosciute)
 
 6. [Consuntivo](#consuntivo)
 
@@ -426,9 +426,9 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 
 |Test Case      | TC-007                       |
 |---------------|--------------------------------------|
-|**Nome**       |Struttura hardware con Arduino|
+|**Nome**       |Struttura hardware con Fishino|
 |**Riferimento**|REQ-004                     |
-|**Descrizione**|La creazione dei dati deve avvenire da una struttura hardware con arduino.  |
+|**Descrizione**|La creazione dei dati deve avvenire da una struttura hardware con fishino.  |
 |**Prerequisiti**|  |
 |**Procedura**   |Controllare la struttura dell'arduino. |
 |**Risultati attesi** |Deve esserci una struttura solida con arduino e ulteriori componenti collegati.  |
@@ -439,38 +439,38 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |**Nome**       |Misurazione vibrazioni con geofono           |
 |**Riferimento**|REQ-005                     |
 |**Descrizione**|Tramite il geofono, bisogna poter prendere i dati che elabora con le vibrazioni del terreno, e poterli leggere nell'arduino.  |
-|**Prerequisiti**|  |
+|**Prerequisiti**|                           |
 |**Procedura**   |Controllare se c'è il geofono e se l'arduino tramite un sistema di output, riceve i dati dal componente correttamente. |
-|**Risultati attesi** |L'arduino deve stampare in console i vari valori delle frequenze che elabora il geofono.  |
+|**Risultati attesi** |L'arduino deve stampare in console i vari valori delle frequenze che elabora il geofono.|
 
 
 |Test Case      | TC-009                       |
 |---------------|--------------------------------------|
-|**Nome**       |           |
-|**Riferimento**|REQ-                     |
-|**Descrizione**|  |
+|**Nome**       |Collegamento Fishino al WIFi          |
+|**Riferimento**|REQ-006                     |
+|**Descrizione**|La parte hardware del progetto deve poetr inviare dati tramite WIFI e quindi deve petersi collegare a internet.|
 |**Prerequisiti**|  |
-|**Procedura**   | |
-|**Risultati attesi** |  |
+|**Procedura**   |Controllare che esista la rete con SSID e password definiti nel codice fishino.|
+|**Risultati attesi** |La porta seriale a fine collegamento dovrebbe stampare lo stato della connessione.|
 
 
 |Test Case      | TC-010                       |
 |---------------|--------------------------------------|
-|**Nome**       |           |
-|**Riferimento**|REQ-                     |
-|**Descrizione**|  |
-|**Prerequisiti**|  |
-|**Procedura**   | |
-|**Risultati attesi** |  |
+|**Nome**       |Invio dati|
+|**Riferimento**|REQ-006                  |
+|**Descrizione**|L'invio dei dati avviene tramite il metodo post, verso un file php all'interno del sito internet. I dati inviati sono fittizi.|
+|**Prerequisiti**|Riuscirsi a collegarsi a internet|
+|**Procedura**   |Una volta collegati al wifi, il codice dovrebbe mandare i dati 5 volte al secondo tramite il metodo send.|
+|**Risultati attesi** |Il fishino non da errori nell'invio di dati.|
 
 |Test Case      | TC-011                      |
 |---------------|--------------------------------------|
-|**Nome**       | |
-|**Riferimento**|REQ-                       |
-|**Descrizione**| |
-|**Prerequisiti**||
-|**Procedura**   | |
-|**Risultati attesi** | |
+|**Nome**       |Inserimento nel DB dei dati|
+|**Riferimento**|REQ-009                    |
+|**Descrizione**|I dati ricevuti dal fishino devono essere inseriti in un db mysql.|
+|**Prerequisiti**|Avere un sito funzionante e un DB per contenere i dati.|
+|**Procedura**   |Controllare che il fishino sia connesso, verificare che il sito e il DB esistano, verificare nel codice arduno che il percorso per il file php sia corretto.|
+|**Risultati attesi** |Nel DB dovrebbero essere stati inseriti i dati|
 
 |Test Case      | TC-012                      |
 |---------------|--------------------------------------|
@@ -555,9 +555,9 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |   TC-005  |  |             
 |   TC-006  |  |             
 |   TC-007  |  |             
-|   TC-008  | |             
-|   TC-009  | |  
-|   TC-010  |  |             
+|   TC-008  | Non passato|             
+|   TC-009  | Passato|  
+|   TC-010  | Passato|                  
 |   TC-011  |  |   
 |   TC-012  |  |
 |   TC-013 |  |
@@ -568,13 +568,9 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |   TC-018  |  |             
 |   TC-019  |  |   
 
-### Mancanze/limitazioni conosciute
-
-Descrizione con motivazione di eventuali elementi mancanti o non
-completamente implementati, al di fuori dei test case. Non devono essere
-riportati gli errori e i problemi riscontrati e poi risolti durante il
-progetto.
-
+### Mancanze e limitazioni conosciute
+##### Hardware
+Il nostro progetto presenta la mancanza di un componente essenziale, ovvero il geofono per la misurazione delle vibrazione terrestri. Questo é dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" con la creazione di dati fittizi in un range tra -1.0 e 1.0.
 ## Consuntivo
 
 Consuntivo del tempo di lavoro effettivo e considerazioni riguardo le
