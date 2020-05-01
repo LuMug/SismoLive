@@ -185,6 +185,7 @@ Georgiy:
 - Acer Aspire A717-71G, Windows 10 home 64 bit
 
 Daniel:
+- ASUS X556UAM, Windows 10 home 64 bit
 
 Sismografo:
 - Arduino Mega 2560
@@ -538,7 +539,7 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |   TC-008  | Non passato|             
 |   TC-009  | Passato|  
 |   TC-010  | Passato|                  
-|   TC-011  |  |   
+|   TC-011  | Passato|   
 |   TC-012  |  |
 |   TC-013 |  |
 |   TC-014  |  |             
