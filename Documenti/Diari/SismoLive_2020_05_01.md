@@ -16,6 +16,7 @@
 |15:30 - 16:30    | Creata pagina per configurare i parametri funzionante(Matthias).|
 |16:30 - 16:50    | Puliza del codice(Matthias).|
 |17:00 - 17:10    | Aggiornamento diario|
+|17:30 - 18:00   | Mandare mail quando la soglia critica è superata (Matthias).|
 
 
 ##  Problemi riscontrati e soluzioni adottate
