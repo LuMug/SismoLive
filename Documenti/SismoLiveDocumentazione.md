@@ -38,7 +38,7 @@
 
   - [Risultati test](#risultati-test)
 
-  - [Mancanze/limitazioni conosciute](#mancanze/limitazioni-conosciute)
+  - [Mancanze e limitazioni conosciute](#mancanze-e-limitazioni-conosciute)
 
 6. [Consuntivo](#consuntivo)
 
@@ -568,7 +568,7 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |   TC-018  |  |             
 |   TC-019  |  |   
 
-### Mancanze/limitazioni conosciute
+### Mancanze e limitazioni conosciute
 ##### Hardware
 Il nostro progetto presenta la mancanza di un componente essenziale, ovvero il geofono per la misurazione delle vibrazione terrestri. Questo é dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" con la creazione di dati fittizi in un range tra -1.0 e 1.0.
 ## Consuntivo
