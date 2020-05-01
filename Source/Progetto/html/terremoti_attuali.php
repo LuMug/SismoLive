@@ -1,5 +1,6 @@
 <?php
   session_start();
+     require "../php/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -68,39 +69,28 @@
     </header>
     <!-- End Header -->
 
-    <!-- ======= Hero Section ======= -->
-    <section class="d-flex align-items-center">
-      <div class="container-fluid bg-2 text-center">
-        <h3 style="font-size:50px;" class="margin">Terremoti Attuali</h3>
-        <br>
-        <div class="row">
-            <div class="col-sm-6">
-                  <h1 style="font-size:20px;">Grafico terremoti</h1>
-                  <br>
-                  <canvas id="grafico_terremoti" width="300" height="200"></canvas>
-            </div>
 
-              <div class="col-sm-6">
-                <h1 style="font-size:20px;">Tabella terremoti</h1>
-                <br>
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Data</th>
-                            <th scope="col">Orario</th>
-                            <th scope="col">Magnitudo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php require "../php/terremoti.php";?>
-                    </tbody>
-                </table>
-              </div>
-                </div>
-            </div>
+    <script src="../js/jquery-latest.js"></script>
+    <script>
+    $('#responsecontainer').load('data.php');
+    var refreshId = setInterval(function()
+    {
+        $('#responsecontainer').load('data.php');
 
-    </section>
-    <!-- End Hero -->
+    }, 1000);
+    </script>
+
+    <!-- Begin page content -->
+<div class="container">
+
+  <script type="text/javascript" src="../assets/js/jquery-3.4.0.min.js"></script>
+  <script type="text/javascript" src="../js/mdb.min.js"></script>
+
+  <div id="responsecontainer">
+
+  </div>
+</div>
+
 
     <!-- ======= Start Blank section ======= -->
     <section id="about" class="d-none d-sm-block">
@@ -140,48 +130,6 @@
     <!-- Librerie -->
     <script src="../js/chart.js"></script>
 
-    <script type="text/javascript">
-
-        var ctx = document.getElementById('grafico_terremoti').getContext('2d');
-
-        var chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'line',
-            options: {
-                responsive: true
-            },
-
-            // The data for our dataset
-            data: {
-                labels: [<?php echo $data; ?>],
-                datasets: [{
-                    label: 'Terremoti',
-                    backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 1)',
-                    data: [<?php echo $earthquake; ?>]
-                }]
-            }
-
-        });
-
-        function updateChart(chart) {
-          <?php require "../php/updateChart.php";?>
-
-          chart.data.datasets.data = [<?php echo $earthquake; ?>];
-          chart.data.labels = [<?php echo $data; ?>];
-          /*for (var i = 0; i < oraria.length; i++) {
-            //console.log(i);
-            chart.data.labels[i] = oraria[i];
-            chart.data.datasets.data[i] = magnitudia[i];
-          }*/
-          chart.update();
-        }
-
-        setInterval(function() {
-            updateChart(chart);
-            chart.update();
-        }, 2000);
-    </script>
 
 </body>
 
