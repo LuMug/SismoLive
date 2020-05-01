@@ -76,24 +76,47 @@
     	<div class="container-contact100">
 
     		<div class="wrap-contact100">
-    			<form class="contact100-form validate-form" method="post" action="../php/congiurazione.php">
-    				<span class="contact100-form-title">
-    					Impostazione parametri
-    				</span>
 
+    				<span class="contact100-form-title">
+    					Valori attuali
+    				</span>
+            <?php require_once "../php/getSoglie.php";?>
     				<div class="wrap-input100 validate-input" >
-    					<input class="input100" type="number" name="name" placeholder="Inserisci la soglia minima">
-    					<span class="focus-input100"></span>
+    					<p>Soglia minima:</p><?php echo $soglia_min;?>
+    				</div>
+
+            <div class="wrap-input100 validate-input" >
+    				<p>Soglia critica:</p><?php echo $soglia_critica;?>
     				</div>
 
     				<div class="container-contact100-form-btn">
-    					<button class="contact100-form-btn">
-    					      Imposta Parametri
-    					</button>
     				</div>
-    			</form>
 
     		</div>
+
+            		<div class="wrap-contact100">
+            			<form class="contact100-form validate-form" method="post" action="../php/congiurazione.php">
+            				<span class="contact100-form-title">
+            					Impostazione parametri
+            				</span>
+
+            				<div class="wrap-input100 validate-input" >
+            					<input class="input100" type="number" name="min" step="0.01" min="0" placeholder="Inserisci la soglia minima">
+            				</div>
+
+                    <div class="wrap-input100 validate-input" >
+            					<input class="input100" type="number" name="critica" step="0.01" min="0" placeholder="Inserisci la soglia critica">
+            					<span class="focus-input100"></span>
+            				</div>
+
+            				<div class="container-contact100-form-btn">
+            					<button class="contact100-form-btn">
+            					      Imposta Parametri
+            					</button>
+            				</div>
+            			</form>
+
+            		</div>
     	</div>
 
     </section>
