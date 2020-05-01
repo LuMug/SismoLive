@@ -39,17 +39,7 @@ insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"luc
 
 # DATI FITTIZI -----------------------------------------------------------------------------------------------------------------------------------------------------
 
-insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(1,1,5.2,curdate(),curtime());
-insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(2,1,4.8,curdate(),curtime());
-insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(3,2,3.5,curdate(),curtime());
-insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(4,2,2.5,curdate(),curtime());
-insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(5,3,9,curdate(),curtime());
-insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(6,3,3,curdate(),curtime());
-insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(7,3,5,curdate(),curtime());
-insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(8,3,2,curdate(),curtime());
-insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(9,3,4,curdate(),curtime());
-insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(10,4,7,curdate(),curtime());
-insert into Terremoto(id_registrazione,id_terremoto,magnitudo,data_registrazione,orario_registrazione) values(11,5,8,curdate(),curtime());
+
 
 # CONFIGURAZIONE DI DEFAULT -----------------------------------------------------------------------------------------------
 
@@ -62,6 +52,9 @@ returns int deterministic
 BEGIN 
 	declare startId int;
 	set startId = (select max(id_registrazione) -5 from Terremoto);
+    if startId <0 then
+		set startId = 0;
+    end if;
     return startId;
 END
 //
