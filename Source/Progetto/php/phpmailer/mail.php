@@ -1,5 +1,6 @@
 <?php
 require "PHPMailer/PHPMailerAutoload.php";
+require "../config.php";
 
 function smtpmailer($to, $from, $from_name, $subject, $body)
     {
@@ -36,13 +37,22 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         }
     }
 
-    $to   = 'thias.ianna@gmail.com';
     $from = 'terremoto@sismolive.online';
-    $name = 'Sismolive Online';
-    $subj = 'PHPMailer 5.2 testing from DomainRacer';
-    $msg = 'This is mail about testing mailing using PHP.';
+    $name = 'SismoLive';
+    $subj = 'Allarme terremoto!';
+    $msg = 'È solo una mail di prova.';
 
-    $error=smtpmailer($to,$from, $name ,$subj, $msg);
+    $email = "SELECT email FROM Utente";
+
+    $result = $link->query($email);
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $to = $row['email'];
+            $error=smtpmailer($to,$from, $name ,$subj, $msg);
+        }
+        echo "Ho mandato tutte le mail";
+    }
 
 ?>
 
