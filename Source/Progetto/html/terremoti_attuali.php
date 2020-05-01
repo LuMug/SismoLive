@@ -92,7 +92,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php require_once "../php/terremoti.php";?>
+                        <?php require "../php/terremoti.php";?>
                     </tbody>
                 </table>
               </div>
@@ -141,8 +141,7 @@
     <script src="../js/chart.js"></script>
 
     <script type="text/javascript">
-        var orari = <?php echo json_encode($giorni); ?>;
-        var magnitudi =  <?php echo json_encode($magnitudi); ?>;
+
         var ctx = document.getElementById('grafico_terremoti').getContext('2d');
 
         var chart = new Chart(ctx, {
@@ -159,27 +158,22 @@
                     label: 'Terremoti',
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 1)',
-                    data: [<?php echo $earth; ?>]
+                    data: [<?php echo $earthquake; ?>]
                 }]
             }
 
         });
 
         function updateChart(chart) {
-                    <?php require_once "../php/updateChart.php";?>
-                    var oraria = JSON.parse('<?= $giorni_json; ?>');
-                    var magnitudia = JSON.parse('<?= $magnitudi_json; ?>');
-                    //console.log(magnitudia);
-          chart.data.datasets.data = [];
-          chart.data.labels = [];
-          console.log(chart.data.datasets.data);
-          console.log(  chart.data.labels);
-          for (var i = 0; i < oraria.length; i++) {
+          <?php require "../php/updateChart.php";?>
+
+          chart.data.datasets.data = [<?php echo $earthquake; ?>];
+          chart.data.labels = [<?php echo $data; ?>];
+          /*for (var i = 0; i < oraria.length; i++) {
             //console.log(i);
             chart.data.labels[i] = oraria[i];
             chart.data.datasets.data[i] = magnitudia[i];
-          }
-          console.log(chart.data.datasets.data);
+          }*/
           chart.update();
         }
 

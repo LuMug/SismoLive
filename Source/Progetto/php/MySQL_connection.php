@@ -3,7 +3,7 @@ require_once "config.php";
 $data_corrente = date("Y-m-d");
 $ora_corrente = date("H:i:s");
 $id_ter = 6;
-$magnitudo = 3;
+$magnitudo = rand(1,9); 
 
 $sql =
 "
@@ -12,10 +12,10 @@ $sql =
 	VALUES ('$id_ter','$magnitudo','$data_corrente','$ora_corrente')
 ";
 
-if ($conn->query($sql) === TRUE) {
+if ($link->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $sql . "<br>" . $link->error;
 }
 
 //$conn->close();
