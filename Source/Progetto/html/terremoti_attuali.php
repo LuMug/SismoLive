@@ -141,8 +141,8 @@
     <script src="../js/chart.js"></script>
 
     <script type="text/javascript">
-        var orari = JSON.parse('<?= $giorni_json; ?>');
-        var magnitudi = JSON.parse('<?= $magnitudi_json; ?>');
+        var orari = <?php echo json_encode($giorni); ?>;
+        var magnitudi =  <?php echo json_encode($magnitudi); ?>;
         var ctx = document.getElementById('grafico_terremoti').getContext('2d');
 
         var chart = new Chart(ctx, {
@@ -154,30 +154,38 @@
 
             // The data for our dataset
             data: {
-                labels: [orari[0], orari[1], orari[2], orari[3], orari[4]],
+                labels: [<?php echo $data; ?>],
                 datasets: [{
                     label: 'Terremoti',
-                    backgroundColor: 'rgb(0, 99, 132)',
-                    borderColor: 'rgb(0, 99, 132)',
-                    data: [magnitudi[0], magnitudi[1], magnitudi[2], magnitudi[3], magnitudi[4]]
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 1)',
+                    data: [<?php echo $earth; ?>]
                 }]
             }
 
         });
 
         function updateChart(chart) {
+                    <?php require_once "../php/updateChart.php";?>
+                    var oraria = JSON.parse('<?= $giorni_json; ?>');
+                    var magnitudia = JSON.parse('<?= $magnitudi_json; ?>');
+                    //console.log(magnitudia);
           chart.data.datasets.data = [];
           chart.data.labels = [];
-          for (var i = 0; i < orari.length; i++) {
-            chart.data.labels[i] = orari[i];
-            chart.data.datasets.data[i] = magnitudi[i];
+          console.log(chart.data.datasets.data);
+          console.log(  chart.data.labels);
+          for (var i = 0; i < oraria.length; i++) {
+            //console.log(i);
+            chart.data.labels[i] = oraria[i];
+            chart.data.datasets.data[i] = magnitudia[i];
           }
+          console.log(chart.data.datasets.data);
           chart.update();
         }
 
         setInterval(function() {
-<?php require_once "../php/terremoti.php";?>
             updateChart(chart);
+            chart.update();
         }, 2000);
     </script>
 

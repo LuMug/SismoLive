@@ -96,7 +96,7 @@ th {
                   <h1 style="font-size:20px;">Tabella terremoti più percepiti in Svizzera</h1>
                   <br>
                   <table class="table" id="sortTable">
-                      <thead class="thead-dark">
+                      <thead class="thead-light">
                           <tr>
                             <th scope="col">Data</th>
                             <th scope="col">Magnitudo</th>
