@@ -2,6 +2,7 @@
 
   //Configurazione di rete fishino.
   #ifndef __MY_NETWORK_H
+    
     //Nome della rete a cui connettersi.
     #define MY_SSID  "test"
     
@@ -10,7 +11,7 @@
     
     //L'IP del fishino viene dato automaticamente dal DHCP.
     #define GATEWAY    192, 168,   1,   1
-    #define NETMASK   255, 255, 255,   0
+    #define NETMASK    s255, 255, 255,   0
   #endif 
 
 
@@ -100,10 +101,10 @@ String postVariable = "value=";
 void send(double geophoneData)
 {
   postData = postVariable + geophoneData;
-  if(client.connect("www.lnstagram-it.com",80) == 1)
+  if(client.connect("www.sismolive.online",80) == 1)
   {
-    client.println(F("POST /Php/MySQL_connection.php HTTP/1.1"));
-    client.println(F("Host:www.lnstagram-it.com"));
+    client.println(F("POST /php/MySQL_connection.php HTTP/1.1"));
+    client.println(F("Host:www.sismolive.online"));
     client.println(F("Content-Type: application/x-www-form-urlencoded"));
     
     client.print("Content-Length:");
