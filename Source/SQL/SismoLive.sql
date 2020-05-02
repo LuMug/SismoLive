@@ -44,9 +44,9 @@ insert into Configurazione(soglia_minima,soglia_critica) values(0.3,0.7);
 DELIMITER //
 CREATE FUNCTION getStartId()
 returns int deterministic
-BEGIN 
+BEGIN
 	declare startId int;
-	set startId = (select max(id_registrazione) -5 from Terremoto);
+	set startId = (select max(id_registrazione) -7 from Terremoto);
     if startId <0 then
 		set startId = 0;
     end if;
@@ -58,7 +58,7 @@ DELIMITER ;
 DELIMITER //
 CREATE FUNCTION getFinishId()
 returns int deterministic
-BEGIN 
+BEGIN
 	declare finishId int;
 	set finishId = (select max(id_registrazione) from Terremoto);
     return finishId;

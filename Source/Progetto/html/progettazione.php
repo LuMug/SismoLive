@@ -88,6 +88,9 @@
         <section class="d-flex align-items-center">
 
             <div class="container">
+              <br>
+              <br>
+              <br>
                 <h1 style="text-align:center;">Progettazione</h1>
                 <br>
                 <img src="../images/Schema_Terremoto.jpg" alt="Schema Terremoto" style="float: right; width: 350px">
