@@ -1,9 +1,19 @@
-# Modulo 306
+# SismoLive
 
-## Progetto
-|Titolo             |Autori           |Responsabile               |Link    |
-|:------------------|:--------------------------|:-----|:-------|
-|SismoLive    |Georgiy Farina, Daniel Matt, Marco Lorusso, Matthias Iannarella|Luca Muggiasca|http://sismolive.online|
+## Responsabile
+
+| **Nome** | **Link github** | **Email** |
+|------|-------------|-------|
+|*Luca Muggiasca*|[LuMug](https://github.com/LuMug)|luca.muggisca@edu.ti.ch|
+
+## Allievi coinvolti
+
+| **Nome** | **Link github** | **Email** |
+|------|-------------|-------|
+|*Marco Lorusso*|[marco-lorusso](https://github.com/marco-lorusso)|marco.lorusso@samtrevano.ch|
+|*Daniel Matt*|[DanielMattJosef](https://github.com/DanielMattJosef)|daniel.matt@samtrevano.ch|
+|*Georgiy Farina*|[georgiyfarina01](https://github.com/georgiyfarina01)|georgiy.farina@samtrevano.ch|
+|*Matthias Iannarella*|[MatthiasIannarella](https://github.com/MatthiasIannarella)|matthias.iannarella@samtrevano.ch|
 
 ## Info
 
@@ -14,6 +24,9 @@
 ## Descrizione
 In questo si dovrà progettare una stazione sismografica funzionante.
 L’obiettivo principale è quello di mettere in funzione permanente il sismografo nella sua versione di prodotto finale.
+
+## Come accedere al sito
+Si può accedere al sito tramite questo link: http://sismolive.online
 
 #### Mandato:
 Documento di specifica: [QdC_SecondoSemestre-Sismografo.pdf](Documenti/muggiasca_qdc_sismografo.pdf)
