@@ -39,9 +39,23 @@
         * Author: BootstrapMade.com
         * License: https://bootstrapmade.com/license/
         ======================================================== -->
+        <style>
+
+
+.footer1 {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+
+        </style>
     </head>
 
-    <body>
+    <body  style="background-image: url(../images/sky.jpg)">
 
         <!-- ======= Header ======= -->
         <header id="header" class="fixed-top d-flex align-items-center">
@@ -69,6 +83,8 @@
         </header>
         <!-- End Header -->
 
+            <main id="main">
+
         <script src="../js/jquery-latest.js"></script>
         <script>
             $('#responsecontainer').load('data.php');
@@ -89,14 +105,20 @@
             </div>
         </div>
 
+
+
+        <section id="about" class="d-none d-md-block d-lg-none">
+
+        </section>
         <!-- ======= Start Blank section ======= -->
         <section id="about" class="d-none d-sm-block">
 
         </section>
-        <!-- End Blank section -->
+
+      </main>
 
         <!-- ======= Footer ======= -->
-        <footer id="footer">
+        <footer class="footer1" id="footer">
             <div class="container">
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-6 text-lg-left text-center">

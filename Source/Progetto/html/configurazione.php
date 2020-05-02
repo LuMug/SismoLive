@@ -41,6 +41,21 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+
+
+
+.footer1 {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: red;
+color: white;
+text-align: center;
+}
+
+  </style>
     </head>
 
     <body>
@@ -70,45 +85,33 @@
             </div>
         </header>
         <!-- End Header -->
-        <div class="container-contact100">
-            <!-- ======= Hero Section ======= -->
-            <section id="hero" class="d-flex align-items-center">
+
+            <main id="main">
+
 
                 <div class="container-contact100">
-
-                    <div class="wrap-contact100">
-
-                        <span class="contact100-form-title">
-    					Valori attuali
-    				</span>
-                        <?php require_once "../php/getSoglie.php";?>
-                            <div class="wrap-input100 validate-input">
-                                <p>Soglia minima:</p>
-                                <?php echo $soglia_min;?>
-                            </div>
-
-                            <div class="wrap-input100 validate-input">
-                                <p>Soglia critica:</p>
-                                <?php echo $soglia_critica;?>
-                            </div>
-
-                            <div class="container-contact100-form-btn">
-                            </div>
-
-                    </div>
-
+                    <?php require_once "../php/getSoglie.php";?>
                     <div class="wrap-contact100">
                         <form class="contact100-form validate-form" method="post" action="../php/configurazione.php">
-                            <span class="contact100-form-title">
+                            <span class="contact100-form-title" style="text-align:center;">
             					Impostazione parametri
             				</span>
 
+                           <div class="wrap-input100 validate-input">
+                                <h5>Soglia minima attuale: <b><?php echo $soglia_minima;?></b></h5>
+
+                            </div>
                             <div class="wrap-input100 validate-input">
-                                <input class="input100" type="number" name="min" step="0.01" min="0" placeholder="Inserisci la soglia minima">
+                                <input class="input100" type="number" name="min" step="0.01" min="0" placeholder="Inserisci la nuova soglia minima">
                             </div>
 
                             <div class="wrap-input100 validate-input">
-                                <input class="input100" type="number" name="critica" step="0.01" min="0" placeholder="Inserisci la soglia critica">
+                                <h5>Soglia critica attuale: <b><?php echo $soglia_critica;?></b></h5>
+
+                            </div>
+
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="number" name="critica" step="0.01" min="0" placeholder="Inserisci la nuova soglia critica">
                                 <span class="focus-input100"></span>
                             </div>
 
@@ -122,12 +125,10 @@
                     </div>
                 </div>
 
-            </section>
-            <!-- End Hero -->
-        </div>
+</main>
 
         <!-- ======= Footer ======= -->
-        <footer id="footer">
+        <footer class="footer1" id="footer">
             <div class="container">
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-6 text-lg-left text-center">

@@ -26,13 +26,15 @@ $earths = trim($earths, ",");
 
 <section class="d-flex align-items-center">
     <div class="container-fluid bg-2 text-center">
+      <br>
+      <br>
         <h3 style="font-size:50px;" class="margin">Terremoti Attuali</h3>
         <br>
         <div class="row">
             <div class="col-sm-6">
                 <h1 style="font-size:20px;">Grafico terremoti</h1>
                 <br>
-                <canvas id="myChart" width="300" height="200"></canvas>
+                <canvas id="myChart" width="400" height="300"></canvas>
                 <script>
                   var canvas = document.getElementById('myChart');
                   var data = {
@@ -101,3 +103,6 @@ $earths = trim($earths, ",");
                 </table>
             </div>
         </div>
+      </div>
+
+    </section >
