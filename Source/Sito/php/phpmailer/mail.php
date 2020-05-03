@@ -14,9 +14,6 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->Username = 'terremoto@sismolive.online';
         $mail->Password = 'terremoto';
 
-   //   $path = 'reseller.pdf';
-   //   $mail->AddAttachment($path);
-
         $mail->IsHTML(true);
         $mail->From="terremoto@sismolive.online";
         $mail->FromName=$from_name;

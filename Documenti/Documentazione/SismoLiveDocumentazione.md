@@ -276,6 +276,348 @@ per la realizzazione del prodotto.
 ## Implementazione
 
 ### Sito
+
+#### config.php
+
+```php
+define('DB_SERVER', '160.153.133.208');
+define('DB_USERNAME', 'sismo');
+define('DB_PASSWORD', 'sismo');
+define('DB_NAME', 'SismoLive');
+```
+
+```php
+/* Tentativo di connesione al database */
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Controlla la connessione
+if ($link === false)
+{
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+```
+
+#### login.php
+
+```php
+if (md5($password) == $pass)
+{
+    // Password is correct, so start a new session
+    session_start();
+
+    // Store data in session variables
+    $_SESSION["loggedin"] = true;
+    $_SESSION["username"] = $username;
+
+    // Redirect user to welcome page
+    header("location: ../index.php");
+}
+else
+{
+    header("location: ../html/login.html");
+}
+```
+
+#### logout.php
+
+```php
+// Initialize the session
+session_start();
+
+// Unset all of the session variables
+$_SESSION = array();
+
+// Destroy the session.
+session_destroy();
+
+// Redirect to login page
+header("location: ../index.php");
+exit;
+```
+
+#### table.php
+
+```php
+
+```
+
+#### csv
+
+```csv
+
+Data,Magnitudo,Pericolosita,Citta
+
+1356.10.18,6.6,Alta,Basilea(BS)
+
+1295.09.03,6.2,Alta,Churwalden(GR)
+
+1855.07.25,6.2,Alta,Stalden-Visp(VS)
+
+1584.03.11,5.9,Alta,Aigle(VD)
+
+1601.09.18,5.9,Alta,Unterwalden(NW)
+
+1524.04.01,5.8,Media,Ardon(VS)
+
+1946.01.25,5.8,Alta,Sierre(VS)
+
+1755.12.09,5.7,Alta,Brig-Naters(VS)
+
+1774.09.10,5.7,Media,Altdorf(UR)
+
+1622.08.03,5.4,Media,Ftan(GR)
+
+```
+
+#### login_or_logout.php
+
+```php
+
+$login = "http://sismolive.online/html/login.html";
+$logout = "http://sismolive.online/php/logout.php";
+$parametri = "http://sismolive.online/html/configurazione.php";
+
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+{
+    echo "<li class='get-started'><a href='$login'>Login</a></li>";
+}
+else
+{
+    echo "<li class='get-started'><a href='$parametri'>Parametri</a></li>";
+    echo "<li class='get-started'><a href='$logout'>Logout</a></li>";
+}
+```
+
+#### getSoglie.php
+
+```php
+require_once "config.php";
+
+$soglia_minima = '';
+$soglia_critica = '';
+
+$soglie = "SELECT soglia_minima,soglia_critica FROM Configurazione";
+
+$result = $link->query($soglie);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $soglia_minima = $row['soglia_minima'];
+        $soglia_critica = $row['soglia_critica'];
+    }
+}
+```
+
+#### mail.php
+
+```php
+require "PHPMailer/PHPMailerAutoload.php";
+require "../config.php";
+
+function smtpmailer($to, $from, $from_name, $subject, $body)
+    {
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true;
+
+        $mail->SMTPSecure = 'ssl';
+        $mail->Host = 'n3plcpnl0298.prod.ams3.secureserver.net';
+        $mail->Port = 465;
+        $mail->Username = 'terremoto@sismolive.online';
+        $mail->Password = 'terremoto';
+
+        $mail->IsHTML(true);
+        $mail->From="terremoto@sismolive.online";
+        $mail->FromName=$from_name;
+        $mail->Sender=$from;
+        $mail->AddReplyTo($from, $from_name);
+        $mail->Subject = $subject;
+        $mail->Body = $body;
+        $mail->AddAddress($to);
+        if(!$mail->Send())
+        {
+            $error ="Please try Later, Error Occured while Processing...";
+            return $error;
+        }
+        else
+        {
+            $error = "Thanks You !! Your email is sent. YOoo";
+            return $error;
+        }
+    }
+
+    $from = 'terremoto@sismolive.online';
+    $name = 'SismoLive';
+    $subj = 'Allarme terremoto!';
+    $msg = 'Terremoto rilevato!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!.';
+
+    $email = "SELECT email FROM Utente";
+
+    $result = $link->query($email);
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $to = $row['email'];
+            $error=smtpmailer($to,$from, $name ,$subj, $msg);
+        }
+    }
+```
+
+#### data.php
+
+```php
+
+include "../php/config.php";
+
+$datas = '';
+$earths = '';
+$terremoti = "SELECT * from tabella";
+$result = $link->query($terremoti);
+if ($result->num_rows > 0)
+{
+    while ($row = $result->fetch_assoc())
+    {
+        $datas = $datas . '"' . $row['orario_registrazione'] . '",';
+        $earths = $earths . '"' . $row['magnitudo'] . '",';
+    }
+}
+
+$datas = trim($datas, ",");
+$earths = trim($earths, ",");
+
+///////////////////////////////////////////////
+
+$terremoti = "SELECT * from tabella";
+$result = $link->query($terremoti);
+if ($result->num_rows > 0)
+{
+  while ($row = $result->fetch_assoc())
+  {
+    echo "<tr><th>" . $row["data_registrazione"] . "</th><th>" . $row["orario_registrazione"] . "</th><th>" . $row["magnitudo"] . "</tr>";
+  }
+}
+
+```
+
+
+#### Ricarica pagina
+
+```javascript
+$('#responsecontainer').load('data.php');
+var refreshId = setInterval(function() {
+    $('#responsecontainer').load('data.php');
+
+}, 1000);
+```
+
+#### Ordinare tabella
+
+```javascript
+const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+const comparer = (idx, asc) => (a, b) => ((v1, v2) => v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2))(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+
+// do the work...
+document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+    const table = th.closest('table');
+    const tbody = table.querySelector('tbody');
+    Array.from(tbody.querySelectorAll('tr')).sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc)).forEach(tr => tbody.appendChild(tr));
+})));
+```
+
+#### Header
+
+```html
+<nav class="nav-menu d-none d-lg-block">
+  <ul>
+    <li class="active"><a href="#header">Home</a></li>
+    <li ><a href="html/terremoti_attuali.php">Terremoti Attuali</a></li>
+    <li><a href="html/terremoti.php">Terremoti</a></li>
+    <li><a href="html/progettazione.php">Progettazione</a></li>
+    <li><a href="html/chisiamo.php">Chi siamo</a></li>
+    <?php require_once "php/login_or_logout.php";?>
+  </ul>
+</nav>
+```
+
+### SQL
+
+```sql
+
+drop database if exists SismoLive;
+create database SismoLive;
+use SismoLive;
+
+# CREAZIONE TABELLE  -----------------------------------------------------------------------------------------------
+drop table if exists Utente;
+create table Utente(
+	nome varchar(20) primary key not null,
+	psw varchar(100) not null,
+	email varchar(50) not null,
+	telefono long not null,
+	tipo varchar(20) not null
+);
+
+drop table if exists Configurazione;
+create table Configurazione(
+	id int primary key auto_increment,
+	soglia_minima double not null,
+    soglia_critica double not null
+);
+
+drop table if exists Terremoto;
+create table Terremoto(
+	id_registrazione int not null,
+	id_terremoto int not null,
+    magnitudo double not null,
+	data_registrazione DATE not null,
+    orario_registrazione TIME not null,
+    primary key (id_registrazione, id_terremoto)
+);
+
+# AMMINISTRATORI DI BASE -----------------------------------------------------------------------------------------------
+
+insert into Utente(nome,psw,email,telefono,tipo) values ("Georgiy",md5("PasswordDiGeorgiy"),"georgiy.farina@samtrevano.ch",41790123456,"A");
+insert into Utente(nome,psw,email,telefono,tipo) values ("Marco",md5("PasswordDiMarco"),"marco.lorusso@samtrevano.ch",41791234567,"A");
+insert into Utente(nome,psw,email,telefono,tipo) values ("Matthias",md5("PasswordDiMatthias"),"matthias.iannarella@samtrevano.ch", 41792345678,"A");
+insert into Utente(nome,psw,email,telefono,tipo) values ("Daniel",md5("PasswordDiDaniel"),"daniel.matt@samtrevano.ch",41793456789,"A");
+insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"luca.muggiasca@edu.ti.ch",41793456789,"A");
+# CONFIGURAZIONE DI DEFAULT -----------------------------------------------------------------------------------------------
+
+insert into Configurazione(soglia_minima,soglia_critica) values(0.3,0.7);
+
+# FUNZIONI VARIE  -----------------------------------------------------------------------------------------------
+DELIMITER //
+CREATE FUNCTION getStartId()
+returns int deterministic
+BEGIN
+	declare startId int;
+	set startId = (select max(id_registrazione) -7 from Terremoto);
+    if startId <0 then
+		set startId = 0;
+    end if;
+    return startId;
+END
+//
+DELIMITER ;
+
+DELIMITER //
+CREATE FUNCTION getFinishId()
+returns int deterministic
+BEGIN
+	declare finishId int;
+	set finishId = (select max(id_registrazione) from Terremoto);
+    return finishId;
+END
+//
+DELIMITER ;
+#----------------------- -----------------------------------------------------------------------------------------------
+drop view if exists tabella;
+create view tabella as select t.data_registrazione, t.orario_registrazione, t.magnitudo, t.id_terremoto from Terremoto t where t.id_registrazione > getStartId();
+
+```
+
+
+
 Il luogo dove tutto viene visualizzato; i dati statistici e altre Informazioni riguardanti il progetto.<br>
 Qui vengono mostrati agli utenti, in tempo reale i dati presi dall'arduino che si aggiornano in continuazione e tramite una pagina di login, gli amministratori possono accedere e modificare vari parametri.
 Per la struttura del sito abbiamo usato un bootstrap.
