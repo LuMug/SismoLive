@@ -1,8 +1,10 @@
+# Script che crea il database del progetto SismoLive
+
 drop database if exists SismoLive;
 create database SismoLive;
 use SismoLive;
 
-# CREAZIONE TABELLE ----------------------------------------------------------------------------------
+# CREAZIONE TABELLE  -----------------------------------------------------------------------------------------------
 drop table if exists Utente;
 create table Utente(
 	nome varchar(20) primary key not null,
@@ -40,7 +42,7 @@ insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"luc
 
 insert into Configurazione(soglia_minima,soglia_critica) values(0.3,0.7);
 
-# FUNZIONI VARIE -----------------------------------------------------------------------------------------------------------------------------------------------------
+# FUNZIONI VARIE  -----------------------------------------------------------------------------------------------
 DELIMITER //
 CREATE FUNCTION getStartId()
 returns int deterministic
@@ -65,7 +67,6 @@ BEGIN
 END
 //
 DELIMITER ;
-#-----------------------------------------------------------------------------------------------------------------------------------------------------
+#----------------------- -----------------------------------------------------------------------------------------------
 drop view if exists tabella;
 create view tabella as select t.data_registrazione, t.orario_registrazione, t.magnitudo, t.id_terremoto from Terremoto t where t.id_registrazione > getStartId();
-select * from tabella;

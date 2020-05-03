@@ -58,10 +58,14 @@
 ### Informazioni sul progetto
 
 - Allievi:
-	> Daniel Matt (Sviluppatore)
-	> Georgiy Farina (Sviluppatore)
-	> Marco Lorusso (Sviluppatore)
-	> Matthias Iannarella (Sviluppatore)
+
+	Daniel Matt (Sviluppatore)
+
+	Georgiy Farina (Sviluppatore)
+
+	Marco Lorusso (Sviluppatore)
+
+	Matthias Iannarella (Sviluppatore)
 
 - Docenti: Luca Muggiasca (Cliente)
 
@@ -128,19 +132,6 @@ Attualmente esiste già un sito nazionale dedicato a questo tema, speriamo che l
 
 ### Analisi e specifica dei requisiti
 
-**Spiegazione elementi tabella dei requisiti:**
-
-***ID***: identificativo univoco del requisito.
-
-***Nome***: breve descrizione del requisito.
-
-***Priorità***: indica l’importanza di un requisito nell’insieme del
-progetto (1 = massima, 2 = importante, 3 = Da considerare 4 = facoltativo).
-
-***Versione***: indica la versione del requisito.
-
-***Note***: eventuali note.
-
   | **ID**  | **Requisito** | **Priorità** | **Versione** | **Note** |
   | ------- | ------------- | ------------ | ------------ | -------- |
   | REQ-001 | Bisogna avere un sito per la visualizzazione di dati| 1 | 1.0  | http://sismolive.online        |
@@ -167,6 +158,7 @@ funzionalità del prodotto.
 
 ### Pianificazione
 
+- Gantt preventivo:
 
 
 ### Analisi dei mezzi
@@ -228,7 +220,7 @@ Descrive:
 
 Sitemap:
 
-![sitemap](Progettazione_Sito/sitemap.png)
+![sitemap](../Progettazione_Sito/sitemap.png)
 
 ### Design dei dati e database
 
@@ -243,24 +235,24 @@ versione, mentre le vecchie saranno sui diari.
 ### Design delle interfacce
 
 Progettazione pagina principale:
-![index](Progettazione_Sito/index.png)
+![index](../Progettazione_Sito/index.png)
 
 Progettazione Login:
 
-![Login](Progettazione_Sito/login.png)
+![Login](../Progettazione_Sito/login.png)
 
 
 Progettazione terremoti:
 
-![Terremoti](Progettazione_Sito/terremoti.png)
+![Terremoti](../Progettazione_Sito/terremoti.png)
 
 Progettazione Menu a tendina:
 
-![Terremoti](Progettazione_Sito/Menu-Tendina.png)
+![Terremoti](../Progettazione_Sito/Menu-Tendina.png)
 
 Progettazione pagina progettazione:
 
-![Terremoti](Progettazione_Sito/Progettazione.png)
+![Terremoti](../Progettazione_Sito/Progettazione.png)
 
 
 ### Design procedurale
@@ -282,19 +274,20 @@ Questi documenti permetteranno di rappresentare i dettagli procedurali
 per la realizzazione del prodotto.
 
 ## Implementazione
+
 ### Sito
 Il luogo dove tutto viene visualizzato; i dati statistici e altre Informazioni riguardanti il progetto.<br>
 Qui vengono mostrati agli utenti, in tempo reale i dati presi dall'arduino che si aggiornano in continuazione e tramite una pagina di login, gli amministratori possono accedere e modificare vari parametri.
 Per la struttura del sito abbiamo usato un bootstrap.
 
-![Terremoti](Immagini/ImgCodiceSito/tabella.png)
+![Terremoti](../Immagini/ImgCodiceSito/tabella.png)
 
 Questo pezzo di codice mostra come viene fatta la tabella con i dati del presi dal database, prima di tutto bisogna connettersi al database inserendo i parametri; nome del server, nome utente con cui si vuole accedere, password, nome del database e infine la porta.<br>
 Dopo essere sicuri che la connessione è andata a buon fine, abbiamo fatto una query dove seleziona tutti i dati della tabella ma con un limite di dati che possono essere mostrati, in modo che la tabella non è così grande.<br>
 Se la query ritorna correttamente, e ci sono dei dati all'interno della tabella, allora inserisce nella tabella i valori corrispondenti della data, ora e magnitudo.
 <br>
 
-![Terremoti](Immagini/ImgCodiceSito/grafico.png)
+![Terremoti](../Immagini/ImgCodiceSito/grafico.png)
 
 Per il grafico abbiamo usato un canvas e tramite questo script si va a creare il grafico a linee con l'opzione di responsive attiva, con la data sull'asse delle X e il magnitudo sull'asse delle Y e con i vari parametri per lo stile. Arrivo fino ad un massimo di 5 dati visualizzati.
 
@@ -306,7 +299,7 @@ La progettazione dell'hardware prevedeva l'uso di una board ArduinoWifi collegat
 <div style="text-align: justify">
 Abbiamo utilizzato ArduinoIDE. Se si ha problemi con le librerie di fishino consultare il diario del
 
-[3.04.2020](Diari/SismoLive_2020_04_03.md)
+[3.04.2020](../Diari/SismoLive_2020_04_03.md)
 o il sito di <a href="https://fishino.it/download-libraries-it.html">fishino</a>.<br>
 Per prima cosa si deve configurare le informazioni che ci serviranno per connetterci al wifi come:
 <ul>
@@ -318,29 +311,29 @@ Per prima cosa si deve configurare le informazioni che ci serviranno per connett
 L'IP del fishino verrà assegnato automaticamente dal DHCP del router, ma se si vuole si puo assegnare un IP fisso con la seguente riga di codice "#define IPADDR 192, 168, 1, 251". Quindi per fare questa configurazione bisognerà scrivere il seguente codice:<br>
 <br>
 
-![](Immagini/ImgCodiceArduino/1_ConfigurazioneSketch.PNG)
+![](../Immagini/ImgCodiceArduino/1_ConfigurazioneSketch.PNG)
 
 <br>
 Dopo aver adattato lo sketch alla rete si deve poter connettere la scheda al WIFI appena configurato.
 Il primo passo per connettere il fishino a una nuova rete é quello di resettarlo in modo da cancellare vecchie configurazioni sulla scheda.
 <br>
 
-![](Immagini/ImgCodiceArduino/2_ResettingFishino.PNG)
+![](../Immagini/ImgCodiceArduino/2_ResettingFishino.PNG)
 <br>
 Dopodiché si imposta la modalità fisica a 11G e la modalità di operazione del fishino in <b>STATION_MODE</b>, cosifacendo si impone al fishino di dover collegarsi a una rete wifi già esistente. Infatti il fishino é in grado di creare un nuova rete con la modalità <b>SOFTAP_MODE</b>
 <br>
 
-![](Immagini/ImgCodiceArduino/3_SetModes.PNG)
+![](../Immagini/ImgCodiceArduino/3_SetModes.PNG)
 <br>
 
 Ora si puó passare alla connessione al wifi. Con la soluzione da noi proposta se la rete non esiste o se si ha passato una password errata il programma continuerà a provare a connettersi all'infino finché non trova la rete con SSID e Password passati prima. Quindi il codice é il seguente:
 <br>
-![](Immagini/ImgCodiceArduino/4_ConnessioneAlRouter.PNG)
+![](../Immagini/ImgCodiceArduino/4_ConnessioneAlRouter.PNG)
 <br>
 
 Infine manca solo l'acquisizione di un indirizzo IP dal DHCP. Per fare questo esiste il metodo <b>Fishino.staStartDHCP()</b>. Anche qui il programma aspetta all'infinito finche il fishino non ha ricevuto un IP dal DHCP.
 <br>
-![](Immagini/ImgCodiceArduino/5_RichiestaIPAlDHCP.PNG)
+![](../Immagini/ImgCodiceArduino/5_RichiestaIPAlDHCP.PNG)
 <br>
 
 Adesso il fishino é connesso al wifi e manca solo di inviare i dati al nostro server.
@@ -349,11 +342,11 @@ Fishino invia i dati con il metodo POST, ma per prima cosa ci si deve connettere
 Se la connessione all'host va a buon fine possiamo impostare il file che dovrà ricevere i dati, questo lo si fa con il meotodo <b>client.println(F("POST /Php/MySQL_connection.php HTTP/1.1"));</b>. Il percorso che si deve inserire é il percorso del file php partendo dall'host.
 Poi bisogna riferire la lunghezza del dato che si vuole mandare, questo lo si puó ricavare con il metodo <b>length()</b>. Il metodo di invio dati alla fine risultera questo:
 <br>
-![](Immagini/ImgCodiceArduino/6_InvioDati.PNG)
+![](../Immagini/ImgCodiceArduino/6_InvioDati.PNG)
 <br>
 Il parametro passato non é altro che il valore che abbiamo creato il generatore di dati fittizzi. Il generatore di dati é un normalissimo random di numeri double in un range specificato con numero minimo e massimo (inclusi nella randomizzazione).
 <br>
-![](Immagini/ImgCodiceArduino/7_GeneratoreDati.PNG)
+![](../Immagini/ImgCodiceArduino/7_GeneratoreDati.PNG)
 <br>
 
 </div>
@@ -550,8 +543,12 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |   TC-019  |  |   
 
 ### Mancanze e limitazioni conosciute
+
 ##### Hardware
-Il nostro progetto presenta la mancanza di un componente essenziale, ovvero il geofono per la misurazione delle vibrazione terrestri. Questo é dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" con la creazione di dati fittizi in un range tra -1.0 e 1.0.
+
+Il nostro progetto presenta la mancanza di un componente essenziale, ovvero il geofono per la misurazione delle vibrazione terrestri.
+Questo é dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" con la creazione di dati fittizi in un range tra -1.0 e 1.0.
+
 ## Consuntivo
 
 Consuntivo del tempo di lavoro effettivo e considerazioni riguardo le
@@ -575,9 +572,11 @@ Matthias:
 Daniel:
 
 ### Sviluppi futuri
+
   Migliorie o estensioni che possono essere sviluppate sul prodotto.
 
 ### Considerazioni personali
+
   Cosa ho imparato in questo progetto? ecc
 
   Marco:
@@ -604,11 +603,11 @@ Daniel:
 
 ## Allegati
 
-- [Diari di lavoro](Diari/)
+- [Diari di lavoro](../Diari/)
 
-- [Codice sorgente](../Source/)
+- [Codice sorgente](../../Source/)
 
-- [Mandato](muggiasca_qdc_sismografo.pdf)
+- [Mandato](../muggiasca_qdc_sismografo.pdf)
 
 -   Istruzioni di installazione del prodotto (con credenziali
     di accesso) e/o di eventuali prodotti terzi
@@ -618,5 +617,3 @@ Daniel:
 -   Eventuali guide utente / Manuali di utilizzo
 
 -   Prodotto
-
--   …
