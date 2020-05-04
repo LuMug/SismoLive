@@ -533,7 +533,7 @@ if ($result->num_rows > 0)
 
 #### sms.php
 
-
+Alla fine invia il messaggio.
 
 ```php
 
@@ -585,6 +585,9 @@ document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() =
 
 #### Header
 
+Esempio di header per ogni pagina, nell'ultima voce viene chiamato in causa il file che decide
+se mostrare il bottone di login oppure i bottoni per effettuare il logout o settare le soglie.
+
 ```html
 <nav class="nav-menu d-none d-lg-block">
   <ul>
@@ -599,6 +602,8 @@ document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() =
 ```
 
 ### SQL
+
+Elimina il database se esiste, dopodichè lo crea e viene selezionato.
 
 ```sql
 
@@ -638,12 +643,15 @@ create table Terremoto(
 );
 ```
 # AMMINISTRATORI DI BASE ---------------------------------
+
+Inserimento dei 5 amministratori predefiniti nel database.
+
 ```sql
 insert into Utente(nome,psw,email,telefono,tipo) values ("Georgiy",md5("PasswordDiGeorgiy"),"georgiy.farina@samtrevano.ch",41790123456,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Marco",md5("PasswordDiMarco"),"marco.lorusso@samtrevano.ch",41791234567,"A");
-insert into Utente(nome,psw,email,telefono,tipo) values ("Matthias",md5("PasswordDiMatthias"),"matthias.iannarella@samtrevano.ch", 41792345678,"A");
+insert into Utente(nome,psw,email,telefono,tipo) values ("Matthias",md5("PasswordDiMatthias"),"matthias.iannarella@samtrevano.ch", 41789246797,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Daniel",md5("PasswordDiDaniel"),"daniel.matt@samtrevano.ch",41793456789,"A");
-insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"luca.muggiasca@edu.ti.ch",41793456789,"A");
+insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"thias.ianna@gmail.com",41793456789,"A");
 
 ```
 # CONFIGURAZIONE DI DEFAULT -------------------------------------------------------
@@ -932,25 +940,25 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 
 ### Risultati test
 
-| Test Case |  Stato   |
-|-----------|----------|
-|   TC-001  |  |            
-|   TC-002  |  |            
-|   TC-003  |  |           
-|   TC-004  |   |
-|   TC-005  |  |             
-|   TC-006  |  |             
+| Test Case |  Stato  |
+|-----------|---------|
+|   TC-001  | Passato |            
+|   TC-002  | Passato |            
+|   TC-003  | Passato |           
+|   TC-004  | Passato |
+|   TC-005  | Passato |             
+|   TC-006  | Passato |             
 |   TC-007  |  |             
 |   TC-008  | Non passato|             
-|   TC-009  | Passato|  
-|   TC-010  | Passato|                  
-|   TC-011  | Passato|   
+|   TC-009  | Passato |  
+|   TC-010  | Passato |                  
+|   TC-011  | Passato |   
 |   TC-012  |  |
-|   TC-013 |  |
-|   TC-014  |  |             
-|   TC-015  |  |   
+|   TC-013  |  |
+|   TC-014  | Passato  |             
+|   TC-015  | Da Testare |   
 |   TC-016  |  |
-|   TC-017 |  |
+|   TC-017  |  |
 |   TC-018  |  |             
 |   TC-019  |  |   
 
@@ -981,11 +989,16 @@ Georgiy:
 
 Matthias:
 
+Rispetto al progetto individuale del primo semestre, in questo progetto a gruppi ho imparato a collaborare in team.
+Il lavoro è stato motivante
+
 Daniel:
 
 ### Sviluppi futuri
 
   Migliorie o estensioni che possono essere sviluppate sul prodotto.
+
+  Sicuramente avere un dispositivo funzionante che rilevi le scosse di terremoto.
 
 ### Considerazioni personali
 
@@ -996,6 +1009,9 @@ Daniel:
   Georgiy:
 
   Matthias:
+
+  Ho saputo consolidare le mie conoscenze del linguaggio PHP. Ecc
+  Sono soddisfatto del risultato finale.
 
   Daniel:
 
@@ -1011,6 +1027,9 @@ Daniel:
 - https://www.sparkfun.com/, 29-01-2020
 - https://www.seeedstudio.com/, 29-01-2020
 - https://www.iconfinder.com/, 29-01-2020
+
+- https://github.com/PHPMailer/PHPMailer, *PHPMailer*, 01-05-2020
+- https://github.com/messagebird/php-rest-api, *messagebird*, 04-05-2020
 
 
 ## Allegati
