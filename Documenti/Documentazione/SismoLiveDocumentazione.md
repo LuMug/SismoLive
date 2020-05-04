@@ -948,13 +948,13 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |   TC-004  | Passato |
 |   TC-005  | Passato |             
 |   TC-006  | Passato |             
-|   TC-007  |  |             
+|   TC-007  | Passato |             
 |   TC-008  | Non passato|             
 |   TC-009  | Passato |  
 |   TC-010  | Passato |                  
 |   TC-011  | Passato |   
 |   TC-012  |  |
-|   TC-013  |  |
+|   TC-013  | Passato |
 |   TC-014  | Passato  |             
 |   TC-015  | Da Testare |   
 |   TC-016  |  |
