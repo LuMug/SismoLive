@@ -119,16 +119,18 @@
   > design such a large-scale microprocessor in just weeks.*
 
 ### Scopo
-  Lo scopo di questo progetto è quello di avere una costante misurazione, insieme alla relativa rappresentazione su un sito web, delle vibrazioni terrestri. Nel caso di un terremoto devono essere notificati gli admin via mail e gli utenti sul sito
+  Lo scopo di questo progetto è quello di avere una costante misurazione, insieme alla relativa rappresentazione su un sito web, delle vibrazioni terrestri.
+  Nel caso di un terremoto devono essere notificati gli admin via mail e gli utenti sul sito.
 
 ## Analisi
 
 ### Analisi del dominio
 
 Il prodotto finale potrà essere utilizzato da tutti gli utenti, sia esperti,
-sia principianti, che hanno a disposizione un dispositivo in grado di navigare su internet. Chiunque può consultare il sito che conterrà una rappresentazione delle misurazioni delle scosse sismiche sotto forma di vari grafici.<br>
-Attualmente esiste già un sito nazionale dedicato a questo tema, speriamo che la nostra versione sia più piacevole ed efficace.
+sia principianti, che hanno a disposizione un dispositivo in grado di navigare su internet.
+Chiunque può consultare il sito che conterrà una rappresentazione delle misurazioni delle scosse sismiche sotto forma di vari grafici.
 
+Attualmente esiste già un sito nazionale dedicato a questo tema, speriamo che la nostra versione sia più piacevole ed efficace.
 
 ### Analisi e specifica dei requisiti
 
@@ -279,12 +281,16 @@ per la realizzazione del prodotto.
 
 #### config.php
 
+Costanti definite
+
 ```php
 define('DB_SERVER', '160.153.133.208');
 define('DB_USERNAME', 'sismo');
 define('DB_PASSWORD', 'sismo');
 define('DB_NAME', 'SismoLive');
 ```
+
+Tenta di connettersi al database, ma se la connessione fallisce stampa l'errore.
 
 ```php
 /* Tentativo di connesione al database */
@@ -298,6 +304,9 @@ if ($link === false)
 ```
 
 #### login.php
+
+La password inserita nel login viene criptata con l'hash md5, se essa equivale alla password trovata
+nel database, esegue l'accesso.
 
 ```php
 if (md5($password) == $pass)
@@ -319,6 +328,9 @@ else
 ```
 
 #### logout.php
+
+Esegue l'unset di tutte le variabili della sessione.
+Distrugge la sessione e infine reindirizza l'utente alla pagina principale.
 
 ```php
 // Initialize the session
@@ -342,6 +354,8 @@ exit;
 ```
 
 #### csv
+
+Esempio del formato in csv, ogni campo è separatao da una ",".
 
 ```csv
 
@@ -371,6 +385,10 @@ Data,Magnitudo,Pericolosita,Citta
 
 #### login_or_logout.php
 
+Se l'utente ha effettuato il login, mostrerà i bottoni per accedere
+alla pagina dei parametri oppure per disconnetersi.
+Se invece non ha effettuato il login, mostrerà solamente il bottone per accedere.
+
 ```php
 
 $login = "http://sismolive.online/html/login.html";
@@ -389,6 +407,10 @@ else
 ```
 
 #### getSoglie.php
+
+Necessita del file **config.php** per effettuare la connesione al database.
+Esegue una query e se nel risultato generato c'è almeno una riga, esegue un ciclo while
+settando le variabili **$soglia_minima** e **$soglia_critica**.
 
 ```php
 require_once "config.php";
@@ -465,27 +487,37 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
 
 #### data.php
 
+Necessita del file **config.php** per effettuare la connesione al database.
+Esegue una query e se nel risultato generato c'è almeno una riga, esegue un ciclo while
+settando le variabili **$datas** e **$earths**.
+Infine esegue un trim togliendo le virgole da entrambe le variabili.
+
 ```php
 
 include "../php/config.php";
 
-$datas = '';
-$earths = '';
+$orario = '';
+$magnitudo = '';
 $terremoti = "SELECT * from tabella";
 $result = $link->query($terremoti);
 if ($result->num_rows > 0)
 {
     while ($row = $result->fetch_assoc())
     {
-        $datas = $datas . '"' . $row['orario_registrazione'] . '",';
-        $earths = $earths . '"' . $row['magnitudo'] . '",';
+        $orario = $orario . '"' . $row['orario_registrazione'] . '",';
+        $magnitudo = $magnitudo . '"' . $row['magnitudo'] . '",';
     }
 }
 
-$datas = trim($datas, ",");
-$earths = trim($earths, ",");
+$orario = trim($orario, ",");
+$magnitudo = trim($magnitudo, ",");
 
-///////////////////////////////////////////////
+```
+
+Esegue una query e se nel risultato generato c'è almeno una riga, crea la tabella in base ai valori
+pescati dal database.
+
+```php
 
 $terremoti = "SELECT * from tabella";
 $result = $link->query($terremoti);
@@ -502,6 +534,9 @@ if ($result->num_rows > 0)
 
 #### Ricarica pagina
 
+Ogni 1000 millisecondi, ovvero ogni secondo fa le query per vedere se ci sono terremoto nuovi.
+Questo rende sia il grafico sia la tabella in modalità "real-time".
+
 ```javascript
 $('#responsecontainer').load('data.php');
 var refreshId = setInterval(function() {
@@ -511,6 +546,8 @@ var refreshId = setInterval(function() {
 ```
 
 #### Ordinare tabella
+
+Permette di ordinare le tabelle per data, orario e magnitudo.
 
 ```javascript
 const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
@@ -546,8 +583,10 @@ document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() =
 drop database if exists SismoLive;
 create database SismoLive;
 use SismoLive;
+```
 
 # CREAZIONE TABELLE  -----------------------------------------------------------------------------------------------
+```sql
 drop table if exists Utente;
 create table Utente(
 	nome varchar(20) primary key not null,
@@ -556,14 +595,16 @@ create table Utente(
 	telefono long not null,
 	tipo varchar(20) not null
 );
-
+```
+```sql
 drop table if exists Configurazione;
 create table Configurazione(
 	id int primary key auto_increment,
 	soglia_minima double not null,
     soglia_critica double not null
 );
-
+```
+```sql
 drop table if exists Terremoto;
 create table Terremoto(
 	id_registrazione int not null,
@@ -573,19 +614,22 @@ create table Terremoto(
     orario_registrazione TIME not null,
     primary key (id_registrazione, id_terremoto)
 );
-
-# AMMINISTRATORI DI BASE -----------------------------------------------------------------------------------------------
-
+```
+# AMMINISTRATORI DI BASE ---------------------------------
+```sql
 insert into Utente(nome,psw,email,telefono,tipo) values ("Georgiy",md5("PasswordDiGeorgiy"),"georgiy.farina@samtrevano.ch",41790123456,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Marco",md5("PasswordDiMarco"),"marco.lorusso@samtrevano.ch",41791234567,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Matthias",md5("PasswordDiMatthias"),"matthias.iannarella@samtrevano.ch", 41792345678,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Daniel",md5("PasswordDiDaniel"),"daniel.matt@samtrevano.ch",41793456789,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"luca.muggiasca@edu.ti.ch",41793456789,"A");
-# CONFIGURAZIONE DI DEFAULT -----------------------------------------------------------------------------------------------
 
+```
+# CONFIGURAZIONE DI DEFAULT -------------------------------------------------------
+```sql
 insert into Configurazione(soglia_minima,soglia_critica) values(0.3,0.7);
-
-# FUNZIONI VARIE  -----------------------------------------------------------------------------------------------
+```
+# FUNZIONI VARIE -------------------------------------------------------------
+```sql
 DELIMITER //
 CREATE FUNCTION getStartId()
 returns int deterministic
@@ -599,7 +643,8 @@ BEGIN
 END
 //
 DELIMITER ;
-
+```
+```sql
 DELIMITER //
 CREATE FUNCTION getFinishId()
 returns int deterministic
@@ -610,7 +655,9 @@ BEGIN
 END
 //
 DELIMITER ;
-#----------------------- -----------------------------------------------------------------------------------------------
+```
+#-------------------------------------------------------------
+```sql
 drop view if exists tabella;
 create view tabella as select t.data_registrazione, t.orario_registrazione, t.magnitudo, t.id_terremoto from Terremoto t where t.id_registrazione > getStartId();
 

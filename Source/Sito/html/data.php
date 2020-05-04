@@ -3,21 +3,21 @@ include "../php/config.php";
 ?>
 
 <?php
-$datas = '';
-$earths = '';
+$orario = '';
+$magnitudo = '';
 $terremoti = "SELECT * from tabella";
 $result = $link->query($terremoti);
 if ($result->num_rows > 0)
 {
     while ($row = $result->fetch_assoc())
     {
-        $datas = $datas . '"' . $row['orario_registrazione'] . '",';
-        $earths = $earths . '"' . $row['magnitudo'] . '",';
+        $orario = $orario . '"' . $row['orario_registrazione'] . '",';
+        $magnitudo = $magnitudo . '"' . $row['magnitudo'] . '",';
     }
 }
 
-$datas = trim($datas, ",");
-$earths = trim($earths, ",");
+$orario = trim($orario, ",");
+$magnitudo = trim($magnitudo, ",");
 
 ?>
 
@@ -38,7 +38,7 @@ $earths = trim($earths, ",");
                 <script>
                   var canvas = document.getElementById('myChart');
                   var data = {
-                      labels: [<?php echo $datas;?>],
+                      labels: [<?php echo $orario;?>],
                       datasets: [{
                           label: "Magnitudo",
                           fill: true,
@@ -58,7 +58,7 @@ $earths = trim($earths, ",");
                           pointHoverBorderWidth: 2,
                           pointRadius: 5,
                           pointHitRadius: 10,
-                          data: [<?php echo $earths;?>]
+                          data: [<?php echo $magnitudo;?>]
                       }]
                   };
 
