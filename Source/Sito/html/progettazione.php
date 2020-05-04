@@ -54,7 +54,7 @@
         </style>
     </head>
 
-    <body style="background-image: url(../images/sky.jpg)">
+    <body style="background-image: url(../img/sky.jpg)">
 
         <!-- ======= Header ======= -->
         <header id="header" class="fixed-top d-flex align-items-center">
@@ -93,7 +93,7 @@
               <br>
                 <h1 style="text-align:center;">Progettazione</h1>
                 <br>
-                <img src="../images/Schema_Terremoto.jpg" alt="Schema Terremoto" style="float: right; width: 350px">
+                <img src="../img/Schema_Terremoto.jpg" alt="Schema Terremoto" style="float: right; width: 350px">
                 <h2>Cos'è un terremoto?</h2>
                 <p>I terremoti, o anche detti sismi sono delle vibrazioni della crosta terrestre provocati dallo spostamento improvviso di una massa rocciosa nel sottosuolo.
                     <br> All'interno della crosta terrestre avviene una deformazione causata dalle forze di natura tettonica(modello di dinamica della Terra), che provoca una liberazione nell'epicentro di energia elastica.

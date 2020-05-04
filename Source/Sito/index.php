@@ -40,20 +40,20 @@
   ======================================================== -->
   <style>
 
-.footer1 {
-position: fixed;
-left: 0;
-bottom: 0;
-width: 100%;
-background-color: red;
-color: white;
-text-align: center;
-}
+  .footer1 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    }
 
   </style>
 </head>
 
-<body style="background-image: url(images/sky.jpg)">
+<body style="background-image: url(img/sky.jpg)">
 
 
   <!-- ======= Header ======= -->
@@ -62,8 +62,6 @@ text-align: center;
 
       <div class="logo mr-auto">
         <h1 class="text-light"><a href="index.php"><span>SismoLive</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
@@ -94,7 +92,7 @@ text-align: center;
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
-          <img src="images/logo.jpg" class="img-fluid animated" alt="">
+          <img src="img/logo.jpg" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>

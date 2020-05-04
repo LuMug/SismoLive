@@ -70,7 +70,7 @@
         </style>
     </head>
 
-    <body style="background-image: url(../images/sky.jpg)">
+    <body style="background-image: url(../img/sky.jpg)">
 
         <!-- ======= Header ======= -->
         <header id="header" class="fixed-top d-flex align-items-center">

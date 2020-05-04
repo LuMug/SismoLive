@@ -54,7 +54,7 @@ text-align: center;
   </style>
     </head>
 
-    <body style="background-image: url(../images/sky.jpg)">
+    <body style="background-image: url(../img/sky.jpg)">
 
         <!-- ======= Header ======= -->
         <header id="header" class="fixed-top d-flex align-items-center">
@@ -95,7 +95,7 @@ text-align: center;
                             <br>Inizio del progetto: 18 gennaio 2020.
                             <br>Fine progetto: 8 maggio 2020.</p>
                         <br>
-                        <a href="https://www.cpttrevano.ti.ch/" target="_blank"><img src="../images/cpt.jpg" style="float: center; width: 200px"></a>
+                        <a href="https://www.cpttrevano.ti.ch/" target="_blank"><img src="../img/cpt.jpg" style="float: center; width: 200px"></a>
                         <br>
                         <br>
                         <br>

@@ -1,14 +1,19 @@
 <?php
 
-require_once('sms/vendor/autoload.php');
+require_once('messagebird/vendor/autoload.php');
 
-$MessageBird = new \MessageBird\Client(''); // Set your own API access key here.
+// Set your own API access key here.
+$MessageBird = new \MessageBird\Client('');
 
-$Message             = new \MessageBird\Objects\Message();
+$Message = new \MessageBird\Objects\Message();
+//Nome del mittente
 $Message->originator = 'SismoLive';
-$Message->recipients = [ '+41XXXXXXXX' ];
-$Message->body       = 'Allarme terremoto!';
+//Numero del destinatario
+$Message->recipients = ['+41XXXXXXXX'];
+//Messaggio da mandare
+$Message->body = 'Allarme terremoto!';
 
+//Invia il messaggio
 try {
     $MessageResult = $MessageBird->messages->create($Message);
     var_dump($MessageResult);

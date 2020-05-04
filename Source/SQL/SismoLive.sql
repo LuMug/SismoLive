@@ -5,6 +5,7 @@ create database SismoLive;
 use SismoLive;
 
 # CREAZIONE TABELLE  -----------------------------------------------------------------------------------------------
+
 drop table if exists Utente;
 create table Utente(
 	nome varchar(20) primary key not null,
@@ -35,14 +36,16 @@ create table Terremoto(
 
 insert into Utente(nome,psw,email,telefono,tipo) values ("Georgiy",md5("PasswordDiGeorgiy"),"georgiy.farina@samtrevano.ch",41790123456,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Marco",md5("PasswordDiMarco"),"marco.lorusso@samtrevano.ch",41791234567,"A");
-insert into Utente(nome,psw,email,telefono,tipo) values ("Matthias",md5("PasswordDiMatthias"),"matthias.iannarella@samtrevano.ch", 41792345678,"A");
+insert into Utente(nome,psw,email,telefono,tipo) values ("Matthias",md5("PasswordDiMatthias"),"matthias.iannarella@samtrevano.ch", 41789246797,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Daniel",md5("PasswordDiDaniel"),"daniel.matt@samtrevano.ch",41793456789,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"luca.muggiasca@edu.ti.ch",41793456789,"A");
+
 # CONFIGURAZIONE DI DEFAULT -----------------------------------------------------------------------------------------------
 
 insert into Configurazione(soglia_minima,soglia_critica) values(0.3,0.7);
 
 # FUNZIONI VARIE  -----------------------------------------------------------------------------------------------
+
 DELIMITER //
 CREATE FUNCTION getStartId()
 returns int deterministic
@@ -67,6 +70,8 @@ BEGIN
 END
 //
 DELIMITER ;
+
 #----------------------- -----------------------------------------------------------------------------------------------
+
 drop view if exists tabella;
 create view tabella as select t.data_registrazione, t.orario_registrazione, t.magnitudo, t.id_terremoto from Terremoto t where t.id_registrazione > getStartId();

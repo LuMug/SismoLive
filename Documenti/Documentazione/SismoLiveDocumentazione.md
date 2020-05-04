@@ -531,6 +531,28 @@ if ($result->num_rows > 0)
 
 ```
 
+#### sms.php
+
+
+
+```php
+
+require_once('sms/vendor/autoload.php');
+
+// Set your own API access key here.
+$MessageBird = new \MessageBird\Client('');
+
+$Message             = new \MessageBird\Objects\Message();
+//Nome del mittente
+$Message->originator = 'SismoLive';
+//Numero del destinatario
+$Message->recipients = [ '+41XXXXXXXX' ];
+//Messaggio da mandare
+$Message->body       = 'Allarme terremoto!';
+//Invia il messaggio
+$MessageResult = $MessageBird->messages->create($Message);
+
+```
 
 #### Ricarica pagina
 
