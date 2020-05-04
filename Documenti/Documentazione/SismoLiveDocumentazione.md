@@ -700,14 +700,14 @@ Il luogo dove tutto viene visualizzato; i dati statistici e altre Informazioni r
 Qui vengono mostrati agli utenti, in tempo reale i dati presi dall'arduino che si aggiornano in continuazione e tramite una pagina di login, gli amministratori possono accedere e modificare vari parametri.
 Per la struttura del sito abbiamo usato un bootstrap.
 
-![Terremoti](../Immagini/ImgCodiceSito/tabella.png)
+![Terremoti](../Immagini/ImgCodiceSito/tabella.PNG)
 
 Questo pezzo di codice mostra come viene fatta la tabella con i dati del presi dal database, prima di tutto bisogna connettersi al database inserendo i parametri; nome del server, nome utente con cui si vuole accedere, password, nome del database e infine la porta.<br>
 Dopo essere sicuri che la connessione è andata a buon fine, abbiamo fatto una query dove seleziona tutti i dati della tabella ma con un limite di dati che possono essere mostrati, in modo che la tabella non è così grande.<br>
 Se la query ritorna correttamente, e ci sono dei dati all'interno della tabella, allora inserisce nella tabella i valori corrispondenti della data, ora e magnitudo.
 <br>
 
-![Terremoti](../Immagini/ImgCodiceSito/grafico.png)
+![Terremoti](../Immagini/ImgCodiceSito/grafico.PNG)
 
 Per il grafico abbiamo usato un canvas e tramite questo script si va a creare il grafico a linee con l'opzione di responsive attiva, con la data sull'asse delle X e il magnitudo sull'asse delle Y e con i vari parametri per lo stile. Arrivo fino ad un massimo di 5 dati visualizzati.
 
@@ -985,7 +985,10 @@ facilmente generalizzabili o sono specifici di un caso particolare? ecc
 
 Marco:
 
-Georgiy:
+Georgiy: 
+
+Da questo progetto ho iniziato a mettere in pratica il lavoro in team nell'ambito di progetti come questi. Mi è piaciuto lavorarci, anche perchè siamo stati ben organizzati e ci siamo aiutati a vicenda quando si aveva bisogno. 
+Il lavoro non è stato assolutamente uno spreco ne di tempo, ne di risorse. Se implementato meglio, potrebbe rivelarsi abbastanza utile.
 
 Matthias:
 
@@ -996,9 +999,7 @@ Daniel:
 
 ### Sviluppi futuri
 
-  Migliorie o estensioni che possono essere sviluppate sul prodotto.
-
-  Sicuramente avere un dispositivo funzionante che rilevi le scosse di terremoto.
+  Date le problematiche e le circostanze che abbiamo avuto durante lo sviluppo del progetto, ci sarebbe da implementare un dispositivo per le effettive misurazioni delle vibrazioni. 
 
 ### Considerazioni personali
 
@@ -1007,6 +1008,9 @@ Daniel:
   Marco:
 
   Georgiy:
+
+  Ho compreso meglio le dinamiche di un lavoro in team, rendendomi conto di come ci si muove in progetti del genere. Ho consolidato le mie conoscenze dei vari linguaggi implementati quali SQL, PHP ecc..
+  Sono rimasto più che soddisfatto da questo lavoro.
 
   Matthias:
 
