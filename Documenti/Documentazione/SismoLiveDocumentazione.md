@@ -666,6 +666,7 @@ END
 //
 DELIMITER ;
 ```
+
 ```sql
 DELIMITER //
 CREATE FUNCTION getFinishId()

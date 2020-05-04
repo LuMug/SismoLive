@@ -1,7 +1,9 @@
 <?php
+session_start();
 // Include config file
 require_once "config.php";
 
+$_SESSION['error'] = "";
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -18,10 +20,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     $min = filter_input(INPUT_POST, 'min', FILTER_DEFAULT);
     $critica = filter_input(INPUT_POST, 'critica', FILTER_DEFAULT);
-
-    $terremoti = "UPDATE Configurazione SET soglia_minima = '$min', soglia_critica = '$critica'";
-    $result = $link->query($terremoti);
-
+    if($min > $critica){
+      $_SESSION['error'] = "La soglia minima deve essere minore di quella critica";
+    }else{
+      $terremoti = "UPDATE Configurazione SET soglia_minima = '$min', soglia_critica = '$critica'";
+      $result = $link->query($terremoti);
+    }
     header("location: ../html/configurazione.php");
 }
 
