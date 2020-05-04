@@ -29,8 +29,6 @@ file_put_contents("data.txt", $magnitudo);
 
 //echo readfile("data.txt");
 
-
-
 if($magnitudo >= $sogliaMinima){
     $magnitudo *= 10;
     $inserimentoDati ="INSERT INTO Terremoto(id_registrazione, id_terremoto,magnitudo,data_registrazione,orario_registrazione) VALUES ('$id_reg','$id_ter','$magnitudo','$data_corrente','$ora_corrente')";
@@ -44,7 +42,5 @@ if($magnitudo >= $sogliaMinima){
 if($magnitudo >= $sogliaCritica){
     require "phpmailer/mail.php";
 }
-
-
 
 ?>
