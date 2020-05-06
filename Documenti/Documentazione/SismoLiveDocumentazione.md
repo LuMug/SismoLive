@@ -221,7 +221,13 @@ Sismografo:
 - Fishino:
 
 ![fishino](../Immagini/fishino.png)
-
+<br>
+La scheda FishinoUNO é la prima scheda di fishino, compatibile al 100% con Arduino UNO ma con molti componenti aggiuntivi che aumentano le potenzialità di questa scheda. I componenti aggiuntivi sono:
+  - Modulo WIFI : utile alla connessione della scheda a una rete wifi
+  - Slot MicroSD: permette alla scheda fishino di utilizzare grandi quantità di dati 
+  - Modulo RTC : permette alla scheda di conoscere in tempo reale anche senza alimentazione, (funziona a batteria), l'ora esatta
+  - Alimentazione 3.3V potenziata
+  - É compatibile con le schede millefori
 
 Sitemap:
 
