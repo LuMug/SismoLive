@@ -119,7 +119,7 @@
   > design such a large-scale microprocessor in just weeks.*
 
 ### Scopo
-  Lo scopo di questo progetto è quello di avere una costante misurazione, insieme alla relativa rappresentazione su un sito web, delle vibrazioni terrestri.
+  Lo scopo di questo progetto è quello di avere una costante misurazione tramite una struttura di registrazione, insieme alla relativa rappresentazione su un sito web, delle vibrazioni terrestri.
   Nel caso di un terremoto devono essere notificati gli admin via mail e gli utenti sul sito.
 
 ## Analisi
@@ -128,7 +128,7 @@
 
 Il prodotto finale potrà essere utilizzato da tutti gli utenti, sia esperti,
 sia principianti, che hanno a disposizione un dispositivo in grado di navigare su internet.
-Chiunque può consultare il sito che conterrà una rappresentazione delle misurazioni delle scosse sismiche sotto forma di vari grafici.
+Chiunque può consultare il sito che conterrà una rappresentazione delle misurazioni delle scosse sismiche sotto forma di grafico e tabella, una pagina dei terremoti più percepiti in Svizzera e nel mondo, e infine una pagina di descrizione del progetto.
 
 Attualmente esiste già un sito nazionale dedicato a questo tema, speriamo che la nostra versione sia più piacevole ed efficace.
 
@@ -162,6 +162,11 @@ funzionalità del prodotto.
 
 - Gantt preventivo:
 
+![Gant preventivo](../Immagini/gantt_prev1.PNG)
+![Gant preventivo](../Immagini/gantt_prev2.PNG)
+![Gant preventivo](../Immagini/gantt_prev3.PNG)
+
+![Gant preventivo](../Immagini/gantt_prev4.PNG)
 
 ### Analisi dei mezzi
 
@@ -213,11 +218,9 @@ Sismografo:
 
 ### Design dell’architettura del sistema
 
-Descrive:
+- Fishino:
 
--   La struttura del programma/sistema lo schema di rete...
-
--   Gli oggetti/moduli/componenti che lo compongono.
+![fishino](../Immagini/fishino.png)
 
 
 Sitemap:
@@ -268,12 +271,7 @@ ad esempio:
 
 -   Classi e metodi.
 
--   Tabelle di routing
-
 -   Diritti di accesso a condivisioni …
-
-Questi documenti permetteranno di rappresentare i dettagli procedurali
-per la realizzazione del prodotto.
 
 ## Implementazione
 
@@ -953,14 +951,12 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |   TC-009  | Passato |  
 |   TC-010  | Passato |                  
 |   TC-011  | Passato |   
-|   TC-012  |  |
+|   TC-012  | Non passato |
 |   TC-013  | Passato |
 |   TC-014  | Passato  |             
 |   TC-015  | Da Testare |   
 |   TC-016  |  |
 |   TC-017  |  |
-|   TC-018  |  |             
-|   TC-019  |  |   
 
 ### Mancanze e limitazioni conosciute
 
@@ -985,9 +981,11 @@ facilmente generalizzabili o sono specifici di un caso particolare? ecc
 
 Marco:
 
-Georgiy: 
+Trovo che lavorare in team sia molto produttivo e che scaturiscono molte più idee, dividendosi i compiti e assegnando le parti dove uno è meno bravo ad un'altro componente del gruppo si riesce a raggiungere obbiettivi molto elevati. In questo progetto abbiamo toccato molti punti dell'informatica, come la gestione e la programmazione dell'hardware, il database e infine il sito web. Se dovessimo riuscire a comprare il geofono penso che questo progetto si riveli molto importante e che potrà essere utile a molte persone.
 
-Da questo progetto ho iniziato a mettere in pratica il lavoro in team nell'ambito di progetti come questi. Mi è piaciuto lavorarci, anche perchè siamo stati ben organizzati e ci siamo aiutati a vicenda quando si aveva bisogno. 
+Georgiy:
+
+Da questo progetto ho iniziato a mettere in pratica il lavoro in team nell'ambito di progetti come questi. Mi è piaciuto lavorarci, anche perchè siamo stati ben organizzati e ci siamo aiutati a vicenda quando si aveva bisogno.
 Il lavoro non è stato assolutamente uno spreco ne di tempo, ne di risorse. Se implementato meglio, potrebbe rivelarsi abbastanza utile.
 
 Matthias:
@@ -999,13 +997,15 @@ Daniel:
 
 ### Sviluppi futuri
 
-  Date le problematiche e le circostanze che abbiamo avuto durante lo sviluppo del progetto, ci sarebbe da implementare un dispositivo per le effettive misurazioni delle vibrazioni. 
+  Date le problematiche e le circostanze che abbiamo avuto durante lo sviluppo del progetto, ci sarebbe da implementare un dispositivo per le effettive misurazioni delle vibrazioni, con una struttura solida che regga il tutto.
 
 ### Considerazioni personali
 
   Cosa ho imparato in questo progetto? ecc
 
   Marco:
+
+  In questo progetto ho migliorato le mie capacità di lavorare in team, le mie conoscenze nei vari linguaggi di programmazione(php, SQL, CSS, ...) e capito ancora meglio come unire parte hardware a database e database a sito web. Sono rimasto molto soddisfatto da questo progetto visti anche i grandi risultati.
 
   Georgiy:
 
