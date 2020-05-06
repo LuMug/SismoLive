@@ -20,7 +20,7 @@ create table Configurazione(
 	id int primary key auto_increment,
 	soglia_minima double not null, #Soglia per registrare il valore nella tabella Terremoto
     soglia_intermedia double not null, # Soglia per mandare la mail
-    soglia_critica double not null # Soglia per mandare l'SMS
+    soglia_critica double not null # Soglia per mandare l'SMS'
 );
 
 drop table if exists Terremoto;
@@ -39,7 +39,7 @@ insert into Utente(nome,psw,email,telefono,tipo) values ("Georgiy",md5("Password
 insert into Utente(nome,psw,email,telefono,tipo) values ("Marco",md5("PasswordDiMarco"),"marco.lorusso@samtrevano.ch",41791234567,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Matthias",md5("PasswordDiMatthias"),"matthias.iannarella@samtrevano.ch", 41789246797,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Daniel",md5("PasswordDiDaniel"),"daniel.matt@samtrevano.ch",41793456789,"A");
-insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"luca.muggiasca@edu.ti.ch",41793456789,"A");
+insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"thias.ianna@gmail.com",41793456789,"A");
 
 # CONFIGURAZIONE DI DEFAULT -----------------------------------------------------------------------------------------------
 

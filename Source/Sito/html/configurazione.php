@@ -106,6 +106,15 @@ text-align: center;
                             </div>
 
                             <div class="wrap-input100 validate-input">
+                                <h5>Soglia intermedia attuale: <b><?php echo $soglia_intermedia;?></b></h5>
+                            </div>
+
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="number" name="intermedia" step="0.01" min="0" placeholder="Inserisci la nuova soglia intermedia">
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input">
                                 <h5>Soglia critica attuale: <b><?php echo $soglia_critica;?></b></h5>
                             </div>
 

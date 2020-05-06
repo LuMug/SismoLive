@@ -41,7 +41,7 @@ if($magnitudo >= $sogliaMinima){
     }
 }
 if($magnitudo >= $sogliaIntermedia){
-    require "phpmailer/mail.php";
+    require "mail/mail.php";
 }
 if($magnitudo >= $sogliaCritica){
     require "sms/sms.php";
