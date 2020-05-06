@@ -1023,10 +1023,6 @@ Daniel:
 
 ### Sitografia
 
-**Esempio:**
-
--   http://standards.ieee.org/guides/style/section7.html, *IEEE
-    Standards Style Manual*, 07-06-2008.
 
 - https://www.sparkfun.com/, 29-01-2020
 - https://www.seeedstudio.com/, 29-01-2020
@@ -1034,8 +1030,7 @@ Daniel:
 
 - https://github.com/PHPMailer/PHPMailer, *PHPMailer*, 01-05-2020
 - https://github.com/messagebird/php-rest-api, *messagebird*, 04-05-2020
-
-
+- https://www.w3schools.com/howto/howto_js_sort_table.asp, 03-04.2020
 ## Allegati
 
 - [Diari di lavoro](../Diari/)
