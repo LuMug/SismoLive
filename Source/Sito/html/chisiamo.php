@@ -30,7 +30,7 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- Template Main CSS File -->
-        <link href="../assets/css/style.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
 
         <!-- =======================================================
   * Template Name: Vesperr - v2.0.0
@@ -144,7 +144,7 @@ text-align: center;
         <script src="../vendor/venobox/venobox.min.js"></script>
         <script src="../vendor/aos/aos.js"></script>
         <!-- Template Main JS File -->
-        <script src="../assets/js/main.js"></script>
+        <script src="../js/main.js"></script>
     </body>
 
     </html>

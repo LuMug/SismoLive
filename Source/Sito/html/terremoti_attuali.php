@@ -141,7 +141,7 @@
         <script src="../vendor/aos/aos.js"></script>
 
         <!-- Template Main JS File -->
-        <script src="../assets/js/main.js"></script>
+        <script src="../js/main.js"></script>
 
         <!-- Librerie -->
         <!-- <script src="../js/chart.js"></script>-->
