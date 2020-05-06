@@ -14,6 +14,7 @@ $id_reg = $queryTerremoti->num_rows + 1;
 $configurazioni = $querySoglie->fetch_assoc();
 
 $sogliaMinima = $configurazioni["soglia_minima"];
+$sogliaIntermedia = $configurazioni["soglia_intermedia"];
 $sogliaCritica = $configurazioni["soglia_critica"];
 
 
@@ -39,8 +40,11 @@ if($magnitudo >= $sogliaMinima){
         echo "Error: " . $inserimentoDati . "<br>" . $link->error;
     }
 }
-if($magnitudo >= $sogliaCritica){
+if($magnitudo >= $sogliaIntermedia){
     require "phpmailer/mail.php";
+}
+if($magnitudo >= $sogliaCritica){
+    require "sms/sms.php";
 }
 
 ?>
