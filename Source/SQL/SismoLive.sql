@@ -18,8 +18,9 @@ create table Utente(
 drop table if exists Configurazione;
 create table Configurazione(
 	id int primary key auto_increment,
-	soglia_minima double not null,
-    soglia_critica double not null
+	soglia_minima double not null, #Soglia per registrare il valore nella tabella Terremoto
+    soglia_intermedia double not null, # Soglia per mandare la mail
+    soglia_critica double not null # Soglia per mandare l'SMS
 );
 
 drop table if exists Terremoto;
@@ -42,7 +43,7 @@ insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"luc
 
 # CONFIGURAZIONE DI DEFAULT -----------------------------------------------------------------------------------------------
 
-insert into Configurazione(soglia_minima,soglia_critica) values(0.3,0.7);
+insert into Configurazione(soglia_minima,soglia_intermedia,soglia_critica) values(0.3,0.6,0.8);
 
 # FUNZIONI VARIE  -----------------------------------------------------------------------------------------------
 
