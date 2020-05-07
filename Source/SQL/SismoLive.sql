@@ -43,7 +43,7 @@ insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"thi
 
 # CONFIGURAZIONE DI DEFAULT -----------------------------------------------------------------------------------------------
 
-insert into Configurazione(soglia_minima,soglia_intermedia,soglia_critica) values(0.3,0.6,0.8);
+insert into Configurazione(soglia_minima,soglia_intermedia,soglia_critica) values(3.0,6.0,7.5);
 
 # FUNZIONI VARIE  -----------------------------------------------------------------------------------------------
 
