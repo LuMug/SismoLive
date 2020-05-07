@@ -70,7 +70,7 @@ END
 //
 DELIMITER ;
 
-#----------------------- -----------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------
 
 drop view if exists tabella;
 create view tabella as select t.data_registrazione, t.orario_registrazione, t.magnitudo, t.id_registrazione from Terremoto t where t.id_registrazione > getStartId();

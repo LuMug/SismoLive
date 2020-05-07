@@ -1,22 +1,18 @@
 <?php
-  session_start();
-     require "../php/connectToDB.php";
-?>
-    <!DOCTYPE html>
-    <html lang="it">
-
+    session_start();
+       require "../php/connectToDB.php";
+    ?>
+<!DOCTYPE html>
+<html lang="it">
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
         <title>Terremoti Attuali</title>
         <meta content="" name="descriptison">
         <meta content="" name="keywords">
-
         <!-- Favicons -->
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
         <!-- Vendor CSS Files -->
         <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="../vendor/icofont/icofont.min.css" rel="stylesheet">
@@ -25,42 +21,34 @@
         <link href="../vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
         <link href="../vendor/venobox/venobox.css" rel="stylesheet">
         <link href="../vendor/aos/aos.css" rel="stylesheet">
-
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- Template Main CSS File -->
         <link href="../css/style.css" rel="stylesheet">
-
         <!-- =======================================================
-        * Template Name: Vesperr - v2.0.0
-        * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
-        * Author: BootstrapMade.com
-        * License: https://bootstrapmade.com/license/
-        ======================================================== -->
+            * Template Name: Vesperr - v2.0.0
+            * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
+            * Author: BootstrapMade.com
+            * License: https://bootstrapmade.com/license/
+            ======================================================== -->
         <style>
-
-
-        .footer1 {
-           position: fixed;
-           left: 0;
-           bottom: 0;
-           width: 100%;
-           background-color: red;
-           color: white;
-           text-align: center;
-        }
+            .footer1 {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+            }
         </style>
     </head>
-
     <body style="background-image: url(../img/sky.jpg)">
-
         <!-- ======= Header ======= -->
         <header id="header" class="fixed-top d-flex align-items-center">
             <div class="container d-flex align-items-center">
-
                 <div class="logo mr-auto">
                     <h1 class="text-light"><a href="../index.php"><span>SismoLive</span></a></h1>
                 </div>
-
                 <nav class="nav-menu d-none d-lg-block">
                     <ul>
                         <li><a href="../index.php">Home</a></li>
@@ -72,12 +60,9 @@
                     </ul>
                 </nav>
                 <!-- .nav-menu -->
-
             </div>
         </header>
         <!-- End Header -->
-
-
         <script src="../js/jquery-latest.js"></script>
         <script>
             $('#responsecontainer').load('data.php');
@@ -86,29 +71,18 @@
 
             }, 1000);
         </script>
-
         <!-- Begin page content -->
         <div class="container">
-
             <script type="text/javascript" src="../js/jquery-3.4.0.min.js"></script>
             <script type="text/javascript" src="../js/mdb.min.js"></script>
-
             <div id="responsecontainer">
-
             </div>
         </div>
-
-
-
         <section id="about" class="d-none d-md-block d-lg-none">
-
         </section>
         <!-- ======= Start Blank section ======= -->
         <section id="about" class="d-none d-sm-block">
-
         </section>
-
-
         <!-- ======= Footer ======= -->
         <footer class="footer1" id="footer">
             <div class="container">
@@ -122,7 +96,6 @@
             </div>
         </footer>
         <!-- End Footer -->
-
         <script src="../vendor/jquery/jquery.min.js"></script>
         <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="../vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -133,13 +106,8 @@
         <script src="../vendor/isotope-layout/isotope.pkgd.min.js"></script>
         <script src="../vendor/venobox/venobox.min.js"></script>
         <script src="../vendor/aos/aos.js"></script>
-
         <!-- Template Main JS File -->
         <script src="../js/main.js"></script>
-
         <!-- Librerie -->
-        <!-- <script src="../js/chart.js"></script>-->
-
     </body>
-
-    </html>
+</html>

@@ -5,19 +5,17 @@ RTC_DS1307 rtc;
 
   //Configurazione di rete fishino.
   #ifndef __MY_NETWORK_H
-    
+
     //Nome della rete a cui connettersi.
     #define MY_SSID  "test"
-    
+
     //Password della rete.
     #define MY_PASS  "testtest"
-    
+
     //L'IP del fishino viene dato automaticamente dal DHCP.
     #define GATEWAY    192, 168,   1,   1
     #define NETMASK    s255, 255, 255,   0
-  #endif 
-  
-
+  #endif
 
 void printWifiStatus()
 {
@@ -40,7 +38,7 @@ void printWifiStatus()
     case PHY_MODE_11N:
       Serial.println("11N");
       break;
-      
+
     default:
       Serial.println("UNKNOWN");
   }
@@ -66,7 +64,7 @@ void setup() {
     while (1);
   }
   rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-  
+
   //Resetta il fishino.
   Serial << F("Resetting Fishino...");
   while(!Fishino.reset())
@@ -81,7 +79,7 @@ void setup() {
   Serial << F("Setting mode STATION_MODE\r\n");
   Fishino.setMode(STATION_MODE);
 
-  
+
   Serial << F("Connecting to AP...");
   while(!Fishino.begin(MY_SSID, MY_PASS))
   {
@@ -89,7 +87,7 @@ void setup() {
     delay(500);
   }
   Serial << F("OK\r\n");
-  
+
   //Fa richiesta al DHCP di un IP.
   Fishino.staStartDHCP();
   Serial << F("Waiting for IP...");
@@ -112,12 +110,12 @@ String postVarTime = "time=";
 //Si occupa di inviare i valori misurati.
 void send(double geophoneData)
 {
-  
+
   /* Questa parte di codice servirebbe a mandare la data e l'ora di rilevamento dei valori
   DateTime time = rtc.now();
   String date = time.timestamp(DateTime::TIMESTAMP_DATE);
   String tempo = time.timestamp(DateTime::TIMESTAMP_TIME);
-  
+
   postData = postVarValue + geophoneData + postVarDate + date + postVarTime + tempo;*/
   postData = postVarValue + geophoneData;
   Serial.println(postData);
@@ -128,8 +126,8 @@ void send(double geophoneData)
     client.println(F("User-Agent: FISHINO"));
     client.println("Connection: close");
     client.println(F("Content-Type: application/x-www-form-urlencoded"));
-    
-    
+
+
     client.print("Content-Length:");
     client.println(postData.length());
     client.println();
@@ -145,14 +143,13 @@ void send(double geophoneData)
 }
 
   //Genera numeri random dato un minimo e un massimo
-  double randomDouble(double minf, double maxf)
-  {
+double randomDouble(double minf, double maxf){
     return  random(minf,maxf)/10.0;
-  }
+}
 
 
 void loop() {
-  //range da 10 a 100 --> sara range da 1,00 a 10,00
+  //range da 10 a 100 --> sarà range da 1,00 a 10,00
   send(randomDouble(10.0, 100.0));
   delay(1000);
 }
