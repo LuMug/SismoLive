@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Include config file
-require_once "config.php";
+require_once "connectToDB.php";
 
 $_SESSION['error'] = "";
 // Processing form data when form is submitted

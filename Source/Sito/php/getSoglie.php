@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+require_once "connectToDB.php";
 
 $soglia_minima = '';
 $soglia_critica = '';
