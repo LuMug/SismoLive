@@ -1,19 +1,10 @@
 <?php
 session_start();
-// Include config file
-require_once "connectToDB.php";
+// Include il file che effettua la connessione al database
+include "connectToDB.php";
 $_SESSION['error'] = "";
-// Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (!(empty(trim($_POST["min"])))) {
-        $min = trim($_POST["min"]);
-    }
-    if (!(empty(trim($_POST["intermedia"])))) {
-        $intermedia = trim($_POST["intermedia"]);
-    }
-    if (!(empty(trim($_POST["critica"])))) {
-        $critica = trim($_POST["critica"]);
-    }
+    // Filtra i dati
     $min = filter_input(INPUT_POST, 'min', FILTER_DEFAULT);
     $intermedia = filter_input(INPUT_POST, 'intermedia', FILTER_DEFAULT);
     $critica = filter_input(INPUT_POST, 'critica', FILTER_DEFAULT);

@@ -1,6 +1,8 @@
 <?php
+// Include il file che effettua la connessione al database
 require_once "connectToDB.php";
-$soglie = "SELECT soglia_minima,soglia_critica FROM Configurazione";
+// Query
+$soglie = "SELECT soglia_minima, soglia_intermedia, soglia_critica FROM Configurazione";
 $terremoti = "SELECT * FROM Terremoto";
 $querySoglie = $link->query($soglie);
 $queryTerremoti = $link->query($terremoti);
@@ -24,9 +26,11 @@ if ($magnitudo >= $sogliaMinima) {
         echo "Error: " . $inserimentoDati . "<br>" . $link->error;
     }
 }
+// Manda la mail se il magnitudo è sopra o guale alla soglia intermedia
 if ($magnitudo >= $sogliaIntermedia) {
     require "mail/mail.php";
 }
+// Manda un sms se il magnitudo è sopra o guale alla soglia critica
 if ($magnitudo >= $sogliaCritica) {
     require "sms/sms.php";
 }

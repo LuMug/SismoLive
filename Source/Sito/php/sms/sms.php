@@ -1,12 +1,12 @@
 <?php
 require_once ('messagebird/vendor/autoload.php');
-// Set your own API access key here.
+// Chiave API
 $MessageBird = new \MessageBird\Client('');
 $Message = new \MessageBird\Objects\Message();
 //Nome del mittente
 $Message->originator = 'SismoLive';
 //Numero del destinatario
-$Message->recipients = ['+41XXXXXXXX'];
+$Message->recipients = ['+41789246797'];
 //Messaggio da mandare
 $Message->body = 'Allarme terremoto!';
 //Invia il messaggio
@@ -15,12 +15,12 @@ try {
     var_dump($MessageResult);
 }
 catch(\MessageBird\Exceptions\AuthenticateException $e) {
-    // That means that your accessKey is unknown
-    echo 'wrong login';
+    // Significa che la chiavi API è sbagliata
+    echo 'Chiave API errata';
 }
 catch(\MessageBird\Exceptions\BalanceException $e) {
-    // That means that you are out of credits, so do something about it.
-    echo 'no balance';
+    // Significa che il credito è finito
+    echo 'Credito finito';
 }
 catch(\Exception $e) {
     echo $e->getMessage();

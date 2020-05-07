@@ -1,20 +1,22 @@
 <?php
     session_start();
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="it">
     <head>
+        <!-- Titolo -->
+        <title>Configurazione</title>
+        <!-- Meta tag -->
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <title>Configurazione</title>
-        <meta content="" name="descriptison">
-        <meta content="" name="keywords">
-        <!-- Favicons -->
-        <link href="../img/favicon.png" rel="icon">
-        <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
+        <meta name="description" content="SismoLive Project">
+        <meta name="keywords" content="Project, Earthquake, SismoLive, Modulo306">
+        <meta name="author" content="Matthias, Marco, Daniel, Georgiy">
+        <!-- Icona -->
+        <link href="../img/logo.jpg" rel="icon">
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-        <!-- Vendor CSS Files -->
+        <!-- CSS Esterni -->
         <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="../vendor/icofont/icofont.min.css" rel="stylesheet">
         <link href="../vendor/remixicon/remixicon.css" rel="stylesheet">
@@ -34,7 +36,7 @@
             * License: https://bootstrapmade.com/license/
             ======================================================== -->
         <style>
-            .footer1 {
+            .footer {
             position: fixed;
             left: 0;
             bottom: 0;
@@ -51,8 +53,6 @@
             <div class="container d-flex align-items-center">
                 <div class="logo mr-auto">
                     <h1 class="text-light"><a href="../index.php"><span>SismoLive</span></a></h1>
-                    <!-- Uncomment below if you prefer to use an image logo -->
-                    <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
                 </div>
                 <nav class="nav-menu d-none d-lg-block">
                     <ul>
@@ -61,10 +61,9 @@
                         <li><a href="terremoti.php">Terremoti</a></li>
                         <li><a href="progettazione.php">Progettazione</a></li>
                         <li><a href="chisiamo.php">Chi siamo</a></li>
-                        <?php require_once "../php/login_or_logout.php";?>
+                        <?php require_once "../php/logged.php";?>
                     </ul>
                 </nav>
-                <!-- .nav-menu -->
             </div>
         </header>
         <!-- End Header -->
@@ -107,7 +106,7 @@
             </div>
         </div>
         <!-- ======= Footer ======= -->
-        <footer class="footer1" id="footer">
+        <footer class="footer" id="footer">
             <div class="container">
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-6 text-lg-left text-center">
@@ -118,8 +117,8 @@
                 </div>
             </div>
         </footer>
-        <!-- End Footer -->
-        <!-- Vendor JS Files -->
+        <!-- Fine Footer -->
+        <!-- Vendor JS file -->
         <script src="../vendor/jquery/jquery.min.js"></script>
         <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="../vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -131,7 +130,7 @@
         <script src="../vendor/venobox/venobox.min.js"></script>
         <script src="../vendor/aos/aos.js"></script>
         <!--===============================================================================================-->
-        <!-- Template Main JS File -->
+        <!-- Template Main JS file -->
         <script src="../js/main.js"></script>
     </body>
 </html>

@@ -1,4 +1,5 @@
 <?php
+// Include il file che effettua la connessione al database
 require_once "connectToDB.php";
 $soglia_minima = '';
 $soglia_critica = '';

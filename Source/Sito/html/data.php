@@ -17,9 +17,10 @@
     $orario = trim($orario, ",");
     $magnitudo = trim($magnitudo, ",");
 
-    ?>
-<!-- Librerie -->
-<script src="../js/chart.js"></script>
+?>
+<!-- Script -->
+<script src="../js/chart.js"></script> 
+
 <section class="d-flex align-items-center">
     <div class="container-fluid bg-2 text-center">
         <br>

@@ -1,19 +1,23 @@
 <?php
     session_start();
-       require "../php/connectToDB.php";
-    ?>
+    require "../php/connectToDB.php";
+?>
 <!DOCTYPE html>
 <html lang="it">
     <head>
+        <!-- Titolo -->
+        <title>Terremoti Attuali</title>
+        <!-- Meta tag -->
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <title>Terremoti Attuali</title>
-        <meta content="" name="descriptison">
-        <meta content="" name="keywords">
-        <!-- Favicons -->
+        <meta name="description" content="SismoLive Project">
+        <meta name="keywords" content="Project, Earthquake, SismoLive, Modulo306">
+        <meta name="author" content="Matthias, Marco, Daniel, Georgiy">
+        <!-- Icona -->
+        <link href="../img/logo.jpg" rel="icon">
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-        <!-- Vendor CSS Files -->
+        <!-- CSS Esterni -->
         <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="../vendor/icofont/icofont.min.css" rel="stylesheet">
         <link href="../vendor/remixicon/remixicon.css" rel="stylesheet">
@@ -31,7 +35,7 @@
             * License: https://bootstrapmade.com/license/
             ======================================================== -->
         <style>
-            .footer1 {
+            .footer {
             position: fixed;
             left: 0;
             bottom: 0;
@@ -56,13 +60,13 @@
                         <li><a href="terremoti.php">Terremoti</a></li>
                         <li><a href="progettazione.php">Progettazione</a></li>
                         <li><a href="chisiamo.php">Chi siamo</a></li>
-                        <?php require_once "../php/login_or_logout.php";?>
+                        <?php require_once "../php/logged.php";?>
                     </ul>
                 </nav>
-                <!-- .nav-menu -->
             </div>
         </header>
         <!-- End Header -->
+        <!-- Script -->
         <script src="../js/jquery-latest.js"></script>
         <script>
             $('#responsecontainer').load('data.php');
@@ -71,7 +75,6 @@
 
             }, 1000);
         </script>
-        <!-- Begin page content -->
         <div class="container">
             <script type="text/javascript" src="../js/jquery-3.4.0.min.js"></script>
             <script type="text/javascript" src="../js/mdb.min.js"></script>
@@ -80,11 +83,12 @@
         </div>
         <section id="about" class="d-none d-md-block d-lg-none">
         </section>
-        <!-- ======= Start Blank section ======= -->
+        <!-- ======= Sezione vuota che scompare su mobile ======= -->
         <section id="about" class="d-none d-sm-block">
         </section>
+        <!-- Fine sezione vuota -->
         <!-- ======= Footer ======= -->
-        <footer class="footer1" id="footer">
+        <footer class="footer" id="footer">
             <div class="container">
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-6 text-lg-left text-center">
@@ -95,7 +99,7 @@
                 </div>
             </div>
         </footer>
-        <!-- End Footer -->
+        <!-- Fine Footer -->
         <script src="../vendor/jquery/jquery.min.js"></script>
         <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="../vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -108,6 +112,5 @@
         <script src="../vendor/aos/aos.js"></script>
         <!-- Template Main JS File -->
         <script src="../js/main.js"></script>
-        <!-- Librerie -->
     </body>
 </html>

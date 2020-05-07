@@ -11,25 +11,26 @@ function smtpmailer($to, $from, $from_name, $subject, $body) {
     $mail->Username = 'terremoto@sismolive.online';
     $mail->Password = 'terremoto';
     $mail->IsHTML(true);
+        //Indirizzo mail mittente
     $mail->From = "terremoto@sismolive.online";
+        //Nome mittente
     $mail->FromName = $from_name;
     $mail->Sender = $from;
     $mail->AddReplyTo($from, $from_name);
+        //Oggetto della mail
     $mail->Subject = $subject;
+        //Contenuto della mail
     $mail->Body = $body;
+        //Destinatario
     $mail->AddAddress($to);
-    if (!$mail->Send()) {
-        $error = "Please try Later, Error Occured while Processing...";
-        return $error;
-    } else {
-        $error = "Thanks You !! Your email is sent. YOoo";
-        return $error;
-    }
+    //Invio la mail
+    $mail->Send();
 }
+
 $from = 'terremoto@sismolive.online';
 $name = 'SismoLive';
 $subj = 'Allarme terremoto!';
-$msg = 'Terremoto rilevato!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!.';
+$msg = 'È stato rilevato un terremoto di magnitudo .. ' . ' alle .. ';
 $email = "SELECT email FROM Utente";
 $result = $link->query($email);
 if ($result->num_rows > 0) {

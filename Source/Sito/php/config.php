@@ -1,11 +1,10 @@
 <?php
+//IP del database
 define('DB_SERVER', 'localhost');
+// Utente del database
 define('DB_USERNAME', 'matthias');
+// Password dell'utente
 define('DB_PASSWORD', 'matthias');
+// Database a quale accedere
 define('DB_NAME', 'SismoLive');
-/*
-define('DB_SERVER', '160.153.133.208');
-define('DB_USERNAME', 'sismo');
-define('DB_PASSWORD', 'sismo');
-define('DB_NAME', 'SismoLive');*/
 ?>
