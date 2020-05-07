@@ -3,7 +3,7 @@ require_once "config.php";
 
 $soglie ="SELECT soglia_minima,soglia_critica FROM Configurazione";
 
-$terremoti = "SELECT * FROM Terremoto;";
+$terremoti = "SELECT * FROM Terremoto";
 
 
 $querySoglie = $link->query($soglie);
@@ -20,19 +20,16 @@ $sogliaCritica = $configurazioni["soglia_critica"];
 
 date_default_timezone_set("Europe/Zurich");
 $data_corrente = date("Y-m-d");
-
+//$data_post = abs($_POST['date']);
 $ora_corrente = date("H:i:s");
+//$ora_post = abs($_POST['time']);
 
-$id_ter = 6;
-
-$magnitudo = abs($_POST['value']);
-file_put_contents("data.txt", $magnitudo);
+$magnitudo = round($_POST['value'],1);
 
 //echo readfile("data.txt");
 
 if($magnitudo >= $sogliaMinima){
-    $magnitudo *= 10;
-    $inserimentoDati ="INSERT INTO Terremoto(id_registrazione, id_terremoto,magnitudo,data_registrazione,orario_registrazione) VALUES ('$id_reg','$id_ter','$magnitudo','$data_corrente','$ora_corrente')";
+    $inserimentoDati ="INSERT INTO Terremoto(id_registrazione,magnitudo,data_registrazione,orario_registrazione) VALUES ('$id_reg','$magnitudo','$data_corrente','$ora_corrente')";
 
     if ($link->query($inserimentoDati) === TRUE) {
         echo "Inserimento dati riuscito";
