@@ -165,7 +165,6 @@ funzionalità del prodotto.
 ![Gant preventivo](../Immagini/gantt_prev1.PNG)
 ![Gant preventivo](../Immagini/gantt_prev2.PNG)
 ![Gant preventivo](../Immagini/gantt_prev3.PNG)
-
 ![Gant preventivo](../Immagini/gantt_prev4.PNG)
 
 ### Analisi dei mezzi
@@ -224,7 +223,7 @@ Sismografo:
 <br>
 La scheda FishinoUNO é la prima scheda di fishino, compatibile al 100% con Arduino UNO ma con molti componenti aggiuntivi che aumentano le potenzialità di questa scheda. I componenti aggiuntivi sono:
   - Modulo WIFI : utile alla connessione della scheda a una rete wifi
-  - Slot MicroSD: permette alla scheda fishino di utilizzare grandi quantità di dati 
+  - Slot MicroSD: permette alla scheda fishino di utilizzare grandi quantità di dati
   - Modulo RTC : permette alla scheda di conoscere in tempo reale anche senza alimentazione, (funziona a batteria), l'ora esatta
   - Alimentazione 3.3V potenziata
   - É compatibile con le schede millefori
@@ -1003,7 +1002,10 @@ Daniel:
 
 ### Sviluppi futuri
 
-  Date le problematiche e le circostanze che abbiamo avuto durante lo sviluppo del progetto, ci sarebbe da implementare un dispositivo per le effettive misurazioni delle vibrazioni, con una struttura solida che regga il tutto.
+  Date le problematiche e le circostanze che abbiamo avuto durante lo sviluppo del progetto,
+  ci sarebbe da implementare un dispositivo per le effettive misurazioni delle vibrazioni, con una struttura solida che regga il tutto.
+  Un altro sviluppo futuro è quello di inviare un sms a tutti gli amministratori del sito quando un terremoto supera la soglia critica, questo perchè
+  con un sms si è più raggiungibili poichè si può visualizzare senza internet a differenza delle email.
 
 ### Considerazioni personali
 
@@ -1033,23 +1035,17 @@ Daniel:
 - https://www.sparkfun.com/, 29-01-2020
 - https://www.seeedstudio.com/, 29-01-2020
 - https://www.iconfinder.com/, 29-01-2020
-
+- https://www.w3schools.com/howto/howto_js_sort_table.asp, *w3schools* 03-04.2020
 - https://github.com/PHPMailer/PHPMailer, *PHPMailer*, 01-05-2020
 - https://github.com/messagebird/php-rest-api, *messagebird*, 04-05-2020
-- https://www.w3schools.com/howto/howto_js_sort_table.asp, 03-04.2020
+
 ## Allegati
 
 - [Diari di lavoro](../Diari/)
 
 - [Codice sorgente](../../Source/)
 
-- [Mandato](../muggiasca_qdc_sismografo.pdf)
+- [Mandato](../Mandato/muggiasca_qdc_sismografo.pdf)
 
 -   Istruzioni di installazione del prodotto (con credenziali
     di accesso) e/o di eventuali prodotti terzi
-
--   Documentazione di prodotti di terzi
-
--   Eventuali guide utente / Manuali di utilizzo
-
--   Prodotto

@@ -29,9 +29,10 @@ L’obiettivo principale è quello di mettere in funzione permanente il sismogr
 Si può accedere al sito tramite questo link: http://sismolive.online
 
 #### Mandato:
-Documento di specifica: [QdC_SecondoSemestre-Sismografo.pdf](Documenti/muggiasca_qdc_sismografo.pdf)
+Documento di specifica: [QdC_SecondoSemestre-Sismografo.pdf](Documenti/Mandato/muggiasca_qdc_sismografo.pdf)
 
 #### Struttura:
+
 - [Source](Source/)
 
 > Cartella nella quale è salvata la documentazione del progetto.
@@ -40,7 +41,7 @@ Documento di specifica: [QdC_SecondoSemestre-Sismografo.pdf](Documenti/muggiasca
 
 > Cartella nella quale è salvata la documentazione del progetto.
 
-- [Gantt](Documenti/Gantt_SismoLive.pdf)
+- [Gantt](Documenti/Gantt/Gantt_SismoLive.pdf)
 
 > Cartella nella quale sono salvati tutti i diagrammi di gantt.
 
