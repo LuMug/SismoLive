@@ -1,8 +1,6 @@
 <?php
-include "../php/connectToDB.php";
-?>
+require "../php/connectToDB.php";
 
-<?php
 $orario = '';
 $magnitudo = '';
 $terremoti = "SELECT * from tabella";
@@ -31,7 +29,7 @@ $magnitudo = trim($magnitudo, ",");
         <h3 style="font-size:50px;" class="margin">Terremoti Attuali</h3>
         <br>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12 col-md-6">
                 <h1 style="font-size:20px;">Grafico terremoti</h1>
                 <br>
                 <canvas id="myChart" width="400" height="300"></canvas>
@@ -76,7 +74,7 @@ $magnitudo = trim($magnitudo, ",");
                 </script>
             </div>
 
-            <div class="col-sm-6">
+            <div id="table" class="col-sm-12 col-md-6">
                 <h1 style="font-size:20px;">Tabella terremoti</h1>
                 <br>
                 <table class="table">
@@ -105,4 +103,4 @@ $magnitudo = trim($magnitudo, ",");
         </div>
       </div>
 
-    </section >
+    </section>

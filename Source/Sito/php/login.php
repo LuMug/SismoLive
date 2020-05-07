@@ -69,13 +69,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     }
                     else
                     {
-                      $_SESSION['call'] = "Yes";
                       $_SESSION["errorLogin"] = "Password errata!";
                         header("location: ../html/login.php");
                     }
                 }
             }else{
-              $_SESSION['call'] = "Yes";
               $_SESSION["errorLogin"] = "L'username non esiste!";
                 header("location: ../html/login.php");
             }

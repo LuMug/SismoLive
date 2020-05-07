@@ -39,20 +39,19 @@
         <style>
 
 
-.footer1 {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: red;
-   color: white;
-   text-align: center;
-}
-
+        .footer1 {
+           position: fixed;
+           left: 0;
+           bottom: 0;
+           width: 100%;
+           background-color: red;
+           color: white;
+           text-align: center;
+        }
         </style>
     </head>
 
-    <body  style="background-image: url(../img/sky.jpg)">
+    <body style="background-image: url(../img/sky.jpg)">
 
         <!-- ======= Header ======= -->
         <header id="header" class="fixed-top d-flex align-items-center">
@@ -78,7 +77,6 @@
         </header>
         <!-- End Header -->
 
-            <main id="main">
 
         <script src="../js/jquery-latest.js"></script>
         <script>
@@ -92,7 +90,7 @@
         <!-- Begin page content -->
         <div class="container">
 
-            <script type="text/javascript" src="../assets/js/jquery-3.4.0.min.js"></script>
+            <script type="text/javascript" src="../js/jquery-3.4.0.min.js"></script>
             <script type="text/javascript" src="../js/mdb.min.js"></script>
 
             <div id="responsecontainer">
@@ -110,7 +108,6 @@
 
         </section>
 
-      </main>
 
         <!-- ======= Footer ======= -->
         <footer class="footer1" id="footer">
