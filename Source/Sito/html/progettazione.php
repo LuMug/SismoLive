@@ -62,8 +62,6 @@
 
                 <div class="logo mr-auto">
                     <h1 class="text-light"><a href="../index.php"><span>SismoLive</span></a></h1>
-                    <!-- Uncomment below if you prefer to use an image logo -->
-                    <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
                 </div>
 
                 <nav class="nav-menu d-none d-lg-block">
@@ -76,7 +74,7 @@
                         <?php require_once "../php/login_or_logout.php";?>
                     </ul>
                 </nav>
-                <!-- .nav-menu -->
+                <!-- nav-menu -->
 
             </div>
         </header>

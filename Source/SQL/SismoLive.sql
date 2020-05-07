@@ -51,7 +51,7 @@ returns int deterministic
 BEGIN
 	declare startId int;
 	set startId = (select max(id_registrazione) -7 from Terremoto);
-    if startId <0 then
+    if startId < 0 then
 		set startId = 0;
     end if;
     return startId;

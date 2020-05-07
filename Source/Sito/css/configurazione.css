@@ -1,77 +1,38 @@
 
 
-
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
 @font-face {
   font-family: SourceSansPro-Regular;
-  src: url('../fonts/source-sans-pro/SourceSansPro-Regular.ttf'); 
+  src: url('../fonts/source-sans-pro/SourceSansPro-Regular.ttf');
 }
 
 @font-face {
   font-family: SourceSansPro-Bold;
-  src: url('../fonts/source-sans-pro/SourceSansPro-Bold.ttf'); 
+  src: url('../fonts/source-sans-pro/SourceSansPro-Bold.ttf');
 }
 
 @font-face {
   font-family: JosefinSans-Bold;
-  src: url('../fonts/JosefinSans/JosefinSans-Bold.ttf'); 
+  src: url('../fonts/JosefinSans/JosefinSans-Bold.ttf');
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
 * {
-	margin: 0px; 
-	padding: 0px; 
+	margin: 0px;
+	padding: 0px;
 	box-sizing: border-box;
 }
 
-body, html {
-	height: 100%;
-	font-family: SourceSansPro-Regular, sans-serif;
-}
-
-/*---------------------------------------------*/
-a {
-	font-family: SourceSansPro-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-	transition: all 0.4s;
-	-webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-}
-
-a:focus {
-	outline: none !important;
-}
-
-a:hover {
-	text-decoration: none;
-}
 
 /*---------------------------------------------*/
 h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
 }
 
-p {
-	font-family: SourceSansPro-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-}
-
-ul, li {
-	margin: 0px;
-	list-style-type: none;
-}
 
 
 /*---------------------------------------------*/
@@ -128,7 +89,7 @@ iframe {
 [ Contact ]*/
 
 .container-contact100 {
-  width: 100%;  
+  width: 100%;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -152,11 +113,6 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(93,84,240,0.5);
-  background: -webkit-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
-  background: -o-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
-  background: -moz-linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
-  background: linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
   pointer-events: none;
 }
 
@@ -170,11 +126,10 @@ iframe {
 }
 
 .wrap-contact100 {
-  width: 800px;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  padding: 72px 150px 25px 150px;
+  padding: 20px 150px 25px 150px;
 
   box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);

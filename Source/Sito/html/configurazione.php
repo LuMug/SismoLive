@@ -28,12 +28,13 @@
         <link href="../vendor/venobox/venobox.css" rel="stylesheet">
         <link href="../vendor/aos/aos.css" rel="stylesheet">
 
-        <link rel="stylesheet" type="text/css" href="../css/util.css">
         <link rel="stylesheet" type="text/css" href="../css/configurazione.css">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- Template Main CSS File -->
         <link href="../css/style.css" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
         <!-- =======================================================
   * Template Name: Vesperr - v2.0.0
@@ -86,15 +87,13 @@ text-align: center;
         </header>
         <!-- End Header -->
 
-            <main id="main">
-
 
                 <div class="container-contact100">
                     <?php require_once "../php/getSoglie.php";?>
                     <div class="wrap-contact100">
                         <form class="contact100-form validate-form" method="post" action="../php/configurazione.php">
                             <span class="contact100-form-title" style="text-align:center;">
-            					Impostazione parametri
+            					Configurazione parametri
             				</span>
 
                            <div class="wrap-input100 validate-input">
@@ -102,7 +101,7 @@ text-align: center;
 
                             </div>
                             <div class="wrap-input100 validate-input">
-                                <input class="input100" type="number" name="min" step="0.01" min="0" placeholder="Inserisci la nuova soglia minima">
+                                <input class="input100" type="number" name="min" step="0.1" min="1" max="10" placeholder="Inserisci la nuova soglia minima">
                             </div>
 
                             <div class="wrap-input100 validate-input">
@@ -110,7 +109,7 @@ text-align: center;
                             </div>
 
                             <div class="wrap-input100 validate-input">
-                                <input class="input100" type="number" name="intermedia" step="0.01" min="0" placeholder="Inserisci la nuova soglia intermedia">
+                                <input class="input100" type="number" name="intermedia" step="0.1" min="1" max="10" placeholder="Inserisci la nuova soglia intermedia">
                                 <span class="focus-input100"></span>
                             </div>
 
@@ -119,18 +118,17 @@ text-align: center;
                             </div>
 
                             <div class="wrap-input100 validate-input">
-                                <input class="input100" type="number" name="critica" step="0.01" min="0" placeholder="Inserisci la nuova soglia critica">
+                                <input class="input100" type="number" name="critica" step="0.1" min="1" max="10" placeholder="Inserisci la nuova soglia critica">
                                 <span class="focus-input100"></span>
                             </div>
 
                             <div class="wrap-input100 validate-input">
-                                <h5><b><?php echo $_SESSION['error'];?></b></h5>
+                                <h5 style="color:red;"><b><?php echo $_SESSION['error'];?></b></h5>
                             </div>
-
 
                             <div class="container-contact100-form-btn">
                                 <button class="contact100-form-btn">
-                                    Imposta Parametri
+                                    Configura Parametri
                                 </button>
                             </div>
                         </form>
@@ -138,7 +136,6 @@ text-align: center;
                     </div>
                 </div>
 
-</main>
 
         <!-- ======= Footer ======= -->
         <footer class="footer1" id="footer">
