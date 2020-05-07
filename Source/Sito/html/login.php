@@ -1,3 +1,8 @@
+<?php
+// Initialize the session
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="it">
 
@@ -48,14 +53,18 @@
 
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
                         <span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
+            							<i class="zmdi zmdi-eye"></i>
+            						</span>
                         <input class="input100" type="password" name="password">
                         <span class="focus-input100" data-placeholder="Password"></span>
                     </div>
 
                     <div class="container-login100-form-btn">
+                      <h5 style="color:red;"><b><?php echo $_SESSION["errorLogin"];?></b></h5>
+                      <br>
+                        <br>
                         <div class="wrap-login100-form-btn">
+
                             <div class="login100-form-bgbtn"></div>
                             <button class="login100-form-btn">
                                 Login
@@ -70,8 +79,8 @@
                     <div class="text-center p-t-115">
 
                         <span class="txt1">
-							SismoLive 2020
-						</span>
+							               SismoLive 2020
+						            </span>
                     </div>
                 </form>
             </div>

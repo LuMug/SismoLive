@@ -1,5 +1,6 @@
 <?php
   session_start();
+  $_SESSION["errorLogin"] = "";
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -96,13 +97,13 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">Benvenuto sul miglior sito per controllare i terremoti</h1>
-          <div data-aos="fade-up">
+          <h1>Benvenuto sul miglior sito per controllare i terremoti</h1>
+          <div>
             <a href="html/terremoti_attuali.php" class="btn-get-started scrollto">Controlla i terremoti</a>
           </div>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
-          <img src="img/logo.jpg" class="img-fluid animated" alt="ERRORE">
+        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+          <img src="img/logo.jpg" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>

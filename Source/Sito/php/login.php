@@ -5,7 +5,7 @@ session_start();
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
 {
-    header("location: ../html/login.html");
+    header("location: ../html/login.php");
     exit;
 }
 
@@ -62,19 +62,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                         $_SESSION["loggedin"] = true;
                         $_SESSION["username"] = $username;
                         $_SESSION["error"] = "";
+                        $_SESSION["errorLogin"] = "";
 
                         // Redirect user to welcome page
                         header("location: ../index.php");
                     }
                     else
                     {
-                        header("location: ../html/login.html");
+                      $_SESSION['call'] = "Yes";
+                      $_SESSION["errorLogin"] = "Password errata!";
+                        header("location: ../html/login.php");
                     }
                 }
+            }else{
+              $_SESSION['call'] = "Yes";
+              $_SESSION["errorLogin"] = "L'username non esiste!";
+                header("location: ../html/login.php");
             }
-        }
-        else
-        {
+        }else{
             echo "Oops! Something went wrong. Please try again later.";
         }
 
