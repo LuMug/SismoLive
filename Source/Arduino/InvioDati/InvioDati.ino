@@ -1,4 +1,7 @@
 #include <Fishino.h>
+#include "RTClib.h"
+
+RTC_DS1307 rtc;
 
   //Configurazione di rete fishino.
   #ifndef __MY_NETWORK_H
@@ -13,6 +16,7 @@
     #define GATEWAY    192, 168,   1,   1
     #define NETMASK    s255, 255, 255,   0
   #endif 
+  
 
 
 void printWifiStatus()
@@ -56,6 +60,12 @@ void printWifiStatus()
 
 void setup() {
   Serial.begin(9600);
+  //Configurazione RTC Orologio Real Time
+  if (! rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
+  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   
   //Resetta il fishino.
   Serial << F("Resetting Fishino...");
@@ -96,11 +106,21 @@ void setup() {
 
 FishinoClient client;
 String postData;
-String postVariable = "value=";
+String postVarValue = "value=";
+String postVarDate = "date=";
+String postVarTime = "time=";
 //Si occupa di inviare i valori misurati.
 void send(double geophoneData)
 {
-  postData = postVariable + geophoneData;
+  
+  /* Questa parte di codice servirebbe a mandare la data e l'ora di rilevamento dei valori
+  DateTime time = rtc.now();
+  String date = time.timestamp(DateTime::TIMESTAMP_DATE);
+  String tempo = time.timestamp(DateTime::TIMESTAMP_TIME);
+  
+  postData = postVarValue + geophoneData + postVarDate + date + postVarTime + tempo;*/
+  postData = postVarValue + geophoneData;
+  Serial.println(postData);
   if(client.connect("www.sismolive.online",80) == 1)
   {
     client.println(F("POST /php/MySQL_connection.php HTTP/1.1"));
@@ -114,7 +134,7 @@ void send(double geophoneData)
     client.println(postData.length());
     client.println();
     client.print(postData);
-    Serial.println("Inviato" + postData);
+    //Serial.println("Inviato" + postData);
     client.flush();
     client.stop();
   }
@@ -124,14 +144,15 @@ void send(double geophoneData)
   }
 }
 
-  //Genera numeri random dato un 
+  //Genera numeri random dato un minimo e un massimo
   double randomDouble(double minf, double maxf)
   {
-    return minf + random(1UL << 31) * (maxf - minf) / (1UL << 31);
+    return  random(minf,maxf)/10.0;
   }
 
 
 void loop() {
-  send(randomDouble(-1.00, 1.00));
+  //range da 10 a 100 --> sara range da 1,00 a 10,00
+  send(randomDouble(10.0, 100.0));
   delay(1000);
 }
