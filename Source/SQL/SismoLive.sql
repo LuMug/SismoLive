@@ -25,12 +25,10 @@ create table Configurazione(
 
 drop table if exists Terremoto;
 create table Terremoto(
-	id_registrazione int not null,
-	id_terremoto int not null,
+	id_registrazione int primary key not null,
     magnitudo double not null,
 	data_registrazione DATE not null,
-    orario_registrazione TIME not null,
-    primary key (id_registrazione, id_terremoto)
+    orario_registrazione TIME not null
 );
 
 # AMMINISTRATORI DI BASE -----------------------------------------------------------------------------------------------
@@ -75,4 +73,4 @@ DELIMITER ;
 #----------------------- -----------------------------------------------------------------------------------------------
 
 drop view if exists tabella;
-create view tabella as select t.data_registrazione, t.orario_registrazione, t.magnitudo, t.id_terremoto from Terremoto t where t.id_registrazione > getStartId();
+create view tabella as select t.data_registrazione, t.orario_registrazione, t.magnitudo, t.id_registrazione from Terremoto t where t.id_registrazione > getStartId();
