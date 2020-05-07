@@ -25,12 +25,10 @@ create table Configurazione(
 
 drop table if exists Terremoto;
 create table Terremoto(
-	id_registrazione int not null,
-	id_terremoto int not null,
+	id_registrazione int primary key not null,
     magnitudo double not null,
 	data_registrazione DATE not null,
-    orario_registrazione TIME not null,
-    primary key (id_registrazione, id_terremoto)
+    orario_registrazione TIME not null
 );
 
 # AMMINISTRATORI DI BASE -----------------------------------------------------------------------------------------------
@@ -43,7 +41,7 @@ insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"thi
 
 # CONFIGURAZIONE DI DEFAULT -----------------------------------------------------------------------------------------------
 
-insert into Configurazione(soglia_minima,soglia_intermedia,soglia_critica) values(0.3,0.6,0.8);
+insert into Configurazione(soglia_minima,soglia_intermedia,soglia_critica) values(3.0,6.0,7.5);
 
 # FUNZIONI VARIE  -----------------------------------------------------------------------------------------------
 
@@ -75,4 +73,4 @@ DELIMITER ;
 #----------------------- -----------------------------------------------------------------------------------------------
 
 drop view if exists tabella;
-create view tabella as select t.data_registrazione, t.orario_registrazione, t.magnitudo, t.id_terremoto from Terremoto t where t.id_registrazione > getStartId();
+create view tabella as select t.data_registrazione, t.orario_registrazione, t.magnitudo, t.id_registrazione from Terremoto t where t.id_registrazione > getStartId();
