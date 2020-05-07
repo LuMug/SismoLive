@@ -969,7 +969,7 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 ##### Hardware
 
 Il nostro progetto presenta la mancanza di un componente essenziale, ovvero il geofono per la misurazione delle vibrazione terrestri.
-Questo é dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" con la creazione di dati fittizi in un range tra -1.0 e 1.0.
+Questo é dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" con la creazione di dati fittizi in un range tra 1.0 e 10.0.
 
 ## Consuntivo
 
