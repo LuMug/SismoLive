@@ -12,7 +12,7 @@
 
   - [Analisi dei mezzi](#analisi-dei-mezzi)
 
-      - [Hardware](#sofware)
+      - [Hardware](#hardware)
 
       - [Software](#software)
 
@@ -175,17 +175,12 @@ Accesso MySQL:
 
 #### Librerie
 
-<<<<<<< HEAD
-- Chart.js, https://www.chartjs.org/
+- [Chart.js](https://ch.godaddy.com/it)
 
-- Fishino, http://fishino.com/download-libraries-it.html%22%3EFishino.h
+- [RTClib](https://github.com/adafruit/RTClib)
 
-- RTClib, https://github.com/adafruit/RTClib
-=======
-- <a href="https://www.chartjs.org/">Chart.js</a>
-- <a href="https://github.com/adafruit/RTClib">RTClib</a>
-- <a href="http://fishino.com/download-libraries-it.html">Fishino.h</a>
->>>>>>> 4256bd747f917be95be08dbd321cf40e11497740
+- [Fishino.h](http://fishino.com/download-libraries-it.html)
+
 
 #### Hosting
 
@@ -1128,6 +1123,9 @@ L'unica nota negativa che ho è che ad un certo punto eravamo un po' indietro co
 
 Daniel:
 
+Alla fine di questo progetto penso di aver compreso com'é realmente lavorare in team in un progetto importante. Ho capito l'importanza della comunicazione nel team.
+Ho potuto rientrare nel mondo di fishino imparando a utilizzarlo. Il progetto é molto interessante, peccato che non abbiamo potuto implementare la parte con il geofono, che sicuramente avrebbe reso ancora piú interessante questo progetto.
+
 ### Sviluppi futuri
 
   Date le problematiche e le circostanze che abbiamo avuto durante lo sviluppo del progetto,
@@ -1152,6 +1150,9 @@ Daniel:
   Spero che nei prossimi progetti, potrò mettere in pratica le conoscenze acquisite da questo progetto.
 
   Daniel:
+
+  In questo progetto ho potuto migliorare la mia capacità di lavorare in team. Il nostro team si è dimostrato molto organizzato e collaborativo tri i suoi membri. Lavorare in gruppo secondo meè sicuramente piú impegnativo, in fatto di organizzazione, che lavorare singolarmente.
+  Questo progetto ha un grande potenziale, si possono effettuare ancora ulteriori modifiche e/o aggiunte in modo da migliorarne il funzionamento e le sue capacità.
 
 ## Sitografia
 
