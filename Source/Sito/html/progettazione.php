@@ -33,17 +33,6 @@
             * Author: BootstrapMade.com
             * License: https://bootstrapmade.com/license/
             ======================================================== -->
-        <style>
-            .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: red;
-            color: white;
-            text-align: center;
-            }
-        </style>
     </head>
     <body style="background-image: url(../img/sky.jpg)">
         <!-- ======= Header ======= -->
@@ -65,39 +54,38 @@
             </div>
         </header>
         <!-- Fine Header -->
-            <!-- ======= Inizio sezione ======= -->
-            <section class="d-flex align-items-center">
-                <div class="container">
-                    <br>
-                    <br>
-                    <br>
-                    <h1 style="text-align:center;">Progettazione</h1>
-                    <br>
-                    <img src="../img/Schema_Terremoto.jpg" alt="Schema Terremoto" style="float: right; width: 350px">
-                    <h2>Cos'è un terremoto?</h2>
-                    <p>I terremoti, o anche detti sismi sono delle vibrazioni della crosta terrestre provocati dallo spostamento improvviso di una massa rocciosa nel sottosuolo.
-                        <br> All'interno della crosta terrestre avviene una deformazione causata dalle forze di natura tettonica(modello di dinamica della Terra), che provoca una liberazione nell'epicentro di energia elastica.
-                        <br>L’energia che viene rilasciata si propaga sotto forma di onde attraverso la terra e sulla superficie terrestre, causando scuotimenti che vengono percepiti come terremoti.
-                        <br>I terremoti possono inoltre essere legati all’attività vulcanica.
-                        <br>Le faglie sono fratture tettoniche nel sottosuolo lungo le quali le masse rocciose mostrano evidenze di movimento relativo.
-                    </p>
-                    <br>
-                    <h2>Rilevamento terremoti</h2>
-                    <p>L'idea iniziale di questo progetto era quella di monitorare in tempo reale i dati presi da un geofono montato su una stazione sismografica, e tramite l'apposito sito web stampare un grafico e una tabella ed avvisare tramite un email gli amministratori appena c'è il sospetto di un terremoto.
-                        <br> Purtoppo a causa di vari motivi la registrazione dei dati non avviene più con il geofono bensì tramite un sistema di generazione fittizia dei dati, che poi tramite un fishino vengono inviati al database che conterrà tutti i terremoti registrati con data e ora annessa.
-                        <br>Dal componente chiamato Fishino viene registrato ogni secondo un numero che simula il magnitudo. Il numero è compreso tra 10 e 100 e prima di essere inviato al database, viene diviso per 10, così da poter sembrare realistico (Per esempio, se viene generato 62, al database verrà mandato il numero 6.2). Il dato finale viene memorizzato in una tabella chiamata Terremoto.
-                        <br> Oltre al solo magnitudo, nella tabella vengono anche memorizzati il momento in cui si crea il dato fittizzio tramite una data e un'ora.
-                        <br> Inseguito il sito prende i dati delle tabelle nel database e nella <a href="terremoti_attuali.php"> pagina dei terremoti attuali</a> crea una grafico sulla sinistra che va in base al magnitudo registrato nel tempo e sulla destra una tabella con i dati in forma numerica.
-                        <br> Nella pagina <a href="terremoti.php">Terremoti</a> invece ci sono due tabelle con dati statici dei terremoti più percepiti in Svizzera e nel mondo.
-                    </p>
-                </div>
-            </section>
-            <!-- Fine sezione -->
-            <!-- ======= Sezione vuota che scompare su mobile ======= -->
-            <section id="about" class="d-none d-sm-block">
-            </section>
-            <!-- Fine sezione vuota -->
-
+        <!-- ======= Inizio sezione ======= -->
+        <section class="d-flex align-items-center">
+            <div class="container">
+                <br>
+                <br>
+                <br>
+                <h1 style="text-align:center;">Progettazione</h1>
+                <br>
+                <img src="../img/Schema_Terremoto.jpg" alt="Schema Terremoto" style="float: right; width: 350px">
+                <h2>Cos'è un terremoto?</h2>
+                <p>I terremoti, o anche detti sismi sono delle vibrazioni della crosta terrestre provocati dallo spostamento improvviso di una massa rocciosa nel sottosuolo.
+                    <br> All'interno della crosta terrestre avviene una deformazione causata dalle forze di natura tettonica(modello di dinamica della Terra), che provoca una liberazione nell'epicentro di energia elastica.
+                    <br>L’energia che viene rilasciata si propaga sotto forma di onde attraverso la terra e sulla superficie terrestre, causando scuotimenti che vengono percepiti come terremoti.
+                    <br>I terremoti possono inoltre essere legati all’attività vulcanica.
+                    <br>Le faglie sono fratture tettoniche nel sottosuolo lungo le quali le masse rocciose mostrano evidenze di movimento relativo.
+                </p>
+                <br>
+                <h2>Rilevamento terremoti</h2>
+                <p>L'idea iniziale di questo progetto era quella di monitorare in tempo reale i dati presi da un geofono montato su una stazione sismografica, e tramite l'apposito sito web stampare un grafico e una tabella ed avvisare tramite un email gli amministratori appena c'è il sospetto di un terremoto.
+                    <br> Purtoppo a causa di vari motivi la registrazione dei dati non avviene più con il geofono bensì tramite un sistema di generazione fittizia dei dati, che poi tramite un fishino vengono inviati al database che conterrà tutti i terremoti registrati con data e ora annessa.
+                    <br>Dal componente chiamato Fishino viene registrato ogni secondo un numero che simula il magnitudo. Il numero è compreso tra 10 e 100 e prima di essere inviato al database, viene diviso per 10, così da poter sembrare realistico (Per esempio, se viene generato 62, al database verrà mandato il numero 6.2). Il dato finale viene memorizzato in una tabella chiamata Terremoto.
+                    <br> Oltre al solo magnitudo, nella tabella vengono anche memorizzati il momento in cui si crea il dato fittizzio tramite una data e un'ora.
+                    <br> Inseguito il sito prende i dati delle tabelle nel database e nella <a href="terremoti_attuali.php"> pagina dei terremoti attuali</a> crea una grafico sulla sinistra che va in base al magnitudo registrato nel tempo e sulla destra una tabella con i dati in forma numerica.
+                    <br> Nella pagina <a href="terremoti.php">Terremoti</a> invece ci sono due tabelle con dati statici dei terremoti più percepiti in Svizzera e nel mondo.
+                </p>
+            </div>
+        </section>
+        <!-- Fine sezione -->
+        <!-- ======= Sezione vuota che scompare su mobile ======= -->
+        <section id="about" class="d-none d-sm-block">
+        </section>
+        <!-- Fine sezione vuota -->
         <!-- ======= Footer ======= -->
         <footer class="footer" id="footer">
             <div class="container">

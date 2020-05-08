@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 require "mail/PHPMailer/PHPMailerAutoload.php";
@@ -11,14 +10,14 @@ $subj = 'Allarme terremoto!';
 $msg = 'In data ' . $_SESSION['data'] . ' abbiamo rilevato un terremoto di magnitudo ' . $_SESSION['magnitudo'] . ' alle ' . $_SESSION['orario'];
 $email = "SELECT email FROM Utente";
 $result = $link->query($email);
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
+if ($result->num_rows > 0){
+    while ($row = $result->fetch_assoc()){
         $to = $row['email'];
         $error = smtpmailer($to, $from, $name, $subj, $msg);
     }
 }
 
-function smtpmailer($to, $from, $from_name, $subject, $body) {
+function smtpmailer($to, $from, $from_name, $subject, $body){
     $mail = new PHPMailer();
     $mail->IsSMTP();
     $mail->SMTPAuth = true;
@@ -28,17 +27,17 @@ function smtpmailer($to, $from, $from_name, $subject, $body) {
     $mail->Username = 'terremoto@sismolive.online';
     $mail->Password = 'terremoto';
     $mail->IsHTML(true);
-        //Indirizzo mail mittente
+    //Indirizzo mail mittente
     $mail->From = "terremoto@sismolive.online";
-        //Nome mittente
+    //Nome mittente
     $mail->FromName = $from_name;
     $mail->Sender = $from;
     $mail->AddReplyTo($from, $from_name);
-        //Oggetto della mail
+    //Oggetto della mail
     $mail->Subject = $subject;
-        //Contenuto della mail
+    //Contenuto della mail
     $mail->Body = $body;
-        //Destinatario
+    //Destinatario
     $mail->AddAddress($to);
     //Invio la mail
     $mail->Send();

@@ -25,9 +25,9 @@
         <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
         <link href="vendor/venobox/venobox.css" rel="stylesheet">
         <link href="vendor/aos/aos.css" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-         <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-              <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
         <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
         <!-- Template Main CSS File -->
         <link href="css/style.css" rel="stylesheet">
@@ -37,17 +37,6 @@
             * Author: BootstrapMade.com
             * License: https://bootstrapmade.com/license/
             ======================================================== -->
-        <style>
-            .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: red;
-            color: white;
-            text-align: center;
-            }
-        </style>
     </head>
     <body style="background-image: url(img/sky.jpg)">
         <!-- ======= Header ======= -->
@@ -69,27 +58,27 @@
             </div>
         </header>
         <!-- Fine Header -->
-            <!-- ======= Inizio sezione ======= -->
-            <section id="hero" class="d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                            <h1>Benvenuto sul miglior sito per controllare i terremoti</h1>
-                            <div>
-                                <a href="html/terremoti_attuali.php" class="btn-get-started scrollto">Controlla i terremoti</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 order-1 order-lg-2 hero-img">
-                            <img src="img/logo.jpg" class="img-fluid animated" alt="">
+        <!-- ======= Inizio sezione ======= -->
+        <section id="hero" class="d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                        <h1>Benvenuto sul miglior sito per controllare i terremoti</h1>
+                        <div>
+                            <a href="html/terremoti_attuali.php" class="btn-get-started scrollto">Controlla i terremoti</a>
                         </div>
                     </div>
+                    <div class="col-lg-6 order-1 order-lg-2 hero-img">
+                        <img src="img/logo.jpg" class="img-fluid animated" alt="">
+                    </div>
                 </div>
-            </section>
-            <!-- Fine sezione -->
-            <!-- ======= Sezione vuota che scompare su mobile ======= -->
-            <section id="about" class="d-none d-sm-block">
-            </section>
-            <!-- Fine sezione vuota -->
+            </div>
+        </section>
+        <!-- Fine sezione -->
+        <!-- ======= Sezione vuota che scompare su mobile ======= -->
+        <section id="about" class="d-none d-sm-block">
+        </section>
+        <!-- Fine sezione vuota -->
         <!-- ======= Footer ======= -->
         <footer class="footer" id="footer">
             <div class="container">
