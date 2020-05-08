@@ -11,10 +11,15 @@
 	2.1 [Analisi del dominio](#analisi-del-dominio)
 
 	2.2 [Analisi dei mezzi](#analisi-dei-mezzi)
+
 		2.2.1 [Hardware](#hardware)
+
 		2.2.2 [Software](#software)
+
 		2.2.3 [Librerie](#librerie)
+
 		2.2.4 [Hosting](#hosting)
+    
 	2.3 [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
 
 	2.4 [Use case](#use-case)
