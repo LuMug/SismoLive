@@ -1,64 +1,64 @@
 1. [Introduzione](#introduzione)
 
-	1.1 [Informazioni sul progetto](#informazioni-sul-progetto)
+    1.1 [Informazioni sul progetto](#informazioni-sul-progetto)
 
-	1.2 [Abstract](#abstract)
+    1.2 [Abstract](#abstract)
 
-	1.3 [Scopo](#scopo)
+    1.3 [Scopo](#scopo)
 
 2. [Analisi](#analisi)
 
-	2.1 [Analisi del dominio](#analisi-del-dominio)
+    2.1 [Analisi del dominio](#analisi-del-dominio)
 
-	2.2 [Analisi dei mezzi](#analisi-dei-mezzi)
+    2.2 [Analisi dei mezzi](#analisi-dei-mezzi)
 
-		2.2.1 [Hardware](#hardware)
+    - 2.2.1 [Hardware](#hardware)
 
-		2.2.2 [Software](#software)
+    - 2.2.2 [Software](#software)
 
-		2.2.3 [Librerie](#librerie)
+    - 2.2.3 [Librerie](#librerie)
 
-		2.2.4 [Hosting](#hosting)
+    - 2.2.4 [Hosting](#hosting)
 
-	2.3 [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
+    2.3 [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
 
-	2.4 [Use case](#use-case)
+    2.4 [Use case](#use-case)
 
-	2.5 [Pianificazione](#pianificazione)
+    2.5 [Pianificazione](#pianificazione)
 
 3. [Progettazione](#progettazione)
 
-	3.1 [Design dell’architettura del sistema](#design-dell’architettura-del-sistema)
+    3.1 [Design dell’architettura del sistema](#design-dell’architettura-del-sistema)
 
-	3.2 [Schema E-R, schema logico e descrizione](#schema-e-r,-schema-logico-e-descrizione)
+    3.2 [Schema E-R, schema logico e descrizione](#schema-e-r,-schema-logico-e-descrizione)
 
-	3.3 [Design delle interfacce](#design-delle-interfacce)
+    3.3 [Design delle interfacce](#design-delle-interfacce)
 
-	3.4 [Design procedurale](#design-procedurale)
+    3.4 [Design procedurale](#design-procedurale)
 
 4. [Implementazione](#implementazione)
 
-	4.1 [Sito Internet](#Sito)
+    4.1 [Sito Internet](#Sito)
 
-	4.2 [Database](#Database)
+    4.2 [Database](#Database)
 
-	4.3 [Hardware e codice](#Hardware-e-codice)
+    4.3 [Hardware e codice](#Hardware-e-codice)
 
 5. [Test](#test)
 
-	5.1 [Protocollo di test](#protocollo-di-test)
+    5.1 [Protocollo di test](#protocollo-di-test)
 
-	5.2 [Risultati test](#risultati-test)
+    5.2 [Risultati test](#risultati-test)
 
-	5.3 [Mancanze e limitazioni conosciute](#mancanze-e-limitazioni-conosciute)
+    5.3 [Mancanze e limitazioni conosciute](#mancanze-e-limitazioni-conosciute)
 
 6. [Consuntivo](#consuntivo)
 
 7. [Conclusioni](#conclusioni)
 
-	7.1 [Sviluppi futuri](#sviluppi-futuri)
+    7.1 [Sviluppi futuri](#sviluppi-futuri)
 
-	7.2 [Considerazioni personali](#considerazioni-personali)
+    7.2 [Considerazioni personali](#considerazioni-personali)
 
 8. [Sitografia](#sitografia)
 
