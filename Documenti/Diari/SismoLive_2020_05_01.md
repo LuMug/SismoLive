@@ -11,12 +11,12 @@
 |11:00 - 12:30    | Inserito test per fishino nella doc.(Daniel)|
 |13:00 - 16:50    | Sistemato alcune piccole cose di invio dati da php a mysql e della struttura di tabelle(Georgiy).|
 |13:00 - 14:30    | Impostata tabella e grafico in modalità "Real Time"(Matthias).|
-|13:30 - 16:50    | Completato inserimento dati nel DB(Daniel).|
+|13:30 - 16:50    | Completato inserimento dati nel DB(Daniel, Georgiy).|
 |14:30 - 15:30    | Creato file csv che contengono i terremoti mondo/svizzera e con php creare la tabella in modo automatico(Matthias).|
 |15:30 - 16:30    | Creata pagina per configurare i parametri funzionante(Matthias).|
 |16:30 - 16:50    | Puliza del codice(Matthias).|
 |17:00 - 17:10    | Aggiornamento diario|
-|17:30 - 18:00   | Mandare mail quando la soglia critica è superata (Matthias).|
+|17:30 - 18:00    | Mandare mail quando la soglia critica è superata (Matthias).|
 
 
 ##  Problemi riscontrati e soluzioni adottate

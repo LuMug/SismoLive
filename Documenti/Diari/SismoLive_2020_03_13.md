@@ -5,7 +5,7 @@
 ## Lavori Svolti
 |Orario          |Lavoro svolto                 |
 |--------------  |------------------------------|
-|08:20 - 08:30 | |
+|08:20 - 08:30 | Creazione tabella terremoti famosi sul sito (Marco)|
 |08:30 - 11:35 | |
 |08:30 - 11:35 | |
 |11:35 - 13:15 | |
