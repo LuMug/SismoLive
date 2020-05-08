@@ -1202,8 +1202,11 @@ Daniel:
 - https://www.seeedstudio.com/, 29-01-2020
 - https://www.iconfinder.com/, 29-01-2020
 - https://www.w3schools.com/howto/howto_js_sort_table.asp, *w3schools* 03-04.2020
+- https://www.w3schools.com/php/php_mysql_insert.asp, *w3schools* 03-04.2020
 - https://github.com/PHPMailer/PHPMailer, *PHPMailer*, 01-05-2020
+- https://www.tutorialspoint.com/php/mysql_select_php.htm, 01-05-2020
 - https://github.com/messagebird/php-rest-api, *messagebird*, 04-05-2020
+
 
 ## Allegati
 
