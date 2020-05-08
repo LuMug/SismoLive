@@ -164,8 +164,7 @@ Daniel:
 - ASUS X556UAM, Windows 10 home 64 bit
 
 Sismografo:
-- Arduino Mega 2560
-- Fishino
+- Fishino UNO
 
 
 #### Software
