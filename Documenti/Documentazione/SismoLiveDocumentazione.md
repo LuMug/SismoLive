@@ -310,7 +310,19 @@ Progettazione pagina progettazione:
 
 ### Design procedurale
 
-![Diagramma flusso dati](../Immagini/Diagramma_Flusso_dati.png)
+***DA COMPLETARE***
+
+
+Descrive i concetti dettagliati dell’architettura/sviluppo utilizzando
+ad esempio:
+
+-   Diagrammi di flusso e Nassi.
+
+-   Tabelle.
+
+-   Classi e metodi.
+
+-   Diritti di accesso a condivisioni …
 
 ## Implementazione
 
@@ -553,13 +565,13 @@ Esegue una query che legge l'indirizzo email di ogni amministratore e per ogni d
 ```php
 session_start();
 
-require "PHPMailer/PHPMailerAutoload.php";
-require "../connectToDB.php";
+require "mail/PHPMailer/PHPMailerAutoload.php";
+require "connectToDB.php";
 
 $from = 'terremoto@sismolive.online';
 $name = 'SismoLive';
 $subj = 'Allarme terremoto!';
-$msg = 'È stato rilevato un terremoto di magnitudo ' .$_SESSION['magnitudo'] . ' alle ' . $_SESSION['orario'];
+$msg = 'In data ' . $_SESSION['data'] . ' abbiamo rilevato un terremoto di magnitudo ' . $_SESSION['magnitudo'] . ' alle ' . $_SESSION['orario'];
 $email = "SELECT email FROM Utente";
 $result = $link->query($email);
 if ($result->num_rows > 0) {
@@ -588,20 +600,24 @@ $terremoti = "SELECT * FROM Terremoto";
 // Esecuzione delle query
 $querySoglie = $link->query($soglie);
 $queryTerremoti = $link->query($terremoti);
-// Estraggo l'ultimo id_registrazione
+// Estrae l'ultimo id_registrazione
 $id_reg = $queryTerremoti->num_rows + 1;
-// Estraggo le tre configurazioni delle soglie
+// Estrae le tre configurazioni delle soglie
 $configurazioni = $querySoglie->fetch_assoc();
 $sogliaMinima = $configurazioni["soglia_minima"];
 $sogliaIntermedia = $configurazioni["soglia_intermedia"];
 $sogliaCritica = $configurazioni["soglia_critica"];
-// imposto il fuso orario corretto
+// Imposta il fuso orario corretto
 date_default_timezone_set("Europe/Zurich");
-// ottengo data e ora attuali
+// Data e ora attuali
 $data_corrente = date("Y-m-d");
 $ora_corrente = date("H:i:s");
-//leggo il dato mandato dal fishino
-$magnitudo = round($_POST['value'], 1);
+// leggo il dato mandato dal fishino
+//$magnitudo = round($_POST['value'], 1);
+
+// Magnitudo random
+$magnitudo = rand(1,10);
+
 //Inserisce il record nella tabella se il magnitudo è sopra o guale alla soglia minima
 if ($magnitudo >= $sogliaMinima) {
     $inserimentoDati = "INSERT INTO Terremoto(id_registrazione,magnitudo,data_registrazione,orario_registrazione) VALUES ('$id_reg','$magnitudo','$data_corrente','$ora_corrente')";
@@ -615,12 +631,11 @@ if ($magnitudo >= $sogliaMinima) {
 if ($magnitudo >= $sogliaIntermedia) {
     $_SESSION['magnitudo'] = $magnitudo;
     $_SESSION['orario'] = $ora_corrente;
-    require "mail/mail.php";
+    $_SESSION['data'] = $data_corrente;
+    require "mail.php";
 }
 // Manda un sms se il magnitudo è sopra o guale alla soglia critica
 if ($magnitudo >= $sogliaCritica) {
-    $_SESSION['magnitudo'] = $magnitudo;
-    $_SESSION['orario'] = $ora_corrente;
     require "sms/sms.php";
 }
 ```
@@ -677,14 +692,14 @@ Il contenuto del messaggio sarà "Allarme terremoto!".
 ```php
 require_once ('messagebird/vendor/autoload.php');
 // Chiave API
-$MessageBird = new \MessageBird\Client('');
+$MessageBird = new \MessageBird\Client('5ObfVA3rDJcJhRR5DgUz8XIIW');
 $Message = new \MessageBird\Objects\Message();
 //Nome del mittente
 $Message->originator = 'SismoLive';
 //Numero del destinatario
 $Message->recipients = ['+41789246797'];
 //Messaggio da mandare
-$Message->body = 'Allarme terremoto!';
+$Message->body = 'Abbiamo rilevato rilevato un terremoto critico, mettiti al riparo velocemente!';
 //Invia il messaggio
 try {
     $MessageResult = $MessageBird->messages->create($Message);
@@ -1207,8 +1222,11 @@ Daniel:
 - https://www.seeedstudio.com/, 29-01-2020
 - https://www.iconfinder.com/, 29-01-2020
 - https://www.w3schools.com/howto/howto_js_sort_table.asp, *w3schools* 03-04.2020
+- https://www.w3schools.com/php/php_mysql_insert.asp, *w3schools* 03-04.2020
 - https://github.com/PHPMailer/PHPMailer, *PHPMailer*, 01-05-2020
+- https://www.tutorialspoint.com/php/mysql_select_php.htm, 01-05-2020
 - https://github.com/messagebird/php-rest-api, *messagebird*, 04-05-2020
+
 
 ## Allegati
 

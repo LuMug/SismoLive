@@ -1,14 +1,15 @@
 <?php
 require_once ('messagebird/vendor/autoload.php');
 // Chiave API
-$MessageBird = new \MessageBird\Client('');
+// Chiave: zjlylwhrifXC9WhJ0mNncrz9O
+$MessageBird = new \MessageBird\Client('5ObfVA3rDJcJhRR5DgUz8XIIW');
 $Message = new \MessageBird\Objects\Message();
 //Nome del mittente
 $Message->originator = 'SismoLive';
 //Numero del destinatario
 $Message->recipients = ['+41789246797'];
 //Messaggio da mandare
-$Message->body = 'Allarme terremoto!';
+$Message->body = 'Abbiamo rilevato rilevato un terremoto critico, mettiti al riparo velocemente!';
 //Invia il messaggio
 try {
     $MessageResult = $MessageBird->messages->create($Message);
