@@ -21,10 +21,7 @@ date_default_timezone_set("Europe/Zurich");
 $data_corrente = date("Y-m-d");
 $ora_corrente = date("H:i:s");
 // leggo il dato mandato dal fishino
-//$magnitudo = round($_POST['value'], 1);
-
-// Magnitudo random
-$magnitudo = rand(1,10);
+$magnitudo = round($_POST['value'], 1);
 
 //Inserisce il record nella tabella se il magnitudo è sopra o guale alla soglia minima
 if ($magnitudo >= $sogliaMinima) {
