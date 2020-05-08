@@ -19,7 +19,7 @@
 		2.2.3 [Librerie](#librerie)
 
 		2.2.4 [Hosting](#hosting)
-    
+
 	2.3 [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
 
 	2.4 [Use case](#use-case)
@@ -286,35 +286,35 @@ Progettazione pagina progettazione, abbiamo pensato di fare una pagina dove vien
 
 ### Sito
 
-- [js](../Source/Sito/js/)
+- [js](../../Source/Sito/js/)
 
 > Cartella nella quale sono salvati tutti i file javascript.
 
-- [fonts](../Source/Sito/fonts/)
+- [fonts](../../Source/Sito/fonts/)
 
 > Cartella nella quale sono salvati tutti i font.
 
-- [csv](../Source/Sito/csv/)
+- [csv](../../Source/Sito/csv/)
 
 > Cartella nella quale sono salvati tutti i file in formato csv.
 
-- [css](../Source/Sito/css/)
+- [css](../../Source/Sito/css/)
 
 > Cartella nella quale sono salvati tutti i file di stile css.
 
-- [php](../Source/Sito/php/)
+- [php](../../Source/Sito/php/)
 
 > Cartella nella quale sono salvati tutti i file PHP.
 
-- [img](../Source/Sito/img/)
+- [img](../../Source/Sito/img/)
 
 > Cartella nella quale sono salvate tutte le immagini.
 
-- [html](../Source/Sito/html/)
+- [html](../../Source/Sito/html/)
 
 > Cartella nella quale sono salvati tutti i file html-php.
 
-- [vendor](../Source/Sito/vendor/)
+- [vendor](../../Source/Sito/vendor/)
 
 > Cartella nella quale sono tutti i vendor utili per il sito.
 
