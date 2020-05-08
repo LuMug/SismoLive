@@ -212,7 +212,9 @@ Sismografo:
 
 #### Librerie
 
-- Chart.js
+- <a href="https://www.chartjs.org/">Chart.js</a>
+- <a href="https://github.com/adafruit/RTClib">RTClib</a>
+- <a href="http://fishino.com/download-libraries-it.html">Fishino.h</a>
 
 #### Hosting
 
