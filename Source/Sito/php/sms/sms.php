@@ -2,7 +2,7 @@
 require_once ('messagebird/vendor/autoload.php');
 // Chiave API
 // Chiave: zjlylwhrifXC9WhJ0mNncrz9O
-$MessageBird = new \MessageBird\Client('');
+$MessageBird = new \MessageBird\Client('5ObfVA3rDJcJhRR5DgUz8XIIW');
 $Message = new \MessageBird\Objects\Message();
 //Nome del mittente
 $Message->originator = 'SismoLive';
