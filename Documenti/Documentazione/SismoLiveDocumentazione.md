@@ -1140,6 +1140,9 @@ Per quanto riguarda la misurazione delle vibrazioni, abbiamo "risolto" con la cr
 ![Gant consuntivo](../Immagini/gantt_cons7.PNG)
 ![Gant consuntivo](../Immagini/gantt_cons8.PNG)
 
+Abbiamo seguito il gantt preventivo in modo abbastanza fedele, in più le varie mancanze che abbiamo avuto durante lo sviluppo sono state compensate da migliorie varie. Ci siamo gestiti e organizzati molto bene sin dall'inizio, senza creare confusione inutile durante il progetto.
+Rispetto al progetto del primo semestre, nel quale tre componenti del team su quattro si erano ridotti all'ultimo con la documentazione, siamo riusciti a tenerla aggiornata costantemente durante l'andamento del progetto, arrivando così con tranquillità alla fine di quest'ultimo.
+
 ## Conclusioni
 
 Marco:
