@@ -13,11 +13,11 @@
 	2.2 [Analisi dei mezzi](#analisi-dei-mezzi)
 
 	- 2.2.1 [Hardware](#hardware)
-		
+
 	- 2.2.2 [Software](#software)
-		
+
 	- 2.2.3 [Librerie](#librerie)
-		
+
 	- 2.2.4 [Hosting](#hosting)
 
 	2.3 [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
@@ -596,10 +596,7 @@ date_default_timezone_set("Europe/Zurich");
 $data_corrente = date("Y-m-d");
 $ora_corrente = date("H:i:s");
 // leggo il dato mandato dal fishino
-//$magnitudo = round($_POST['value'], 1);
-
-// Magnitudo random
-$magnitudo = rand(1,10);
+$magnitudo = round($_POST['value'], 1);
 
 //Inserisce il record nella tabella se la magnitudo è sopra o uguale alla soglia minima
 if ($magnitudo >= $sogliaMinima) {
