@@ -1,69 +1,63 @@
 1. [Introduzione](#introduzione)
 
-  - [Informazioni sul progetto](#informazioni-sul-progetto)
+	1.1 [Informazioni sul progetto](#informazioni-sul-progetto)
 
-  - [Abstract](#abstract)
+	1.2 [Abstract](#abstract)
 
-  - [Scopo](#scopo)
+	1.3 [Scopo](#scopo)
 
 2. [Analisi](#analisi)
 
-  - [Analisi del dominio](#analisi-del-dominio)
+	2.1 [Analisi del dominio](#analisi-del-dominio)
 
-  - [Analisi dei mezzi](#analisi-dei-mezzi)
+	2.2 [Analisi dei mezzi](#analisi-dei-mezzi)
+		2.2.1 [Hardware](#hardware)
+		2.2.2 [Software](#software)
+		2.2.3 [Librerie](#librerie)
+		2.2.4 [Hosting](#hosting)
+	2.3 [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
 
-      - [Hardware](#hardware)
+	2.4 [Use case](#use-case)
 
-      - [Software](#software)
-
-      - [Librerie](#librerie)
-
-      - [Hosting](#hosting)
-
-  - [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
-
-  - [Use case](#use-case)
-
-  - [Pianificazione](#pianificazione)
+	2.5 [Pianificazione](#pianificazione)
 
 3. [Progettazione](#progettazione)
 
-  - [Design dell’architettura del sistema](#design-dell’architettura-del-sistema)
+	3.1 [Design dell’architettura del sistema](#design-dell’architettura-del-sistema)
 
-  - [Schema E-R, schema logico e descrizione](#schema-e-r,-schema-logico-e-descrizione)
+	3.2 [Schema E-R, schema logico e descrizione](#schema-e-r,-schema-logico-e-descrizione)
 
-  - [Design delle interfacce](#design-delle-interfacce)
+	3.3 [Design delle interfacce](#design-delle-interfacce)
 
-  - [Design procedurale](#design-procedurale)
+	3.4 [Design procedurale](#design-procedurale)
 
 4. [Implementazione](#implementazione)
 
-  - [Sito Internet](#Sito)
+	4.1 [Sito Internet](#Sito)
 
-  - [Database](#Database)
+	4.2 [Database](#Database)
 
-  - [Hardware e codice](#Hardware-e-codice)
+	4.3 [Hardware e codice](#Hardware-e-codice)
 
 5. [Test](#test)
 
-  - [Protocollo di test](#protocollo-di-test)
+	5.1 [Protocollo di test](#protocollo-di-test)
 
-  - [Risultati test](#risultati-test)
+	5.2 [Risultati test](#risultati-test)
 
-  - [Mancanze e limitazioni conosciute](#mancanze-e-limitazioni-conosciute)
+	5.3 [Mancanze e limitazioni conosciute](#mancanze-e-limitazioni-conosciute)
 
 6. [Consuntivo](#consuntivo)
 
 7. [Conclusioni](#conclusioni)
 
-  - [Sviluppi futuri](#sviluppi-futuri)
+	7.1 [Sviluppi futuri](#sviluppi-futuri)
 
-  - [Considerazioni personali](#considerazioni-personali)
+	7.2 [Considerazioni personali](#considerazioni-personali)
 
 8. [Sitografia](#sitografia)
 
 9. [Allegati](#allegati)
-
 
 ## Introduzione
 
@@ -218,7 +212,7 @@ Questo perché senza queste due caratteristiche, sarebbe stato molto difficile d
 
 Lo schema seguente rappresenta lo use case del progetto:
 
-![Diagramma use case](../Immagini/diagramma_use_case.PNG)
+![Diagramma use case](../Immagini/diagramma_use_case.png)
 
 ### Pianificazione
 
@@ -254,21 +248,21 @@ Sitemap:
 
 L'immagine sottostante rappresenta il diagramma E/R del database SismoLive:
 
-![Diagramma E/R](../Immagini/diagramma_er.PNG)
+![Diagramma E/R](../Immagini/diagramma_er.png)
 
 ### Design delle interfacce
 
 Progettazione pagina principale, abbiamo inizialmente pensato di avere una home che contenesse la visualizzazione dei dati in live sotto forma di grafico e tabella:
 
-![index](../Progettazione_Sito/Index.png)
+![index](../Progettazione_Sito/index.png)
 
 Progettazione pagina login, abbiamo pensato di avere una pagina di login dove gli amministratori possono accedere tramite le credenziali nome utente e password:
 
-![Login](../Progettazione_Sito/Login.png)
+![Login](../Progettazione_Sito/login.png)
 
 Progettazione terremoti, pagina dove vengono mostrate due tabelle con i terremoti più percepiti in Svizzera e nel mondo con colonne: data, magnitudo, pericolosità e la città:
 
-![Terremoti](../Progettazione_Sito/Terremoti.png)
+![Terremoti](../Progettazione_Sito/terremoti.png)
 
 Progettazione Menu a tendina, abbiamo progettato di fare un menu a tendina dove si potesse navigare fra le varie pagine(Home, terremoti, progettazione, chi siamo):
 
