@@ -178,6 +178,17 @@ Daniel:
 Sismografo:
 - Fishino UNO
 
+Accesso FTP:
+- Host: sismolive.online
+- IP: 160.153.133.208
+- Username: pp5pgbhrdzcr
+- Password: SismoLive2020!
+
+Accesso MySQL:
+- IP: 160.153.133.208
+- Username: sismo
+- Password: sismo
+- Database: SismoLive
 
 #### Software
 
@@ -247,6 +258,7 @@ funzionalità del prodotto.
 ![Gant preventivo](../Immagini/gantt_prev1.PNG)
 ![Gant preventivo](../Immagini/gantt_prev2.PNG)
 ![Gant preventivo](../Immagini/gantt_prev3.PNG)
+
 ![Gant preventivo](../Immagini/gantt_prev4.PNG)
 
 ## Progettazione
@@ -277,23 +289,23 @@ versione, mentre le vecchie saranno sui diari.
 
 ### Design delle interfacce
 
-Progettazione pagina principale:
+Progettazione pagina principale, abbiamo inizialmente pensato di avere una home che contenesse la visualizzazione dei dati in live sotto forma di grafico e tabella:
 ![index](../Progettazione_Sito/index.png)
 
-Progettazione Login:
+Progettazione Login, abbiamo pensato di avere una pagina di login dove gli amministratori possono accedere tramite le credenziali nome utente e password:
 
 ![Login](../Progettazione_Sito/login.png)
 
 
-Progettazione terremoti:
+Progettazione terremoti, pagina dove vengono mostrate due tabelle con i terremoti più percepiti in Svizzera e nel mondo con colonne: data, magnitudo, pericolosità e la città:
 
 ![Terremoti](../Progettazione_Sito/terremoti.png)
 
-Progettazione Menu a tendina:
+Progettazione Menu a tendina, abbiamo progettato di fare un menu a tendina dove si potesse navigare fra le varie pagine(Home, terremoti, progettazione, chi siamo):
 
 ![Terremoti](../Progettazione_Sito/Menu-Tendina.png)
 
-Progettazione pagina progettazione:
+Progettazione pagina progettazione, abbiamo pensato di fare una pagina dove viene spiegato il progetto, con dei commenti, un analisi e lo sviluppo e sulla destra un'immagine del montaggio:
 
 ![Terremoti](../Progettazione_Sito/Progettazione.png)
 
@@ -303,16 +315,7 @@ Progettazione pagina progettazione:
 ***DA COMPLETARE***
 
 
-Descrive i concetti dettagliati dell’architettura/sviluppo utilizzando
-ad esempio:
-
 -   Diagrammi di flusso e Nassi.
-
--   Tabelle.
-
--   Classi e metodi.
-
--   Diritti di accesso a condivisioni …
 
 ## Implementazione
 
@@ -1113,7 +1116,7 @@ Daniel:
 - https://www.sparkfun.com/, 29-01-2020
 - https://www.seeedstudio.com/, 29-01-2020
 - https://www.iconfinder.com/, 29-01-2020
-- https://www.w3schools.com/howto/howto_js_sort_table.asp, *w3schools* 03-04.2020
+- https://stackoverflow.com/questions/14267781/sorting-html-table-with-javascript/49041392, *stackoverflow* 03-04.2020
 - https://github.com/PHPMailer/PHPMailer, *PHPMailer*, 01-05-2020
 - https://github.com/messagebird/php-rest-api, *messagebird*, 04-05-2020
 
