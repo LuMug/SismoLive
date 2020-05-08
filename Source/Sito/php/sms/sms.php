@@ -9,7 +9,7 @@ $Message->originator = 'SismoLive';
 //Numero del destinatario
 $Message->recipients = ['+41789246797'];
 //Messaggio da mandare
-$Message->body = 'Abbiamo rilevato rilevato un terremoto critico, mettiti al riparo velocemente!';
+$Message->body = 'Abbiamo rilevato un terremoto critico, mettiti al riparo velocemente!';
 //Invia il messaggio
 try {
     $MessageResult = $MessageBird->messages->create($Message);
