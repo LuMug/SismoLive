@@ -81,6 +81,13 @@
 
 ### Abstract
 
+***DA COMPLETARE***
+
+
+   ***Ogni giorno nel mondo vengono percepiti un marea di terremoti, con questo sito
+   si può controllare in tempo reale le scosse percepite dal nostro sensore.***
+
+
   E’ una breve e accurata rappresentazione dei contenuti di un documento,
   senza notazioni critiche o valutazioni. Lo scopo di un abstract efficace
   dovrebbe essere quello di far conoscere all’utente il contenuto di base
@@ -119,6 +126,10 @@
   > design such a large-scale microprocessor in just weeks.*
 
 ### Scopo
+
+***DA COMPLETARE***
+
+  Lo scopo principale di questo progetto è di poter approfondire le nostre capacità nell teamwork.
   Lo scopo di questo progetto è quello di avere una costante misurazione tramite una struttura di registrazione, insieme alla relativa rappresentazione su un sito web, delle vibrazioni terrestri.
   Nel caso di un terremoto devono essere notificati gli admin via mail e gli utenti sul sito.
 
@@ -126,11 +137,71 @@
 
 ### Analisi del dominio
 
-Il prodotto finale potrà essere utilizzato da tutti gli utenti, sia esperti,
-sia principianti, che hanno a disposizione un dispositivo in grado di navigare su internet.
+***DA COMPLETARE***
+
+
+SismoLive è progettato per tutti gli utenti, sia esperti,
+sia principianti, che hanno a disposizione un dispositivo, il quale può essere un telefono, tablet o computer in grado di navigare su internet.
 Chiunque può consultare il sito che conterrà una rappresentazione delle misurazioni delle scosse sismiche sotto forma di grafico e tabella, una pagina dei terremoti più percepiti in Svizzera e nel mondo, e infine una pagina di descrizione del progetto.
 
 Attualmente esiste già un sito nazionale dedicato a questo tema, speriamo che la nostra versione sia più piacevole ed efficace.
+
+### Analisi dei mezzi
+
+
+
+#### Hardware
+
+Matthias:
+
+- ASUS ROG GL553VE, Windows 10 Home 64 bit, versione 1903 build 18362.535.
+
+Marco:
+
+- Acer Aspire VN7-572G, Windows 10 home 64 bit
+
+Georgiy:
+- Acer Aspire A717-71G, Windows 10 home 64 bit
+
+Daniel:
+- ASUS X556UAM, Windows 10 home 64 bit
+
+Sismografo:
+- Arduino Mega 2560
+- Fishino
+
+
+#### Software
+
+- Lunacy v4.6.1
+
+- Atom v1.40.1
+
+- Microsoft Project 2019 v16
+
+- GitHub Desktop v2.1.3
+
+- Google Chrome v79.0.3945.79
+
+- XAMPP v3.2.4
+
+- MySQL Workbench 8.0 CE
+
+- Arduino IDE v1.8.33.0
+
+- Sublime text 3
+
+- Opera
+
+#### Librerie
+
+- Chart.js
+
+
+#### Hosting
+
+Hosting su GoDaddy !!! Da chidere
+
 
 ### Analisi e specifica dei requisiti
 
@@ -155,6 +226,9 @@ Attualmente esiste già un sito nazionale dedicato a questo tema, speriamo che l
 
 ### Use case
 
+***DA COMPLETARE***
+
+
 I casi d’uso rappresentano l’interazione tra i vari attori e le
 funzionalità del prodotto.
 
@@ -166,51 +240,6 @@ funzionalità del prodotto.
 ![Gant preventivo](../Immagini/gantt_prev2.PNG)
 ![Gant preventivo](../Immagini/gantt_prev3.PNG)
 ![Gant preventivo](../Immagini/gantt_prev4.PNG)
-
-### Analisi dei mezzi
-
-#### Hardware
-
-Matthias:
-
-- ASUS ROG GL553VE, Windows 10 Home 64 bit, versione 1903 build 18362.535.
-
-Marco:
-
-- Acer Aspire VN7-572G, Windows 10 home 64 bit
-
-Georgiy:
-- Acer Aspire A717-71G, Windows 10 home 64 bit
-
-Daniel:
-- ASUS X556UAM, Windows 10 home 64 bit
-
-Sismografo:
-- Arduino Mega 2560
-- Fishino
-
-#### Software
-
-- Lunacy v4.6.1
-
-- Atom v1.40.1
-
-- Microsoft Project 2019 v16
-
-- GitHub Desktop v2.1.3
-
-- Google Chrome v79.0.3945.79
-
-- XAMPP v3.2.4
-
-- MySQL Workbench 8.0 CE
-
-- Arduino IDE v1.8.33.0
-
-- Sublime text 3
-
-#### Librerie
-
 
 ## Progettazione
 
@@ -267,6 +296,9 @@ Progettazione pagina progettazione:
 
 ### Design procedurale
 
+***DA COMPLETARE***
+
+
 Descrive i concetti dettagliati dell’architettura/sviluppo utilizzando
 ad esempio:
 
@@ -279,6 +311,9 @@ ad esempio:
 -   Diritti di accesso a condivisioni …
 
 ## Implementazione
+
+***DA COMPLETARE***
+
 
 ### Sito
 
@@ -516,6 +551,12 @@ if ($result->num_rows > 0) {
 
 #### data.php
 
+
+Il luogo dove tutto viene visualizzato; i dati statistici e altre Informazioni riguardanti il progetto.<br>
+Qui vengono mostrati agli utenti, in tempo reale i dati presi dall'arduino che si aggiornano in continuazione e tramite una pagina di login, gli amministratori possono accedere e modificare vari parametri.
+Per la struttura del sito abbiamo usato un bootstrap.
+
+
 Necessita del file **config.php** per effettuare la connesione al database.
 Esegue una query e se nel risultato generato c'è almeno una riga, esegue un ciclo while
 settando le variabili **$prarop** e **$magnitudo**.
@@ -542,6 +583,13 @@ $orario = trim($orario, ",");
 $magnitudo = trim($magnitudo, ",");
 
 ```
+
+Questo pezzo di codice mostra come viene fatta la tabella con i dati del presi dal database, prima di tutto bisogna connettersi al database inserendo i parametri; nome del server, nome utente con cui si vuole accedere, password, nome del database e infine la porta.<br>
+Dopo essere sicuri che la connessione è andata a buon fine, abbiamo fatto una query dove seleziona tutti i dati della tabella ma con un limite di dati che possono essere mostrati, in modo che la tabella non è così grande.<br>
+Se la query ritorna correttamente, e ci sono dei dati all'interno della tabella, allora inserisce nella tabella i valori corrispondenti della data, ora e magnitudo.
+<br>
+
+--
 
 Esegue una query e se nel risultato generato c'è almeno una riga, crea la tabella in base ai valori
 pescati dal database.
@@ -639,7 +687,7 @@ se mostrare il bottone di login oppure i bottoni per effettuare il logout o sett
 </nav>
 ```
 
-### SQL
+### Database
 
 Elimina il database se esiste, dopodichè lo crea e viene selezionato.
 
@@ -723,23 +771,6 @@ create view tabella as select t.data_registrazione, t.orario_registrazione, t.ma
 
 ```
 
-
-
-Il luogo dove tutto viene visualizzato; i dati statistici e altre Informazioni riguardanti il progetto.<br>
-Qui vengono mostrati agli utenti, in tempo reale i dati presi dall'arduino che si aggiornano in continuazione e tramite una pagina di login, gli amministratori possono accedere e modificare vari parametri.
-Per la struttura del sito abbiamo usato un bootstrap.
-
-![Terremoti](../Immagini/ImgCodiceSito/tabella.PNG)
-
-Questo pezzo di codice mostra come viene fatta la tabella con i dati del presi dal database, prima di tutto bisogna connettersi al database inserendo i parametri; nome del server, nome utente con cui si vuole accedere, password, nome del database e infine la porta.<br>
-Dopo essere sicuri che la connessione è andata a buon fine, abbiamo fatto una query dove seleziona tutti i dati della tabella ma con un limite di dati che possono essere mostrati, in modo che la tabella non è così grande.<br>
-Se la query ritorna correttamente, e ci sono dei dati all'interno della tabella, allora inserisce nella tabella i valori corrispondenti della data, ora e magnitudo.
-<br>
-
-![Terremoti](../Immagini/ImgCodiceSito/grafico.PNG)
-
-Per il grafico abbiamo usato un canvas e tramite questo script si va a creare il grafico a linee con l'opzione di responsive attiva, con la data sull'asse delle X e il magnitudo sull'asse delle Y e con i vari parametri per lo stile. Arrivo fino ad un massimo di 5 dati visualizzati.
-
 ### Hardware e codice
 <div style="text-align: justify">
 La progettazione dell'hardware prevedeva l'uso di una board ArduinoWifi collegato al geofono e e a un display per mostrare la misurazione ottenuta direttamente sul luogo. Purtroppo noi abbiamo avuto un problema con l'ordine dei componenti che sono risultati dispersi. Quindi abbiamo deciso di svilluppare il progetto con un fishino UNO Rev2, una scheda compatibile con arduino e equipaggiata con un modulo per il WIFI. Per quanto riguarda i dati di misurazione, generiamo noi dei dati fittizi da inviare al server.
@@ -797,12 +828,14 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 <br>
 ![](../Immagini/ImgCodiceArduino/7_GeneratoreDati.PNG)
 <br>
-
 </div>
 
 ## Test
 
 ### Protocollo di test
+
+***DA COMPLETARE***
+
 
 |Test Case      | TC-001                       |
 |---------------|--------------------------------------|
@@ -969,6 +1002,9 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 
 ### Risultati test
 
+***DA COMPLETARE***
+
+
 | Test Case |  Stato  |
 |-----------|---------|
 |   TC-001  | Passato |            
@@ -991,12 +1027,21 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 
 ### Mancanze e limitazioni conosciute
 
+***DA COMPLETARE***
+
+
 ##### Hardware
+
+***DA COMPLETARE***
+
 
 Il nostro progetto presenta la mancanza di un componente essenziale, ovvero il geofono per la misurazione delle vibrazione terrestri.
 Questo é dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" con la creazione di dati fittizi in un range tra 1.0 e 10.0.
 
 ## Consuntivo
+
+***DA COMPLETARE***
+
 
 Consuntivo del tempo di lavoro effettivo e considerazioni riguardo le
 differenze rispetto alla pianificazione (cap 1.7) (ad esempio Gannt
@@ -1023,10 +1068,13 @@ Matthias:
 
 Rispetto al progetto individuale del primo semestre, in questo progetto a gruppi ho imparato a collaborare in team.
 Il lavoro è stato motivante
+  (Devo completare)
 
 Daniel:
 
 ### Sviluppi futuri
+
+***DA COMPLETARE***
 
   Date le problematiche e le circostanze che abbiamo avuto durante lo sviluppo del progetto,
   ci sarebbe da implementare un dispositivo per le effettive misurazioni delle vibrazioni, con una struttura solida che regga il tutto.
@@ -1049,14 +1097,14 @@ Daniel:
   Matthias:
 
   Ho saputo consolidare le mie conoscenze del linguaggio PHP. Ecc
+  (Devo completare)
   Sono soddisfatto del risultato finale.
 
   Daniel:
+  
+## Sitografia
 
-## Bibliografia
-
-### Sitografia
-
+***AGGIUNGERE I SITI CHE ABBIAMO VISITATO***
 
 - https://www.sparkfun.com/, 29-01-2020
 - https://www.seeedstudio.com/, 29-01-2020
