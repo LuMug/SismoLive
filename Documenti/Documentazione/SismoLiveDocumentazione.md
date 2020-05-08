@@ -218,7 +218,7 @@ Questo perché senza queste due caratteristiche, sarebbe stato molto difficile d
 
 Lo schema seguente rappresenta lo use case del progetto:
 
-![Diagramma use case](../Immagini/diagramma_use_case.png)
+![Diagramma use case](../Immagini/diagramma_use_case.PNG)
 
 ### Pianificazione
 
