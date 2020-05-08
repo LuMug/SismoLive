@@ -310,19 +310,7 @@ Progettazione pagina progettazione:
 
 ### Design procedurale
 
-***DA COMPLETARE***
-
-
-Descrive i concetti dettagliati dell’architettura/sviluppo utilizzando
-ad esempio:
-
--   Diagrammi di flusso e Nassi.
-
--   Tabelle.
-
--   Classi e metodi.
-
--   Diritti di accesso a condivisioni …
+![Diagramma flusso dati](../Immagini/Diagramma_Flusso_dati.png)
 
 ## Implementazione
 
