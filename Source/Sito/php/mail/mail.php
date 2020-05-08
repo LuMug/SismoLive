@@ -4,6 +4,20 @@ session_start();
 
 require "PHPMailer/PHPMailerAutoload.php";
 require "../connectToDB.php";
+
+$from = 'terremoto@sismolive.online';
+$name = 'SismoLive';
+$subj = 'Allarme terremoto!';
+$msg = 'È stato rilevato un terremoto di magnitudo ' .$_SESSION['magnitudo'] . ' alle ' . $_SESSION['orario'];
+$email = "SELECT email FROM Utente";
+$result = $link->query($email);
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $to = $row['email'];
+        $error = smtpmailer($to, $from, $name, $subj, $msg);
+    }
+}
+
 function smtpmailer($to, $from, $from_name, $subject, $body) {
     $mail = new PHPMailer();
     $mail->IsSMTP();
@@ -28,18 +42,5 @@ function smtpmailer($to, $from, $from_name, $subject, $body) {
     $mail->AddAddress($to);
     //Invio la mail
     $mail->Send();
-}
-
-$from = 'terremoto@sismolive.online';
-$name = 'SismoLive';
-$subj = 'Allarme terremoto!';
-$msg = 'È stato rilevato un terremoto di magnitudo ' .$_SESSION['magnitudo'] . ' alle ' . $_SESSION['orario'];
-$email = "SELECT email FROM Utente";
-$result = $link->query($email);
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $to = $row['email'];
-        $error = smtpmailer($to, $from, $name, $subj, $msg);
-    }
 }
 ?>
