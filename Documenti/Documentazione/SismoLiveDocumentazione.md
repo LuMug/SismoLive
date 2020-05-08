@@ -828,7 +828,7 @@ insert into Configurazione(soglia_minima,soglia_intermedia,soglia_critica) value
 
 #### Funzioni
 
-DA COMMENTARE
+Ritorna l'id del primo record dei dati da visualizzare sul sito.
 
 ```sql
 DELIMITER //
@@ -846,7 +846,7 @@ END
 DELIMITER ;
 ```
 
-DA COMMENTARE
+Ritorna l'id dell'ultimo record dei dati da visualizzare sul sito.
 
 ```sql
 DELIMITER //
