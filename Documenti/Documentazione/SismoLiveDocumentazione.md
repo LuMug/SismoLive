@@ -30,8 +30,6 @@
 
   - [Design dell’architettura del sistema](#design-dell’architettura-del-sistema)
 
-  - [Design dei dati e database](#design-dei-dati-e-database)
-
   - [Schema E-R, schema logico e descrzione](#schema-e-r,-schema-logico-e-descrizione)
 
   - [Design delle interfacce](#design-delle-interfacce)
@@ -95,63 +93,17 @@
 
 ### Abstract
 
-***DA COMPLETARE***
-
-
-   ***Ogni giorno nel mondo vengono percepiti un marea di terremoti, con questo sito
-   si può controllare in tempo reale le scosse percepite dal nostro sensore.***
-
-
-  E’ una breve e accurata rappresentazione dei contenuti di un documento,
-  senza notazioni critiche o valutazioni. Lo scopo di un abstract efficace
-  dovrebbe essere quello di far conoscere all’utente il contenuto di base
-  di un documento e metterlo nella condizione di decidere se risponde ai
-  suoi interessi e se è opportuno il ricorso al documento originale.
-
-  Può contenere alcuni o tutti gli elementi seguenti:
-
-  -   **Background/Situazione iniziale**
-
-  -   **Descrizione del problema e motivazione**: Che problema ho cercato
-      di risolvere? Questa sezione dovrebbe includere l'importanza del
-      vostro lavoro, la difficoltà dell'area e l'effetto che potrebbe
-      avere se portato a termine con successo.
-
-  -   **Approccio/Metodi**: Come ho ottenuto dei progressi? Come ho
-      risolto il problema (tecniche…)? Quale è stata l’entità del mio
-      lavoro? Che fattori importanti controllo, ignoro o misuro?
-
-  -   **Risultati**: Quale è la risposta? Quali sono i risultati? Quanto è
-      più veloce, più sicuro, più economico o in qualche altro aspetto
-      migliore di altri prodotti/soluzioni?
-
-  Esempio di abstract:
-
-  > *As the size and complexity of today’s most modern computer chips
-  > increase, new techniques must be developed to effectively design and
-  > create Very Large Scale Integration chips quickly. For this project, a
-  > new type of hardware compiler is created. This hardware compiler will
-  > read a C++ program, and physically design a suitable microprocessor
-  > intended for running that specific program. With this new and powerful
-  > compiler, it is possible to design anything from a small adder, to a
-  > microprocessor with millions of transistors. Designing new computer
-  > chips, such as the Pentium 4, can require dozens of engineers and
-  > months of time. With the help of this compiler, a single person could
-  > design such a large-scale microprocessor in just weeks.*
 
 ### Scopo
 
-***DA COMPLETARE***
-
-  Lo scopo principale di questo progetto è di poter approfondire le nostre capacità nell teamwork.
   Lo scopo di questo progetto è quello di avere una costante misurazione tramite una struttura di registrazione, insieme alla relativa rappresentazione su un sito web, delle vibrazioni terrestri.
   Nel caso di un terremoto devono essere notificati gli admin via mail e gli utenti sul sito.
+  Inoltre questo progetto servirà a migliorare le nostre capacità di lavorare in team.
+
 
 ## Analisi
 
 ### Analisi del dominio
-
-***DA COMPLETARE***
 
 SismoLive è progettato per tutti gli utenti, sia esperti,
 sia principianti, che hanno a disposizione un dispositivo, il quale può essere un telefono, tablet o computer in grado di navigare su internet.
@@ -181,8 +133,19 @@ Daniel:
 
 Sismografo:
 
-- Arduino Mega 2560
-- Fishino
+- Fishino UNO
+
+Accesso FTP:
+- Host: sismolive.online
+- IP: 160.153.133.208
+- Username: pp5pgbhrdzcr
+- Password: SismoLive2020!
+
+Accesso MySQL:
+- IP: 160.153.133.208
+- Username: sismo
+- Password: sismo
+- Database: SismoLive
 
 #### Software
 
@@ -212,7 +175,11 @@ Sismografo:
 
 #### Librerie
 
-- Chart.js
+- Chart.js, https://www.chartjs.org/
+
+- Fishino, http://fishino.com/download-libraries-it.html%22%3EFishino.h
+
+- RTClib, https://github.com/adafruit/RTClib
 
 #### Hosting
 
@@ -241,11 +208,7 @@ HOSTING DI QUEL SITO, PERCHà CI SERVONO LE FUNZIONI.
 
 ### Use case
 
-***DA COMPLETARE***
-
-
-I casi d’uso rappresentano l’interazione tra i vari attori e le
-funzionalità del prodotto.
+![Diagramma use case](../Immagini/diagramma_use_case.png)
 
 ### Pianificazione
 
@@ -254,6 +217,7 @@ funzionalità del prodotto.
 ![Gant preventivo](../Immagini/gantt_prev1.PNG)
 ![Gant preventivo](../Immagini/gantt_prev2.PNG)
 ![Gant preventivo](../Immagini/gantt_prev3.PNG)
+
 ![Gant preventivo](../Immagini/gantt_prev4.PNG)
 
 ## Progettazione
@@ -275,58 +239,39 @@ Sitemap:
 
 ![sitemap](../Progettazione_Sito/sitemap.png)
 
-### Design dei dati e database
-
-Descrizione delle strutture di dati utilizzate dal programma in base
-agli attributi e le relazioni degli oggetti in uso.
 
 ### Schema E-R, schema logico e descrizione
 
-Se il diagramma E-R viene modificato, sulla doc dovrà apparire l’ultima
-versione, mentre le vecchie saranno sui diari.
+![Diagramma E/R](../Immagini/diagramma_er.png)
 
 ### Design delle interfacce
 
-Progettazione pagina principale:
+Progettazione pagina principale, abbiamo inizialmente pensato di avere una home che contenesse la visualizzazione dei dati in live sotto forma di grafico e tabella:
 
 ![index](../Progettazione_Sito/index.png)
 
-Progettazione pagina login:
+Progettazione pagina login, abbiamo pensato di avere una pagina di login dove gli amministratori possono accedere tramite le credenziali nome utente e password:
 
 ![Login](../Progettazione_Sito/login.png)
 
-Progettazione terremoti:
+Progettazione terremoti, pagina dove vengono mostrate due tabelle con i terremoti più percepiti in Svizzera e nel mondo con colonne: data, magnitudo, pericolosità e la città:
 
 ![Terremoti](../Progettazione_Sito/terremoti.png)
 
-Progettazione Menu a tendina:
+Progettazione Menu a tendina, abbiamo progettato di fare un menu a tendina dove si potesse navigare fra le varie pagine(Home, terremoti, progettazione, chi siamo):
 
 ![Terremoti](../Progettazione_Sito/Menu-Tendina.png)
 
-Progettazione pagina progettazione:
+Progettazione pagina progettazione, abbiamo pensato di fare una pagina dove viene spiegato il progetto, con dei commenti, un analisi e lo sviluppo e sulla destra un'immagine del montaggio:
 
 ![Terremoti](../Progettazione_Sito/Progettazione.png)
 
 
 ### Design procedurale
 
-***DA COMPLETARE***
-
-
-Descrive i concetti dettagliati dell’architettura/sviluppo utilizzando
-ad esempio:
-
--   Diagrammi di flusso e Nassi.
-
--   Tabelle.
-
--   Classi e metodi.
-
--   Diritti di accesso a condivisioni …
+![Diagramma flusso dati](../Immagini/diagramma_flusso_dati.png)
 
 ## Implementazione
-
-***DA COMPLETARE***
 
 
 ### Sito
@@ -1011,12 +956,12 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 
 |Test Case      | TC-007                       |
 |---------------|--------------------------------------|
-|**Nome**       |Struttura hardware con Fishino|
+|**Nome**       |Struttura hardware con Arduino|
 |**Riferimento**|REQ-004                     |
-|**Descrizione**|La creazione dei dati deve avvenire da una struttura hardware con fishino.  |
+|**Descrizione**|La creazione dei dati deve avvenire da una struttura hardware con Arduino.  |
 |**Prerequisiti**|  |
-|**Procedura**   |Controllare la struttura dell'arduino. |
-|**Risultati attesi** |Deve esserci una struttura solida con arduino e ulteriori componenti collegati.  |
+|**Procedura**   |Controllare la struttura dell'Arduino. |
+|**Risultati attesi** |Deve esserci una struttura solida con Arduino.  |
 
 
 |Test Case      | TC-008                       |
@@ -1152,20 +1097,9 @@ Questo é dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" c
 
 ## Consuntivo
 
-***DA COMPLETARE***
 
-
-Consuntivo del tempo di lavoro effettivo e considerazioni riguardo le
-differenze rispetto alla pianificazione (cap 1.7) (ad esempio Gannt
-consuntivo).
 
 ## Conclusioni
-
-Quali sono le implicazioni della mia soluzione? Che impatto avrà?
-Cambierà il mondo? È un successo importante? È solo un’aggiunta
-marginale o è semplicemente servita per scoprire che questo percorso è
-stato una perdita di tempo? I risultati ottenuti sono generali,
-facilmente generalizzabili o sono specifici di un caso particolare? ecc
 
 Marco:
 
@@ -1186,11 +1120,9 @@ Daniel:
 
 ### Sviluppi futuri
 
-***DA COMPLETARE***
-
   Date le problematiche e le circostanze che abbiamo avuto durante lo sviluppo del progetto,
   ci sarebbe da implementare un dispositivo per le effettive misurazioni delle vibrazioni, con una struttura solida che regga il tutto.
-  Un altro sviluppo futuro è quello di inviare un sms a tutti gli amministratori del sito quando un terremoto supera la soglia critica, questo perchè
+  Un altro sviluppo futuro potrebbe essere quello di inviare un sms a tutti gli amministratori del sito invece che a solo un numero di telefono, quando un terremoto supera la soglia critica, questo perchè
   con un sms si è più raggiungibili poichè si può visualizzare senza internet a differenza delle email.
 
 ### Considerazioni personali
@@ -1216,16 +1148,26 @@ Daniel:
 
 ## Sitografia
 
-***AGGIUNGERE I SITI CHE ABBIAMO VISITATO***
-
 - https://www.sparkfun.com/, 29-01-2020
 - https://www.seeedstudio.com/, 29-01-2020
 - https://www.iconfinder.com/, 29-01-2020
-- https://www.w3schools.com/howto/howto_js_sort_table.asp, *w3schools* 03-04.2020
-- https://www.w3schools.com/php/php_mysql_insert.asp, *w3schools* 03-04.2020
+- https://www.sparkfun.com/products/11744, 29-01-2020
+- https://www.sparkfun.com/products/14074, 29-01-2020
+- https://www.sparkfun.com/products/14030, 29-01-2020
+- https://www.sparkfun.com/products/13678, 29-01-2020
+- https://www.chartjs.org/, *Chart.js*, 27-03-2020
+- https://www.arduino.cc/reference/en/language/functions/random-numbers/random/ , 27-03-2020
+- https://stackoverflow.com/questions/14267781/sorting-html-table-with-javascript/49041392, *stackoverflow*, 03-04.2020
+- https://www.w3schools.com/php/php_mysql_insert.asp, *w3schools*, 03-04.2020
+- http://fishino.com/home-it.html, 03-04-2020
+- https://www.fishino.com/files/fishino-theme/media/content-images/docs/libraries/FishinoLibrary-20180107.pdf 03-04-2020
+- https://www.youtube.com/watch?v=32VcKyI0dio, 03-4-2020
 - https://github.com/PHPMailer/PHPMailer, *PHPMailer*, 01-05-2020
 - https://www.tutorialspoint.com/php/mysql_select_php.htm, 01-05-2020
+- https://www.tutorialspoint.com/php/mysql_select_php.htm, 01-05-2020
 - https://github.com/messagebird/php-rest-api, *messagebird*, 04-05-2020
+- https://www.freeformatter.com/html-formatter.html, *HTML formatter*, 08-05-2020
+- http://beautifytools.com/php-beautifier.php, *PHP formatter*, 08-05-2020
 
 
 ## Allegati
@@ -1236,5 +1178,6 @@ Daniel:
 
 - [Mandato](../Mandato/muggiasca_qdc_sismografo.pdf)
 
--   Istruzioni di installazione del prodotto (con credenziali
-    di accesso) e/o di eventuali prodotti terzi
+- Credenziali di accesso sul sito http://sismolive.online:
+  - nome utente: test
+  - password: test
