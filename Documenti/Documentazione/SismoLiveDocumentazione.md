@@ -798,7 +798,7 @@ insert into Configurazione(soglia_minima,soglia_intermedia,soglia_critica) value
 
 #### Funzioni
 
-DA COMMENTARE
+Ritorna il primo degli ultimi 7 id di registrazioni che verranno mostrate sul sito
 
 ```sql
 DELIMITER //
@@ -816,7 +816,7 @@ END
 DELIMITER ;
 ```
 
-DA COMMENTARE
+Ritorna l'ultimo id di registrazione da mostrare sul sito
 
 ```sql
 DELIMITER //
