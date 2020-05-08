@@ -12,6 +12,14 @@
 
   - [Analisi dei mezzi](#analisi-dei-mezzi)
 
+      - [Hardware](#sofware)
+
+      - [Software](#software)
+
+      - [Librerie](#librerie)
+
+      - [Hosting](#hosting)
+
   - [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
 
   - [Use case](#use-case)
@@ -22,15 +30,19 @@
 
   - [Design dell’architettura del sistema](#design-dell’architettura-del-sistema)
 
-  - [Design dei dati e database](#design-dei-dati-e-database)
+  - [Schema E-R, schema logico e descrzione](#schema-e-r,-schema-logico-e-descrizione)
+
+  - [Design delle interfacce](#design-delle-interfacce)
+
+  - [Design prodecurale](#design-prodecurale)
 
 4. [Implementazione](#implementazione)
 
   - [Sito Internet](#Sito)
 
-  - [Hardware e codice](#Hardware-e-codice)
-
   - [Database](#Database)
+
+  - [Hardware e codice](#Hardware-e-codice)
 
 5. [Test](#test)
 
@@ -257,10 +269,6 @@ Sitemap:
 
 ![sitemap](../Progettazione_Sito/sitemap.png)
 
-### Design dei dati e database
-
-Descrizione delle strutture di dati utilizzate dal programma in base
-agli attributi e le relazioni degli oggetti in uso.
 
 ### Schema E-R, schema logico e descrizione.
 
@@ -895,12 +903,12 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 
 |Test Case      | TC-007                       |
 |---------------|--------------------------------------|
-|**Nome**       |Struttura hardware con Fishino|
+|**Nome**       |Struttura hardware con Arduino|
 |**Riferimento**|REQ-004                     |
-|**Descrizione**|La creazione dei dati deve avvenire da una struttura hardware con fishino.  |
+|**Descrizione**|La creazione dei dati deve avvenire da una struttura hardware con Arduino.  |
 |**Prerequisiti**|  |
-|**Procedura**   |Controllare la struttura dell'arduino. |
-|**Risultati attesi** |Deve esserci una struttura solida con arduino e ulteriori componenti collegati.  |
+|**Procedura**   |Controllare la struttura dell'Arduino. |
+|**Risultati attesi** |Deve esserci una struttura solida con Arduino.  |
 
 
 |Test Case      | TC-008                       |
@@ -1009,7 +1017,7 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |   TC-004  | Passato |
 |   TC-005  | Passato |
 |   TC-006  | Passato |
-|   TC-007  | Passato |
+|   TC-007  | Non passato |
 |   TC-008  | Non passato|
 |   TC-009  | Passato |
 |   TC-010  | Passato |
