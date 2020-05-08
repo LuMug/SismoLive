@@ -9,12 +9,13 @@
 |08:25 - 09:50|  Aiutato Daniel con delle ricerche (Georgiy)|
 |8:25 - 11:35 | Caricato il sito su un dominio provvisorio, configurato PHP, MySQL e creato gli utenti per poter accedere da remoto
 Creata funzione che prende i dati dal database e crea un grafico (non ancora live) (Matthias)|
-|08:25 - 16:30 | Ricerca funzionamento fishino(Daniel)|
+|08:25 - 14:45 | Ricerca funzionamento fishino(Daniel)|
 |10:05 - 11:35 | Cercato come mandare dati da php a db mysql remoto.(Georgiy)|
 |8:25 - 11:35  | Implementato ordinamento tabelle in base alle colonne e fatto migliorie nel DB(Marco)|
 |13:15 - 16:30 | Sistemato struttura del database togliendo tabelle e inserimenti di dati inutili. Fatto in modo da poter visualizzare sul sito le ultime 5 registrazioni (Georgiy) |
 |13:15 - 16:30 | Implementato pagine progettazione e chi siamo, fatte migliorie nel codice (Marco)|
 |13:15 - 16:20 | Cercato su internet come fare in modo che il grafico si aggiorna ogni tot x secondi/minuti simulando la ricezione dei dati.(Matthias) |
+|14:45 - 16:20 | Iniziato implementazione invio dati da fishino (Daniel)|
 |16:20 - 16:30 | Aggiornamento diario|
 
 ##  Problemi riscontrati e soluzioni adottate

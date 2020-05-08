@@ -9,7 +9,7 @@
 |08:30 - 11:35 | Progettazione Database (Matthias, Marco e Georgiy)|
 |10:00 - 13:30 | Progettazione struttura circuito Arduino terminata (Daniel)|
 |11:35 - 13:15 | Pausa pranzo (Marco, Matthias e Georgiy)|
-|13:15 - 15:30 | Creazione struttura DB e  (Georgiy)|
+|13:15 - 15:30 | Creazione struttura DB  (Georgiy)|
 |13:15 - 16:00 | Sito responsive (terminato) e login amministratore(da terminare) (Marco, Matthias)|
 |13:30 - 16:20 | Cercato informazioni su come inviare mail/sms da sql (Daniel)|
 |16:20 - 16:30 | Aggiornamento diario|
