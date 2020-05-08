@@ -20,7 +20,6 @@
 ?>
 <!-- Script -->
 <script src="../js/chart.js"></script>
-
 <section class="d-flex align-items-center">
     <div class="container-fluid bg-2 text-center">
         <br>
@@ -87,14 +86,12 @@
                         <?php
                             $terremoti = "SELECT * from tabella";
                             $result = $link->query($terremoti);
-                            if ($result->num_rows > 0)
-                            {
-                              while ($row = $result->fetch_assoc())
-                              {
+                            if ($result->num_rows > 0){
+                              while ($row = $result->fetch_assoc()){
                                 echo "<tr><th>" . $row["data_registrazione"] . "</th><th>" . $row["orario_registrazione"] . "</th><th>" . $row["magnitudo"] . "</tr>";
                               }
                             }
-                            ?>
+                        ?>
                     </tbody>
                 </table>
             </div>

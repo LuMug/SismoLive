@@ -39,20 +39,6 @@
             * Author: BootstrapMade.com
             * License: https://bootstrapmade.com/license/
             ======================================================== -->
-        <style>
-            th {
-            cursor: pointer;
-            }
-            .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: red;
-            color: white;
-            text-align: center;
-            }
-        </style>
     </head>
     <body style="background-image: url(../img/sky.jpg)">
         <!-- ======= Header ======= -->
@@ -73,36 +59,36 @@
                 </nav>
             </div>
         </header>
-        <!-- End Header -->
-            <!-- ======= Inizio sezione ======= -->
-            <section class="d-flex align-items-center">
-                <div class="container-fluid bg-2 text-center">
-                    <br>
-                    <br>
-                    <br>
-                    <h3 style="font-size:50px;" class="margin">Terremoti</h3>
-                    <br>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h1 style="font-size:20px;">Tabella terremoti più percepiti in Svizzera</h1>
-                            <br>
-                            <!-- Tabella terremoti svizzeri -->
-                            <?php require_once "../php/table-swiss.php";?>
-                        </div>
-                        <div class="col-sm-6">
-                            <h1 style="font-size:20px;">Tabella terremoti più percepiti nel mondo</h1>
-                            <br>
-                              <!-- Tabella terremoti mondiali -->
-                            <?php require_once "../php/table-earth.php";?>
-                        </div>
+        <!-- Fine Header -->
+        <!-- ======= Inizio sezione ======= -->
+        <section class="d-flex align-items-center">
+            <div class="container-fluid bg-2 text-center">
+                <br>
+                <br>
+                <br>
+                <h3 style="font-size:50px;" class="margin">Terremoti</h3>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1 style="font-size:20px;">Tabella terremoti più percepiti in Svizzera</h1>
+                        <br>
+                        <!-- Tabella terremoti svizzeri -->
+                        <?php require_once "../php/table-swiss.php";?>
+                    </div>
+                    <div class="col-sm-6">
+                        <h1 style="font-size:20px;">Tabella terremoti più percepiti nel mondo</h1>
+                        <br>
+                        <!-- Tabella terremoti mondiali -->
+                        <?php require_once "../php/table-earth.php";?>
                     </div>
                 </div>
-            </section>
-            <!-- Fine seziones -->
-            <!-- ======= Sezione vuota che scompare su mobile ======= -->
-            <section id="about" class="d-none d-sm-block">
-            </section>
-            <!-- Fine sezione vuota -->
+            </div>
+        </section>
+        <!-- Fine sezione -->
+        <!-- ======= Sezione vuota che scompare su mobile ======= -->
+        <section id="about" class="d-none d-sm-block">
+        </section>
+        <!-- Fine sezione vuota -->
         </main>
         <!-- ======= Footer ======= -->
         <footer class="footer" id="footer">
@@ -116,7 +102,7 @@
                 </div>
             </div>
         </footer>
-        <!-- End Footer -->
+        <!-- Fine footer -->
         <!-- Script -->
         <script>
             const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;

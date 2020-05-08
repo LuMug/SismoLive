@@ -33,17 +33,6 @@
             * Author: BootstrapMade.com
             * License: https://bootstrapmade.com/license/
             ======================================================== -->
-        <style>
-            .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: red;
-            color: white;
-            text-align: center;
-            }
-        </style>
     </head>
     <body style="background-image: url(../img/sky.jpg)">
         <!-- ======= Header ======= -->
@@ -65,33 +54,29 @@
             </div>
         </header>
         <!-- Fine Header -->
-            <!-- ======= Inizio sezione ======= -->
-            <section id="hero" class="d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="container-fluid bg-2 text-center">
-                            <h1>Chi siamo</h1>
-                            <br>
-                            <p>Gli informatici della scuola d'arti e mestieri di Trevano(SAMT) del terzo anno: Marco Lorusso, Matthias Iannarella, Daniel Matt e Georgiy Farina hanno eseguito questo progetto, assegnato dai periti Luca Muggiasca e Geo Petrini, per il modulo 306.
-                                <br>Inizio del progetto: 18 gennaio 2020.
-                                <br>Fine progetto: 8 maggio 2020.
-                            </p>
-                            <br>
-                            <a href="https://www.cpttrevano.ti.ch/" target="_blank"><img src="../img/cpt.jpg" style="float: center; width: 200px"></a>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                        </div>
+        <!-- ======= Inizio sezione ======= -->
+        <section id="hero" class="d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="container-fluid bg-2 text-center">
+                        <h1>Chi siamo</h1>
+                        <br>
+                        <p>Gli informatici della scuola d'arti e mestieri di Trevano(SAMT) del terzo anno: Marco Lorusso, Matthias Iannarella, Daniel Matt e Georgiy Farina hanno eseguito questo progetto, assegnato dai periti Luca Muggiasca e Geo Petrini, per il modulo 306.
+                            <br>Inizio del progetto: 18 gennaio 2020.
+                            <br>Fine progetto: 8 maggio 2020.
+                        </p>
+                        <br>
+                        <a href="https://www.cpttrevano.ti.ch/" target="_blank"><img src="../img/cpt.jpg" style="float: center; width: 200px"></a>
+                        <br><br><br><br><br>
                     </div>
                 </div>
-            </section>
-            <!-- Fine sezione -->
-            <!-- ======= Sezione vuota che scompare su mobile ======= -->
-            <section id="about" class="d-none d-sm-block">
-            </section>
-            <!-- Fine sezione vuota -->
+            </div>
+        </section>
+        <!-- Fine sezione -->
+        <!-- ======= Sezione vuota che scompare su mobile ======= -->
+        <section id="about" class="d-none d-sm-block">
+        </section>
+        <!-- Fine sezione vuota -->
         <!-- ======= Footer ======= -->
         <footer class="footer" id="footer">
             <div class="container">
