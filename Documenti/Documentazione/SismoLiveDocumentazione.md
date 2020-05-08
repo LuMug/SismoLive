@@ -81,7 +81,7 @@
 
 	Matthias Iannarella (Sviluppatore)
 
-- Docenti: Luca Muggiasca (Cliente)
+- Docente: Luca Muggiasca (Cliente)
 
 - Scuola: SAMT (Scuola d'arti e Mestieri Trevano)
 
@@ -172,26 +172,17 @@ Marco:
 - Acer Aspire VN7-572G, Windows 10 home 64 bit
 
 Georgiy:
+
 - Acer Aspire A717-71G, Windows 10 home 64 bit
 
 Daniel:
+
 - ASUS X556UAM, Windows 10 home 64 bit
 
 Sismografo:
+
 - Arduino Mega 2560
 - Fishino
-
-Accesso FTP:
-- Host: sismolive.online
-- IP: 160.153.133.208
-- Username: pp5pgbhrdzcr
-- Password: SismoLive2020!
-
-Accesso MySQL:
-- IP: 160.153.133.208
-- Username: sismo
-- Password: sismo
-- Database: SismoLive
 
 #### Software
 
@@ -215,15 +206,17 @@ Accesso MySQL:
 
 - Opera
 
+- Diagram Designer
+
+- FileZilla
+
 #### Librerie
 
 - Chart.js
 
-
 #### Hosting
 
-Hosting su GoDaddy !!! Da chidere
-
+HOSTING DI QUEL SITO, PERCHà CI SERVONO LE FUNZIONI.
 
 ### Analisi e specifica dei requisiti
 
@@ -261,11 +254,9 @@ funzionalità del prodotto.
 ![Gant preventivo](../Immagini/gantt_prev1.PNG)
 ![Gant preventivo](../Immagini/gantt_prev2.PNG)
 ![Gant preventivo](../Immagini/gantt_prev3.PNG)
-
 ![Gant preventivo](../Immagini/gantt_prev4.PNG)
 
 ## Progettazione
-
 
 ### Design dell’architettura del sistema
 
@@ -296,23 +287,23 @@ versione, mentre le vecchie saranno sui diari.
 
 ### Design delle interfacce
 
-Progettazione pagina principale, abbiamo inizialmente pensato di avere una home che contenesse la visualizzazione dei dati in live sotto forma di grafico e tabella:
+Progettazione pagina principale:
+
 ![index](../Progettazione_Sito/index.png)
 
-Progettazione Login, abbiamo pensato di avere una pagina di login dove gli amministratori possono accedere tramite le credenziali nome utente e password:
+Progettazione pagina login:
 
 ![Login](../Progettazione_Sito/login.png)
 
-
-Progettazione terremoti, pagina dove vengono mostrate due tabelle con i terremoti più percepiti in Svizzera e nel mondo con colonne: data, magnitudo, pericolosità e la città:
+Progettazione terremoti:
 
 ![Terremoti](../Progettazione_Sito/terremoti.png)
 
-Progettazione Menu a tendina, abbiamo progettato di fare un menu a tendina dove si potesse navigare fra le varie pagine(Home, terremoti, progettazione, chi siamo):
+Progettazione Menu a tendina:
 
 ![Terremoti](../Progettazione_Sito/Menu-Tendina.png)
 
-Progettazione pagina progettazione, abbiamo pensato di fare una pagina dove viene spiegato il progetto, con dei commenti, un analisi e lo sviluppo e sulla destra un'immagine del montaggio:
+Progettazione pagina progettazione:
 
 ![Terremoti](../Progettazione_Sito/Progettazione.png)
 
@@ -322,7 +313,16 @@ Progettazione pagina progettazione, abbiamo pensato di fare una pagina dove vien
 ***DA COMPLETARE***
 
 
+Descrive i concetti dettagliati dell’architettura/sviluppo utilizzando
+ad esempio:
+
 -   Diagrammi di flusso e Nassi.
+
+-   Tabelle.
+
+-   Classi e metodi.
+
+-   Diritti di accesso a condivisioni …
 
 ## Implementazione
 
@@ -333,7 +333,7 @@ Progettazione pagina progettazione, abbiamo pensato di fare una pagina dove vien
 
 #### config.php
 
-Costanti definite
+In questo file sono definite le costanti per l'accesso al database da remoto.
 
 ```php
 //IP del database
@@ -348,7 +348,8 @@ define('DB_NAME', 'SismoLive');
 
 #### connectToDB.php
 
-Tenta di connettersi al database, ma se la connessione fallisce stampa l'errore.
+Tenta di connettersi al database con le credenziali prese dal file **config.php**,
+ma se la connessione fallisce stampa un errore.
 
 ```php
 // Include il file da dove prendere le varie variabili
@@ -363,8 +364,10 @@ if ($link === false) {
 
 #### login.php
 
-La password inserita nel login viene criptata con l'hash md5, se essa equivale alla password trovata nel database, esegue l'accesso.
+Quando una persona prova ad accedere al sito, la password inserita nel login viene criptata con l'hash md5,
+se essa equivale alla password trovata nel database, esegue l'accesso.
 Sennò verrà stampato un errore cons critto "Password errata!".
+Ovviamente però, per fare questo controllo l'username inserito deve esistere.
 
 ```php
 if (md5($password) == $pass) {
@@ -401,6 +404,10 @@ exit;
 
 #### table.php
 
+Innanzitutto apre file csv e dopodichè legge il contenuto del file e lo inserisce
+in una variabile.
+Poi rimuove tutte tutti i ritorni a capo dalla variabile che contiene il contenuto del file.
+
 ```php
 // Apre il csv di riferimento
 $f = fopen("../csv/mondo.csv", "r");
@@ -408,15 +415,18 @@ $f = fopen("../csv/mondo.csv", "r");
 $fr = fread($f, filesize("../csv/mondo.csv"));
 // Chiude il file
 fclose($f);
-//Rimuove tutti le nuove righe
+//Rimuove tutti i ritorni a capo
 $lines = explode("\n\r", $fr);
 ```
 
+Con il ciclo for, passerà tutte le righe del file csv.
+Se è alla prima riga, crea l'header della tabella, sennò legge la riga attuale e
+immette i dati nella tabella.
 
 ```php
 $check = 0;
 for ($i = 0;$i < count($lines);$i++) {
-  // Se è nella prima riga, crea l'header della taballa
+  // Se è nella prima riga, crea l'header della tabella
     if ($check == 0) {
         echo "<thead class='thead-dark'>";
         echo "<tr>";
@@ -443,7 +453,7 @@ for ($i = 0;$i < count($lines);$i++) {
 }
 ```
 
-#### csv
+#### CSV
 
 Esempio del formato in csv, ogni campo è separatao da un ";".
 
@@ -473,8 +483,8 @@ Data;Magnitudo;Pericolosità;Città
 
 #### logged.php
 
-Se l'utente ha effettuato il login, mostrerà i bottoni per accedere
-alla pagina dei parametri oppure per disconnetersi.
+Se l'utente ha effettuato il login, mostrerà il bottone per accedere
+alla pagina dei parametri oppure per disconnetersi dal sito.
 Se invece non ha effettuato il login, mostrerà solamente il bottone per accedere.
 
 ```php
@@ -483,8 +493,10 @@ $logout = "http://sismolive.online/php/logout.php";
 $parametri = "http://sismolive.online/html/configurazione.php";
 // Se l'utente è loggato mostrerà il tasto di logout e per accedere alla configurazione dei parametri, sennò comparirà solamente il tasto per effettuare il login.
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    // Mostra il bottone per il login
     echo "<li class='get-started'><a href='$login'>Login</a></li>";
 } else {
+    // Mostra il bottone per la disconnessione dal sito oppure per accedere alla pagina dei parametri
     echo "<li class='get-started'><a href='$parametri'>Parametri</a></li>";
     echo "<li class='get-started'><a href='$logout'>Logout</a></li>";
 }
@@ -492,7 +504,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 #### getSoglie.php
 
-Necessita del file **config.php** per effettuare la connesione al database.
+Necessita del file **connectToDB.php** per effettuare la connesione al database.
 Esegue una query e se nel risultato generato c'è almeno una riga, esegue un ciclo while
 settando le variabili **$soglia_minima**, **$soglia_intermedia** e **$soglia_critica**.
 
@@ -516,13 +528,10 @@ if ($result->num_rows > 0) {
 
 #### mail.php
 
-Funzione
+In questa funzione bisogna passare il destinatario, il mittente, il nome del mittente,
+l'oggetto e il messaggio della mail.
 
 ```php
-session_start();
-
-require "PHPMailer/PHPMailerAutoload.php";
-require "../connectToDB.php";
 function smtpmailer($to, $from, $from_name, $subject, $body) {
     $mail = new PHPMailer();
     $mail->IsSMTP();
@@ -533,24 +542,32 @@ function smtpmailer($to, $from, $from_name, $subject, $body) {
     $mail->Username = 'terremoto@sismolive.online';
     $mail->Password = 'terremoto';
     $mail->IsHTML(true);
-        //Indirizzo mail mittente
+    //Indirizzo mail mittente
     $mail->From = "terremoto@sismolive.online";
-        //Nome mittente
+    //Nome mittente
     $mail->FromName = $from_name;
     $mail->Sender = $from;
     $mail->AddReplyTo($from, $from_name);
-        //Oggetto della mail
+    //Oggetto della mail
     $mail->Subject = $subject;
-        //Contenuto della mail
+    //Contenuto della mail
     $mail->Body = $body;
-        //Destinatario
+    //Destinatario
     $mail->AddAddress($to);
     //Invio la mail
     $mail->Send();
 }
 ```
 
+Necessita del file **connectToDB.php** per effettuare la connesione al database e del file **PHPMailerAutoload.php** per l'invio delle mail.
+Esegue una query che legge l'indirizzo email di ogni amministratore e per ogni di esso, invia la mail.
+
 ```php
+session_start();
+
+require "PHPMailer/PHPMailerAutoload.php";
+require "../connectToDB.php";
+
 $from = 'terremoto@sismolive.online';
 $name = 'SismoLive';
 $subj = 'Allarme terremoto!';
@@ -567,8 +584,10 @@ if ($result->num_rows > 0) {
 
 #### MySQL_connection.php
 
-```php
+Se il magnitudo è sopra o guale alla soglia intermedia, manda una mail a tutti gli amministratori.
+Invece, se il magnitudo è sopra o guale alla soglia critica, manda un sms.
 
+```php
 // Include il file che effettua la connessione al database
 include "connectToDB.php";
 // Query
@@ -583,11 +602,8 @@ $sogliaIntermedia = $configurazioni["soglia_intermedia"];
 $sogliaCritica = $configurazioni["soglia_critica"];
 date_default_timezone_set("Europe/Zurich");
 $data_corrente = date("Y-m-d");
-//$data_post = abs($_POST['date']);
 $ora_corrente = date("H:i:s");
-//$ora_post = abs($_POST['time']);
 $magnitudo = round($_POST['value'], 1);
-//echo readfile("data.txt");
 if ($magnitudo >= $sogliaMinima) {
     $inserimentoDati = "INSERT INTO Terremoto(id_registrazione,magnitudo,data_registrazione,orario_registrazione) VALUES ('$id_reg','$magnitudo','$data_corrente','$ora_corrente')";
     if ($link->query($inserimentoDati) === TRUE) {
@@ -612,15 +628,9 @@ if ($magnitudo >= $sogliaCritica) {
 
 #### data.php
 
-
-Il luogo dove tutto viene visualizzato; i dati statistici e altre Informazioni riguardanti il progetto.<br>
-Qui vengono mostrati agli utenti, in tempo reale i dati presi dall'arduino che si aggiornano in continuazione e tramite una pagina di login, gli amministratori possono accedere e modificare vari parametri.
-Per la struttura del sito abbiamo usato un bootstrap.
-
-
-Necessita del file **config.php** per effettuare la connesione al database.
+Necessita del file **connectToDB.php** per effettuare la connesione al database.
 Esegue una query e se nel risultato generato c'è almeno una riga, esegue un ciclo while
-settando le variabili **$prarop** e **$magnitudo**.
+settando le variabili **$orario** e **$magnitudo**.
 Infine esegue un trim togliendo le virgole da entrambe le variabili.
 
 ```php
@@ -642,21 +652,12 @@ if ($result->num_rows > 0)
 
 $orario = trim($orario, ",");
 $magnitudo = trim($magnitudo, ",");
-
 ```
 
-Questo pezzo di codice mostra come viene fatta la tabella con i dati del presi dal database, prima di tutto bisogna connettersi al database inserendo i parametri; nome del server, nome utente con cui si vuole accedere, password, nome del database e infine la porta.<br>
-Dopo essere sicuri che la connessione è andata a buon fine, abbiamo fatto una query dove seleziona tutti i dati della tabella ma con un limite di dati che possono essere mostrati, in modo che la tabella non è così grande.<br>
-Se la query ritorna correttamente, e ci sono dei dati all'interno della tabella, allora inserisce nella tabella i valori corrispondenti della data, ora e magnitudo.
-<br>
-
---
-
-Esegue una query e se nel risultato generato c'è almeno una riga, crea la tabella in base ai valori
-pescati dal database.
+Questo pezzo di codice mostra come viene fatta la tabella con i dati del presi dal database, viene effettuata  una query dove seleziona tutti i dati della tabella ma con un limite di dati che possono essere mostrati (definito in una funzione del database), in modo che la tabella non è così grande.
+Se la query ritorna correttamente e ci sono dei dati all'interno della tabella, allora inserisce nella tabella i valori corrispondenti della data, ora e magnitudo.
 
 ```php
-
 $terremoti = "SELECT * from tabella";
 $result = $link->query($terremoti);
 if ($result->num_rows > 0)
@@ -671,7 +672,8 @@ if ($result->num_rows > 0)
 
 #### sms.php
 
-Alla fine invia il messaggio.
+Invia il messaggio solo a un destinatario per il momento.
+Il contenuto del messaggio sarà "Allarme terremoto!".
 
 ```php
 require_once ('messagebird/vendor/autoload.php');
@@ -704,7 +706,7 @@ catch(\Exception $e) {
 
 #### Ricarica pagina
 
-Ogni 1000 millisecondi, ovvero ogni secondo fa le query per vedere se ci sono terremoto nuovi.
+Ogni 1000 millisecondi, ovvero ogni secondo fa la query per vedere se ci sono terremoto nuovi.
 Questo rende sia il grafico sia la tabella in modalità "real-time".
 
 ```javascript
@@ -722,7 +724,8 @@ Permette di ordinare le tabelle per data, orario e magnitudo.
 const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
 const comparer = (idx, asc) => (a, b) => ((v1, v2) => v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2))(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
 
-// do the work...
+// Per ogni table header, aggiunge un evento di click
+// Se l'utente clicca su un table header, viene ordinata la tabella.
 document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
     const table = th.closest('table');
     const tbody = table.querySelector('tbody');
@@ -750,17 +753,20 @@ se mostrare il bottone di login oppure i bottoni per effettuare il logout o sett
 
 ### Database
 
+#### Creazione database
 Elimina il database se esiste, dopodichè lo crea e viene selezionato.
 
 ```sql
-# Script che crea il database del progetto SismoLive
-
 drop database if exists SismoLive;
 create database SismoLive;
 use SismoLive;
+```
+#### Creazione tabelle
 
-# CREAZIONE TABELLE  ------------------------------
+Tabella per gli utenti del sito, ogni admin ha un nome, una password,
+una mail, un numero di telefono e il tipo di utente (admin o utente normale).
 
+```sql
 drop table if exists Utente;
 create table Utente(
 	nome varchar(20) primary key not null,
@@ -769,7 +775,14 @@ create table Utente(
 	telefono long not null,
 	tipo varchar(20) not null
 );
+```
 
+Tabella per la configurazione del sensore, ha tre soglie.
+La prima, quando viene superata registra il valore nella tabaella terremoto.
+La seconda, quando viene superata manda una mail a tutti gli amministratori del sito.
+L'ultima invece, quando viene superata manda un sms.
+
+```sql
 drop table if exists Configurazione;
 create table Configurazione(
 	id int primary key auto_increment,
@@ -777,7 +790,12 @@ create table Configurazione(
     soglia_intermedia double not null, # Soglia per mandare la mail
     soglia_critica double not null # Soglia per mandare l'SMS'
 );
+```
 
+Tabella per salvare i terremoti registrati, ogni di esso ha un magnitudo, l'orario
+in cui è stato registrato e anche la data.
+
+```sql
 drop table if exists Terremoto;
 create table Terremoto(
 	id_registrazione int primary key not null,
@@ -785,21 +803,33 @@ create table Terremoto(
 	data_registrazione DATE not null,
     orario_registrazione TIME not null
 );
+```
 
-# AMMINISTRATORI DI BASE --------------------------
+#### Amministratori
 
+Inserisce nel database i 5 admin predefiniti, tra cui uno è di test.
+
+```sql
 insert into Utente(nome,psw,email,telefono,tipo) values ("Georgiy",md5("PasswordDiGeorgiy"),"georgiy.farina@samtrevano.ch",41790123456,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Marco",md5("PasswordDiMarco"),"marco.lorusso@samtrevano.ch",41791234567,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Matthias",md5("PasswordDiMatthias"),"matthias.iannarella@samtrevano.ch", 41789246797,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Daniel",md5("PasswordDiDaniel"),"daniel.matt@samtrevano.ch",41793456789,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"thias.ianna@gmail.com",41793456789,"A");
+```
 
-# CONFIGURAZIONE DI 'DEFAULT' --------------
+#### Amministratori
 
+Inserisce nel database la soglia_minima, soglia_intermedia e soglia_critica.
+
+```sql
 insert into Configurazione(soglia_minima,soglia_intermedia,soglia_critica) values(3.0,6.0,7.5);
+```
 
-# FUNZIONI VARIE  ---------------------
+#### Funzioni
 
+DA COMMENTARE
+
+```sql
 DELIMITER //
 CREATE FUNCTION getStartId()
 returns int deterministic
@@ -813,7 +843,11 @@ BEGIN
 END
 //
 DELIMITER ;
+```
 
+DA COMMENTARE
+
+```sql
 DELIMITER //
 CREATE FUNCTION getFinishId()
 returns int deterministic
@@ -824,12 +858,15 @@ BEGIN
 END
 //
 DELIMITER ;
+```
 
-#------------------------------------
+#### View
 
+Crea una view che prende solamente gli ultimi **7** terremoti inseriti nel database, di essi prende la data di registrazione, l'orario di registrazione e il magnitudo del terremoto.
+
+```sql
 drop view if exists tabella;
 create view tabella as select t.data_registrazione, t.orario_registrazione, t.magnitudo, t.id_registrazione from Terremoto t where t.id_registrazione > getStartId();
-
 ```
 
 ### Hardware e codice
@@ -1170,7 +1207,7 @@ Daniel:
 - https://www.sparkfun.com/, 29-01-2020
 - https://www.seeedstudio.com/, 29-01-2020
 - https://www.iconfinder.com/, 29-01-2020
-- https://stackoverflow.com/questions/14267781/sorting-html-table-with-javascript/49041392, *stackoverflow* 03-04.2020
+- https://www.w3schools.com/howto/howto_js_sort_table.asp, *w3schools* 03-04.2020
 - https://github.com/PHPMailer/PHPMailer, *PHPMailer*, 01-05-2020
 - https://github.com/messagebird/php-rest-api, *messagebird*, 04-05-2020
 

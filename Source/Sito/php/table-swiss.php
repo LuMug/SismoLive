@@ -7,10 +7,11 @@ $fr = fread($f, filesize("../csv/svizzera.csv"));
 // Chiude il file
 fclose($f);
 $lines = array();
-//Rimuove tutti le nuove righe
+//Rimuove tutti i ritorni a capo
 $lines = explode("\n\r", $fr);
 $check = 0;
 for ($i = 0;$i < count($lines);$i++) {
+    // Se è nella prima riga, crea l'header della tabella
     if ($check == 0) {
         echo "<thead class='thead-light'>";
         echo "<tr>";
