@@ -241,11 +241,7 @@ HOSTING DI QUEL SITO, PERCHà CI SERVONO LE FUNZIONI.
 
 ### Use case
 
-***DA COMPLETARE***
-
-
-I casi d’uso rappresentano l’interazione tra i vari attori e le
-funzionalità del prodotto.
+![Diagramma use case](../Immagini/diagramma_use_case.png)
 
 ### Pianificazione
 
@@ -282,8 +278,7 @@ agli attributi e le relazioni degli oggetti in uso.
 
 ### Schema E-R, schema logico e descrizione
 
-Se il diagramma E-R viene modificato, sulla doc dovrà apparire l’ultima
-versione, mentre le vecchie saranno sui diari.
+![Diagramma E/R](../Immagini/diagramma_er.png)
 
 ### Design delle interfacce
 
