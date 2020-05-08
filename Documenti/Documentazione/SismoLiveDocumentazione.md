@@ -285,8 +285,39 @@ Progettazione pagina progettazione, abbiamo pensato di fare una pagina dove vien
 
 ## Implementazione
 
+### Struttura del sito
 
-### Sito
+- [js](../Source/Sito/js/)
+
+> Cartella nella quale sono salvati tutti i file javascript.
+
+- [fonts](../Source/Sito/fonts/)
+
+> Cartella nella quale sono salvati tutti i font.
+
+- [csv](../Source/Sito/csv/)
+
+> Cartella nella quale sono salvati tutti i file in formato csv.
+
+- [css](../Source/Sito/css/)
+
+> Cartella nella quale sono salvati tutti i file di stile css.
+
+- [php](../Source/Sito/php/)
+
+> Cartella nella quale sono salvati tutti i file PHP.
+
+- [img](../Source/Sito/img/)
+
+> Cartella nella quale sono salvate tutte le immagini.
+
+- [html](../Source/Sito/html/)
+
+> Cartella nella quale sono salvati tutti i file html-php.
+
+- [vendor](../Source/Sito/vendor/)
+
+> Cartella nella quale sono tutti i vendor utili per il sito.
 
 #### config.php
 
@@ -359,7 +390,7 @@ header("location: ../index.php");
 exit;
 ```
 
-#### table.php
+#### table-earth.php
 
 Innanzitutto, apre file csv e dopodiché legge il contenuto del file e lo inserisce
 in una variabile.
