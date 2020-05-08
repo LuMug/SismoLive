@@ -12,6 +12,14 @@
 
   - [Analisi dei mezzi](#analisi-dei-mezzi)
 
+      - [Hardware](#sofware)
+
+      - [Software](#software)
+
+      - [Librerie](#librerie)
+
+      - [Hosting](#hosting)
+
   - [Analisi e specifica dei requisiti](#analisi-e-specifica-dei-requisiti)
 
   - [Use case](#use-case)
@@ -24,13 +32,19 @@
 
   - [Design dei dati e database](#design-dei-dati-e-database)
 
+  - [Schema E-R, schema logico e descrzione](#schema-e-r,-schema-logico-e-descrizione)
+
+  - [Design delle interfacce](#design-delle-interfacce)
+
+  - [Design prodecurale](#design-prodecurale)
+
 4. [Implementazione](#implementazione)
 
   - [Sito Internet](#Sito)
 
-  - [Hardware e codice](#Hardware-e-codice)
-
   - [Database](#Database)
+
+  - [Hardware e codice](#Hardware-e-codice)
 
 5. [Test](#test)
 
@@ -164,7 +178,8 @@ Daniel:
 - ASUS X556UAM, Windows 10 home 64 bit
 
 Sismografo:
-- Fishino UNO
+- Arduino Mega 2560
+- Fishino
 
 
 #### Software
@@ -262,7 +277,7 @@ Sitemap:
 Descrizione delle strutture di dati utilizzate dal programma in base
 agli attributi e le relazioni degli oggetti in uso.
 
-### Schema E-R, schema logico e descrizione.
+### Schema E-R, schema logico e descrizione
 
 Se il diagramma E-R viene modificato, sulla doc dovrà apparire l’ultima
 versione, mentre le vecchie saranno sui diari.
@@ -501,8 +516,10 @@ if ($result->num_rows > 0) {
 Funzione
 
 ```php
+session_start();
+
 require "PHPMailer/PHPMailerAutoload.php";
-require "../config.php";
+require "../connectToDB.php";
 function smtpmailer($to, $from, $from_name, $subject, $body) {
     $mail = new PHPMailer();
     $mail->IsSMTP();
@@ -534,7 +551,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body) {
 $from = 'terremoto@sismolive.online';
 $name = 'SismoLive';
 $subj = 'Allarme terremoto!';
-$msg = 'È stato rilevato un terremoto di magnitudo .. ' . ' alle .. ';
+$msg = 'È stato rilevato un terremoto di magnitudo ' .$_SESSION['magnitudo'] . ' alle ' . $_SESSION['orario'];
 $email = "SELECT email FROM Utente";
 $result = $link->query($email);
 if ($result->num_rows > 0) {
@@ -542,6 +559,51 @@ if ($result->num_rows > 0) {
         $to = $row['email'];
         $error = smtpmailer($to, $from, $name, $subj, $msg);
     }
+}
+```
+
+#### MySQL_connection.php
+
+```php
+
+// Include il file che effettua la connessione al database
+include "connectToDB.php";
+// Query
+$soglie = "SELECT soglia_minima, soglia_intermedia, soglia_critica FROM Configurazione";
+$terremoti = "SELECT * FROM Terremoto";
+$querySoglie = $link->query($soglie);
+$queryTerremoti = $link->query($terremoti);
+$id_reg = $queryTerremoti->num_rows + 1;
+$configurazioni = $querySoglie->fetch_assoc();
+$sogliaMinima = $configurazioni["soglia_minima"];
+$sogliaIntermedia = $configurazioni["soglia_intermedia"];
+$sogliaCritica = $configurazioni["soglia_critica"];
+date_default_timezone_set("Europe/Zurich");
+$data_corrente = date("Y-m-d");
+//$data_post = abs($_POST['date']);
+$ora_corrente = date("H:i:s");
+//$ora_post = abs($_POST['time']);
+$magnitudo = round($_POST['value'], 1);
+//echo readfile("data.txt");
+if ($magnitudo >= $sogliaMinima) {
+    $inserimentoDati = "INSERT INTO Terremoto(id_registrazione,magnitudo,data_registrazione,orario_registrazione) VALUES ('$id_reg','$magnitudo','$data_corrente','$ora_corrente')";
+    if ($link->query($inserimentoDati) === TRUE) {
+        echo "Inserimento dati riuscito";
+    } else {
+        echo "Error: " . $inserimentoDati . "<br>" . $link->error;
+    }
+}
+// Manda la mail se il magnitudo è sopra o guale alla soglia intermedia
+if ($magnitudo >= $sogliaIntermedia) {
+    $_SESSION['magnitudo'] = $magnitudo;
+    $_SESSION['orario'] = $ora_corrente;
+    require "mail/mail.php";
+}
+// Manda un sms se il magnitudo è sopra o guale alla soglia critica
+if ($magnitudo >= $sogliaCritica) {
+    $_SESSION['magnitudo'] = $magnitudo;
+    $_SESSION['orario'] = $ora_corrente;
+    require "sms/sms.php";
 }
 ```
 

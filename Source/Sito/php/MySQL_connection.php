@@ -1,6 +1,7 @@
 <?php
+session_start();
 // Include il file che effettua la connessione al database
-require_once "connectToDB.php";
+include "connectToDB.php";
 // Query
 $soglie = "SELECT soglia_minima, soglia_intermedia, soglia_critica FROM Configurazione";
 $terremoti = "SELECT * FROM Terremoto";
@@ -28,10 +29,14 @@ if ($magnitudo >= $sogliaMinima) {
 }
 // Manda la mail se il magnitudo è sopra o guale alla soglia intermedia
 if ($magnitudo >= $sogliaIntermedia) {
+    $_SESSION['magnitudo'] = $magnitudo;
+    $_SESSION['orario'] = $ora_corrente;
     require "mail/mail.php";
 }
 // Manda un sms se il magnitudo è sopra o guale alla soglia critica
 if ($magnitudo >= $sogliaCritica) {
+    $_SESSION['magnitudo'] = $magnitudo;
+    $_SESSION['orario'] = $ora_corrente;
     require "sms/sms.php";
 }
 ?>
