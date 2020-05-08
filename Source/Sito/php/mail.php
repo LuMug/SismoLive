@@ -2,13 +2,13 @@
 
 session_start();
 
-require "PHPMailer/PHPMailerAutoload.php";
-require "../connectToDB.php";
+require "mail/PHPMailer/PHPMailerAutoload.php";
+include "connectToDB.php";
 
 $from = 'terremoto@sismolive.online';
 $name = 'SismoLive';
 $subj = 'Allarme terremoto!';
-$msg = 'È stato rilevato un terremoto di magnitudo ' .$_SESSION['magnitudo'] . ' alle ' . $_SESSION['orario'];
+$msg = 'In data ' . $_SESSION['data'] . ' abbiamo rilevato un terremoto di magnitudo ' . $_SESSION['magnitudo'] . ' alle ' . $_SESSION['orario'];
 $email = "SELECT email FROM Utente";
 $result = $link->query($email);
 if ($result->num_rows > 0) {
