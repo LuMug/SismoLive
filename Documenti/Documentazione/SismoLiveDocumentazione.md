@@ -100,7 +100,6 @@ Lo scopo di questo progetto è quello di avere una costante misurazione tramite 
 Nel caso di un terremoto devono essere notificati gli amministratori via mail e gli utenti sul sito.
 Inoltre questo progetto servirà a migliorare le nostre capacità di lavorare in team.
 
-
 ## Analisi
 
 ### Analisi del dominio
@@ -226,7 +225,6 @@ Lo schema seguente rappresenta lo use case del progetto:
 ![Gant preventivo](../Immagini/gantt_prev1.PNG)
 ![Gant preventivo](../Immagini/gantt_prev2.PNG)
 ![Gant preventivo](../Immagini/gantt_prev3.PNG)
-
 ![Gant preventivo](../Immagini/gantt_prev4.PNG)
 
 ## Progettazione
@@ -247,7 +245,6 @@ La scheda FishinoUNO è la prima scheda di fishino, compatibile al 100% con Ardu
 Sitemap:
 
 ![sitemap](../Progettazione_Sito/sitemap.png)
-
 
 ### Schema E-R, schema logico e descrizione
 
@@ -276,7 +273,6 @@ Progettazione Menu a tendina, abbiamo progettato di fare un menu a tendina dove 
 Progettazione pagina progettazione, abbiamo pensato di fare una pagina dove viene spiegato il progetto, con dei commenti, un analisi e lo sviluppo e sulla destra un'immagine del montaggio:
 
 ![Terremoti](../Progettazione_Sito/Progettazione.png)
-
 
 ### Design procedurale
 
@@ -668,7 +664,6 @@ if ($result->num_rows > 0)
     echo "<tr><th>" . $row["data_registrazione"] . "</th><th>" . $row["orario_registrazione"] . "</th><th>" . $row["magnitudo"] . "</tr>";
   }
 }
-
 ```
 
 #### sms.php
@@ -702,7 +697,6 @@ catch(\MessageBird\Exceptions\BalanceException $e) {
 catch(\Exception $e) {
     echo $e->getMessage();
 }
-
 ```
 
 #### Ricarica pagina
@@ -755,6 +749,7 @@ se mostrare il bottone di login oppure i bottoni per effettuare il logout o sett
 ### Database
 
 #### Creazione database
+
 Elimina il database se esiste, dopodiché lo crea e viene selezionato.
 
 ```sql
@@ -762,6 +757,7 @@ drop database if exists SismoLive;
 create database SismoLive;
 use SismoLive;
 ```
+
 #### Creazione tabelle
 
 Tabella per gli utenti del sito, ogni admin ha un nome, una password,
@@ -935,7 +931,6 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 
 ***DA COMPLETARE***
 
-
 |Test Case      | TC-001                       |
 |---------------|--------------------------------------|
 |**Nome**       |Presenza del sito|
@@ -944,7 +939,6 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Prerequisiti**| --- |
 |**Procedura**   | Aprire un browser ed andare sul seguente url: http://sismolive.online/index.php, controllare che il grafico e la tabella si vedono e si aggiornano ogni 5 secondi, aprire anche le altre sezioni del sito.|
 |**Risultati attesi** | Deve apparire la pagina principale con grafico e tabella con dati al suo interno, ogni 5 secondi si deve poter vedere un miglioramento, non ci devono essere problemi di connessione al database o di altro genere.|
-
 
 |Test Case      | TC-002                       |
 |---------------|--------------------------------------|
@@ -955,7 +949,6 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Procedura**   | Avere il sito su questo url: http://www.sismolive.online/index.php Dopodiché in alto a destra cliccare sul bottone "Login" inserire le credenziali: nome utente: test password: test. E controllare se una volta reindirizzato sulla pagina principale, spunta la parte di configurazione. |
 |**Risultati attesi** | Dovrebbe apparire la pagina di login, e tramite le credenziali deve poter accedere come amministratore e avere la possibilità di aprire la pagina di configurazione e modificare i parametri.|
 
-
 |Test Case      | TC-003                       |
 |---------------|--------------------------------------|
 |**Nome**       |Compatibilità coi principali browser|
@@ -964,7 +957,6 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Prerequisiti**| Avere il sito |
 |**Procedura**   | Inserire l'url http://www.sismolive.online/index.php sui vari browser sopracitati, controllare se i grafici e la tabella si aggiornano ogni 5 secondi e che il login funzioni.|
 |**Risultati attesi** | Dovrebbe apparire la pagina principale con i grafici e le tabelle e con possibilità di effettuare il login.|
-
 
 |Test Case      | TC-004                       |
 |---------------|--------------------------------------|
@@ -975,7 +967,6 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Procedura**   | Visitare https://trello.com/b/fdVY0YLT/sismolive|
 |**Risultati attesi** | Visitando l'agenda devono essere presenti le varie liste di attività|
 
-
 |Test Case      | TC-005                       |
 |---------------|--------------------------------------|
 |**Nome**       |DB collegato al sito|
@@ -984,7 +975,6 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Prerequisiti**||
 |**Procedura**   |Connettersi al DB tramite WorkBench, provare ad aggiungere un record in Terremoto, in seguito aprire il sito e controllare se nella tabella e nel grafico viene visualizzato il record.|
 |**Risultati attesi** |Sul sito dovrebbe apparire il nuovo record di terremoto, sia nella tabella che nel rispettivo grafico.|
-
 
 |Test Case      | TC-006                       |
 |---------------|--------------------------------------|
@@ -995,7 +985,6 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Procedura**   |Visitare http://www.sismolive.online/index.php e scorrere in basso, fino al grafico, dove ogni 5 secondi si deve aggiornare.|
 |**Risultati attesi** |Si dovrebbe poter vedere il grafico dei terremoti che si aggiorna ogni 5 secondi, con accanto la rispettiva tabella|
 
-
 |Test Case      | TC-007                       |
 |---------------|--------------------------------------|
 |**Nome**       |Struttura hardware con Arduino|
@@ -1004,7 +993,6 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Prerequisiti**|  |
 |**Procedura**   |Controllare la struttura dell'Arduino. |
 |**Risultati attesi** |Deve esserci una struttura solida con Arduino.  |
-
 
 |Test Case      | TC-008                       |
 |---------------|--------------------------------------|
@@ -1015,7 +1003,6 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Procedura**   |Controllare se c'è il geofono e se l'arduino tramite un sistema di output, riceve i dati dal componente correttamente. |
 |**Risultati attesi** |L'arduino deve stampare in console i vari valori delle frequenze che elabora il geofono.|
 
-
 |Test Case      | TC-009                       |
 |---------------|--------------------------------------|
 |**Nome**       |Collegamento Fishino al WIFi          |
@@ -1024,7 +1011,6 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Prerequisiti**|  |
 |**Procedura**   |Controllare che esista la rete con SSID e password definiti nel codice fishino.|
 |**Risultati attesi** |La porta seriale a fine collegamento dovrebbe stampare lo stato della connessione.|
-
 
 |Test Case      | TC-010                       |
 |---------------|--------------------------------------|
@@ -1098,9 +1084,7 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Procedura**   |Entrare nel sito, fare il login come amministratore e entrare nella pagina dei parametri, in seguito controllare se c'è un form dove si può inserire un numero che servirà alla modifica della frequenza dei dati letti. |
 |**Risultati attesi** |Dovrebbe esserci un form e un bottone che confermi la frequenza, e il grafico e la tabella dovrebbero aggiornarsi in base al tempo appena settato. |
 
-
 ### Risultati test
-
 
 | Test Case |  Stato  |
 |-----------|---------|
@@ -1124,9 +1108,7 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 
 ### Mancanze e limitazioni conosciute
 
-
 ##### Hardware
-
 
 Il nostro progetto presenta la mancanza di un componente essenziale, ovvero il geofono per la misurazione delle vibrazioni terrestri.
 Questo è dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" con la creazione di dati fittizi in un range tra 10.0 e 100.0 che viene in seguito diviso per 10, l'invio e la creazione dei dati avviene tramite un fishino UNO.
@@ -1144,22 +1126,22 @@ Questo è dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" c
 
 ## Conclusioni
 
-Marco:
+#### Marco
 
 Trovo che lavorare in team sia molto produttivo e che scaturiscono molte più idee, dividendosi i compiti e assegnando le parti dove uno è meno bravo ad un altro componente del gruppo si riesce a raggiungere obbiettivi molto elevati. In questo progetto abbiamo toccato molti punti dell'informatica, come la gestione e la programmazione dell'hardware, il database e infine il sito web. Se dovessimo riuscire a comprare il geofono penso che questo progetto si riveli molto importante e che potrà essere utile a molte persone.
 
-Georgiy:
+#### Georgiy
 
 Da questo progetto ho iniziato a mettere in pratica il lavoro in team nell'ambito di progetti come questi. Mi è piaciuto lavorarci, anche perché siamo stati ben organizzati e ci siamo aiutati a vicenda quando si aveva bisogno.
 Il lavoro non è stato assolutamente uno spreco né di tempo, né di risorse. Se implementato meglio, potrebbe rivelarsi abbastanza utile.
 
-Matthias:
+#### Matthias
 
 Rispetto al progetto individuale del primo semestre, in questo progetto a gruppi ho imparato a collaborare in team.
 Il lavoro è stato motivante, ho avuto degli ottimi compagni di squadra e ci siamo trovati tutti quanti bene, senza complicazioni.
 L'unica nota negativa che ho è che ad un certo punto eravamo un po' indietro col progetto, ma siamo riusciti a recuperare terreno ed a finirlo nel tempo limite.
 
-Daniel:
+#### Daniel
 
 Alla fine di questo progetto penso di aver compreso com'è realmente lavorare in team in un progetto importante. Ho capito l'importanza della comunicazione nel team.
 Ho potuto rientrare nel mondo di fishino imparando a utilizzarlo. Il progetto è molto interessante, peccato che non abbiamo potuto implementare la parte con il geofono, che sicuramente avrebbe reso ancora più interessante questo progetto.
@@ -1172,25 +1154,25 @@ Ho potuto rientrare nel mondo di fishino imparando a utilizzarlo. Il progetto è
 
 ### Considerazioni personali
 
-  Marco:
+#### Marco
 
-  In questo progetto ho migliorato le mie capacità di lavorare in team, le mie conoscenze nei vari linguaggi di programmazione(php, SQL, CSS, ...) e capito ancora meglio come unire parte hardware a database e database a sito web. Sono rimasto molto soddisfatto da questo progetto visti anche i grandi risultati.
+In questo progetto ho migliorato le mie capacità di lavorare in team, le mie conoscenze nei vari linguaggi di programmazione(php, SQL, CSS, ...) e capito ancora meglio come unire parte hardware a database e database a sito web. Sono rimasto molto soddisfatto da questo progetto visti anche i grandi risultati.
 
-  Georgiy:
+#### Georgiy
 
-  Ho compreso meglio le dinamiche di un lavoro in team, rendendomi conto di come ci si muove in progetti del genere. Ho consolidato le mie conoscenze dei vari linguaggi implementati quali SQL, PHP ecc..
-  Sono rimasto più che soddisfatto da questo lavoro.
+Ho compreso meglio le dinamiche di un lavoro in team, rendendomi conto di come ci si muove in progetti del genere. Ho consolidato le mie conoscenze dei vari linguaggi implementati quali SQL, PHP ecc..
+Sono rimasto più che soddisfatto da questo lavoro.
 
-  Matthias:
+#### Matthias
 
-  Grazie a questo progetto didattico, sono riuscito consolidare le mie conoscenze principalmente nel linguaggio PHP e HTML.
-  Parlando del risultato, sono felice del risultato finale, mi aspettavo peggio.
-  Spero che nei prossimi progetti, potrò mettere in pratica le conoscenze acquisite da questo progetto.
+Grazie a questo progetto didattico, sono riuscito consolidare le mie conoscenze principalmente nel linguaggio PHP e HTML.
+Parlando del risultato, sono felice del risultato finale, mi aspettavo peggio.
+Spero che nei prossimi progetti, potrò mettere in pratica le conoscenze acquisite da questo progetto.
 
-  Daniel:
+#### Daniel
 
-  In questo progetto ho potuto migliorare la mia capacità di lavorare in team. Il nostro team si è dimostrato molto organizzato e collaborativo tri i suoi membri. Lavorare in gruppo secondo me è sicuramente più impegnativo, in fatto di organizzazione, che lavorare singolarmente.
-  Questo progetto ha un grande potenziale, si possono effettuare ancora ulteriori modifiche e/o aggiunte in modo da migliorarne il funzionamento e le sue capacità.
+In questo progetto ho potuto migliorare la mia capacità di lavorare in team. Il nostro team si è dimostrato molto organizzato e collaborativo tri i suoi membri. Lavorare in gruppo secondo me è sicuramente più impegnativo, in fatto di organizzazione, che lavorare singolarmente.
+Questo progetto ha un grande potenziale, si possono effettuare ancora ulteriori modifiche e/o aggiunte in modo da migliorarne il funzionamento e le sue capacità.
 
 ## Sitografia
 
@@ -1214,7 +1196,6 @@ Ho potuto rientrare nel mondo di fishino imparando a utilizzarlo. Il progetto è
 - https://github.com/messagebird/php-rest-api, *messagebird*, 04-05-2020
 - https://www.freeformatter.com/html-formatter.html, *HTML formatter*, 08-05-2020
 - http://beautifytools.com/php-beautifier.php, *PHP formatter*, 08-05-2020
-
 
 ## Allegati
 
