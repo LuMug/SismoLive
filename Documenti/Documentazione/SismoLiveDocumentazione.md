@@ -260,15 +260,15 @@ L'immagine sottostante rappresenta il diagramma E/R del database SismoLive:
 
 Progettazione pagina principale, abbiamo inizialmente pensato di avere una home che contenesse la visualizzazione dei dati in live sotto forma di grafico e tabella:
 
-![index](../Progettazione_Sito/index.PNG)
+![index](../Progettazione_Sito/Index.png)
 
 Progettazione pagina login, abbiamo pensato di avere una pagina di login dove gli amministratori possono accedere tramite le credenziali nome utente e password:
 
-![Login](../Progettazione_Sito/login.PNG)
+![Login](../Progettazione_Sito/Login.png)
 
 Progettazione terremoti, pagina dove vengono mostrate due tabelle con i terremoti più percepiti in Svizzera e nel mondo con colonne: data, magnitudo, pericolosità e la città:
 
-![Terremoti](../Progettazione_Sito/terremoti.PNG)
+![Terremoti](../Progettazione_Sito/Terremoti.png)
 
 Progettazione Menu a tendina, abbiamo progettato di fare un menu a tendina dove si potesse navigare fra le varie pagine(Home, terremoti, progettazione, chi siamo):
 
