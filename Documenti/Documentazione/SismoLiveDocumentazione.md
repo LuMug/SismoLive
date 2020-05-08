@@ -933,8 +933,6 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 
 ### Protocollo di test
 
-***DA COMPLETARE***
-
 
 |Test Case      | TC-001                       |
 |---------------|--------------------------------------|
@@ -942,8 +940,8 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Riferimento**|REQ-001|
 |**Descrizione**| Bisogna verificare che esista il sito all'url: http://sismolive.online/index.php, e che tutte le pagine vengono visualizzate senza problemi.|
 |**Prerequisiti**| --- |
-|**Procedura**   | Aprire un browser ed andare sul seguente url: http://sismolive.online/index.php, controllare che il grafico e la tabella si vedono e si aggiornano ogni 5 secondi, aprire anche le altre sezioni del sito.|
-|**Risultati attesi** | Deve apparire la pagina principale con grafico e tabella con dati al suo interno, ogni 5 secondi si deve poter vedere un miglioramento, non ci devono essere problemi di connessione al database o di altro genere.|
+|**Procedura**   | Aprire un browser ed andare sul seguente url: http://sismolive.online/index.php, controllare che il grafico e la tabella si vedono e si aggiornano ogni secondo, aprire anche le altre sezioni del sito.|
+|**Risultati attesi** | Deve apparire la pagina principale con grafico e tabella con dati al suo interno, ogni secondo si deve poter vedere un aggiornamento, non ci devono essere problemi di connessione al database o di altro genere.|
 
 
 |Test Case      | TC-002                       |
@@ -953,7 +951,7 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Descrizione**| Visitando il sito, deve esserci la possibilità di eseguire il login e collegarsi come amministratori.|
 |**Prerequisiti**| Visitare il sito|
 |**Procedura**   | Avere il sito su questo url: http://www.sismolive.online/index.php Dopodiché in alto a destra cliccare sul bottone "Login" inserire le credenziali: nome utente: test password: test. E controllare se una volta reindirizzato sulla pagina principale, spunta la parte di configurazione. |
-|**Risultati attesi** | Dovrebbe apparire la pagina di login, e tramite le credenziali deve poter accedere come amministratore e avere la possibilità di aprire la pagina di configurazione e modificare i parametri.|
+|**Risultati attesi** | Dovrebbe apparire la pagina di login, e tramite le credenziali si deve poter accedere come amministratore e avere la possibilità di aprire la pagina di configurazione e modificare i parametri.|
 
 
 |Test Case      | TC-003                       |
@@ -962,7 +960,7 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Riferimento**|REQ-007|
 |**Descrizione**| Il sito deve essere compatibile con i principali browser (Chrome, Opera, Firefox, Edge)|
 |**Prerequisiti**| Avere il sito |
-|**Procedura**   | Inserire l'url http://www.sismolive.online/index.php sui vari browser sopracitati, controllare se i grafici e la tabella si aggiornano ogni 5 secondi e che il login funzioni.|
+|**Procedura**   | Inserire l'url http://www.sismolive.online/index.php sui vari browser sopracitati, controllare se i grafici e la tabella si aggiornano ogni secondo e che il login funzioni.|
 |**Risultati attesi** | Dovrebbe apparire la pagina principale con i grafici e le tabelle e con possibilità di effettuare il login.|
 
 
@@ -992,8 +990,8 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Riferimento**|REQ-008|
 |**Descrizione**|I dati sul sito devono essere rappresentati sotto forma di grafici.  |
 |**Prerequisiti**|Avere dei dati da dover rappresentare.|
-|**Procedura**   |Visitare http://www.sismolive.online/index.php e scorrere in basso, fino al grafico, dove ogni 5 secondi si deve aggiornare.|
-|**Risultati attesi** |Si dovrebbe poter vedere il grafico dei terremoti che si aggiorna ogni 5 secondi, con accanto la rispettiva tabella|
+|**Procedura**   |Visitare http://www.sismolive.online/index.php e scorrere in basso, fino al grafico, dove ogni secondo si deve aggiornare.|
+|**Risultati attesi** |Si dovrebbe poter vedere il grafico dei terremoti che si aggiorna ogni secondo, con accanto la rispettiva tabella.|
 
 
 |Test Case      | TC-007                       |
@@ -1011,7 +1009,7 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Nome**       |Misurazione vibrazioni con geofono           |
 |**Riferimento**|REQ-005                     |
 |**Descrizione**|Tramite il geofono, bisogna poter prendere i dati che elabora con le vibrazioni del terreno, e poterli leggere nell'arduino.  |
-|**Prerequisiti**|                           |
+|**Prerequisiti**| Avere il geofono|
 |**Procedura**   |Controllare se c'è il geofono e se l'arduino tramite un sistema di output, riceve i dati dal componente correttamente. |
 |**Risultati attesi** |L'arduino deve stampare in console i vari valori delle frequenze che elabora il geofono.|
 
@@ -1031,17 +1029,17 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Nome**       |Invio dati|
 |**Riferimento**|REQ-006                  |
 |**Descrizione**|L'invio dei dati avviene tramite il metodo post, verso un file php all'interno del sito internet. I dati inviati sono fittizi.|
-|**Prerequisiti**|Riuscirsi a collegarsi a internet|
-|**Procedura**   |Una volta collegati al wifi, il codice dovrebbe mandare i dati 5 volte al secondo tramite il metodo send.|
+|**Prerequisiti**|Riuscire a collegarsi a internet|
+|**Procedura**   |Una volta collegati al wifi, il codice dovrebbe mandare i dati ogni secondo tramite il metodo send.|
 |**Risultati attesi** |Il fishino non da errori nell'invio di dati.|
 
 |Test Case      | TC-011                      |
 |---------------|--------------------------------------|
-|**Nome**       |Inserimento nel DB dei dati|
+|**Nome**       |Inserimento dei dati nel DB |
 |**Riferimento**|REQ-009                    |
 |**Descrizione**|I dati ricevuti dal fishino devono essere inseriti in un db mysql.|
 |**Prerequisiti**|Avere un sito funzionante e un DB per contenere i dati.|
-|**Procedura**   |Controllare che il fishino sia connesso, verificare che il sito e il DB esistano, verificare nel codice arduino che il percorso per il file php sia corretto.|
+|**Procedura**   |Controllare che il fishino sia connesso, verificare che il sito e il DB esistano, verificare nel codice arduino che il percorso per il file php sia corretto (dovrebbe essere il seguente: /php/MySQL_connection.php).|
 |**Risultati attesi** |Nel DB dovrebbero essere stati inseriti i dati|
 
 |Test Case      | TC-012                      |
@@ -1049,17 +1047,17 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Nome**       | Dato in live su LCD|
 |**Riferimento**|REQ-010                       |
 |**Descrizione**| Tramite un LCD montato sull'arduino, bisogna mostrare il dato appena registrato|
-|**Prerequisiti**||
+|**Prerequisiti**|Avere l'LCD integrato nella struttura Arduino|
 |**Procedura**   |Controllare sulla struttura se c'è un LCD montato e se mostra i dati in tempo reale. |
 |**Risultati attesi** |Ci dovrebbe essere un LCD con i dati misurati/generati casualmente. |
 
 |Test Case      | TC-013                      |
 |---------------|--------------------------------------|
-|**Nome**       |configurazione soglie da parte dell'admin |
+|**Nome**       |Configurazione soglie da parte dell'admin |
 |**Riferimento**|REQ-11                       |
 |**Descrizione**| Gli amministratori possono configurare delle soglie, che corrispondono alla soglia minima e a quella massima. Settando la soglia minima, si potranno vedere i dati riguardanti la magnitudo sopra ad esso. Settando la soglia critica ad un certo valore, se si registra un magnitudo sopra quel valore, gli admin vengono avvisati tramite un'email.|
 |**Prerequisiti**||
-|**Procedura**   |Entrare nel sito, fare il login con il nome utente: test e la password: test. Inseguito aprire la pagina di configurazione dei parametri e settare un valore minimo e uno massimo. Infine, controllare se sul grafico e sulla tabella escono solo i valori sopra la soglia e che se ci dovesse essere un terremoto di magnitudo sopra la soglia critica, arriva un'email. |
+|**Procedura**   |Entrare nel sito, fare il login con il nome utente: test e la password: test. In seguito aprire la pagina di configurazione dei parametri e settare un valore minimo e uno massimo. Infine, controllare se sul grafico e sulla tabella escono solo i valori sopra la soglia e che se ci dovesse essere un terremoto di magnitudo sopra la soglia critica, arriva un'email. |
 |**Risultati attesi** |La tabella e il grafico dovrebbero prendere in considerazione solo i dati sopra la soglia minima e si deve ricevere un'email se si supera la soglia critica. |
 
 |Test Case      | TC-014                      |
@@ -1068,25 +1066,25 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |**Riferimento**|REQ-12                       |
 |**Descrizione**|I dati che prende il sito, devono aggiornarsi in live sia sul grafico che sulla tabella, senza la necessità di riaggiornare la pagina ogni volta. |
 |**Prerequisiti**||
-|**Procedura**   |Aprire il sito, andare nella pagina dei terremoti attuali e aspettare fino a che il grafico e la tabella non cambia. |
-|**Risultati attesi** |Il grafico e la tabella si aggiorna in live senza il refresh della pagina. |
+|**Procedura**   |Aprire il sito, andare nella pagina dei terremoti attuali e aspettare fino a che il grafico e la tabella non cambino. |
+|**Risultati attesi** |Il grafico e la tabella si aggiornano in live senza il refresh della pagina. |
 
 |Test Case      | TC-015                      |
 |---------------|--------------------------------------|
 |**Nome**       |Notifica tramite email |
 |**Riferimento**|REQ-13                       |
-|**Descrizione**|Se si registra un terremoto sopra la soglia critica settata, gli amministratori ricevono un'email che si sta registrando un terremoto. |
+|**Descrizione**|Se si registra un terremoto sopra la soglia critica settata, gli amministratori ricevono un'email di notifica. |
 |**Prerequisiti**||
-|**Procedura**   |Aprire il sito, fare login con il nome utente: test e la password: test, settare una soglia critica, aspettare finché non si registra un valore alto, e inseguito controllare la casella postale. |
+|**Procedura**   |Aprire il sito, fare login con il nome utente: test e la password: test, settare una soglia critica, aspettare finché non si registra un valore alto, e in seguito controllare la casella postale. |
 |**Risultati attesi** |Dovrebbe arrivare una mail, con un'allerta che si sta registrando un terremoto. |
 
 |Test Case      | TC-016                      |
 |---------------|--------------------------------------|
 |**Nome**       |Notifica tramite messaggio |
 |**Riferimento**|REQ-14                       |
-|**Descrizione**|Se si registra un terremoto sopra la soglia critica settata, gli amministratori ricevono un messaggio sul telefono che si sta registrando un terremoto. |
+|**Descrizione**|Se si registra un terremoto sopra la soglia critica settata, gli amministratori ricevono una notifica via messaggio. |
 |**Prerequisiti**||
-|**Procedura**   |Aprire il sito, fare login con il nome utente: test e la password: test, settare una soglia critica, aspettare finché non si registra un valore alto, e inseguito controllare i messaggi sul telefono.  |
+|**Procedura**   |Aprire il sito, fare login con il nome utente: test e la password: test, settare una soglia critica, aspettare finché non si registra un valore alto, e in seguito controllare i messaggi sul telefono.  |
 |**Risultati attesi** |Dovrebbe arrivare un messaggio con un'allerta che si sta registrando un terremoto. |
 
 |Test Case      | TC-017                      |
@@ -1110,17 +1108,17 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 |   TC-004  | Passato |
 |   TC-005  | Passato |
 |   TC-006  | Passato |
-|   TC-007  | Passato |
-|   TC-008  | Non passato|
+|   TC-007  | Non Passato: abbiamo usato una struttura con Fishino |
+|   TC-008  | Non passato: il componente non è mai arrivato|
 |   TC-009  | Passato |
 |   TC-010  | Passato |
 |   TC-011  | Passato |
-|   TC-012  | Non passato |
-|   TC-013  | Passato |
+|   TC-012  | Non passato: il componente non è mai arrivato |
+|   TC-013  | Passato (nota: le soglie ora sono 3, dove con quella intermedia si manda una mail, mentre con quella critica si manda un sms)|
 |   TC-014  | Passato  |
 |   TC-015  | Passato |
 |   TC-016  | Passato |
-|   TC-017  | Non passato |
+|   TC-017  | Non passato: manca il codice per settare il valore|
 
 ### Mancanze e limitazioni conosciute
 
@@ -1128,8 +1126,8 @@ Il parametro passato non è altro che il valore che abbiamo creato il generatore
 ##### Hardware
 
 
-Il nostro progetto presenta la mancanza di un componente essenziale, ovvero il geofono per la misurazione delle vibrazioni terrestri.
-Questo è dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" con la creazione di dati fittizi in un range tra 10.0 e 100.0 che viene in seguito diviso per 10, l'invio e la creazione dei dati avviene tramite un fishino UNO.
+Il nostro progetto presenta la mancanza di più componenti ordinati, ovvero il geofono per misurare le vibrazioni, l'LCD per mostrare il dato in live sulla struttura hardware e il modulo WIFI.
+Per quanto riguarda la misurazione delle vibrazioni, abbiamo "risolto" con la creazione di dati fittizi, che tramite il fishino UNO vengono mandati sul sito.
 
 ## Consuntivo
 
@@ -1146,7 +1144,7 @@ Questo è dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" c
 
 Marco:
 
-Trovo che lavorare in team sia molto produttivo e che scaturiscono molte più idee, dividendosi i compiti e assegnando le parti dove uno è meno bravo ad un altro componente del gruppo si riesce a raggiungere obbiettivi molto elevati. In questo progetto abbiamo toccato molti punti dell'informatica, come la gestione e la programmazione dell'hardware, il database e infine il sito web. Se dovessimo riuscire a comprare il geofono penso che questo progetto si riveli molto importante e che potrà essere utile a molte persone.
+Trovo che lavorare in team sia molto produttivo e che scaturiscono molte più idee, inoltre ci si può dividere i compiti in base alle capacità di ogni componente del team. In questo progetto abbiamo toccato molti punti dell'informatica, come la gestione e la programmazione dell'hardware, il database e infine il sito web. Se dovessimo riuscire a comprare il geofono penso che questo progetto si rivelerebbe molto importante e che potrebbe essere utile a molte persone.
 
 Georgiy:
 
@@ -1157,7 +1155,7 @@ Matthias:
 
 Rispetto al progetto individuale del primo semestre, in questo progetto a gruppi ho imparato a collaborare in team.
 Il lavoro è stato motivante, ho avuto degli ottimi compagni di squadra e ci siamo trovati tutti quanti bene, senza complicazioni.
-L'unica nota negativa che ho è che ad un certo punto eravamo un po' indietro col progetto, ma siamo riusciti a recuperare terreno ed a finirlo nel tempo limite.
+L'unica nota negativa che ho è che ad un certo punto eravamo un po' indietro col progetto, ma siamo riusciti a recuperare terreno e a finirlo nel tempo limite.
 
 Daniel:
 
