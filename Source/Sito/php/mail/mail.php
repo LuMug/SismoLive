@@ -1,6 +1,9 @@
 <?php
+
+session_start();
+
 require "PHPMailer/PHPMailerAutoload.php";
-require "../config.php";
+require "../connectToDB.php";
 function smtpmailer($to, $from, $from_name, $subject, $body) {
     $mail = new PHPMailer();
     $mail->IsSMTP();
@@ -30,7 +33,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body) {
 $from = 'terremoto@sismolive.online';
 $name = 'SismoLive';
 $subj = 'Allarme terremoto!';
-$msg = 'È stato rilevato un terremoto di magnitudo .. ' . ' alle .. ';
+$msg = 'È stato rilevato un terremoto di magnitudo ' .$_SESSION['magnitudo'] . ' alle ' . $_SESSION['orario'];
 $email = "SELECT email FROM Utente";
 $result = $link->query($email);
 if ($result->num_rows > 0) {

@@ -41,7 +41,7 @@ Documento di specifica: [QdC_SecondoSemestre-Sismografo.pdf](Documenti/Mandato/m
 
 > Cartella nella quale è salvata la documentazione del progetto.
 
-- [Gantt](Documenti/Gantt/Gantt_SismoLive.pdf)
+- [Gantt](Documenti/Gantt/)
 
 > Cartella nella quale sono salvati tutti i diagrammi di gantt.
 
