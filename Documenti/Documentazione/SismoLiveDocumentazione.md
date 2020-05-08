@@ -139,7 +139,6 @@
 
 ***DA COMPLETARE***
 
-
 SismoLive è progettato per tutti gli utenti, sia esperti,
 sia principianti, che hanno a disposizione un dispositivo, il quale può essere un telefono, tablet o computer in grado di navigare su internet.
 Chiunque può consultare il sito che conterrà una rappresentazione delle misurazioni delle scosse sismiche sotto forma di grafico e tabella, una pagina dei terremoti più percepiti in Svizzera e nel mondo, e infine una pagina di descrizione del progetto.
@@ -147,8 +146,6 @@ Chiunque può consultare il sito che conterrà una rappresentazione delle misura
 Attualmente esiste già un sito nazionale dedicato a questo tema, speriamo che la nostra versione sia più piacevole ed efficace.
 
 ### Analisi dei mezzi
-
-
 
 #### Hardware
 
@@ -205,24 +202,24 @@ Hosting su GoDaddy !!! Da chidere
 
 ### Analisi e specifica dei requisiti
 
-  | **ID**  | **Requisito** | **Priorità** | **Versione** | **Note** |
-  | ------- | ------------- | ------------ | ------------ | -------- |
-  | REQ-001 | Bisogna avere un sito per la visualizzazione di dati| 1 | 1.0  | http://sismolive.online        |
-  | REQ-002 |Il sito deve avere il collegamento ad un DB| 1 | 1.0  |          |
-  | REQ-003 | Il sito deve avere una pagina di login| 1 | 1.0  |  Con credenziali solo per amministratori        |
-  | REQ-004 | Dev'esserci una struttura hardware con Arduino| 1 | 1.0 | |
-  | REQ-005 | L'Arduino deve poter leggere i dati da un componente che misura le vibrazioni| 1 | 1.0 | Il componente in questione è un geofono|
-  | REQ-006 | L'arduino deve poter mandare i dati tramite modulo Wi-Fi| 1 | 1.0| |
-  | REQ-007 |Il sito dev'essere compatibile con i principali browser| 1 | 2.0 | |
-  | REQ-008 | I dati sul sito devono essere rappresentati sotto forma di grafici | 1 | 1.0 |          |
-  | REQ-009 | Deve esistere un DB per il salvataggio dei vari dati | 1 | 1.0 | |
-  | REQ-010 | Il dato live viene mostrato su un LCD attaccato all'Arduino | 3 | 1.0 |     |
-  | REQ-011 | L'admin deve poter configurare le  soglie (minima e critica) dei dati  | 1 | 1.0 |  |
-  | REQ-012 | Il dato live viene mostrato sul sito| 2 | 1.0 |  |
-  | REQ-013 | In caso di terremoto gli admin vengono notificati via mail  | 1 | 1.0 |  |
-  | REQ-014 | In caso di terremoto gli admin vengono notificati via messaggio| 4 | 1.0 | |
-  | REQ-015 | Per il progetto è necessario avere un agenda su TRELLO | 2 | 1.0 | |
-  | REQ-016 | I dati vengono letti con frequenza configurata dall'admin| 1 | 1.0 | |
+| **ID**  | **Requisito** | **Priorità** | **Versione** | **Note** |
+| ------- | ------------- | ------------ | ------------ | -------- |
+| REQ-001 | Bisogna avere un sito per la visualizzazione di dati| 1 | 1.0  | http://sismolive.online        |
+| REQ-002 |Il sito deve avere il collegamento ad un DB| 1 | 1.0  |          |
+| REQ-003 | Il sito deve avere una pagina di login| 1 | 1.0  |  Con credenziali solo per amministratori        |
+| REQ-004 | Dev'esserci una struttura hardware con Arduino| 1 | 1.0 | |
+| REQ-005 | L'Arduino deve poter leggere i dati da un componente che misura le vibrazioni| 1 | 1.0 | Il componente in questione è un geofono|
+| REQ-006 | L'arduino deve poter mandare i dati tramite modulo Wi-Fi| 1 | 1.0| |
+| REQ-007 |Il sito dev'essere compatibile con i principali browser| 1 | 2.0 | |
+| REQ-008 | I dati sul sito devono essere rappresentati sotto forma di grafici | 1 | 1.0 |          |
+| REQ-009 | Deve esistere un DB per il salvataggio dei vari dati | 1 | 1.0 | |
+| REQ-010 | Il dato live viene mostrato su un LCD attaccato all'Arduino | 3 | 1.0 |     |
+| REQ-011 | L'admin deve poter configurare le  soglie (minima e critica) dei dati  | 1 | 1.0 |  |
+| REQ-012 | Il dato live viene mostrato sul sito| 2 | 1.0 |  |
+| REQ-013 | In caso di terremoto gli admin vengono notificati via mail  | 1 | 1.0 |  |
+| REQ-014 | In caso di terremoto gli admin vengono notificati via messaggio| 4 | 1.0 | |
+| REQ-015 | Per il progetto è necessario avere un agenda su TRELLO | 2 | 1.0 | |
+| REQ-016 | I dati vengono letti con frequenza configurata dall'admin| 1 | 1.0 | |
 
 ### Use case
 
@@ -1007,21 +1004,21 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 
 | Test Case |  Stato  |
 |-----------|---------|
-|   TC-001  | Passato |            
-|   TC-002  | Passato |            
-|   TC-003  | Passato |           
+|   TC-001  | Passato |
+|   TC-002  | Passato |
+|   TC-003  | Passato |
 |   TC-004  | Passato |
-|   TC-005  | Passato |             
-|   TC-006  | Passato |             
-|   TC-007  | Passato |             
-|   TC-008  | Non passato|             
-|   TC-009  | Passato |  
-|   TC-010  | Passato |                  
-|   TC-011  | Passato |   
+|   TC-005  | Passato |
+|   TC-006  | Passato |
+|   TC-007  | Passato |
+|   TC-008  | Non passato|
+|   TC-009  | Passato |
+|   TC-010  | Passato |
+|   TC-011  | Passato |
 |   TC-012  | Non passato |
 |   TC-013  | Passato |
-|   TC-014  | Passato  |             
-|   TC-015  | Da Testare |   
+|   TC-014  | Passato  |
+|   TC-015  | Da Testare |
 |   TC-016  |  |
 |   TC-017  |  |
 
@@ -1101,7 +1098,7 @@ Daniel:
   Sono soddisfatto del risultato finale.
 
   Daniel:
-  
+
 ## Sitografia
 
 ***AGGIUNGERE I SITI CHE ABBIAMO VISITATO***
