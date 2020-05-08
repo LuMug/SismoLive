@@ -165,13 +165,15 @@ Accesso MySQL:
 
 - Arduino IDE v1.8.33.0
 
-- Sublime text 3
+- Sublime Text 3.11
 
-- Opera
+- Opera v64
 
-- Diagram Designer
+- Diagram Designer v1.29.5
 
-- FileZilla
+- FileZilla v3.48
+
+- Fritzing v0.9.4
 
 #### Librerie
 
