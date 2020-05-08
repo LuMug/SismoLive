@@ -93,6 +93,7 @@
 
 ### Abstract
 
+Hundreds, or better, thousands of seismic tremors occur on our planet. Unfortunately, there are few means to monitor them, especially with simplicity. What we propose is the best solution to these problems: SismoLive! It's a monitoring system of a high degree of semplicity, but just as much professionalism, which allows to keep updated anyone IN REAL TIME. You think that's it? Absolutely not, in fact, every time there is an earthquake of high magnitude, the administrators will be notified either by email or, in even more serious cases, by SMS, so you can warn those of duty. Hurry up and visit the simplest yet most professional site of recent times
 
 ### Scopo
 
@@ -175,17 +176,16 @@ Accesso MySQL:
 
 #### Librerie
 
-<<<<<<< HEAD
 - Chart.js, https://www.chartjs.org/
 
 - Fishino, http://fishino.com/download-libraries-it.html%22%3EFishino.h
 
 - RTClib, https://github.com/adafruit/RTClib
-=======
-- <a href="https://www.chartjs.org/">Chart.js</a>
-- <a href="https://github.com/adafruit/RTClib">RTClib</a>
-- <a href="http://fishino.com/download-libraries-it.html">Fishino.h</a>
->>>>>>> 4256bd747f917be95be08dbd321cf40e11497740
+
+- PhpMailer, https://github.com/PHPMailer/PHPMailer
+
+- MessageBird, https://github.com/messagebird/php-rest-api
+
 
 #### Hosting
 
@@ -213,6 +213,7 @@ HOSTING DI QUEL SITO, PERCHà CI SERVONO LE FUNZIONI.
 | REQ-016 | I dati vengono letti con frequenza configurata dall'admin| 1 | 1.0 | |
 
 ### Use case
+ Lo schema seguente rappresenta lo use case del progetto:
 
 ![Diagramma use case](../Immagini/diagramma_use_case.png)
 
@@ -247,6 +248,8 @@ Sitemap:
 
 
 ### Schema E-R, schema logico e descrizione
+
+L'immagine sottostante rappresenta il diagramma E/R del database SismoLive:
 
 ![Diagramma E/R](../Immagini/diagramma_er.png)
 
@@ -1057,15 +1060,13 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |---------------|--------------------------------------|
 |**Nome**       |Dati letti con frequenza settata |
 |**Riferimento**|REQ-16                       |
-|**Descrizione**| |
+|**Descrizione**|L'admin può settare il tempo in cui vengono letti i dati dal fishino. |
 |**Prerequisiti**||
-|**Procedura**   | |
-|**Risultati attesi** | |
+|**Procedura**   | Entrare nel sito, fare il login come amministratore e entrare nella pagina dei parametri, in seguito controllare se c'è un form dove si può inserire un numero che servirà alla modifica della frequenza dei dati letti.  |
+|**Risultati attesi** |Dovrebbe esserci un form e un bottone che confermi la frequenza, e il grafico e la tabella dovrebbero aggiornarsi in base al tempo appena settato. |
 
 
 ### Risultati test
-
-***DA COMPLETARE***
 
 
 | Test Case |  Stato  |
@@ -1084,26 +1085,25 @@ Il parametro passato non é altro che il valore che abbiamo creato il generatore
 |   TC-012  | Non passato |
 |   TC-013  | Passato |
 |   TC-014  | Passato  |
-|   TC-015  | Da Testare |
-|   TC-016  |  |
-|   TC-017  |  |
+|   TC-015  | Passato |
+|   TC-016  | Passato |
+|   TC-017  | Non passato |
 
 ### Mancanze e limitazioni conosciute
-
-***DA COMPLETARE***
 
 
 ##### Hardware
 
-***DA COMPLETARE***
-
-
 Il nostro progetto presenta la mancanza di un componente essenziale, ovvero il geofono per la misurazione delle vibrazione terrestri.
-Questo é dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" con la creazione di dati fittizi in un range tra 1.0 e 10.0.
+Questo é dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" con la creazione di dati fittizi in un range tra 10.0 e 100.0 che viene in seguito diviso per 10, l'invio e la creazione dei dati avviene tramite un fishino UNO.
 
 ## Consuntivo
 
+![Gant consuntivo](../Immagini/gantt_cons1.PNG)
+![Gant consuntivo](../Immagini/gantt_cons2.PNG)
+![Gant consuntivo](../Immagini/gantt_cons3.PNG)
 
+![Gant consuntivo](../Immagini/gantt_prev4.PNG)
 
 ## Conclusioni
 
@@ -1119,10 +1119,13 @@ Il lavoro non è stato assolutamente uno spreco ne di tempo, ne di risorse. Se i
 Matthias:
 
 Rispetto al progetto individuale del primo semestre, in questo progetto a gruppi ho imparato a collaborare in team.
-Il lavoro è stato motivante
-  (Devo completare)
+Il lavoro è stato motivante, ho avuto dei ottimi compagni di squadra e ci siamo trovati tutti quanti bene, senza complicazioni.
+L'unica nota negativa che ho è che ad un certo punto eravamo un po' indietro col progetto, ma siamo riusciti a recuperare terreno ed a finirlo nel tempo limi
 
 Daniel:
+
+In questo progetto ho potuto migliorare la mia capacità di lavorare in team. Il nostro team si é dimostrato molto organizzato e collaborativo tri i suoi membri. Lavorare in gruppo secondo me é sicuramente piú impegnativo, in fatto di organizzazione, che lavorare singolarmente.
+Questo progetto ha un grande potenziale, si possono effettuare ancora ulteriori modifiche e/o aggiunte in modo da migliorarne il funzionamento e le sue capacità.
 
 ### Sviluppi futuri
 
@@ -1146,11 +1149,14 @@ Daniel:
 
   Matthias:
 
-  Ho saputo consolidare le mie conoscenze del linguaggio PHP. Ecc
-  (Devo completare)
-  Sono soddisfatto del risultato finale.
+  Grazie a questo progetto didattico, sono riuscito consolidare le mie conoscenze principalmente nel linguaggio PHP e HTML.
+    Parlando del risultato, sono felice del risultato finale, mi aspettavo peggio.
+    Spero che nei prossimi progetti, potrò mettere in pratica le conoscenze acquisite da questo progetto.
 
   Daniel:
+
+  Alla fine di questo progetto penso di aver compreso com'é realmente lavorare in team in un progetto importante. Ho capito l'importanza della comunicazione nel team.
+  Ho potuto rientrare nel mondo di fishino imparando a utilizzarlo. Il progetto é molto interessante, peccato che non abbiamo potuto implementare la parte con il geofono, che sicuramente avrebbe reso ancora piú interessante questo progetto.
 
 ## Sitografia
 
