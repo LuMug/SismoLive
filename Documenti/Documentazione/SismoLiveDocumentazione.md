@@ -1164,6 +1164,7 @@ Daniel:
 
 Alla fine di questo progetto penso di aver compreso com'è realmente lavorare in team in un progetto importante. Ho capito l'importanza della comunicazione nel team.
 Sono potuto rientrare nel mondo di fishino imparando a utilizzarlo. Il progetto è molto interessante, peccato che non abbiamo potuto implementare la parte con il geofono, che sicuramente avrebbe reso ancora più interessante questo progetto.
+Quest'ultimo ha un grande potenziale, si possono effettuare ancora ulteriori modifiche e/o aggiunte in modo da migliorarne il funzionamento e le sue capacità.
 
 ### Sviluppi futuri
 
@@ -1190,8 +1191,9 @@ Sono potuto rientrare nel mondo di fishino imparando a utilizzarlo. Il progetto 
 
   Daniel:
 
-  In questo progetto ho potuto migliorare la mia capacità di lavorare in team. Il nostro team si è dimostrato molto organizzato e collaborativo tra i suoi membri. Lavorare in gruppo secondo me è sicuramente più impegnativo, in fatto di organizzazione, che lavorare singolarmente.
-  Questo progetto ha un grande potenziale, si possono effettuare ancora ulteriori modifiche e/o aggiunte in modo da migliorarne il funzionamento e le sue capacità.
+  In questo progetto ho potuto migliorare la mia capacità di lavorare in team e ho appreso nuove competenze per quanto riguarda l'utilizzo del Fishino. Il nostro team si è dimostrato molto organizzato e collaborativo tra i suoi membri. Lavorare in gruppo secondo me è sicuramente più impegnativo, in fatto di organizzazione, che lavorare singolarmente.
+
+
 
 ## Sitografia
 
