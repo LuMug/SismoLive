@@ -1105,8 +1105,11 @@ Questo è dovuto dalla scomparsa del pacco con i componenti. Abbiamo "risolto" c
 ![Gant consuntivo](../Immagini/gantt_cons1.PNG)
 ![Gant consuntivo](../Immagini/gantt_cons2.PNG)
 ![Gant consuntivo](../Immagini/gantt_cons3.PNG)
-
-![Gant consuntivo](../Immagini/gantt_prev4.PNG)
+![Gant consuntivo](../Immagini/gantt_cons4.PNG)
+![Gant consuntivo](../Immagini/gantt_cons5.PNG)
+![Gant consuntivo](../Immagini/gantt_cons6.PNG)
+![Gant consuntivo](../Immagini/gantt_cons7.PNG)
+![Gant consuntivo](../Immagini/gantt_cons8.PNG)
 
 ## Conclusioni
 
