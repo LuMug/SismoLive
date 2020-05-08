@@ -84,7 +84,7 @@
 
 - Sezione: Informatica
 
-- Materia: Modulo 306 - Realizzare un piccolo proggetto IT
+- Materia: Modulo 306 - Realizzare un piccolo progetto IT
 
 - Data inizio: 18 gennaio 2020
 
@@ -98,7 +98,7 @@ Hundreds, or better, thousands of seismic tremors occur on our planet. Unfortuna
 
 Lo scopo di questo progetto è quello di avere una costante misurazione tramite una struttura di registrazione, insieme alla relativa rappresentazione su un sito web, delle vibrazioni terrestri.
 Nel caso di un terremoto devono essere notificati gli amministratori via mail e gli utenti sul sito.
-Inoltre questo progetto servirà a migliorare le nostre capacità di lavorare in team.
+Inoltre, questo progetto servirà a migliorare le nostre capacità di lavorare in team.
 
 
 ## Analisi
@@ -273,7 +273,7 @@ Progettazione Menu a tendina, abbiamo progettato di fare un menu a tendina dove 
 
 ![Terremoti](../Progettazione_Sito/Menu-Tendina.png)
 
-Progettazione pagina progettazione, abbiamo pensato di fare una pagina dove viene spiegato il progetto, con dei commenti, un analisi e lo sviluppo e sulla destra un'immagine del montaggio:
+Progettazione pagina progettazione, abbiamo pensato di fare una pagina dove viene spiegato il progetto, con dei commenti, un'analisi e lo sviluppo e sulla destra un'immagine del montaggio:
 
 ![Terremoti](../Progettazione_Sito/Progettazione.png)
 
@@ -391,7 +391,7 @@ exit;
 
 #### table-earth.php
 
-Innanzitutto apre file csv e Dopodiché legge il contenuto del file e lo inserisce
+Innanzitutto apre file csv e dopodiché legge il contenuto del file e lo inserisce
 in una variabile.
 Poi rimuove tutte tutti i ritorni a capo dalla variabile che contiene il contenuto del file.
 
@@ -655,7 +655,7 @@ $orario = trim($orario, ",");
 $magnitudo = trim($magnitudo, ",");
 ```
 
-Questo pezzo di codice mostra come viene fatta la tabella con i dati del presi dal database, viene effettuata una query dove seleziona tutti i dati della tabella ma con un limite di dati che possono essere mostrati (definito in una funzione del database), in modo che la tabella non è così grande.
+Questo pezzo di codice mostra come viene fatta la tabella con i dati presi dal database, viene effettuata una query dove seleziona tutti i dati della tabella ma con un limite di dati che possono essere mostrati (definito in una funzione del database), in modo che la tabella non è così grande.
 Se la query ritorna correttamente e ci sono dei dati all'interno della tabella, allora inserisce nella tabella i valori corrispondenti della data, ora e magnitudo.
 
 ```php
@@ -793,7 +793,7 @@ create table Configurazione(
 );
 ```
 
-Tabella per salvare i terremoti registrati, ogni di esso ha un magnitudo, l'orario
+Tabella per salvare i terremoti registrati, ogni di esso ha una magnitudo, l'orario
 in cui è stato registrato e anche la data.
 
 ```sql
@@ -872,7 +872,7 @@ create view tabella as select t.data_registrazione, t.orario_registrazione, t.ma
 
 ### Hardware e codice
 <div style="text-align: justify">
-La progettazione dell'hardware prevedeva l'uso di una board ArduinoWifi collegato al geofono e a un display per mostrare la misurazione ottenuta direttamente sul luogo. Purtroppo noi abbiamo avuto un problema con l'ordine dei componenti che sono risultati dispersi. Quindi abbiamo deciso di sviluppare il progetto con un fishino UNO Rev2, una scheda compatibile con arduino e equipaggiata con un modulo per il WIFI. Per quanto riguarda i dati di misurazione, generiamo noi dei dati fittizi da inviare al server.
+La progettazione dell'hardware prevedeva l'uso di una board ArduinoWifi collegato al geofono e a un display per mostrare la misurazione ottenuta direttamente sul luogo. Purtroppo, noi abbiamo avuto un problema con l'ordine dei componenti che sono risultati dispersi. Quindi abbiamo deciso di sviluppare il progetto con un fishino UNO Rev2, una scheda compatibile con arduino e equipaggiata con un modulo per il WIFI. Per quanto riguarda i dati di misurazione, generiamo noi dei dati fittizi da inviare al server.
 </div>
 
 <div style="text-align: justify">
@@ -899,7 +899,7 @@ Il primo passo per connettere il fishino a una nuova rete è quello di resettarl
 
 ![](../Immagini/ImgCodiceArduino/2_ResettingFishino.PNG)
 <br>
-Dopodiché si imposta la modalità fisica a 11G e la modalità di operazione del fishino in <b>STATION_MODE</b>, così facendo si impone al fishino di dover collegarsi a una rete wifi già esistente. Infatti il fishino è in grado di creare un nuova rete con la modalità <b>SOFTAP_MODE</b>
+Dopodiché si imposta la modalità fisica a 11G e la modalità di operazione del fishino in <b>STATION_MODE</b>, così facendo si impone al fishino di dover collegarsi a una rete wifi già esistente. Infatti, il fishino è in grado di creare un nuova rete con la modalità <b>SOFTAP_MODE</b>
 <br>
 
 ![](../Immagini/ImgCodiceArduino/3_SetModes.PNG)
@@ -918,7 +918,7 @@ Infine, manca solo l'acquisizione di un indirizzo IP dal DHCP. Per fare questo e
 Adesso il fishino è connesso al wifi e manca solo di inviare i dati al nostro server.
 <br>
 Fishino invia i dati con il metodo POST, ma per prima cosa ci si deve connettere al host dove è presente il file php in cui andremo a ricevere i dati che invia il fishino. Il metodo che permette la connessione al host del server è <b>client.connect("www.sismolive.online",80)</b>, dove il primo parametro corrisponde all'host mentre il secondo è la porta su cui vogliamo connetterci.
-Se la connessione all'host va a buon fine possiamo impostare il file che dovrà ricevere i dati, questo lo si fa con il meotodo <b>client.println(F("POST /Php/MySQL_connection.php HTTP/1.1"));</b>. Il percorso che si deve inserire è il percorso del file php partendo dall'host.
+Se la connessione all'host va a buon fine possiamo impostare il file che dovrà ricevere i dati, questo lo si fa con il metodo <b>client.println(F("POST /Php/MySQL_connection.php HTTP/1.1"));</b>. Il percorso che si deve inserire è il percorso del file php partendo dall'host.
 Poi bisogna riferire la lunghezza del dato che si vuole mandare, questo lo si può ricavare con il metodo <b>length()</b>. Il metodo di invio dati alla fine risulterà questo:
 <br>
 ![](../Immagini/ImgCodiceArduino/6_InvioDati.PNG)
