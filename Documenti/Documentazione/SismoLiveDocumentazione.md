@@ -212,7 +212,7 @@ Questo perché senza queste due caratteristiche, sarebbe stato molto difficile d
 
 Lo schema seguente rappresenta lo use case del progetto:
 
-![Diagramma use case](../Immagini/diagramma_use_case.png)
+![Diagramma use case](../Immagini/diagramma_use_case.PNG)
 
 ### Pianificazione
 
@@ -248,21 +248,21 @@ Sitemap:
 
 L'immagine sottostante rappresenta il diagramma E/R del database SismoLive:
 
-![Diagramma E/R](../Immagini/diagramma_er.png)
+![Diagramma E/R](../Immagini/diagramma_er.PNG)
 
 ### Design delle interfacce
 
 Progettazione pagina principale, abbiamo inizialmente pensato di avere una home che contenesse la visualizzazione dei dati in live sotto forma di grafico e tabella:
 
-![index](../Progettazione_Sito/index.png)
+![index](../Progettazione_Sito/Index.png)
 
 Progettazione pagina login, abbiamo pensato di avere una pagina di login dove gli amministratori possono accedere tramite le credenziali nome utente e password:
 
-![Login](../Progettazione_Sito/login.png)
+![Login](../Progettazione_Sito/Login.png)
 
 Progettazione terremoti, pagina dove vengono mostrate due tabelle con i terremoti più percepiti in Svizzera e nel mondo con colonne: data, magnitudo, pericolosità e la città:
 
-![Terremoti](../Progettazione_Sito/terremoti.png)
+![Terremoti](../Progettazione_Sito/Terremoti.png)
 
 Progettazione Menu a tendina, abbiamo progettato di fare un menu a tendina dove si potesse navigare fra le varie pagine(Home, terremoti, progettazione, chi siamo):
 
