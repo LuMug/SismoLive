@@ -287,46 +287,49 @@ ad esempio:
 Costanti definite
 
 ```php
+//IP del database
 define('DB_SERVER', '160.153.133.208');
+// Utente del database
 define('DB_USERNAME', 'sismo');
-define('DB_PASSWORD', 'sismo');
+// Password dell'utente
+define('DB_PASSWORD', 'simo');
+// Database a quale accedere
 define('DB_NAME', 'SismoLive');
 ```
+
+#### connectToDB.php
 
 Tenta di connettersi al database, ma se la connessione fallisce stampa l'errore.
 
 ```php
-/* Tentativo di connesione al database */
+// Include il file da dove prendere le varie variabili
+include "config.php";
+// Tentativo di connesione al database
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
-// Controlla la connessione
-if ($link === false)
-{
+// Controlla la connessione se è andata a buon fine
+if ($link === false) {
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 ```
 
 #### login.php
 
-La password inserita nel login viene criptata con l'hash md5, se essa equivale alla password trovata
-nel database, esegue l'accesso.
+La password inserita nel login viene criptata con l'hash md5, se essa equivale alla password trovata nel database, esegue l'accesso.
+Sennò verrà stampato un errore cons critto "Password errata!".
 
 ```php
-if (md5($password) == $pass)
-{
-    // Password is correct, so start a new session
+if (md5($password) == $pass) {
+    // La password è corretta e quindi inizia la sessione
     session_start();
-
-    // Store data in session variables
+    // Salva i dati nelle variabili di sessione
     $_SESSION["loggedin"] = true;
     $_SESSION["username"] = $username;
-
-    // Redirect user to welcome page
+    $_SESSION["error"] = "";
+    $_SESSION["errorLogin"] = "";
     header("location: ../index.php");
-}
-else
-{
-    header("location: ../html/login.html");
+} else {
+    $_SESSION["errorLogin"] = "Password errata!";
+    header("location: ../html/login.php");
 }
 ```
 
@@ -336,16 +339,13 @@ Esegue l'unset di tutte le variabili della sessione.
 Distrugge la sessione e infine reindirizza l'utente alla pagina principale.
 
 ```php
-// Initialize the session
+// Inizializza la sessione
 session_start();
-
-// Unset all of the session variables
+// Esegue l'unset di tutte le variabili di sessione
 $_SESSION = array();
-
-// Destroy the session.
+// Distrugge la sessione
 session_destroy();
-
-// Redirect to login page
+// Reindirizza alla pagina principale
 header("location: ../index.php");
 exit;
 ```
@@ -353,57 +353,89 @@ exit;
 #### table.php
 
 ```php
+// Apre il csv di riferimento
+$f = fopen("../csv/mondo.csv", "r");
+// Legge il contenuto del file
+$fr = fread($f, filesize("../csv/mondo.csv"));
+// Chiude il file
+fclose($f);
+//Rimuove tutti le nuove righe
+$lines = explode("\n\r", $fr);
+```
 
+
+```php
+$check = 0;
+for ($i = 0;$i < count($lines);$i++) {
+  // Se è nella prima riga, crea l'header della taballa
+    if ($check == 0) {
+        echo "<thead class='thead-dark'>";
+        echo "<tr>";
+        $cells = array();
+        // Toglie ; da tutti i dati
+        $cells = explode(";", $lines[$i]);
+        for ($k = 0;$k < count($cells);$k++) {
+            echo "<th scope='col'>" . $cells[$k] . "</th>";
+        }
+        echo "</tr>";
+        echo "</thead>";
+        echo "</tbody>";
+    } else {
+        echo "<tr>";
+        $cells = array();
+          // Toglie ; da tutti i dati
+        $cells = explode(";", $lines[$i]);
+        for ($k = 0;$k < count($cells);$k++) {
+            echo "<td>" . $cells[$k] . "</td>";
+        }
+        echo "</tr>";
+    }
+    $check++;
+}
 ```
 
 #### csv
 
-Esempio del formato in csv, ogni campo è separatao da una ",".
+Esempio del formato in csv, ogni campo è separatao da un ";".
 
 ```csv
+Data;Magnitudo;Pericolosità;Città
 
-Data,Magnitudo,Pericolosita,Citta
+1960.05.22;9.5;Molto alta;Valdivia, Cile
 
-1356.10.18,6.6,Alta,Basilea(BS)
+1964.03.27;9.2;Molto alta;Stretto di Prince William, Alaska (Stati Uniti)
 
-1295.09.03,6.2,Alta,Churwalden(GR)
+2004.12.26;9.1;Molto alta;Oceano Indiano, Sumatra, Indonesia
 
-1855.07.25,6.2,Alta,Stalden-Visp(VS)
+2011.03.11;9.0;Molto alta;Oceano Pacifico, Regione di Tohoku, Giappone
 
-1584.03.11,5.9,Alta,Aigle(VD)
+1952.11.04;9.0;Molto alta;Kamcatka, Russia (all'epoca in URSS)
 
-1601.09.18,5.9,Alta,Unterwalden(NW)
+1868.08.13;9.0;Molto alta;Arica, Cile
 
-1524.04.01,5.8,Media,Ardon(VS)
+1700.01.26;8.7;Molto alta;Oceano Pacifico, USA e Canada
 
-1946.01.25,5.8,Alta,Sierre(VS)
+1869.07.09;8.9;Molto alta;Oceano Pacifico, Regione di Tohoku, Giappone
 
-1755.12.09,5.7,Alta,Brig-Naters(VS)
+1611.12.02;8.9;Molto alta;Oceano Pacifico, Hokkaido, Giappone
 
-1774.09.10,5.7,Media,Altdorf(UR)
-
-1622.08.03,5.4,Media,Ftan(GR)
-
+1762.04.02;8.8;Molto alta;Chittagong, Bangladesh
 ```
 
-#### login_or_logout.php
+#### logged.php
 
 Se l'utente ha effettuato il login, mostrerà i bottoni per accedere
 alla pagina dei parametri oppure per disconnetersi.
 Se invece non ha effettuato il login, mostrerà solamente il bottone per accedere.
 
 ```php
-
 $login = "http://sismolive.online/html/login.html";
 $logout = "http://sismolive.online/php/logout.php";
 $parametri = "http://sismolive.online/html/configurazione.php";
-
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
-{
+// Se l'utente è loggato mostrerà il tasto di logout e per accedere alla configurazione dei parametri, sennò comparirà solamente il tasto per effettuare il login.
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     echo "<li class='get-started'><a href='$login'>Login</a></li>";
-}
-else
-{
+} else {
     echo "<li class='get-started'><a href='$parametri'>Parametri</a></li>";
     echo "<li class='get-started'><a href='$logout'>Logout</a></li>";
 }
@@ -413,21 +445,21 @@ else
 
 Necessita del file **config.php** per effettuare la connesione al database.
 Esegue una query e se nel risultato generato c'è almeno una riga, esegue un ciclo while
-settando le variabili **$soglia_minima** e **$soglia_critica**.
+settando le variabili **$soglia_minima**, **$soglia_intermedia** e **$soglia_critica**.
 
 ```php
-require_once "config.php";
-
+// Include il file che effettua la connessione al database
+include "connectToDB.php";
 $soglia_minima = '';
 $soglia_critica = '';
-
-$soglie = "SELECT soglia_minima,soglia_critica FROM Configurazione";
-
+$soglia_intermedia = '';
+// Query
+$soglie = "SELECT soglia_minima, soglia_intermedia, soglia_critica FROM Configurazione";
 $result = $link->query($soglie);
-
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $soglia_minima = $row['soglia_minima'];
+        $soglia_intermedia = $row['soglia_intermedia'];
         $soglia_critica = $row['soglia_critica'];
     }
 }
@@ -435,69 +467,63 @@ if ($result->num_rows > 0) {
 
 #### mail.php
 
+Funzione
+
 ```php
 require "PHPMailer/PHPMailerAutoload.php";
 require "../config.php";
+function smtpmailer($to, $from, $from_name, $subject, $body) {
+    $mail = new PHPMailer();
+    $mail->IsSMTP();
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = 'ssl';
+    $mail->Host = 'n3plcpnl0298.prod.ams3.secureserver.net';
+    $mail->Port = 465;
+    $mail->Username = 'terremoto@sismolive.online';
+    $mail->Password = 'terremoto';
+    $mail->IsHTML(true);
+        //Indirizzo mail mittente
+    $mail->From = "terremoto@sismolive.online";
+        //Nome mittente
+    $mail->FromName = $from_name;
+    $mail->Sender = $from;
+    $mail->AddReplyTo($from, $from_name);
+        //Oggetto della mail
+    $mail->Subject = $subject;
+        //Contenuto della mail
+    $mail->Body = $body;
+        //Destinatario
+    $mail->AddAddress($to);
+    //Invio la mail
+    $mail->Send();
+}
+```
 
-function smtpmailer($to, $from, $from_name, $subject, $body)
-    {
-        $mail = new PHPMailer();
-        $mail->IsSMTP();
-        $mail->SMTPAuth = true;
-
-        $mail->SMTPSecure = 'ssl';
-        $mail->Host = 'n3plcpnl0298.prod.ams3.secureserver.net';
-        $mail->Port = 465;
-        $mail->Username = 'terremoto@sismolive.online';
-        $mail->Password = 'terremoto';
-
-        $mail->IsHTML(true);
-        $mail->From="terremoto@sismolive.online";
-        $mail->FromName=$from_name;
-        $mail->Sender=$from;
-        $mail->AddReplyTo($from, $from_name);
-        $mail->Subject = $subject;
-        $mail->Body = $body;
-        $mail->AddAddress($to);
-        if(!$mail->Send())
-        {
-            $error ="Please try Later, Error Occured while Processing...";
-            return $error;
-        }
-        else
-        {
-            $error = "Thanks You !! Your email is sent. YOoo";
-            return $error;
-        }
+```php
+$from = 'terremoto@sismolive.online';
+$name = 'SismoLive';
+$subj = 'Allarme terremoto!';
+$msg = 'È stato rilevato un terremoto di magnitudo .. ' . ' alle .. ';
+$email = "SELECT email FROM Utente";
+$result = $link->query($email);
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $to = $row['email'];
+        $error = smtpmailer($to, $from, $name, $subj, $msg);
     }
-
-    $from = 'terremoto@sismolive.online';
-    $name = 'SismoLive';
-    $subj = 'Allarme terremoto!';
-    $msg = 'Terremoto rilevato!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!.';
-
-    $email = "SELECT email FROM Utente";
-
-    $result = $link->query($email);
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $to = $row['email'];
-            $error=smtpmailer($to,$from, $name ,$subj, $msg);
-        }
-    }
+}
 ```
 
 #### data.php
 
 Necessita del file **config.php** per effettuare la connesione al database.
 Esegue una query e se nel risultato generato c'è almeno una riga, esegue un ciclo while
-settando le variabili **$datas** e **$earths**.
+settando le variabili **$prarop** e **$magnitudo**.
 Infine esegue un trim togliendo le virgole da entrambe le variabili.
 
 ```php
-
-include "../php/config.php";
+// Include il file che effettua la connessione al database
+include "../php/connectToDB.php";
 
 $orario = '';
 $magnitudo = '';
@@ -539,21 +565,31 @@ if ($result->num_rows > 0)
 Alla fine invia il messaggio.
 
 ```php
-
-require_once('sms/vendor/autoload.php');
-
-// Set your own API access key here.
+require_once ('messagebird/vendor/autoload.php');
+// Chiave API
 $MessageBird = new \MessageBird\Client('');
-
-$Message             = new \MessageBird\Objects\Message();
+$Message = new \MessageBird\Objects\Message();
 //Nome del mittente
 $Message->originator = 'SismoLive';
 //Numero del destinatario
-$Message->recipients = [ '+41XXXXXXXX' ];
+$Message->recipients = ['+41789246797'];
 //Messaggio da mandare
-$Message->body       = 'Allarme terremoto!';
+$Message->body = 'Allarme terremoto!';
 //Invia il messaggio
-$MessageResult = $MessageBird->messages->create($Message);
+try {
+    $MessageResult = $MessageBird->messages->create($Message);
+}
+catch(\MessageBird\Exceptions\AuthenticateException $e) {
+    // Significa che la chiavi API è sbagliata
+    echo 'Chiave API errata';
+}
+catch(\MessageBird\Exceptions\BalanceException $e) {
+    // Significa che il credito è finito
+    echo 'Credito finito';
+}
+catch(\Exception $e) {
+    echo $e->getMessage();
+}
 
 ```
 
@@ -566,7 +602,6 @@ Questo rende sia il grafico sia la tabella in modalità "real-time".
 $('#responsecontainer').load('data.php');
 var refreshId = setInterval(function() {
     $('#responsecontainer').load('data.php');
-
 }, 1000);
 ```
 
@@ -599,7 +634,7 @@ se mostrare il bottone di login oppure i bottoni per effettuare il logout o sett
     <li><a href="html/terremoti.php">Terremoti</a></li>
     <li><a href="html/progettazione.php">Progettazione</a></li>
     <li><a href="html/chisiamo.php">Chi siamo</a></li>
-    <?php require_once "php/login_or_logout.php";?>
+    <?php require_once "php/logged.php";?>
   </ul>
 </nav>
 ```
@@ -609,14 +644,14 @@ se mostrare il bottone di login oppure i bottoni per effettuare il logout o sett
 Elimina il database se esiste, dopodichè lo crea e viene selezionato.
 
 ```sql
+# Script che crea il database del progetto SismoLive
 
 drop database if exists SismoLive;
 create database SismoLive;
 use SismoLive;
-```
 
-# CREAZIONE TABELLE  -----------------------------------------------------------------------------------------------
-```sql
+# CREAZIONE TABELLE  ------------------------------
+
 drop table if exists Utente;
 create table Utente(
 	nome varchar(20) primary key not null,
@@ -625,60 +660,51 @@ create table Utente(
 	telefono long not null,
 	tipo varchar(20) not null
 );
-```
-```sql
+
 drop table if exists Configurazione;
 create table Configurazione(
 	id int primary key auto_increment,
-	soglia_minima double not null,
-    soglia_critica double not null
+	soglia_minima double not null, #Soglia per registrare il valore nella tabella Terremoto
+    soglia_intermedia double not null, # Soglia per mandare la mail
+    soglia_critica double not null # Soglia per mandare l'SMS'
 );
-```
-```sql
+
 drop table if exists Terremoto;
 create table Terremoto(
-	id_registrazione int not null,
-	id_terremoto int not null,
+	id_registrazione int primary key not null,
     magnitudo double not null,
 	data_registrazione DATE not null,
-    orario_registrazione TIME not null,
-    primary key (id_registrazione, id_terremoto)
+    orario_registrazione TIME not null
 );
-```
-# AMMINISTRATORI DI BASE ---------------------------------
 
-Inserimento dei 5 amministratori predefiniti nel database.
+# AMMINISTRATORI DI BASE --------------------------
 
-```sql
 insert into Utente(nome,psw,email,telefono,tipo) values ("Georgiy",md5("PasswordDiGeorgiy"),"georgiy.farina@samtrevano.ch",41790123456,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Marco",md5("PasswordDiMarco"),"marco.lorusso@samtrevano.ch",41791234567,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Matthias",md5("PasswordDiMatthias"),"matthias.iannarella@samtrevano.ch", 41789246797,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("Daniel",md5("PasswordDiDaniel"),"daniel.matt@samtrevano.ch",41793456789,"A");
 insert into Utente(nome,psw,email,telefono,tipo) values ("test",md5("test"),"thias.ianna@gmail.com",41793456789,"A");
 
-```
-# CONFIGURAZIONE DI DEFAULT -------------------------------------------------------
-```sql
-insert into Configurazione(soglia_minima,soglia_critica) values(0.3,0.7);
-```
-# FUNZIONI VARIE -------------------------------------------------------------
-```sql
+# CONFIGURAZIONE DI 'DEFAULT' --------------
+
+insert into Configurazione(soglia_minima,soglia_intermedia,soglia_critica) values(3.0,6.0,7.5);
+
+# FUNZIONI VARIE  ---------------------
+
 DELIMITER //
 CREATE FUNCTION getStartId()
 returns int deterministic
 BEGIN
 	declare startId int;
 	set startId = (select max(id_registrazione) -7 from Terremoto);
-    if startId <0 then
+    if startId < 0 then
 		set startId = 0;
     end if;
     return startId;
 END
 //
 DELIMITER ;
-```
 
-```sql
 DELIMITER //
 CREATE FUNCTION getFinishId()
 returns int deterministic
@@ -689,11 +715,11 @@ BEGIN
 END
 //
 DELIMITER ;
-```
-#-------------------------------------------------------------
-```sql
+
+#------------------------------------
+
 drop view if exists tabella;
-create view tabella as select t.data_registrazione, t.orario_registrazione, t.magnitudo, t.id_terremoto from Terremoto t where t.id_registrazione > getStartId();
+create view tabella as select t.data_registrazione, t.orario_registrazione, t.magnitudo, t.id_registrazione from Terremoto t where t.id_registrazione > getStartId();
 
 ```
 

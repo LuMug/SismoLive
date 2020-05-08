@@ -4,6 +4,7 @@ echo "<table class='table' id='sortTable'>";
 $f = fopen("../csv/mondo.csv", "r");
 // Legge il contenuto del file
 $fr = fread($f, filesize("../csv/mondo.csv"));
+// Chiude il file
 fclose($f);
 $lines = array();
 //Rimuove tutti le nuove righe
@@ -15,7 +16,7 @@ for ($i = 0;$i < count($lines);$i++) {
         echo "<thead class='thead-dark'>";
         echo "<tr>";
         $cells = array();
-        // Toglie ; tutti i dati
+        // Toglie ";" da tutti i dati
         $cells = explode(";", $lines[$i]);
         for ($k = 0;$k < count($cells);$k++) {
             echo "<th scope='col'>" . $cells[$k] . "</th>";
@@ -26,7 +27,7 @@ for ($i = 0;$i < count($lines);$i++) {
     } else {
         echo "<tr>";
         $cells = array();
-          // Toglie ; tutti i dati
+          // Toglie ";" da tutti i dati
         $cells = explode(";", $lines[$i]);
         for ($k = 0;$k < count($cells);$k++) {
             echo "<td>" . $cells[$k] . "</td>";

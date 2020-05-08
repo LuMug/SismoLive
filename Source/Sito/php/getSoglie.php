@@ -1,9 +1,10 @@
 <?php
 // Include il file che effettua la connessione al database
-require_once "connectToDB.php";
+include "connectToDB.php";
 $soglia_minima = '';
 $soglia_critica = '';
 $soglia_intermedia = '';
+// Query
 $soglie = "SELECT soglia_minima, soglia_intermedia, soglia_critica FROM Configurazione";
 $result = $link->query($soglie);
 if ($result->num_rows > 0) {

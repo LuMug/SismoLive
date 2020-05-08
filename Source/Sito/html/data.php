@@ -1,5 +1,6 @@
 <?php
-    require "../php/connectToDB.php";
+    // Include il file che effettua la connessione al database
+    include "../php/connectToDB.php";
 
     $orario = '';
     $magnitudo = '';
@@ -16,10 +17,9 @@
 
     $orario = trim($orario, ",");
     $magnitudo = trim($magnitudo, ",");
-
 ?>
 <!-- Script -->
-<script src="../js/chart.js"></script> 
+<script src="../js/chart.js"></script>
 
 <section class="d-flex align-items-center">
     <div class="container-fluid bg-2 text-center">

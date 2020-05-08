@@ -12,7 +12,6 @@ $Message->body = 'Allarme terremoto!';
 //Invia il messaggio
 try {
     $MessageResult = $MessageBird->messages->create($Message);
-    var_dump($MessageResult);
 }
 catch(\MessageBird\Exceptions\AuthenticateException $e) {
     // Significa che la chiavi API è sbagliata
@@ -25,3 +24,4 @@ catch(\MessageBird\Exceptions\BalanceException $e) {
 catch(\Exception $e) {
     echo $e->getMessage();
 }
+?>
